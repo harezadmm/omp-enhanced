@@ -8,25 +8,10 @@ Auto-loading workflow system with comprehensive security, development, and creat
 
 ## 🚀 One-Command Installation
 
-### Using Bun (Recommended - Fast)
-
 ```bash
-# Clone repository
+# Clone and install
 git clone https://github.com/harezadmm/omp-enhanced.git
 cd omp-enhanced
-
-# Install with Bun (fastest)
-bun install.sh
-```
-
-### Using Bash (Alternative)
-
-```bash
-# Clone repository
-git clone https://github.com/harezadmm/omp-enhanced.git
-cd omp-enhanced
-
-# Install with bash
 bash install.sh
 ```
 
