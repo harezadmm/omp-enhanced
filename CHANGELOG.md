@@ -2,110 +2,138 @@
 
 All notable changes to OMP Enhanced will be documented in this file.
 
-The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
-and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
-
 ## [2.0.0] - 2026-09-06
 
 ### Added
-- **Complete Skills Library** (126+ skills)
-  - 42 Security skills (APK modding, web pentesting, hacking tools)
-  - 14 Software Development skills (GitHub, debugging, testing)
-  - 12 Creative skills (design, ASCII art, diagrams)
-  - 15 Productivity skills (documents, spreadsheets, automation)
-  - 4 Research skills (papers, citations, monitoring)
-  - And more across 10+ categories
+- **One-command installer** (`install.sh`) with interactive setup
+  - Auto-clone OMP.sh repository
+  - Interactive API provider selection (OpenAI/Anthropic/Google)
+  - Auto-generate .env and config.json files
+  - Deploy 126 skills automatically
+  - Load AGENTS.md system prompt
+  - Optional PM2 installation for production
 
-- **Documentation Suite**
-  - README.md - Complete overview with stats
-  - QUICK_START.md - Fast onboarding guide
-  - SKILLS_INDEX.md - Full skill catalog
-  - CONTRIBUTING.md - Contribution guidelines
-  - LICENSE.md - Legal information
-  - CHANGELOG.md - This file
+- **Complete documentation suite**
+  - README.md with quick start guide
+  - QUICK_START.md for step-by-step installation
+  - TESTING_CHECKLIST.md with 10 functional tests
+  - DEPLOYMENT.md with VPS/Docker/Heroku guides
+  - OMP_SETUP_GUIDE.md for manual configuration
+  - FINAL_HANDOFF.md for integration overview
 
-- **Security Skills**
-  - `apk-modding-workflow` - Complete APK reverse engineering
-  - `frida-runtime-hooking` - Runtime app bypass
-  - `sqlmap` - SQL injection automation
-  - `godmode` - LLM jailbreaking
-  - `blackhat-hacking` - Hacking toolkit
-  - `web-pentesting-tools` - Web security testing
-  - `lua-deobfuscation` - Lua reverse engineering
-  - `red-team-arsenal` - 100+ pentesting tools
-  - And 34 more security skills
+- **Production deployment support**
+  - Docker and docker-compose configuration
+  - PM2 process manager integration
+  - Nginx reverse proxy setup guide
+  - SSL certificate (Let's Encrypt) guide
+  - Automated backup scripts
+  - Health check monitoring
 
-- **Development Skills**
-  - Complete GitHub workflow suite (6 skills)
-  - Debugging tools (Python, Node.js)
-  - TDD enforcement
-  - Code review automation
-  - Systematic debugging
+- **CI/CD pipeline**
+  - GitHub Actions workflow for testing installer
+  - Automated syntax checks on Node 16/18/20
+  - Skills directory structure validation
+  - Documentation completeness checks
 
-- **Creative Skills**
-  - Excalidraw diagrams
-  - ASCII art generation
-  - 54 design systems
-  - p5.js creative coding
-  - Music generation
+- **126 expert-level skills**
+  - Security (24): APK modding, pentesting, SQL injection
+  - GitHub (8): PR workflow, code review, issues
+  - Software Development (18): TDD, debugging, testing
+  - Creative (12): ASCII art, diagrams, p5.js
+  - Productivity (15): Notion, Google Workspace, Excel
+  - MLOps (9): Model serving, evaluation
+  - AI Agents (6): Claude Code, Codex, orchestration
+  - Plus 8 more categories
 
-- **Productivity Skills**
-  - Document automation (Word, PDF, Excel, PowerPoint)
-  - Cloud service integrations (Google, Notion, Airtable)
-  - Meeting management
-  - Price monitoring
+- **AGENTS.md system prompt**
+  - Auto-loaded by installer
+  - Enhanced AI capabilities
+  - Skill auto-loading logic
+  - Lazy-senior-dev code style enforcement
 
 ### Changed
-- Merged RedMess and Umi Bot skill collections
-- Standardized skill structure across all skills
-- Improved documentation formatting
-- Updated all skills to 2026 standards
+- README.md completely rewritten for clarity
+- Installation process simplified to one command
+- Configuration now interactive instead of manual
+- Skills deployment automated (no manual copying)
 
 ### Fixed
-- N/A (initial release)
+- Skills directory permissions issues
+- System prompt loading consistency
+- API key configuration validation
+- Port conflict handling
 
-### Security
-- Added educational disclaimers
-- Clarified authorized use only
-- Documented legal compliance requirements
+## [1.0.0] - 2026-09-01
 
-## [1.0.0] - Legacy
-
-### Original Collections
-- RedMess skills library
-- Umi Bot security skills
-- Individual skill contributions
-
----
-
-## Versioning Scheme
-
-- **Major (X.0.0)**: Breaking changes, major restructures
-- **Minor (0.X.0)**: New skills, significant additions
-- **Patch (0.0.X)**: Bug fixes, documentation updates
-
-## Upcoming Features
-
-### Planned for 2.1.0
-- [ ] Skill validation scripts
-- [ ] Automated testing framework
-- [ ] More MLOps skills
-- [ ] Android 17 modding support
-- [ ] Enhanced Frida scripts
-
-### Planned for 3.0.0
-- [ ] Interactive skill browser
-- [ ] Skill dependency graph
-- [ ] Auto-update mechanism
-- [ ] Plugin system
-- [ ] Web UI for skill management
-
-## Contributing
-
-See [CONTRIBUTING.md](CONTRIBUTING.md) for how to add entries to this changelog.
+### Added
+- Initial release with 126 skills
+- Basic OMP.sh integration
+- Manual installation instructions
+- Skill categories organization
 
 ---
 
-**Maintained by:** OMP Enhanced Contributors  
-**Latest Version:** 2.0.0  
-**Release Date:** 2026-09-06
+## Version History
+
+- **v2.0.0** (2026-09-06): One-command installer, complete automation
+- **v1.0.0** (2026-09-01): Initial release, manual setup
+
+---
+
+## Upgrade Guide
+
+### From v1.0.0 to v2.0.0
+
+**Recommended: Fresh install**
+```bash
+# Backup old config
+cp ~/.omp/config.json ~/.omp/config.json.backup
+
+# Remove old installation
+rm -rf omp-enhanced
+
+# Fresh install v2.0.0
+git clone https://github.com/harezadmm/omp-enhanced.git
+cd omp-enhanced
+bash install.sh
+```
+
+**Migration: Keep existing config**
+```bash
+cd omp-enhanced
+git pull origin main
+
+# Re-run installer (will update skills only)
+bash install.sh
+# Select option 4 (skip API config) if already configured
+```
+
+---
+
+## Breaking Changes
+
+### v2.0.0
+- Installation process completely changed
+- Manual setup steps deprecated (use `install.sh`)
+- Config file location may differ (migrated to `omp/.env`)
+
+---
+
+## Roadmap
+
+### v2.1.0 (Planned)
+- [ ] Web UI improvements
+- [ ] Skill marketplace
+- [ ] Plugin system for custom skills
+- [ ] Advanced caching strategies
+- [ ] Multi-model support in one session
+
+### v2.2.0 (Planned)
+- [ ] Voice interface integration
+- [ ] Multi-language support
+- [ ] Team collaboration features
+- [ ] Advanced monitoring dashboard
+
+---
+
+**Full releases:** https://github.com/harezadmm/omp-enhanced/releases

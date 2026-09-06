@@ -1,0 +1,45 @@
+# Git
+.git
+.gitignore
+.github
+
+# Node modules (will be installed in container)
+node_modules
+npm-debug.log
+yarn-error.log
+
+# OMP (will be cloned in container)
+omp/
+
+# Environment files (use docker-compose env)
+.env
+.env.local
+.env.production
+
+# Documentation
+*.md
+!README.md
+!AGENTS.md
+
+# CI/CD
+.travis.yml
+.gitlab-ci.yml
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+
+# Temporary files
+tmp/
+temp/
+*.tmp
