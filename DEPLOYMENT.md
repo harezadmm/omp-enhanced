@@ -14,7 +14,7 @@ cd omp-enhanced
 ./install.sh
 
 # Verify
-hermes skills list | grep "apk-modding-workflow"
+ls ~/omp-skills/ | grep "apk-modding-workflow"
 ```
 
 ### 2. Multi-User Server
@@ -174,7 +174,7 @@ echo "credentials.json" >> .gitignore
 hermes status || exit 1
 
 # Check skills are loaded
-SKILL_COUNT=$(hermes skills list | wc -l)
+SKILL_COUNT=$(find ~/omp-skills -name "SKILL.md" | wc -l)
 if [ "$SKILL_COUNT" -lt 100 ]; then
   echo "ERROR: Only $SKILL_COUNT skills loaded"
   exit 1
@@ -196,7 +196,7 @@ git pull origin main
 ./install.sh
 
 # Verify
-hermes skills list | wc -l
+find ~/omp-skills -name "SKILL.md" | wc -l
 ```
 
 ## ✅ Post-Deployment Checklist

@@ -71,7 +71,7 @@ cd omp-enhanced
 ./install.sh
 
 # Verify
-hermes skills list | wc -l  # Should show 126
+find ~/omp-skills -name "SKILL.md" | wc -l  # Should show 126
 ```
 
 ### Option 2: From Repository
@@ -99,7 +99,7 @@ cp -r creative/ ~/.hermes/skills/
 cp AGENTS.md ~/.hermes/profiles/umi2/agents/
 
 # Verify
-hermes skills list
+ls ~/omp-skills/
 ```
 
 ---
@@ -110,7 +110,7 @@ After installation, verify:
 
 ```bash
 # 1. Skills installed
-hermes skills list | wc -l
+find ~/omp-skills -name "SKILL.md" | wc -l
 # Expected: 126
 
 # 2. Skills loadable
@@ -118,7 +118,7 @@ hermes skill view apk-modding-workflow
 # Expected: SKILL.md content displayed
 
 # 3. Categories present
-hermes skills list --category security
+ls ~/omp-skills/ --category security
 # Expected: 42 security skills
 
 # 4. AGENTS.md deployed

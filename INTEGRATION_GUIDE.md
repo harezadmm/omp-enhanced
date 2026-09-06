@@ -248,7 +248,7 @@ cd omp-enhanced
 ./install.sh
 
 # 2. Verify skills
-hermes skills list | wc -l  # Should show 126+
+find ~/omp-skills -name "SKILL.md" | wc -l  # Should show 126+
 
 # 3. Deploy AGENTS.md
 cp AGENTS.md ~/.hermes/profiles/umi2/agents/
@@ -395,7 +395,7 @@ Skills load only when needed:
 **Solutions**:
 ```bash
 # 1. Check skills installed
-hermes skills list
+ls ~/omp-skills/
 
 # 2. Verify path
 ls -la ~/.hermes/skills/

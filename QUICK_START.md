@@ -21,7 +21,7 @@ cp -r skills/* ~/.hermes/profiles/umi2/skills/
 
 ### 3. Verify Installation
 ```bash
-hermes skills list
+ls ~/omp-skills/
 ```
 
 ## 💡 Basic Usage
@@ -231,7 +231,7 @@ def apk_mod_pipeline(apk_path):
 ### Skill Not Found
 ```bash
 # List available skills
-hermes skills list
+ls ~/omp-skills/
 
 # Install optional skill
 hermes skills install <skill-name>

@@ -98,13 +98,13 @@ Multi-agent orchestration, delegation
 
 ```bash
 # List semua skills
-hermes skills list
+ls ~/omp-skills/
 
 # Load specific skill
-hermes skills view apk-modding-workflow
+cat ~/omp-skills/*/apk-modding-workflow/SKILL.md
 
 # Install optional skill
-hermes skills install sqlmap
+# Skills already deployed to ~/omp-skills/sqlmap
 ```
 
 ### 2. Panggil dari Conversation

@@ -33,7 +33,7 @@ cd omp-enhanced
 ./install.sh
 
 # Verify
-hermes skills list | wc -l  # Should output: 126
+find ~/omp-skills -name "SKILL.md" | wc -l  # Should output: 126
 ```
 
 ### 2. Load LTX-QUASAR Persona (2 minutes)
@@ -70,7 +70,7 @@ After deployment, verify these items:
 - [ ] Version tag present (v2.0.0)
 
 ### Skills Check
-- [ ] 126 skills loadable via `hermes skills list`
+- [ ] 126 skills loadable via `ls ~/omp-skills/`
 - [ ] Security category: 42 skills
 - [ ] Development category: 14 skills
 - [ ] Test load: `hermes skill view apk-modding-workflow`

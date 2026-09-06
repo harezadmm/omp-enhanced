@@ -104,7 +104,7 @@ cd omp-enhanced
 ./install.sh
 
 # Verify
-hermes skills list | grep apk-modding-workflow
+ls ~/omp-skills/ | grep apk-modding-workflow
 ```
 
 ---

@@ -210,7 +210,7 @@ c8e0429 Add VERSION file for release tracking
 ```bash
 cd /tmp/omp-enhanced
 ./install.sh
-hermes skills list | wc -l  # Verify 126 skills
+find ~/omp-skills -name "SKILL.md" | wc -l  # Verify 126 skills
 ```
 
 ### Use with LTX-QUASAR
@@ -226,13 +226,13 @@ cp AGENTS.md ~/.hermes/profiles/umi2/agents/
 ### Browse Skills
 ```bash
 # List all skills
-hermes skills list
+ls ~/omp-skills/
 
 # View specific skill
 hermes skill view apk-modding-workflow
 
 # By category
-hermes skills list --category security
+ls ~/omp-skills/ --category security
 ```
 
 ---

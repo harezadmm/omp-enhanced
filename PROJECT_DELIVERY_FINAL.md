@@ -107,7 +107,7 @@ cd omp-enhanced
 ./install.sh
 
 # 3. Verify (1 min)
-hermes skills list | wc -l  # Should output: 126
+find ~/omp-skills -name "SKILL.md" | wc -l  # Should output: 126
 
 # 4. Deploy LTX-QUASAR (1 min)
 cp AGENTS.md ~/.hermes/profiles/umi2/agents/
