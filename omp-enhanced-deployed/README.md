@@ -4,8 +4,14 @@ Koleksi lengkap skills dari **RedMess** dan **Umi Bot** untuk Hermes Agent. Libr
 
 ## ⚡ Quick Start
 
+**Linux/macOS:**
 ```bash
-curl -fsSL https://raw.githubusercontent.com/harezadmm/omp-enhanced/master/install.sh | sh
+curl -fsSL https://raw.githubusercontent.com/harezadmm/omp-enhanced/master/install.sh | bash
+```
+
+**Windows (PowerShell):**
+```powershell
+irm https://raw.githubusercontent.com/harezadmm/omp-enhanced/master/install.ps1 | iex
 ```
 
 ## 📦 Apa Itu Skills?
