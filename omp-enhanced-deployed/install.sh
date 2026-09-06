@@ -1,105 +1,45 @@
 #!/bin/bash
-# Quick installer for OMP Enhanced v2.0.0
-
 set -e
 
-echo "=========================================="
-echo "  OMP Enhanced Skills Library Installer"
-echo "  Version: 2.0.0"
-echo "=========================================="
-echo ""
+echo "Installing OMP-Enhanced..."
 
 # Detect OS
-if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+if [[ "$OSTYPE" == "msys" || "$OSTYPE" == "win32" ]]; then
+    OS="windows"
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
     OS="linux"
 elif [[ "$OSTYPE" == "darwin"* ]]; then
-    OS="macos"
-elif [[ "$OSTYPE" == "msys" ]] || [[ "$OSTYPE" == "cygwin" ]]; then
-    OS="windows"
+    OS="darwin"
 else
-    OS="unknown"
-fi
-
-echo "Detected OS: $OS"
-echo ""
-
-# Check Hermes installation
-if ! command -v hermes &> /dev/null; then
-    echo "❌ Hermes Agent not found!"
-    echo "Install from: https://hermes-agent.nousresearch.com/docs"
+    echo "Unsupported OS: $OSTYPE"
     exit 1
 fi
 
-echo "✅ Hermes Agent found: $(hermes --version)"
-echo ""
+# Download binary
+REPO="harezadmm/omp-enhanced"
+VERSION="latest"
+INSTALL_DIR="$HOME/.omp-enhanced"
 
-# Detect Hermes profile
-HERMES_DIR="$HOME/.hermes"
-if [ ! -d "$HERMES_DIR" ]; then
-    echo "❌ Hermes directory not found at $HERMES_DIR"
-    exit 1
-fi
+mkdir -p "$INSTALL_DIR"
 
-# Ask for profile or use default
-echo "Available profiles:"
-ls -1 "$HERMES_DIR/profiles/" 2>/dev/null || echo "  (default profile)"
-echo ""
-read -p "Enter profile name (press Enter for default): " PROFILE
-
-if [ -z "$PROFILE" ]; then
-    SKILLS_DIR="$HERMES_DIR/skills"
-    echo "Using default profile"
+if [ "$OS" == "windows" ]; then
+    BINARY="omp-enhanced.exe"
 else
-    SKILLS_DIR="$HERMES_DIR/profiles/$PROFILE/skills"
-    echo "Using profile: $PROFILE"
+    BINARY="omp-enhanced"
 fi
 
-# Create skills directory if not exists
-mkdir -p "$SKILLS_DIR"
+echo "Downloading $BINARY for $OS..."
+curl -fsSL "https://github.com/$REPO/releases/latest/download/$BINARY" -o "$INSTALL_DIR/$BINARY"
+chmod +x "$INSTALL_DIR/$BINARY"
 
-# Check if repository is cloned
-if [ ! -d "skills" ]; then
-    echo "❌ skills/ directory not found"
-    echo "Run this script from omp-enhanced directory"
-    exit 1
+# Add to PATH
+if [ "$OS" == "windows" ]; then
+    echo "Add to PATH manually: $INSTALL_DIR"
+else
+    echo "export PATH=\"\$PATH:$INSTALL_DIR\"" >> "$HOME/.bashrc"
+    echo "export PATH=\"\$PATH:$INSTALL_DIR\"" >> "$HOME/.zshrc" 2>/dev/null || true
 fi
 
-# Backup existing skills (optional)
-read -p "Backup existing skills? (y/N): " BACKUP
-if [[ "$BACKUP" =~ ^[Yy]$ ]]; then
-    BACKUP_DIR="$HOME/hermes-skills-backup-$(date +%Y%m%d-%H%M%S)"
-    echo "Creating backup at: $BACKUP_DIR"
-    cp -r "$SKILLS_DIR" "$BACKUP_DIR"
-    echo "✅ Backup created"
-fi
-
-# Copy skills
 echo ""
-echo "Installing skills..."
-cp -r skills/* "$SKILLS_DIR/"
-
-# Count installed skills
-SKILL_COUNT=$(find "$SKILLS_DIR" -name "SKILL.md" | wc -l)
-
-echo ""
-echo "=========================================="
-echo "  Installation Complete! 🎉"
-echo "=========================================="
-echo ""
-echo "📊 Stats:"
-echo "  - Skills installed: $SKILL_COUNT"
-echo "  - Installation path: $SKILLS_DIR"
-echo ""
-echo "📚 Next steps:"
-echo "  1. Read QUICK_START.md for usage guide"
-echo "  2. Browse SKILLS_INDEX.md for skill catalog"
-echo "  3. Run: hermes chat"
-echo "  4. Try: skill_view(name='apk-modding-workflow')"
-echo ""
-echo "🔗 Documentation:"
-echo "  - Quick Start: QUICK_START.md"
-echo "  - Skills Index: SKILLS_INDEX.md"
-echo "  - Installation: docs/INSTALLATION.md"
-echo "  - Contributing: CONTRIBUTING.md"
-echo ""
-echo "Happy hacking! 🚀"
+echo "✓ OMP-Enhanced installed to $INSTALL_DIR"
+echo "Run: omp-enhanced --help"
