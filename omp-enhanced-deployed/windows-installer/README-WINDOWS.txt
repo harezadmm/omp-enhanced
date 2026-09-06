@@ -1,74 +1,92 @@
-OMP Enhanced - Windows Installation Guide
-==========================================
+# OMP-Enhanced Windows Installation Guide
 
-QUICK START:
-1. Double-click install.bat
-2. Wait for installation to complete
-3. Double-click start.bat to run server
+## Quick Install (Recommended)
+1. Open CMD or PowerShell as Administrator
+2. Navigate to omp-enhanced directory:
+   cd path\to\omp-enhanced
+3. Run installer:
+   windows-installer\install.bat
+4. Restart terminal after installation
+5. Verify installation:
+   java -version
+   gradle -v
+   hermes --version
 
-REQUIREMENTS:
-- Windows 10/11 (x64)
-- PowerShell (built-in)
-- Java 8+ (auto-installed if missing)
-- 512MB RAM minimum
+## What Gets Installed
+- Java JDK 21 → %USERPROFILE%\.omp-enhanced\jdk-21
+- Android SDK → %USERPROFILE%\.omp-enhanced\android-sdk
+- Gradle 9.7.1 → %USERPROFILE%\.omp-enhanced\gradle-9.7.1
+- Environment variables: JAVA_HOME, ANDROID_HOME, PATH
 
-MANUAL STEPS (if auto-installer fails):
+## Manual Installation
 
-1. Install Java:
-   Download from: https://adoptium.net/temurin/releases/
-   Choose: Windows x64 JDK 17 MSI installer
+### 1. Install Java JDK 21
+Download from: https://www.oracle.com/java/technologies/downloads/#java21
+- Extract to C:\Program Files\Java\jdk-21
+- Set JAVA_HOME environment variable:
+  setx JAVA_HOME "C:\Program Files\Java\jdk-21"
+- Add to PATH:
+  setx PATH "%PATH%;%JAVA_HOME%\bin"
 
-2. Download OMP server:
-   https://github.com/openmultiplayer/open.mp/releases/latest
-   Download: open.mp-win-x86.zip
+### 2. Install Android SDK
+Download command-line tools: https://developer.android.com/studio#command-tools
+- Extract to C:\Android\sdk
+- Move cmdline-tools to C:\Android\sdk\cmdline-tools\latest
+- Set ANDROID_HOME:
+  setx ANDROID_HOME "C:\Android\sdk"
+- Add to PATH:
+  setx PATH "%PATH%;%ANDROID_HOME%\cmdline-tools\latest\bin;%ANDROID_HOME%\platform-tools"
 
-3. Extract to folder
+### 3. Install Gradle 9.7.1
+Download from: https://services.gradle.org/distributions/gradle-9.7.1-bin.zip
+- Extract to C:\Gradle\gradle-9.7.1
+- Add to PATH:
+  setx PATH "%PATH%;C:\Gradle\gradle-9.7.1\bin"
 
-4. Edit config.json (optional):
-   - Change "hostname" to your server name
-   - Change "rcon_password" to secure password
-   - Change "port" if needed (default 7777)
+### 4. Install Hermes Agent
+Follow official guide: https://hermes-agent.nousresearch.com/docs/installation
 
-5. Run: omp-server.exe
+## Troubleshooting
 
-CONFIGURATION:
-- Server config: config.json
-- RCON password: changeme123 (CHANGE THIS!)
-- Port: 7777 (configurable)
-- Max players: 50 (configurable)
+### "Java not found" after installation
+- Restart terminal/CMD completely
+- Verify JAVA_HOME: echo %JAVA_HOME%
+- Verify PATH: echo %PATH% | findstr Java
 
-FIREWALL:
-Allow inbound UDP port 7777 in Windows Firewall:
-1. Control Panel → Windows Defender Firewall
-2. Advanced Settings → Inbound Rules → New Rule
-3. Port → UDP → 7777 → Allow
+### "ANDROID_HOME not set"
+- Run: setx ANDROID_HOME "%USERPROFILE%\.omp-enhanced\android-sdk"
+- Restart terminal
 
-PORT FORWARDING (for internet access):
-1. Access router admin (usually 192.168.1.1)
-2. Find Port Forwarding section
-3. Add rule: UDP port 7777 → your PC's local IP
+### "Gradle command not found"
+- Verify Gradle installed: dir %USERPROFILE%\.omp-enhanced\gradle-9.7.1
+- Add to PATH manually:
+  setx PATH "%PATH%;%USERPROFILE%\.omp-enhanced\gradle-9.7.1\bin"
 
-TROUBLESHOOTING:
-- "Java not found": Restart installer or install manually
-- "Port already in use": Change port in config.json
-- Server won't start: Check if port 7777 is open
-- Can't connect: Check firewall and port forwarding
+### Permission Errors
+- Run installer as Administrator
+- Or install to user directory without admin privileges
 
-CONNECTING:
-1. Open GTA San Andreas
-2. Open SA-MP client
-3. Add server: your_ip:7777
-4. Join server
+## Requirements
+- Windows 10/11
+- PowerShell (included by default)
+- Internet connection
+- ~2GB free disk space
 
-For VPS/dedicated server, use public IP.
-For home network, use public IP with port forwarding.
+## System Requirements
+- OS: Windows 10 (64-bit) or newer
+- RAM: 8GB minimum, 16GB recommended
+- CPU: Multi-core processor
+- Disk: 10GB free space (SDK + tools)
 
-SECURITY:
-- Change RCON password in config.json
-- Don't share RCON password
-- Keep server files in separate folder
-- Regular backups of scriptfiles/
+## Next Steps After Installation
+1. Restart terminal
+2. Verify all tools: java -version && gradle -v && hermes --version
+3. Build OMP-Enhanced:
+   cd omp-enhanced
+   gradle build
+4. Run Hermes Agent:
+   hermes run
 
-SUPPORT:
-GitHub: https://github.com/harezadmm/omp-enhanced
-Issues: https://github.com/harezadmm/omp-enhanced/issues
+## Support
+- GitHub Issues: https://github.com/harezadmm/omp-enhanced/issues
+- Telegram: @sisuryaofficialkuu
