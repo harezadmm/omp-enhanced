@@ -1,0 +1,78 @@
+providers:
+  - name: deepinfra
+    type: openai
+    base_url: https://api.deepinfra.com/v1/openai
+    api_key: ${DEEPINFRA_API_KEY}
+    description: ZERO filter, FREE 100 req/day
+    models:
+      - id: qwen-coder-32b
+        name: Qwen/Qwen2.5-Coder-32B-Instruct
+        description: Best for coding, zero refusals
+        context_length: 32768
+      
+      - id: deepseek-coder
+        name: deepseek-ai/DeepSeek-Coder-V2-Instruct
+        description: Alternative coding model
+        context_length: 32768
+      
+      - id: llama-70b
+        name: meta-llama/Meta-Llama-3.1-70B-Instruct
+        description: General purpose, good reasoning
+        context_length: 8192
+
+  - name: groq
+    type: openai
+    base_url: https://api.groq.com/openai/v1
+    api_key: ${GROQ_API_KEY}
+    description: FASTEST inference, minimal filter
+    models:
+      - id: llama-3.3-70b
+        name: llama-3.3-70b-versatile
+        description: Latest Llama, very fast
+        context_length: 8192
+      
+      - id: mixtral-8x7b
+        name: mixtral-8x7b-32768
+        description: MoE model, good quality
+        context_length: 32768
+
+  - name: openrouter
+    type: openai
+    base_url: https://openrouter.ai/api/v1
+    api_key: ${OPENROUTER_API_KEY}
+    description: Best quality, $3 free credits
+    extra_headers:
+      HTTP-Referer: https://yourapp.com
+      X-Title: OMP Uncensored
+    models:
+      - id: qwen-72b
+        name: qwen/qwen-2.5-72b-instruct
+        description: Best reasoning, minimal filter
+        context_length: 32768
+      
+      - id: deepseek-chat
+        name: deepseek/deepseek-chat
+        description: Good coding, cheap
+        context_length: 64000
+
+  - name: ollama
+    type: openai
+    base_url: http://127.0.0.1:11434/v1
+    api_key: ollama
+    description: 100% private, ZERO filter, FREE
+    models:
+      - id: qwen3-abliterated
+        name: huihui_ai/qwen3-abliterated:8b
+        description: Uncensored via abliteration
+        context_length: 8192
+
+default_provider: deepinfra
+default_model: qwen-coder-32b
+temperature: 0.7
+max_tokens: 4096
+timeout: 30
+
+retry:
+  enabled: true
+  max_attempts: 3
+  backoff: exponential
