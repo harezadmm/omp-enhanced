@@ -59,3 +59,5 @@ tmp/
 *.key
 *.crt
 *.keystore
+workspace/
+*.tar.gz
