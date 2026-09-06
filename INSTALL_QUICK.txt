@@ -1,0 +1,55 @@
+OMP ENHANCED - STANDALONE FIXED v2.0.1
+=======================================
+
+INSTALASI SUPER CEPAT (1 MENIT)
+--------------------------------
+
+# Download
+wget https://github.com/harezadmm/omp-enhanced/releases/download/v2.0.1/omp-enhanced-standalone-fixed-v2.0.1.tar.gz
+
+# Extract
+tar -xzf omp-enhanced-standalone-fixed-v2.0.1.tar.gz
+cd omp-enhanced-standalone-fixed-v2.0.1
+
+# Install (JANGAN pakai sudo!)
+bash install_fixed.sh
+
+DONE! ✅
+
+
+HASIL
+-----
+126 skills installed di: ~/.omp/skills/
+System prompt di: ~/.omp/prompts/system.md
+Config di: ~/.omp/config.yaml
+
+
+INTEGRASI KE HERMES
+-------------------
+cp -r ~/.omp/skills/* ~/.hermes/profiles/umi2/skills/
+
+
+VERIFIKASI
+----------
+find ~/.omp/skills -name "SKILL.md" | wc -l
+# Harus output: 126
+
+
+TIDAK BUTUH
+-----------
+❌ npm
+❌ Node.js
+❌ PM2
+✅ Cuma butuh Bash!
+
+
+CHECKSUMS
+---------
+MD5:    07486474eebbf6f18cb4dec5114aa4bd
+SHA256: 9f2ee4f43190e2e7e5f7ff4d2246c442a8ca59c2e3bb0e6d79601eb0b714000e
+
+
+SUPPORT
+-------
+Telegram: @sisuryaofficialkuu
+GitHub: https://github.com/harezadmm/omp-enhanced
