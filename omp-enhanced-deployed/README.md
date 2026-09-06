@@ -94,56 +94,40 @@ Multi-agent orchestration, delegation
 
 ## 🚀 Instalasi
 
-### Windows (One-Click Installer) ⚡
+### One-Line Install (Semua Platform) ⚡
 
-**Cara Termudah - Automated Installer:**
+```bash
+curl -fsSL https://raw.githubusercontent.com/harezadmm/omp-enhanced/master/install.sh | sh
+```
 
-1. **Download Repository**
-   ```bash
-   git clone https://github.com/harezadmm/omp-enhanced.git
-   cd omp-enhanced
-   ```
+**Atau via Windows:**
 
-2. **Jalankan Installer**
-   ```bash
-   cd windows-installer
-   install.bat
-   ```
-   
-   **✨ Installer otomatis akan:**
-   - ✅ Deteksi & install Java JDK 21 (jika belum ada)
-   - ✅ Download & setup Android SDK + command-line tools
-   - ✅ Install Gradle 9.7.1
-   - ✅ Setup environment variables (JAVA_HOME, ANDROID_HOME, PATH)
-   - ✅ Install Hermes Agent
-   - ✅ Verify semua instalasi
+```batch
+curl -fsSL https://raw.githubusercontent.com/harezadmm/omp-enhanced/master/windows-installer/install.bat | cmd
+```
 
-3. **Restart Terminal**
-   ```bash
-   # Setelah instalasi selesai, restart terminal agar environment variables aktif
-   ```
-
-**Requirements:**
-- Windows 10/11
-- PowerShell (untuk auto-download Java)
-- Admin privileges (recommended untuk environment variables)
-- Internet connection (untuk download dependencies)
-
-**Manual Installation:** 
-Jika installer otomatis gagal, lihat `windows-installer/INSTALL-GUIDE.txt` atau `windows-installer/README-WINDOWS.txt` untuk panduan step-by-step lengkap.
+**✨ Installer otomatis akan:**
+- ✅ Deteksi OS (Windows/Linux/Mac)
+- ✅ Download binary ke `~/.omp-enhanced/`
+- ✅ Add ke PATH
+- ✅ Siap pakai
 
 ---
 
-### Linux/Mac
+### Manual Install
 
 ```bash
 # Clone repo
 git clone https://github.com/harezadmm/omp-enhanced.git
 cd omp-enhanced
 
-# Run install script
+# Linux/Mac
 chmod +x install.sh
 ./install.sh
+
+# Windows
+cd windows-installer
+install.bat
 ```
 
 ## 🎯 Cara Pakai
