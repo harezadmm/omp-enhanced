@@ -92,7 +92,42 @@ Multi-agent orchestration, delegation
 - `claude-code` - Delegate to Claude Code CLI
 - `hermes-agent` - Configure & orchestrate Hermes
 
-## 🚀 Cara Pakai
+## 🚀 Instalasi
+
+### Windows (Automated Installer)
+
+Download dan jalankan installer otomatis:
+
+```bash
+# 1. Download installer
+git clone https://github.com/harezadmm/omp-enhanced.git
+cd omp-enhanced/windows-installer
+
+# 2. Run installer (Admin privileges recommended)
+install.bat
+
+# Installer akan otomatis:
+# - Download Java JDK 21 (jika belum ada)
+# - Setup Android SDK & tools
+# - Install Hermes Agent
+# - Configure environment variables
+```
+
+**Manual Installation:** Lihat `windows-installer/INSTALL-GUIDE.txt` untuk panduan lengkap.
+
+### Linux/Mac
+
+```bash
+# Clone repo
+git clone https://github.com/harezadmm/omp-enhanced.git
+cd omp-enhanced
+
+# Run install script
+chmod +x install.sh
+./install.sh
+```
+
+## 🎯 Cara Pakai
 
 ### 1. Load Skill dari Hermes Agent
 

@@ -1,0 +1,101 @@
+OMP ENHANCED - WINDOWS INSTALLER
+=================================
+
+CARA INSTALL (SIMPLE):
+
+1. Download file: omp-enhanced-windows-installer.tar.gz
+   Link: https://github.com/harezadmm/omp-enhanced/releases/download/v2.0.1/omp-enhanced-windows-installer.tar.gz
+
+2. Extract file .tar.gz (pakai 7-Zip atau WinRAR)
+   - Download 7-Zip: https://www.7-zip.org/download.html
+   - Klik kanan file → 7-Zip → Extract Here
+
+3. Jalankan install.bat (double-click)
+   - Installer akan auto-download Java + OMP server
+   - Tunggu sampai selesai (~50MB download)
+
+4. Jalankan start.bat untuk mulai server
+
+5. Server jalan di port 7777
+   - Connect via SA-MP: localhost:7777
+   - RCON password: changeme123 (GANTI INI!)
+
+TROUBLESHOOTING:
+
+Error "tar tidak ada"?
+→ Install 7-Zip atau WinRAR untuk extract .tar.gz
+
+Error "Java tidak ditemukan"?
+→ Installer auto-download, tunggu saja
+→ Kalau gagal, download manual: https://adoptium.net/temurin/releases/
+
+Error "Port 7777 sudah dipakai"?
+→ Edit config.json, ganti "port": 7777 jadi port lain (misal 7778)
+
+Gak bisa connect dari luar?
+→ Buka port di Windows Firewall
+→ Port forwarding di router (UDP 7777)
+
+KONFIGURASI:
+
+File: config.json
+
+Ganti nama server:
+"hostname": "Nama Server Lo"
+
+Ganti RCON password (WAJIB!):
+"rcon_password": "password_kuat_lo"
+
+Ganti max player:
+"max_players": 100
+
+Ganti port:
+"port": 7777
+
+FIREWALL (PENTING!):
+
+1. Tekan Win+R
+2. Ketik: wf.msc
+3. Klik "Inbound Rules" → "New Rule"
+4. Pilih "Port" → UDP → 7777 → Allow
+5. Kasih nama: OMP Server
+
+PORT FORWARDING (buat akses internet):
+
+1. Buka router admin (biasanya 192.168.1.1)
+2. Login (default biasanya admin/admin)
+3. Cari menu "Port Forwarding" atau "Virtual Server"
+4. Tambah rule:
+   - Protocol: UDP
+   - External Port: 7777
+   - Internal Port: 7777
+   - Internal IP: IP PC lo (cek: ipconfig di CMD)
+5. Save
+
+CONNECT KE SERVER:
+
+Dari komputer yang sama:
+→ SA-MP client → Add Server → localhost:7777
+
+Dari jaringan lokal:
+→ SA-MP client → Add Server → 192.168.x.x:7777
+
+Dari internet:
+→ SA-MP client → Add Server → IP_PUBLIC_LO:7777
+→ Cek IP public: https://whatismyipaddress.com/
+
+SECURITY:
+
+✓ Ganti RCON password di config.json
+✓ Jangan share RCON password
+✓ Backup folder scriptfiles/ secara berkala
+✓ Update OMP server secara rutin
+
+SUPPORT:
+
+GitHub: https://github.com/harezadmm/omp-enhanced
+Issues: https://github.com/harezadmm/omp-enhanced/issues
+
+Butuh VPS?
+→ Linode, DigitalOcean, Vultr (mulai $5/bulan)
+→ Lebih stabil untuk server 24/7
