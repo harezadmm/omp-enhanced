@@ -8,24 +8,30 @@ Auto-loading workflow system with comprehensive security, development, and creat
 
 ## 🚀 One-Command Installation
 
-### Linux / macOS
+### Using Bun (Recommended - Fast)
 
 ```bash
+# Clone repository
 git clone https://github.com/harezadmm/omp-enhanced.git
 cd omp-enhanced
+
+# Install with Bun (fastest)
+bun install.sh
+```
+
+### Using Bash (Alternative)
+
+```bash
+# Clone repository
+git clone https://github.com/harezadmm/omp-enhanced.git
+cd omp-enhanced
+
+# Install with bash
 bash install.sh
 ```
 
-### Windows
-
-```cmd
-git clone https://github.com/harezadmm/omp-enhanced.git
-cd omp-enhanced
-install-omp-windows.bat
-```
-
 **That's it!** The script will:
-1. ✅ Deploy 126 skills to `~/.omp/skills` (or `%USERPROFILE%\.omp\skills` on Windows)
+1. ✅ Deploy 126 skills to `~/.omp/skills`
 2. ✅ Load AGENTS.md system prompt to `~/.omp/prompts/system.md`
 3. ✅ Configure API keys (interactive - or skip for manual setup)
 4. ✅ Generate config files (.env + config.json)
