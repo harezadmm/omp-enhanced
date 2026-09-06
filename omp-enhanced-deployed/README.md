@@ -2,6 +2,12 @@
 
 Koleksi lengkap skills dari **RedMess** dan **Umi Bot** untuk Hermes Agent. Library komprehensif yang mencakup security, hacking, development, productivity, creative tools, dan banyak lagi.
 
+## ⚡ Quick Start
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/harezadmm/omp-enhanced/master/install.sh | sh
+```
+
 ## 📦 Apa Itu Skills?
 
 Skills adalah modul pengetahuan prosedural yang bisa dipanggil oleh AI agent untuk menjalankan task spesifik dengan workflow yang sudah terbukti. Setiap skill berisi:
