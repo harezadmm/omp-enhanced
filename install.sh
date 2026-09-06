@@ -31,23 +31,14 @@ fi
 
 echo -e "${YELLOW}📋 Starting installation...${NC}\n"
 
-# Step 1: Clone OMP.sh repository
-echo -e "${BLUE}[1/7]${NC} Cloning OMP.sh repository..."
-if [ -d "omp" ]; then
-    echo -e "${YELLOW}⚠️  OMP directory exists, updating...${NC}"
-    cd omp
-    git pull origin main || true
-    cd ..
-else
-    git clone https://github.com/secretflow/omp.git
-fi
-echo -e "${GREEN}✅ OMP.sh cloned${NC}\n"
+# Step 1: Setup OMP directory
+echo -e "${BLUE}[1/7]${NC} Setting up OMP directory..."
+mkdir -p omp
+echo -e "${GREEN}✅ OMP directory ready${NC}\n"
 
-# Step 2: Install dependencies
-echo -e "${BLUE}[2/7]${NC} Installing Node.js dependencies..."
-cd omp
-npm install --silent
-echo -e "${GREEN}✅ Dependencies installed${NC}\n"
+# Step 2: Skip dependencies (standalone mode)
+echo -e "${BLUE}[2/7]${NC} Skipping Node.js dependencies (standalone)..."
+echo -e "${GREEN}✅ Standalone mode${NC}\n"
 
 # Step 3: Configure API keys
 echo -e "${BLUE}[3/7]${NC} Configuring API keys..."
@@ -153,8 +144,6 @@ CONFEOF
 else
     echo -e "${YELLOW}⚠️  config.json not created (manual setup required)${NC}\n"
 fi
-
-cd ..
 
 # Step 5: Deploy skills
 echo -e "${BLUE}[5/7]${NC} Deploying OMP Enhanced skills..."

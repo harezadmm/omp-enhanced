@@ -1,0 +1,126 @@
+OMP Enhanced - Standalone Fixed Release
+========================================
+
+Version: 2.0.1-fixed
+Date: 2026-09-06
+Commit: c0cc5b3
+
+CHANGES
+-------
+
+✅ Fixed: Installer tidak butuh npm/pm2 lagi
+✅ Fixed: Tidak clone repo OMP.sh (standalone)
+✅ Added: install_fixed.sh - installer bersih tanpa dependency
+✅ Added: INSTALL_STANDALONE.md - dokumentasi lengkap
+
+WHAT'S INCLUDED
+---------------
+
+• install_fixed.sh - Standalone installer (no npm/pm2)
+• INSTALL_STANDALONE.md - Installation guide
+• skills/ - 126 skills across 10 categories
+• AGENTS.md - LTX-QUASAR v2.1 system prompt
+
+INSTALLATION
+------------
+
+```bash
+# Extract
+tar -xzf omp-enhanced-standalone-fixed.tar.gz
+cd omp-enhanced-standalone-fixed
+
+# Install (no root!)
+bash install_fixed.sh
+```
+
+INSTALLED FILES
+---------------
+
+~/.omp/config.yaml - Configuration
+~/.omp/prompts/system.md - System prompt (AGENTS.md)
+~/.omp/skills/ - 126 skills
+
+SKILLS CATEGORIES (126 total)
+------------------------------
+
+Security (42): APK modding, Frida, SQLmap, pentesting
+GitHub (8): PR workflow, code review, repo management
+Creative (12): ASCII art, diagrams, design systems
+Software Dev (24): TDD, debugging, systematic debugging
+Productivity (18): Docs, spreadsheets, meeting automation
+MLOps (14): Model serving, evaluation, vLLM
+Autonomous Agents (8): Claude Code, Codex, Hermes
+
+CHECKSUMS
+---------
+
+MD5: 0bf64d9704946b5c3e0b878140b0f735
+SHA256: ffb9c4d2adc02c7d287f376cb1236b06c50cbcbd9cf5935eaacab8f14e7ecbd6
+
+REQUIREMENTS
+------------
+
+✅ Bash
+✅ Linux/macOS
+❌ NO npm required
+❌ NO pm2 required
+❌ NO Node.js required
+
+INTEGRATION WITH HERMES
+-----------------------
+
+# Copy skills to Hermes profile
+cp -r ~/.omp/skills/* ~/.hermes/profiles/umi2/skills/
+
+# Test
+hermes skills list | grep -i "apk-modding"
+
+ORIGINAL vs FIXED
+-----------------
+
+install.sh (original):
+  ❌ Needs npm
+  ❌ Needs pm2
+  ❌ Clones OMP.sh repo (404 error)
+  ❌ Complex interactive prompts
+
+install_fixed.sh (THIS):
+  ✅ Zero dependencies
+  ✅ Standalone (no external repos)
+  ✅ Simple one-command install
+  ✅ Works offline
+
+VERIFICATION
+------------
+
+After install:
+
+# Check skills count
+find ~/.omp/skills -name "SKILL.md" | wc -l
+# Expected: 126
+
+# Check system prompt
+head -20 ~/.omp/prompts/system.md
+# Expected: LTX-QUASAR v2.1
+
+# Check config
+cat ~/.omp/config.yaml
+# Expected: YAML config with skills paths
+
+TROUBLESHOOTING
+---------------
+
+Q: "Skills directory not found"
+A: Run dari directory yang ada folder skills/
+
+Q: "Permission denied"
+A: Jangan pakai sudo/root, run sebagai user biasa
+
+Q: Skills count = 0
+A: Extract tar.gz dulu sebelum run installer
+
+CONTACT
+-------
+
+Repo: https://github.com/harezadmm/omp-enhanced
+Issues: Submit ke GitHub Issues
