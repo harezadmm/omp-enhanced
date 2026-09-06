@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <LINK REL="SHORTCUT ICON" HREF="images/iconpoltek.ICO">
+
+    <title>Siakad Politeknik LP3I</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/modern-business.css" rel="stylesheet">
+    <link href="css/bootstrap.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    </head>
+
+    <body>
+
+
+        <!-- Navigation -->
+
+        <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="background-color: #003399">
+            <div class="container">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="index.php"><img src="images/logo.png"></a>
+                </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li>
+                            <a href="index.php">Beranda</a>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Akreditasi<b class="caret"></b></a>
+                            <ul class="dropdown-menu" role="menu">
+                                <li><a href="siamhs/file-sertifikat/SERT-LP3I.pdf"><i></i> Akreditasi LP3I</a></li>
+                                <li><a href="siamhs/file-sertifikat/SK-LP3I.pdf"><i></i> SK LP3I</a></li>
+
+                                <li><a href="siamhs/file-sertifikat/SERT-AB.jpg"><i></i> Akreditasi Prodi AB</a></li>
+                                <li><a href="siamhs/file-sertifikat/SK-AB.pdf"><i></i> SK Prodi AB</a></li>
+
+
+                                <li><a href="siamhs/file-sertifikat/SERT-MI.jpg"><i></i> Akreditasi Prodi MI</a></li>
+                                <li><a href="siamhs/file-sertifikat/SK-MI.pdf"><i></i> SK Prodi MI</a></li>
+
+                                <li><a href="siamhs/file-sertifikat/SERT-AK.jpg"><i></i> Akreditasi Prodi AK</a></li>    
+                                <li><a href="siamhs/file-sertifikat/SK-AK.pdf"><i></i> SK Prodi AK</a></li>
+
+                                <li><a href="siamhs/file-sertifikat/SERT-HM.pdf"><i></i> Akreditasi Prodi HM</a></li>   
+                                <li><a href="siamhs/file-sertifikat/SK-HM.pdf"><i></i> SK Prodi HM</a></li>
+
+                            </ul>
+                        </li>
+                    <!-- <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Kegiatan <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="#">Akademik (Coming Soon)</a>
+                            </li>
+                            <li>
+                                <a href="#">Kemahasiswaan (Coming Soon)</a>
+                            </li>
+                            <li>
+                                <a href="#">Penempatan Kerja (Coming Soon)</a>
+                            </li>
+                        </ul>
+                    </li> -->
+
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><b>Login</b> <span class="caret"></span></a>
+                        <ul id="login-dp" class="dropdown-menu">
+                            <li>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        Silahkan masukkan User Name & Password anda                             
+                                        <form class="form" role="form" method="post" action="config/ceklogin.php" accept-charset="UTF-8" id="login-nav">
+                                            <div class="form-group">
+                                               <label class="sr-only" for="username">User Name</label>
+                                               <body oncopy='return false' oncut='return false' onpaste='return false'>
+                                                   <input name ="username" type="text" maxlength="15" onkeypress="return hanyaAngka(event)" class="form-control" id="username" placeholder="User Name" required>
+                                                   <script>
+                                                    function hanyaAngka(evt) {
+                                                      var charCode = (evt.which) ? evt.which : event.keyCode
+                                                      if (charCode > 31 && (charCode < 48 || charCode > 57))
+                                                        return false;
+                                                    return true;
+                                                }
+                                            </script>
+                                        </div>
+                                        <div class="form-group position-relative">
+                                            <label class="sr-only" for="password">Password</label>
+
+                                            <div style="position: relative;">
+                                                <input 
+                                                name="password"
+                                                type="password"
+                                                class="form-control"
+                                                id="password"
+                                                placeholder="Password"
+                                                required
+                                                style="padding-right:40px;"
+                                                >
+
+                                                <span 
+                                                onclick="togglePassword()"
+                                                style="
+                                                position:absolute;
+                                                right:12px;
+                                                top:50%;
+                                                transform:translateY(-50%);
+                                                cursor:pointer;
+                                                "
+                                                >
+                                                <i class="fa fa-eye" id="eyeIcon"></i>
+                                            </span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                       <button type="submit" class="btn btn-primary btn-block">Log in</button>
+                                   </div>
+                                    <!--    <div class="checkbox">
+                                             <label>
+                                             <input type="checkbox"> keep me logged-in
+                                             </label>
+                                         </div> -->
+                                     </form>
+                                 </div>                          
+                             </div>
+                         </li>
+                     </ul>
+                 </li>
+
+             </ul>
+         </li>
+     </ul>
+ </div>
+ <!-- /.navbar-collapse -->
+</div>
+<!-- /.container -->
+</nav>
+
+<!-- Header Carousel -->
+<header id="myCarousel" class="carousel slide">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#myCarousel" data-slide-to="1"></li>
+        <li data-target="#myCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        <div class="item active">
+            <div class="fill" style="background-image:url(images/student_vdi.jpg)"></div>
+            <div class="carousel-caption">
+                <h2></h2>
+            </div>
+        </div>
+        <div class="item">
+            <div class="fill" style="background-image:url('images/banner siakad.jpg');"></div>
+            <div class="carousel-caption">
+                <h2></h2>
+            </div>
+        </div>
+        <div class="item">
+            <div class="fill" style="background-image:url('images/banner_.jpg');"></div>
+            <div class="carousel-caption">
+                <h2></h2>
+            </div>
+        </div>
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="icon-next"></span>
+    </a>
+</header>
+<!-- /.container -->
+
+<!-- jQuery -->
+<script src="js/jquery.js"></script>
+
+<script>
+function togglePassword() {
+    var password = document.getElementById("password");
+    var eyeIcon = document.getElementById("eyeIcon");
+
+    if (password.type === "password") {
+        password.type = "text";
+        eyeIcon.classList.remove("fa-eye");
+        eyeIcon.classList.add("fa-eye-slash");
+    } else {
+        password.type = "password";
+        eyeIcon.classList.remove("fa-eye-slash");
+        eyeIcon.classList.add("fa-eye");
+    }
+}
+</script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="js/bootstrap.min.js"></script>
+
+<!-- Script to Activate the Carousel -->
+<script>
+    $('.carousel').carousel({
+        interval: 5000 //changes the speed
+    })
+</script>
+</div>
+
+
+</body>
+
+
+</html>
+
+<script type='text/javascript'>
+    function redirectCU(e) {
+      if (e.ctrlKey && e.which == 85) {
+        window.location.replace("403.html");
+        return false;
+    }
+}
+document.onkeydown = redirectCU;
+
+//Script Redirect Klik Kanan
+function redirectKK(e) {
+  if (e.which == 3) {
+    window.location.replace("403.html");
+    return false;
+}
+}
+document.oncontextmenu = redirectKK;
+//]]>
+</script><div class="wrapper">
+
+    <!-- Page Content -->
+    <div class="container">
+
+        <!-- Marketing Icons Section -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h2 class="page-header">
+                    Info Terbaru.
+                </h2>
+
+ 
+
+            </div>
+           
+                   
+        </div>
+        <!-- /.row -->
+                <div class="panel panel-info">
+        	<div class="panel-heading">Pengumuman Timeline Tugas Akhir Tahun Akademik 2025/2026                                                                                              </div>
+              <div class="panel-body">
+                <p><em>Assalamualaikum, wr. wb.</em></p>
+
+<p style="margin-right:6px; text-align:justify"><span style="font-size:12pt"><span style="font-family:&quot;Times New Roman&quot;,serif"><span style="font-size:10.0pt"><span style="font-family:&quot;Tahoma&quot;,sans-serif">Berkenaan dengan akan dimulainya pengajuan proposal, pelaksanaan Bimbingan TA, Sidang TA, dan Wisuda. Maka kami informasikan jadwal kegiatan&nbsp;sebagai berikut :</span></span></span></span></p>
+
+<ol>
+	<li>Sosialisasi TA&nbsp;: 13 November 2025</li>
+	<li>Upload Proposal&nbsp;: 20 November - 19 Desember 2025</li>
+	<li>Pengisian KRS Smt 6 : 12 - 14 Januari 2026</li>
+	<li>Review dan Approval Proposal oleh Kaprodi : 22 - 29 Desember 2025</li>
+	<li>Pengumuman Proposal dan Dosen Pembimbing :&nbsp;22 - 29 Desember 2025</li>
+	<li>Proses Bimbingan : 30 Desember 2025 - 10 Maret 2026</li>
+	<li>Uji Kompetensi Komputer : 21 - 24 Januari 2026</li>
+	<li>Pendaftaran Sidang : 1 Februari - 10 Maret 2026</li>
+	<li>Uji Kompetensi Prodi : 13 - 18 April 2026</li>
+	<li>Pelaksanaan Sidang : Batch 1 : 7 Maret 2026, Batch 2 : 23 Mei 2026</li>
+	<li>Uji Kompetensi Peminatan : 17 - 20 Juni 2026</li>
+	<li>Yudisium Kelulusan : Batch 1 : 18 April 2026, Batch 2 : 29 Agustus 2026</li>
+	<li>Wisuda XXIII : November 2026</li>
+</ol>
+
+<p>Demikian informasi ini kami sampaikan, atas perhatiannya kami ucapkan terima kasih.<br />
+<br />
+<em>Wassalamu&#39;alaikum, wr. wb.</em></p>
+
+<p>&nbsp;</p>
+
+<p><em>-Bagian Akademik-</em></p>
+            </div>
+        </div>
+                <div class="panel panel-info">
+        	<div class="panel-heading">Pengumuman UTS Semester Ganjil TA 2025/2026                                                                                                           </div>
+              <div class="panel-body">
+                <p>Assalamu&rsquo;alaikum, Wr, Wb.</p>
+
+<p>Kepada mahasiswa POLITEKNIK LP3I kelas reguler pagi angkatan 2025 &nbsp;kami sampaikan Ujian Tengah Semester Ganjil Tahun Akademik 2025/2026 dilaksanakan pada tanggal 17 - 21 November 2025 . Dengan ketentuan sebagai berikut :<br />
+1. Mahasiswa telah melakukan pembayaran SPP sampai bulan November 2025 .<br />
+2. Mahasiswa wajib mencetak Kartu Ujian mulai tanggal 10 - 14 November 2025 .<br />
+3. Jadwal Ujian, sesuai dengan jadwal kuliah yang tercantum dalam Siakad Online.<br />
+4. Soal Ujian akan didapatkan mahasiswa dalam bentuk print out saat jam ujian.&nbsp;<br />
+5. Jawaban ujian dikumpulkan kepada dosen dan diupload melalui SIAKAD ONLINE sesuai dengan waktu yang telah ditentukan dan tidak ada waktu tambahan bagi yang terlambat hadir.<br />
+6. Jika mahasiswa melakukan kecurangan, mencontek atau kerjasama maka nilai ujiannya diberi 0 (nol) dan wajib mengikuti tahun depan.<br />
+7. Mahasiswa mengikuti Tata Tertib Ujian yang berlaku di POLITEKNIK LP3I.<br />
+8. Mahasiswa menggunakan seragam lengkap sebagai berikut:<br />
+a. &nbsp;Hari Senin dan Kamis<br />
+- Pria : Kemeja putih polos, celana biru, blazer, dan berdasi, rambut pendek rapi tidak dicat warna, serta menggunakan sepatu pantofel.<br />
+- Wanita : Kemeja putih polos, rok biru, blazer, menggunakan scraft, dan sepatu pantofel. Bagi yang menggunakan hijab menggunakan hijab berwarna biru dongker (navy), bagi yang tidak menggunakan hijab, rambut rapi dan tidak dicat warna.<br />
+b. Hari Selasa, Rabu, dan Sabtu.<br />
+- Pria dan Wanita mengenakan seragam kantor berdasi (Office Wear).<br />
+c. Hari Jumat<br />
+- Pria dan Wanita menggunakan batik/koko.<br />
+9. Pelaksanaan ujian dilakukan secara offline dan hadir di &nbsp;ruang kelas 15 menit sebelum ujian dimulai.<br />
+Demikian pengumuman ini disampaikan, atas perhatian dan kerjasamanya kami ucapkan terimakasih.</p>
+
+<p>Wassalamu&rsquo;alaikum Wr.Wb.</p>
+
+<p>Bandung, 31 Oktober 2025<br />
+Hormat kami, &nbsp;&nbsp; &nbsp;</p>
+
+<p><br />
+Agus Salim, S.Kom., M.Kom.&nbsp;&nbsp; &nbsp;<br />
+Wakil Direktur Akademik</p>
+            </div>
+        </div>
+                <div class="panel panel-info">
+        	<div class="panel-heading">Pelaksanaan UTS Susulan Genap TA. 2022-2023                                                                                                           </div>
+              <div class="panel-body">
+                <p>Assalamualaikum Wr.Wb.</p>
+
+<p>Kami Informasikan bagi mahasiswa Kelas Reguler pendaftaran Ujian Susulan (UTS) Genap Tahun Akademik 2022/2023 paling lambat s/d Selasa, 02 Mei 2023 silakan mengajukan melalui siakad online.&nbsp;</p>
+
+<p>Ujian susulan akan dilaksanakan pada tanggal 08-13 Mei 2023 secara offline.</p>
+
+<p>Adapun syarat mengikuti ujian susulan:<br />
+1. Telah mengajukan ujian susulan pada siakad online.&nbsp;<br />
+2. Pakaian dan rambut disesuaikan dengan ketentuan yang berlaku di Politeknik LP3I.<br />
+3. Telah melakukan pembayaran sampai dengan bulan April 2023.<br />
+4. Membawa Laptop dan alat tulis pribadi untuk pengerjaan ujian.</p>
+
+<p>Demikian informasi ini kami sampaikan, atas perhatiannya terima kasih.</p>
+
+<p>Wassalamualaikum Wr.Wb.</p>
+
+<p>Hormat kami,&nbsp;</p>
+
+<p>Bagian Akademik</p>
+            </div>
+        </div>
+                <div class="panel panel-info">
+        	<div class="panel-heading">INFORMASI LIBUR HARI RAYA IDUL FITRI 1444 H                                                                                                           </div>
+              <div class="panel-body">
+                <p><em>Assalamualaikum Wr.Wb.</em><br />
+<br />
+Kepada Yth.<br />
+Mahasiswa<br />
+Di tempat<br />
+<br />
+Sehubungan dengan Libur Nasional Hari Raya Idul Fitri 1444 H. Bersama ini kami sampaikan bahwa perkuliahan libur&nbsp;mulai tanggal <strong>17 April 2023</strong>. Perkuliahan aktif kembali pada tanggal <strong>2 Mei 2023.</strong><br />
+<br />
+Demikian informasi ini kami sampaikan, atas perhatian dan kerjasama yang baik, terima kasih.<br />
+<br />
+<strong><em>Minal aidzin walfaidzin. Mohon maaf lahir dan batin.</em></strong><br />
+<br />
+<em>Wassalamualaikum Wr.Wb.</em><br />
+<br />
+Hormat kami,<br />
+<br />
+<br />
+Bagian Akademik</p>
+            </div>
+        </div>
+                <div class="panel panel-info">
+        	<div class="panel-heading">Pelaksanaan Ujian Tengah Semester Genap TA. 2022-2023                                                                                                 </div>
+              <div class="panel-body">
+                <p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><em><span style="font-family:&quot;Arial&quot;,sans-serif">Assalamu&#39;alaikum Wr. Wb.</span></em></span></span></p>
+
+<p style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif">Kepada mahasiswa POLITEKNIK LP3I kelas reguler pagi angkatan 2020, 2021 dan 2022, kami sampaikan pelaksanaan <strong>Ujian Tengah Semester Genap Tahun Akademik 2022/2023 </strong>pada tanggal<strong> 10&ndash;15 April 2023</strong>. Dengan ketentuan sebagai berikut :</span></span></span></p>
+
+<ol>
+	<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif">Mahasiswa telah melakukan pembayaran SPP sampai bulan Maret 2023. Terakhir pembayaran pada hari Jum&rsquo;at, 7 Maret 2023.</span></span></span></li>
+	<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif">Seluruh mahasiswa wajib&nbsp; mencetak dan membawa Kartu Ujian yang sudah disediakan menggunakan <strong>kertas concord (tebal)</strong>. </span></span></span></li>
+	<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif">Kartu ujian dapat diakses di https://siakad.plb.ac.id&nbsp; pada Menu Akademik - UTS. Kartu Ujian di tandatangan oleh petugas pengawas sebagai tanda hadir mengikuti UTS.&nbsp; </span></span></span></li>
+	<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif">Ketentuan <strong>pakaian mahasiswa</strong> pada saat Ujian:</span></span></span></li>
+</ol>
+
+<ol style="list-style-type:lower-alpha; margin-left:40px">
+	<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif">Senin dan Kamis : Almamater lengkap (jas almamater, kemeja putih, scarf/dasi, celana dan rok panjang, dan menggunakan sepatu pantofel. Bagi yang memakai hijab dipersilakan menggunakan hijab berwarna biru dongker).</span></span></span></li>
+	<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif">Selasa, Rabu dan Sabtu : menggunakan office wear dengan sepatu pantofel.</span></span></span></li>
+	<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif">Jumat : batik.</span></span></span></li>
+</ol>
+
+<ol start="5">
+	<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif">Mahasiswa <strong>wajib memenuhi 7 (tujuh) pertemuan pada setiap matakuliah</strong>. Apabila belum terpenuhi karena tidak hadir baik izin/sakit/alpa silakan membuat resume/ringkasan sesuai pertemuan yang tidak hadir. Hasil resume dilaporkan kepada dosen yang bersangkutan.</span></span></span></li>
+	<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif">Mahasiswa <strong>wajib hadir</strong> 15 menit sebelum ujian berlangsung.</span></span></span></li>
+	<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif">Membawa alat tulis pribadi.</span></span></span></li>
+	<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif">Mahasiswa mengikuti <strong>Tata Tertib Ujian</strong> yang berlaku di POLITEKNIK LP3I.</span></span></span></li>
+	<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif">Apabila pada saat pelaksanaan ujian berhalangan hadir dikarenakan sakit, silahkan mengajukan susulan pada siakad dan lampirkan surat sakit ke Bagian Akademik/WA Center Layanan Akademik 0895-8003-53069.</span></span></span></li>
+	<li style="text-align:justify"><span style="font-size:11pt"><span style="font-family:Calibri,sans-serif"><span style="font-family:&quot;Arial&quot;,sans-serif">Bila melakukan pelanggaran, tidak sesuai dengan ketentuan di atas, maka kami tidak akan ikutsertakan mengikuti UTS.</span></span></span></li>
+</ol>
+            </div>
+        </div>
+                <!-- Portfolio Section -->
+        
+        <!-- /.row -->
+
+        <!-- Features Section -->
+        
+
+        <hr>
+
+        <!-- Footer -->
+        <div class="push"></div>
+       
+
+
+    </div>
+

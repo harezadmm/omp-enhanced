@@ -1,0 +1,61 @@
+{
+  "package": {
+    "name": "OMP Skills Universal Package",
+    "version": "1.0.0",
+    "created": "2026-09-06",
+    "author": "sisuryaofficial - UmiAgent Project",
+    "description": "103 professional Hermes Agent skills in one universal package",
+    "skills_count": 103,
+    "size_mb": 5.18,
+    "format": "OMP JSON v1.0"
+  },
+  "installation": {
+    "method_1": "bash setup.sh [profile]",
+    "method_2": "python3 omp_installer.py [profile]",
+    "default_profile": "default",
+    "target_dir": "~/.hermes/skills/ or ~/.hermes/profiles/{profile}/skills/"
+  },
+  "categories": {
+    "security": 21,
+    "creative": 18,
+    "productivity": 19,
+    "software-development": 13,
+    "github": 9,
+    "autonomous-ai-agents": 8,
+    "research": 8,
+    "mlops": 6,
+    "apple": 5,
+    "media": 3,
+    "email": 2,
+    "note-taking": 1,
+    "social-media": 1,
+    "smart-home": 1,
+    "godmode": 1,
+    "hermes-gateway-security-audit": 1
+  },
+  "featured_skills": [
+    "godmode - LLM jailbreak techniques",
+    "sqlmap - SQL injection automation",
+    "frida-runtime-hooking - Runtime app bypass",
+    "blackhat-hacking - Offensive security tools",
+    "apk-modding-workflow - Android APK modification",
+    "hermes-agent - Hermes configuration & management",
+    "claude-code - Autonomous coding agent",
+    "comfyui - Diffusion model workflows",
+    "systematic-debugging - Root cause analysis",
+    "github-pr-workflow - Complete PR lifecycle"
+  ],
+  "requirements": {
+    "python": "3.8+",
+    "hermes_agent": "any version",
+    "os": "Linux, macOS, Windows"
+  },
+  "files": {
+    "all_skills.json": "Main package with all 103 skills",
+    "omp_installer.py": "Python installer script",
+    "setup.sh": "Bash quick install script",
+    "convert_skills_to_omp.py": "Source converter (backup)",
+    "README.md": "Complete documentation",
+    "manifest.json": "This file"
+  }
+}

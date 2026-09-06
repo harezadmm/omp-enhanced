@@ -1,0 +1,32 @@
+# UmiAgent Security Bot - Python Dependencies
+# Install: pip install -r requirements.txt
+
+# Telegram Bot Framework
+python-telegram-bot==20.7
+
+# Async HTTP Client
+aiohttp==3.9.1
+
+# CloudFlare Bypass
+cloudscraper==1.2.71
+
+# SSH Client
+paramiko==3.4.0
+
+# HTTP Requests
+requests==2.31.0
+
+# Frida Tools (Mobile Security)
+frida-tools==12.3.0
+
+# Objection (Mobile Pentesting)
+objection==1.11.0
+
+# Optional: Environment Variables
+python-dotenv==1.0.0
+
+# Optional: Better JSON handling
+ujson==5.9.0
+
+# Optional: Progress bars
+tqdm==4.66.1

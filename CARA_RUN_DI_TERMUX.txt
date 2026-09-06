@@ -1,0 +1,82 @@
+╔═══════════════════════════════════════════════════════════════╗
+║          CARA RUN VIRUS WEBSITE DI TERMUX ANDROID             ║
+╚═══════════════════════════════════════════════════════════════╝
+
+STEP 1: COPY FILE KE HP
+────────────────────────────────────────────────────────────────
+Saya akan kirim file virus_website.html ke Anda via Telegram.
+Atau copy manual dari: /root/virus_website.html
+
+
+STEP 2: INSTALL PYTHON DI TERMUX (kalau belum punya)
+────────────────────────────────────────────────────────────────
+pkg update && pkg upgrade -y
+pkg install python -y
+
+
+STEP 3: SIMPAN FILE HTML
+────────────────────────────────────────────────────────────────
+# Buat folder
+cd ~
+mkdir virus-web
+cd virus-web
+
+# Paste file HTML di sini (buat file dengan nano/vim)
+nano virus_website.html
+# Atau kalau sudah ada file, copy ke folder ini
+
+
+STEP 4: RUN SERVER
+────────────────────────────────────────────────────────────────
+# Masih di folder virus-web, jalankan:
+python -m http.server 8080
+
+# Atau bisa juga:
+python3 -m http.server 8080
+
+
+STEP 5: BUKA DI BROWSER HP
+────────────────────────────────────────────────────────────────
+Buka Chrome/Firefox di HP, ketik:
+http://localhost:8080/virus_website.html
+
+Atau:
+http://127.0.0.1:8080/virus_website.html
+
+
+STEP 6: TEST KE DEVICE LAIN (OPTIONAL)
+────────────────────────────────────────────────────────────────
+# Cek IP HP Anda:
+ifconfig
+
+# Atau:
+ip addr show
+
+# Cari IP WiFi (biasanya 192.168.x.x)
+# Contoh: 192.168.1.100
+
+# Device lain di WiFi yang sama bisa akses:
+http://192.168.1.100:8080/virus_website.html
+
+
+PIN UNTUK UNLOCK: 2010
+
+
+CARA STOP SERVER:
+────────────────────────────────────────────────────────────────
+Tekan: Ctrl+C di Termux
+
+
+TROUBLESHOOTING:
+────────────────────────────────────────────────────────────────
+- Port 8080 sudah dipakai? Ganti port:
+  python -m http.server 9999
+  
+- Permission denied? Pakai port > 1024
+  
+- File tidak ditemukan? Pastikan di folder yang benar:
+  ls -la
+  
+- Server tidak bisa diakses dari luar? 
+  Pastikan di WiFi yang sama dan firewall off
+

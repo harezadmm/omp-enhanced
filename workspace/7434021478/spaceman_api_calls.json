@@ -1,0 +1,578 @@
+[
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/en/casino/instant-games/game/pragmatic-spaceman-insta",
+    "method": "GET",
+    "time": "2026-09-02T20:46:14.963920"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/en/casino/instant-games/game/pragmatic-spaceman-insta",
+    "status": 200,
+    "time": "2026-09-02T20:46:15.678001"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/api/v1/growthbook/features",
+    "method": "GET",
+    "time": "2026-09-02T20:46:15.686817"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/api/v1/growthbook/features",
+    "status": 200,
+    "time": "2026-09-02T20:46:16.158378"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/api/geo-location",
+    "method": "GET",
+    "time": "2026-09-02T20:46:19.363382"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/api/geo-location",
+    "status": 200,
+    "time": "2026-09-02T20:46:19.367612"
+  },
+  {
+    "type": "request",
+    "url": "https://errs.qwrt.xyz/api/15/envelope/?sentry_version=7&sentry_key=bca98dae553e4242bbfceeeea05b7d6b&sentry_client=sentry.javascript.browser%2F10.51.0",
+    "method": "POST",
+    "time": "2026-09-02T20:46:19.373481"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/api/v0/sport/feed/localization/markets?lang=en-VPM&prompt=true",
+    "method": "GET",
+    "time": "2026-09-02T20:46:19.374333"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/api/v0/sport/feed/localization/markets?lang=en-VPM&prompt=true",
+    "status": 200,
+    "time": "2026-09-02T20:46:19.374883"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/api/v0/sport/feed/schema",
+    "method": "GET",
+    "time": "2026-09-02T20:46:19.375398"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/api/v0/sport/feed/schema",
+    "status": 200,
+    "time": "2026-09-02T20:46:19.377249"
+  },
+  {
+    "type": "request",
+    "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-2EV1BHPHL4&gtm=45je6910h1v9229520491z89226263897za20gzb9226263897zd9226263897&_p=1788381976769&gcd=13l3l3l3l1l1&npa=0&dma=0&are=1&cid=1458682129.1788381977&frm=0&ngs=1&pscdl=noapi&rcb=5&sr=1920x1080&uaa=x86&uab=64&uafvl=Not%253DA%253FBrand%3B99.0.0.0%7CHeadlessChrome%3B151.0.7922.34%7CChromium%3B151.0.7922.34&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-us&_s=1&tag_exp=115938466~115938468~118897920~118897930~119404698~120385422&sid=1788381977&sct=1&seg=0&dl=https%3A%2F%2Fdashkng-88-ind-929.com%2Fen%2Fcasino%2Finstant-games%2Fgame%2Fpragmatic-spaceman-insta&dt=...&en=page_view&_fv=1&_nsi=1&_ss=1&tfd=2503",
+    "method": "POST",
+    "time": "2026-09-02T20:46:19.377756"
+  },
+  {
+    "type": "response",
+    "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-2EV1BHPHL4&gtm=45je6910h1v9229520491z89226263897za20gzb9226263897zd9226263897&_p=1788381976769&gcd=13l3l3l3l1l1&npa=0&dma=0&are=1&cid=1458682129.1788381977&frm=0&ngs=1&pscdl=noapi&rcb=5&sr=1920x1080&uaa=x86&uab=64&uafvl=Not%253DA%253FBrand%3B99.0.0.0%7CHeadlessChrome%3B151.0.7922.34%7CChromium%3B151.0.7922.34&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-us&_s=1&tag_exp=115938466~115938468~118897920~118897930~119404698~120385422&sid=1788381977&sct=1&seg=0&dl=https%3A%2F%2Fdashkng-88-ind-929.com%2Fen%2Fcasino%2Finstant-games%2Fgame%2Fpragmatic-spaceman-insta&dt=...&en=page_view&_fv=1&_nsi=1&_ss=1&tfd=2503",
+    "status": 204,
+    "time": "2026-09-02T20:46:19.378760"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/CasinoGameLaunch.11ccf3f2fbfdefd2a333.css",
+    "method": "GET",
+    "time": "2026-09-02T20:46:19.379261"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/CasinoGameLaunch.15f2a4317a94d5f3c68a.bundle.js",
+    "method": "GET",
+    "time": "2026-09-02T20:46:19.379423"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/CasinoGameLaunch.11ccf3f2fbfdefd2a333.css",
+    "status": 200,
+    "time": "2026-09-02T20:46:19.380850"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/CasinoGameLaunch.15f2a4317a94d5f3c68a.bundle.js",
+    "status": 200,
+    "time": "2026-09-02T20:46:19.382210"
+  },
+  {
+    "type": "request",
+    "url": "https://rtg.admaxium.com/sync?ref=&lp=https%3A%2F%2Fdashkng-88-ind-929.com%2Fen%2Fcasino%2Finstant-games%2Fgame%2Fpragmatic-spaceman-insta&sh=1080&sw=1920&date=1788381977581&fp=uid-2338596325.8498258706",
+    "method": "GET",
+    "time": "2026-09-02T20:46:19.382967"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/apg/v0/widgets/v1/page?route=%2Fcasino%2F%3AproductType%2Fgame%2F%3AgameId&routeParams=%7B%22productType%22%3A%22instant-games%22%2C%22gameId%22%3A%22pragmatic-spaceman-insta%22%7D",
+    "method": "GET",
+    "time": "2026-09-02T20:46:19.383849"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/api/gw/api/eva/v2/instant-games/lobby/game/info/pragmatic-spaceman-insta",
+    "method": "GET",
+    "time": "2026-09-02T20:46:19.384119"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/fpapi/s.js",
+    "method": "GET",
+    "time": "2026-09-02T20:46:19.384588"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/mtapi/js/v2/mlibrary.js",
+    "method": "GET",
+    "time": "2026-09-02T20:46:19.384843"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/mtapi/js/v2/mlibrary.js",
+    "status": 200,
+    "time": "2026-09-02T20:46:19.385897"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/fpapi/s.js",
+    "status": 200,
+    "time": "2026-09-02T20:46:19.386516"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/mtapi/promo/timestamp",
+    "method": "GET",
+    "time": "2026-09-02T20:46:19.387076"
+  },
+  {
+    "type": "response",
+    "url": "https://rtg.admaxium.com/sync?ref=&lp=https%3A%2F%2Fdashkng-88-ind-929.com%2Fen%2Fcasino%2Finstant-games%2Fgame%2Fpragmatic-spaceman-insta&sh=1080&sw=1920&date=1788381977581&fp=uid-2338596325.8498258706",
+    "status": 200,
+    "time": "2026-09-02T20:46:19.387243"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/api/gw/api/eva/v2/instant-games/lobby/game/info/pragmatic-spaceman-insta",
+    "status": 200,
+    "time": "2026-09-02T20:46:19.388409"
+  },
+  {
+    "type": "response",
+    "url": "https://errs.qwrt.xyz/api/15/envelope/?sentry_version=7&sentry_key=bca98dae553e4242bbfceeeea05b7d6b&sentry_client=sentry.javascript.browser%2F10.51.0",
+    "status": 200,
+    "time": "2026-09-02T20:46:19.388726"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/apg/v0/widgets/v1/page?route=%2Fcasino%2F%3AproductType%2Fgame%2F%3AgameId&routeParams=%7B%22productType%22%3A%22instant-games%22%2C%22gameId%22%3A%22pragmatic-spaceman-insta%22%7D",
+    "status": 200,
+    "time": "2026-09-02T20:46:19.389043"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/mtapi/promo/timestamp",
+    "status": 200,
+    "time": "2026-09-02T20:46:19.390916"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/widgets-platform/widgets/casino/game_launch/0.24.0/dist/remoteEntry.js",
+    "method": "GET",
+    "time": "2026-09-02T20:46:19.465075"
+  },
+  {
+    "type": "request",
+    "url": "https://z.cdn.adnetwork.bet/load?z=1727954242&div=zone_1727954242&cw=1920&ch=1080&sr=1920x1080&df=1&bh=2&tl=3705&me=32&hc=8&n=1788381978661&v=true&i=true&url=dashkng-88-ind-929.com%2Fen%2Fcasino%2Finstant-games%2Fgame%2Fpragmatic-spaceman-insta&vc=ANGLE%20(Google%2C%20Vulkan%201.3.0%20(SwiftShader%20Device%20(Subzero)%20(0x0000C0DE))%2C%20SwiftShader%20driver)&ti=...&zyx=2199320569&cp10=channel7",
+    "method": "GET",
+    "time": "2026-09-02T20:46:19.465729"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/content/metatags-v2?_limit=10&_sort=updated_at%3Adesc&brands.name=VPM&language.name=en&pages.name=instant-games_%5B%2Fgame%2F%3AgameId%5D&casinoPageId=pragmatic-spaceman-insta&casinoPageId=",
+    "method": "GET",
+    "time": "2026-09-02T20:46:19.466847"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/content/seotexts?pagelink.name=instant-games_%5B%2Fgame%2F%3AgameId%5D&brands.name=VPM&language.name=en&name=pragmatic-spaceman-insta&name=",
+    "method": "GET",
+    "time": "2026-09-02T20:46:19.467102"
+  },
+  {
+    "type": "request",
+    "url": "https://api-js.datadome.co/js/",
+    "method": "POST",
+    "time": "2026-09-02T20:46:19.467375"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/content/metatags-v2?_limit=10&_sort=updated_at%3Adesc&brands.name=VPM&language.name=en&pages.name=instant-games_%5B%2Fgame%2F%3AgameId%5D&casinoPageId=pragmatic-spaceman-insta&casinoPageId=",
+    "status": 200,
+    "time": "2026-09-02T20:46:19.467567"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/content/seotexts?pagelink.name=instant-games_%5B%2Fgame%2F%3AgameId%5D&brands.name=VPM&language.name=en&name=pragmatic-spaceman-insta&name=",
+    "status": 200,
+    "time": "2026-09-02T20:46:19.468258"
+  },
+  {
+    "type": "response",
+    "url": "https://z.cdn.adnetwork.bet/load?z=1727954242&div=zone_1727954242&cw=1920&ch=1080&sr=1920x1080&df=1&bh=2&tl=3705&me=32&hc=8&n=1788381978661&v=true&i=true&url=dashkng-88-ind-929.com%2Fen%2Fcasino%2Finstant-games%2Fgame%2Fpragmatic-spaceman-insta&vc=ANGLE%20(Google%2C%20Vulkan%201.3.0%20(SwiftShader%20Device%20(Subzero)%20(0x0000C0DE))%2C%20SwiftShader%20driver)&ti=...&zyx=2199320569&cp10=channel7",
+    "status": 204,
+    "time": "2026-09-02T20:46:19.468539"
+  },
+  {
+    "type": "response",
+    "url": "https://api-js.datadome.co/js/",
+    "status": 200,
+    "time": "2026-09-02T20:46:19.468904"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/widgets-platform/widgets/casino/game_launch/0.24.0/dist/remoteEntry.js",
+    "status": 200,
+    "time": "2026-09-02T20:46:19.476941"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/widgets-platform/widgets/casino/game_launch/0.24.0/dist/274.43cdd6981d520f2a7f34.js",
+    "method": "GET",
+    "time": "2026-09-02T20:46:19.477671"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/widgets-platform/widgets/casino/game_launch/0.24.0/dist/685.43cdd6981d520f2a7f34.js",
+    "method": "GET",
+    "time": "2026-09-02T20:46:19.477829"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/widgets-platform/widgets/casino/game_launch/0.24.0/dist/849.43cdd6981d520f2a7f34.js",
+    "method": "GET",
+    "time": "2026-09-02T20:46:19.477992"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/widgets-platform/widgets/casino/game_launch/0.24.0/dist/788.43cdd6981d520f2a7f34.js",
+    "method": "GET",
+    "time": "2026-09-02T20:46:19.478143"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/widgets-platform/widgets/casino/game_launch/0.24.0/dist/945.43cdd6981d520f2a7f34.js",
+    "method": "GET",
+    "time": "2026-09-02T20:46:19.478308"
+  },
+  {
+    "type": "request",
+    "url": "https://errs.qwrt.xyz/api/15/envelope/?sentry_version=7&sentry_key=bca98dae553e4242bbfceeeea05b7d6b&sentry_client=sentry.javascript.browser%2F10.51.0",
+    "method": "POST",
+    "time": "2026-09-02T20:46:19.632120"
+  },
+  {
+    "type": "request",
+    "url": "https://errs.qwrt.xyz/api/15/envelope/?sentry_version=7&sentry_key=bca98dae553e4242bbfceeeea05b7d6b&sentry_client=sentry.javascript.browser%2F10.51.0",
+    "method": "POST",
+    "time": "2026-09-02T20:46:19.632412"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/CasinoCollectionGames.e9899ae0fa30dd6b6823.css",
+    "method": "GET",
+    "time": "2026-09-02T20:46:19.687184"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/CasinoCollectionGames.b172d23ac02c3d1a3a4c.bundle.js",
+    "method": "GET",
+    "time": "2026-09-02T20:46:19.687332"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/CasinoCollectionGames.e9899ae0fa30dd6b6823.css",
+    "status": 200,
+    "time": "2026-09-02T20:46:19.690121"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/content/rich-snippets?_limit=10&_sort=updated_at%3Adesc&brands.name=VPM&language.name=en&pages.name=instant-games",
+    "method": "GET",
+    "time": "2026-09-02T20:46:19.755873"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/CasinoCollectionGames.b172d23ac02c3d1a3a4c.bundle.js",
+    "status": 200,
+    "time": "2026-09-02T20:46:19.756630"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/apg/v0/widgets/v1/page?route=%2Fcasino%2F%3AproductType%2F%3AentityType(categories%7Cproviders%7Ctheme)%2F%3AentityId&routeParams=%7B%22productType%22%3A%22instant-games%22%2C%22entityType%22%3A%22providers%22%2C%22entityId%22%3A%22pragmatic%22%7D",
+    "method": "GET",
+    "time": "2026-09-02T20:46:19.766085"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/apg/v0/navigation/v2/casino-simple?productType=instant-games&entityType=providers&entityIds=pragmatic&limit=1&isWithWidgetData=true",
+    "method": "GET",
+    "time": "2026-09-02T20:46:19.766402"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/content/metatags-v2?_limit=10&_sort=updated_at%3Adesc&brands.name=VPM&language.name=en&pages.name=instant-games_%5B%2Fproviders%2F%3AproviderId%5D&casinoPageId=pragmatic&casinoPageId=",
+    "method": "GET",
+    "time": "2026-09-02T20:46:19.766759"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/content/rich-snippets?_limit=10&_sort=updated_at%3Adesc&brands.name=VPM&language.name=en&pages.name=instant-games",
+    "status": 200,
+    "time": "2026-09-02T20:46:24.770361"
+  },
+  {
+    "type": "response",
+    "url": "https://errs.qwrt.xyz/api/15/envelope/?sentry_version=7&sentry_key=bca98dae553e4242bbfceeeea05b7d6b&sentry_client=sentry.javascript.browser%2F10.51.0",
+    "status": 200,
+    "time": "2026-09-02T20:46:24.773194"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/widgets-platform/widgets/casino/game_launch/0.24.0/dist/685.43cdd6981d520f2a7f34.js",
+    "status": 200,
+    "time": "2026-09-02T20:46:24.776538"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/widgets-platform/widgets/casino/game_launch/0.24.0/dist/849.43cdd6981d520f2a7f34.js",
+    "status": 200,
+    "time": "2026-09-02T20:46:24.777521"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/widgets-platform/widgets/casino/game_launch/0.24.0/dist/274.43cdd6981d520f2a7f34.js",
+    "status": 200,
+    "time": "2026-09-02T20:46:24.778402"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/apg/v0/widgets/v1/page?route=%2Fcasino%2F%3AproductType%2F%3AentityType(categories%7Cproviders%7Ctheme)%2F%3AentityId&routeParams=%7B%22productType%22%3A%22instant-games%22%2C%22entityType%22%3A%22providers%22%2C%22entityId%22%3A%22pragmatic%22%7D",
+    "status": 200,
+    "time": "2026-09-02T20:46:24.779540"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/widgets-platform/widgets/casino/game_launch/0.24.0/dist/788.43cdd6981d520f2a7f34.js",
+    "status": 200,
+    "time": "2026-09-02T20:46:24.780328"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/widgets-platform/widgets/casino/game_launch/0.24.0/dist/945.43cdd6981d520f2a7f34.js",
+    "status": 200,
+    "time": "2026-09-02T20:46:24.780986"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/apg/v0/navigation/v2/casino-simple?productType=instant-games&entityType=providers&entityIds=pragmatic&limit=1&isWithWidgetData=true",
+    "status": 200,
+    "time": "2026-09-02T20:46:24.781657"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/content/seotexts?pagelink.name=instant-games_%5B%2Fproviders%2F%3AproviderId%5D&brands.name=VPM&language.name=en&name=pragmatic&name=",
+    "method": "GET",
+    "time": "2026-09-02T20:46:24.783461"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/mdlr/assets/icons/brand238/ic_24_jetx_game_outlined.svg",
+    "method": "GET",
+    "time": "2026-09-02T20:46:24.792157"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/mdlr/assets/icons/brand238/ic_24_jetx_game_filled.svg",
+    "method": "GET",
+    "time": "2026-09-02T20:46:24.792290"
+  },
+  {
+    "type": "response",
+    "url": "https://errs.qwrt.xyz/api/15/envelope/?sentry_version=7&sentry_key=bca98dae553e4242bbfceeeea05b7d6b&sentry_client=sentry.javascript.browser%2F10.51.0",
+    "status": 200,
+    "time": "2026-09-02T20:46:24.794024"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/mdlr/assets/icons/brand238/ic_24_jetx_game_outlined.svg",
+    "status": 200,
+    "time": "2026-09-02T20:46:24.799463"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/mdlr/assets/icons/brand238/ic_24_jetx_game_filled.svg",
+    "status": 200,
+    "time": "2026-09-02T20:46:24.800834"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/content/metatags-v2?_limit=10&_sort=updated_at%3Adesc&brands.name=VPM&language.name=en&pages.name=instant-games_%5B%2Fproviders%2F%3AproviderId%5D&casinoPageId=pragmatic&casinoPageId=",
+    "status": 200,
+    "time": "2026-09-02T20:46:24.802783"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/apg/v0/casino/instant-games/lobby/game/info/pragmatic-spaceman-insta",
+    "method": "GET",
+    "time": "2026-09-02T20:46:24.860559"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/content/seotexts?pagelink.name=instant-games_%5B%2Fproviders%2F%3AproviderId%5D&brands.name=VPM&language.name=en&name=pragmatic&name=",
+    "status": 200,
+    "time": "2026-09-02T20:46:24.864242"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/apg/v0/casino/instant-games/lobby/game/info/pragmatic-spaceman-insta",
+    "status": 200,
+    "time": "2026-09-02T20:46:24.864896"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/apg/v0/navigation/v2/casino-simple?productType=instant-games&entityType=providers&entityIds=pragmatic&offset=0&limit=50",
+    "method": "GET",
+    "time": "2026-09-02T20:46:24.866834"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/apg/v0/navigation/v2/casino-simple?productType=instant-games&entityType=providers&entityIds=pragmatic&offset=0&limit=50",
+    "status": 200,
+    "time": "2026-09-02T20:46:24.867143"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/image-cdn/casino/v0/format=auto,width=214,height=214,trim.width=700,trim.height=700,trim.left=150,trim.top=150,dpr=1/games/pragmatic-chicken.png",
+    "method": "GET",
+    "time": "2026-09-02T20:46:24.867489"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/image-cdn/casino/v0/format=auto,width=214,height=214,trim.width=700,trim.height=700,trim.left=150,trim.top=150,dpr=1/games/pragmatic-spire.png",
+    "method": "GET",
+    "time": "2026-09-02T20:46:24.867633"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/image-cdn/casino/v0/format=auto,width=214,height=214,trim.width=700,trim.height=700,trim.left=150,trim.top=150,dpr=1/games/pragmatic-mines.png",
+    "method": "GET",
+    "time": "2026-09-02T20:46:24.867792"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/image-cdn/casino/v0/format=auto,width=214,height=214,trim.width=700,trim.height=700,trim.left=150,trim.top=150,dpr=1/games/pragmatic-roulette.png",
+    "method": "GET",
+    "time": "2026-09-02T20:46:24.867921"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/image-cdn/casino/v0/format=auto,width=214,height=214,trim.width=700,trim.height=700,trim.left=150,trim.top=150,dpr=1/games/pragmatic-plinko.png",
+    "method": "GET",
+    "time": "2026-09-02T20:46:24.868045"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/image-cdn/casino/v0/format=auto,width=214,height=214,trim.width=700,trim.height=700,trim.left=150,trim.top=150,dpr=1/games/pragmatic-high-flyer.png",
+    "method": "GET",
+    "time": "2026-09-02T20:46:24.868169"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/image-cdn/casino/v0/format=auto,width=214,height=214,trim.width=700,trim.height=700,trim.left=150,trim.top=150,dpr=1/games/pragmatic-big-bass-crash.png",
+    "method": "GET",
+    "time": "2026-09-02T20:46:24.868293"
+  },
+  {
+    "type": "request",
+    "url": "https://dashkng-88-ind-929.com/image-cdn/casino/v0/format=auto,width=214,height=214,trim.width=700,trim.height=700,trim.left=150,trim.top=150,dpr=1/games/pragmatic-spaceman-insta.png",
+    "method": "GET",
+    "time": "2026-09-02T20:46:24.868417"
+  },
+  {
+    "type": "request",
+    "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-2EV1BHPHL4&gtm=45je6910h1v9229520491za20gzb9226263897zd9226263897&_p=1788381976769&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAAQ&ae=a&are=1&cid=1458682129.1788381977&frm=0&ngs=1&pscdl=noapi&rcb=5&sr=1920x1080&uaa=x86&uab=64&uafvl=Not%253DA%253FBrand%3B99.0.0.0%7CHeadlessChrome%3B151.0.7922.34%7CChromium%3B151.0.7922.34&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-us&tag_exp=115938466~115938468~118897920~118897930~119404698~120385422&sid=1788381977&sct=1&seg=0&dl=https%3A%2F%2Fdashkng-88-ind-929.com%2Fen%2Fcasino%2Finstant-games%2Fgame%2Fpragmatic-spaceman-insta&dt=...&_s=2&tfd=7516",
+    "method": "POST",
+    "time": "2026-09-02T20:46:24.869277"
+  },
+  {
+    "type": "response",
+    "url": "https://www.google-analytics.com/g/collect?v=2&tid=G-2EV1BHPHL4&gtm=45je6910h1v9229520491za20gzb9226263897zd9226263897&_p=1788381976769&gcd=13l3l3l3l1l1&npa=0&dma=0&_eu=AEAAAAQ&ae=a&are=1&cid=1458682129.1788381977&frm=0&ngs=1&pscdl=noapi&rcb=5&sr=1920x1080&uaa=x86&uab=64&uafvl=Not%253DA%253FBrand%3B99.0.0.0%7CHeadlessChrome%3B151.0.7922.34%7CChromium%3B151.0.7922.34&uam=&uamb=0&uap=Windows&uapv=10.0&uaw=0&ul=en-us&tag_exp=115938466~115938468~118897920~118897930~119404698~120385422&sid=1788381977&sct=1&seg=0&dl=https%3A%2F%2Fdashkng-88-ind-929.com%2Fen%2Fcasino%2Finstant-games%2Fgame%2Fpragmatic-spaceman-insta&dt=...&_s=2&tfd=7516",
+    "status": 204,
+    "time": "2026-09-02T20:46:24.869433"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/image-cdn/casino/v0/format=auto,width=214,height=214,trim.width=700,trim.height=700,trim.left=150,trim.top=150,dpr=1/games/pragmatic-high-flyer.png",
+    "status": 200,
+    "time": "2026-09-02T20:46:24.869678"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/image-cdn/casino/v0/format=auto,width=214,height=214,trim.width=700,trim.height=700,trim.left=150,trim.top=150,dpr=1/games/pragmatic-spaceman-insta.png",
+    "status": 200,
+    "time": "2026-09-02T20:46:24.870050"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/image-cdn/casino/v0/format=auto,width=214,height=214,trim.width=700,trim.height=700,trim.left=150,trim.top=150,dpr=1/games/pragmatic-big-bass-crash.png",
+    "status": 200,
+    "time": "2026-09-02T20:46:24.870430"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/image-cdn/casino/v0/format=auto,width=214,height=214,trim.width=700,trim.height=700,trim.left=150,trim.top=150,dpr=1/games/pragmatic-plinko.png",
+    "status": 200,
+    "time": "2026-09-02T20:46:24.870794"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/image-cdn/casino/v0/format=auto,width=214,height=214,trim.width=700,trim.height=700,trim.left=150,trim.top=150,dpr=1/games/pragmatic-spire.png",
+    "status": 200,
+    "time": "2026-09-02T20:46:24.871247"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/image-cdn/casino/v0/format=auto,width=214,height=214,trim.width=700,trim.height=700,trim.left=150,trim.top=150,dpr=1/games/pragmatic-roulette.png",
+    "status": 200,
+    "time": "2026-09-02T20:46:24.871549"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/image-cdn/casino/v0/format=auto,width=214,height=214,trim.width=700,trim.height=700,trim.left=150,trim.top=150,dpr=1/games/pragmatic-chicken.png",
+    "status": 200,
+    "time": "2026-09-02T20:46:24.871867"
+  },
+  {
+    "type": "response",
+    "url": "https://dashkng-88-ind-929.com/image-cdn/casino/v0/format=auto,width=214,height=214,trim.width=700,trim.height=700,trim.left=150,trim.top=150,dpr=1/games/pragmatic-mines.png",
+    "status": 200,
+    "time": "2026-09-02T20:46:24.872189"
+  },
+  {
+    "type": "request",
+    "url": "https://api-js.datadome.co/js/",
+    "method": "POST",
+    "time": "2026-09-02T20:46:29.981697"
+  },
+  {
+    "type": "response",
+    "url": "https://api-js.datadome.co/js/",
+    "status": 200,
+    "time": "2026-09-02T20:46:29.981900"
+  }
+]

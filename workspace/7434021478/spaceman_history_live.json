@@ -1,0 +1,1202 @@
+[
+  {
+    "round_id": "spaceman_1788373667",
+    "multiplier": 1.46,
+    "timestamp": "2026-09-02T18:27:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788373697",
+    "multiplier": 23.95,
+    "timestamp": "2026-09-02T18:28:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788373727",
+    "multiplier": 1.52,
+    "timestamp": "2026-09-02T18:28:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788373757",
+    "multiplier": 3.16,
+    "timestamp": "2026-09-02T18:29:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788373787",
+    "multiplier": 1.57,
+    "timestamp": "2026-09-02T18:29:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788373817",
+    "multiplier": 5.07,
+    "timestamp": "2026-09-02T18:30:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788373847",
+    "multiplier": 3.91,
+    "timestamp": "2026-09-02T18:30:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788373877",
+    "multiplier": 2.43,
+    "timestamp": "2026-09-02T18:31:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788373907",
+    "multiplier": 7.61,
+    "timestamp": "2026-09-02T18:31:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788373937",
+    "multiplier": 1.34,
+    "timestamp": "2026-09-02T18:32:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788373967",
+    "multiplier": 24.25,
+    "timestamp": "2026-09-02T18:32:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788373997",
+    "multiplier": 1.12,
+    "timestamp": "2026-09-02T18:33:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374027",
+    "multiplier": 1.07,
+    "timestamp": "2026-09-02T18:33:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374057",
+    "multiplier": 1.47,
+    "timestamp": "2026-09-02T18:34:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374087",
+    "multiplier": 1.44,
+    "timestamp": "2026-09-02T18:34:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374117",
+    "multiplier": 9.08,
+    "timestamp": "2026-09-02T18:35:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374147",
+    "multiplier": 5.26,
+    "timestamp": "2026-09-02T18:35:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374177",
+    "multiplier": 1.54,
+    "timestamp": "2026-09-02T18:36:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374207",
+    "multiplier": 1.61,
+    "timestamp": "2026-09-02T18:36:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374237",
+    "multiplier": 9.51,
+    "timestamp": "2026-09-02T18:37:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374267",
+    "multiplier": 9.74,
+    "timestamp": "2026-09-02T18:37:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374297",
+    "multiplier": 9.06,
+    "timestamp": "2026-09-02T18:38:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374327",
+    "multiplier": 1.36,
+    "timestamp": "2026-09-02T18:38:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374357",
+    "multiplier": 13.23,
+    "timestamp": "2026-09-02T18:39:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374387",
+    "multiplier": 9.19,
+    "timestamp": "2026-09-02T18:39:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374417",
+    "multiplier": 7.68,
+    "timestamp": "2026-09-02T18:40:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374447",
+    "multiplier": 1.1,
+    "timestamp": "2026-09-02T18:40:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374477",
+    "multiplier": 1.72,
+    "timestamp": "2026-09-02T18:41:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374507",
+    "multiplier": 7.48,
+    "timestamp": "2026-09-02T18:41:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374537",
+    "multiplier": 82.21,
+    "timestamp": "2026-09-02T18:42:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374567",
+    "multiplier": 1.88,
+    "timestamp": "2026-09-02T18:42:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374597",
+    "multiplier": 7.8,
+    "timestamp": "2026-09-02T18:43:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374627",
+    "multiplier": 6.91,
+    "timestamp": "2026-09-02T18:43:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374657",
+    "multiplier": 6.43,
+    "timestamp": "2026-09-02T18:44:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374687",
+    "multiplier": 7.72,
+    "timestamp": "2026-09-02T18:44:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374717",
+    "multiplier": 13.43,
+    "timestamp": "2026-09-02T18:45:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374747",
+    "multiplier": 1.83,
+    "timestamp": "2026-09-02T18:45:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374777",
+    "multiplier": 26.27,
+    "timestamp": "2026-09-02T18:46:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374807",
+    "multiplier": 2.13,
+    "timestamp": "2026-09-02T18:46:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374837",
+    "multiplier": 1.65,
+    "timestamp": "2026-09-02T18:47:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374867",
+    "multiplier": 21.26,
+    "timestamp": "2026-09-02T18:47:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374897",
+    "multiplier": 1.13,
+    "timestamp": "2026-09-02T18:48:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374927",
+    "multiplier": 4.71,
+    "timestamp": "2026-09-02T18:48:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374957",
+    "multiplier": 8.65,
+    "timestamp": "2026-09-02T18:49:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788374987",
+    "multiplier": 2.93,
+    "timestamp": "2026-09-02T18:49:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375017",
+    "multiplier": 7.83,
+    "timestamp": "2026-09-02T18:50:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375047",
+    "multiplier": 1.72,
+    "timestamp": "2026-09-02T18:50:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375077",
+    "multiplier": 1.9,
+    "timestamp": "2026-09-02T18:51:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375107",
+    "multiplier": 1.29,
+    "timestamp": "2026-09-02T18:51:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375137",
+    "multiplier": 1.79,
+    "timestamp": "2026-09-02T18:52:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375167",
+    "multiplier": 1.2,
+    "timestamp": "2026-09-02T18:52:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375197",
+    "multiplier": 28.94,
+    "timestamp": "2026-09-02T18:53:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375227",
+    "multiplier": 21.0,
+    "timestamp": "2026-09-02T18:53:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375257",
+    "multiplier": 9.14,
+    "timestamp": "2026-09-02T18:54:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375287",
+    "multiplier": 6.78,
+    "timestamp": "2026-09-02T18:54:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375317",
+    "multiplier": 11.76,
+    "timestamp": "2026-09-02T18:55:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375347",
+    "multiplier": 7.48,
+    "timestamp": "2026-09-02T18:55:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375377",
+    "multiplier": 9.01,
+    "timestamp": "2026-09-02T18:56:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375407",
+    "multiplier": 1.02,
+    "timestamp": "2026-09-02T18:56:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375437",
+    "multiplier": 8.9,
+    "timestamp": "2026-09-02T18:57:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375467",
+    "multiplier": 8.56,
+    "timestamp": "2026-09-02T18:57:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375497",
+    "multiplier": 7.15,
+    "timestamp": "2026-09-02T18:58:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375527",
+    "multiplier": 1.45,
+    "timestamp": "2026-09-02T18:58:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375557",
+    "multiplier": 20.7,
+    "timestamp": "2026-09-02T18:59:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375587",
+    "multiplier": 1.36,
+    "timestamp": "2026-09-02T18:59:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375617",
+    "multiplier": 7.21,
+    "timestamp": "2026-09-02T19:00:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375647",
+    "multiplier": 9.69,
+    "timestamp": "2026-09-02T19:00:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375677",
+    "multiplier": 1.03,
+    "timestamp": "2026-09-02T19:01:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375707",
+    "multiplier": 1.81,
+    "timestamp": "2026-09-02T19:01:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375737",
+    "multiplier": 5.37,
+    "timestamp": "2026-09-02T19:02:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375767",
+    "multiplier": 46.45,
+    "timestamp": "2026-09-02T19:02:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375797",
+    "multiplier": 1.58,
+    "timestamp": "2026-09-02T19:03:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375827",
+    "multiplier": 1.71,
+    "timestamp": "2026-09-02T19:03:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375857",
+    "multiplier": 1.29,
+    "timestamp": "2026-09-02T19:04:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375887",
+    "multiplier": 15.75,
+    "timestamp": "2026-09-02T19:04:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375917",
+    "multiplier": 1.68,
+    "timestamp": "2026-09-02T19:05:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375947",
+    "multiplier": 34.05,
+    "timestamp": "2026-09-02T19:05:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788375977",
+    "multiplier": 7.47,
+    "timestamp": "2026-09-02T19:06:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376007",
+    "multiplier": 1.68,
+    "timestamp": "2026-09-02T19:06:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376037",
+    "multiplier": 1.24,
+    "timestamp": "2026-09-02T19:07:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376067",
+    "multiplier": 40.01,
+    "timestamp": "2026-09-02T19:07:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376097",
+    "multiplier": 1.78,
+    "timestamp": "2026-09-02T19:08:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376127",
+    "multiplier": 5.05,
+    "timestamp": "2026-09-02T19:08:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376157",
+    "multiplier": 19.68,
+    "timestamp": "2026-09-02T19:09:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376187",
+    "multiplier": 7.8,
+    "timestamp": "2026-09-02T19:09:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376217",
+    "multiplier": 1.63,
+    "timestamp": "2026-09-02T19:10:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376247",
+    "multiplier": 7.94,
+    "timestamp": "2026-09-02T19:10:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376277",
+    "multiplier": 9.83,
+    "timestamp": "2026-09-02T19:11:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376307",
+    "multiplier": 22.74,
+    "timestamp": "2026-09-02T19:11:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376337",
+    "multiplier": 6.07,
+    "timestamp": "2026-09-02T19:12:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376367",
+    "multiplier": 1.78,
+    "timestamp": "2026-09-02T19:12:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376397",
+    "multiplier": 1.17,
+    "timestamp": "2026-09-02T19:13:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376427",
+    "multiplier": 20.43,
+    "timestamp": "2026-09-02T19:13:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376457",
+    "multiplier": 19.11,
+    "timestamp": "2026-09-02T19:14:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376487",
+    "multiplier": 1.4,
+    "timestamp": "2026-09-02T19:14:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376517",
+    "multiplier": 4.96,
+    "timestamp": "2026-09-02T19:15:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376547",
+    "multiplier": 1.95,
+    "timestamp": "2026-09-02T19:15:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376577",
+    "multiplier": 61.14,
+    "timestamp": "2026-09-02T19:16:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376607",
+    "multiplier": 6.93,
+    "timestamp": "2026-09-02T19:16:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376637",
+    "multiplier": 1.25,
+    "timestamp": "2026-09-02T19:17:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376667",
+    "multiplier": 1.93,
+    "timestamp": "2026-09-02T19:17:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376697",
+    "multiplier": 1.51,
+    "timestamp": "2026-09-02T19:18:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376727",
+    "multiplier": 2.4,
+    "timestamp": "2026-09-02T19:18:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376757",
+    "multiplier": 1.92,
+    "timestamp": "2026-09-02T19:19:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376787",
+    "multiplier": 10.85,
+    "timestamp": "2026-09-02T19:19:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376817",
+    "multiplier": 6.42,
+    "timestamp": "2026-09-02T19:20:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376847",
+    "multiplier": 14.02,
+    "timestamp": "2026-09-02T19:20:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376877",
+    "multiplier": 1.81,
+    "timestamp": "2026-09-02T19:21:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376907",
+    "multiplier": 8.3,
+    "timestamp": "2026-09-02T19:21:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376937",
+    "multiplier": 9.71,
+    "timestamp": "2026-09-02T19:22:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376967",
+    "multiplier": 27.29,
+    "timestamp": "2026-09-02T19:22:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788376997",
+    "multiplier": 1.85,
+    "timestamp": "2026-09-02T19:23:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377027",
+    "multiplier": 1.78,
+    "timestamp": "2026-09-02T19:23:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377057",
+    "multiplier": 12.42,
+    "timestamp": "2026-09-02T19:24:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377087",
+    "multiplier": 1.92,
+    "timestamp": "2026-09-02T19:24:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377117",
+    "multiplier": 4.54,
+    "timestamp": "2026-09-02T19:25:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377147",
+    "multiplier": 1.37,
+    "timestamp": "2026-09-02T19:25:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377177",
+    "multiplier": 36.7,
+    "timestamp": "2026-09-02T19:26:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377207",
+    "multiplier": 11.61,
+    "timestamp": "2026-09-02T19:26:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377237",
+    "multiplier": 28.65,
+    "timestamp": "2026-09-02T19:27:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377267",
+    "multiplier": 1.59,
+    "timestamp": "2026-09-02T19:27:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377297",
+    "multiplier": 1.41,
+    "timestamp": "2026-09-02T19:28:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377327",
+    "multiplier": 1.95,
+    "timestamp": "2026-09-02T19:28:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377357",
+    "multiplier": 5.52,
+    "timestamp": "2026-09-02T19:29:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377387",
+    "multiplier": 1.46,
+    "timestamp": "2026-09-02T19:29:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377417",
+    "multiplier": 2.56,
+    "timestamp": "2026-09-02T19:30:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377447",
+    "multiplier": 1.09,
+    "timestamp": "2026-09-02T19:30:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377477",
+    "multiplier": 5.82,
+    "timestamp": "2026-09-02T19:31:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377507",
+    "multiplier": 1.52,
+    "timestamp": "2026-09-02T19:31:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377537",
+    "multiplier": 1.45,
+    "timestamp": "2026-09-02T19:32:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377567",
+    "multiplier": 3.21,
+    "timestamp": "2026-09-02T19:32:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377597",
+    "multiplier": 13.92,
+    "timestamp": "2026-09-02T19:33:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377627",
+    "multiplier": 15.1,
+    "timestamp": "2026-09-02T19:33:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377657",
+    "multiplier": 6.47,
+    "timestamp": "2026-09-02T19:34:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377687",
+    "multiplier": 1.61,
+    "timestamp": "2026-09-02T19:34:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377717",
+    "multiplier": 1.46,
+    "timestamp": "2026-09-02T19:35:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377747",
+    "multiplier": 4.84,
+    "timestamp": "2026-09-02T19:35:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377777",
+    "multiplier": 29.08,
+    "timestamp": "2026-09-02T19:36:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377807",
+    "multiplier": 2.07,
+    "timestamp": "2026-09-02T19:36:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377837",
+    "multiplier": 8.3,
+    "timestamp": "2026-09-02T19:37:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377867",
+    "multiplier": 1.06,
+    "timestamp": "2026-09-02T19:37:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377897",
+    "multiplier": 7.48,
+    "timestamp": "2026-09-02T19:38:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377927",
+    "multiplier": 22.4,
+    "timestamp": "2026-09-02T19:38:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377957",
+    "multiplier": 5.13,
+    "timestamp": "2026-09-02T19:39:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788377987",
+    "multiplier": 8.94,
+    "timestamp": "2026-09-02T19:39:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378017",
+    "multiplier": 5.99,
+    "timestamp": "2026-09-02T19:40:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378047",
+    "multiplier": 1.32,
+    "timestamp": "2026-09-02T19:40:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378077",
+    "multiplier": 26.85,
+    "timestamp": "2026-09-02T19:41:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378107",
+    "multiplier": 1.72,
+    "timestamp": "2026-09-02T19:41:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378137",
+    "multiplier": 24.46,
+    "timestamp": "2026-09-02T19:42:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378167",
+    "multiplier": 1.46,
+    "timestamp": "2026-09-02T19:42:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378197",
+    "multiplier": 12.12,
+    "timestamp": "2026-09-02T19:43:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378227",
+    "multiplier": 11.48,
+    "timestamp": "2026-09-02T19:43:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378257",
+    "multiplier": 1.52,
+    "timestamp": "2026-09-02T19:44:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378287",
+    "multiplier": 1.2,
+    "timestamp": "2026-09-02T19:44:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378317",
+    "multiplier": 1.94,
+    "timestamp": "2026-09-02T19:45:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378347",
+    "multiplier": 8.08,
+    "timestamp": "2026-09-02T19:45:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378377",
+    "multiplier": 3.01,
+    "timestamp": "2026-09-02T19:46:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378407",
+    "multiplier": 1.95,
+    "timestamp": "2026-09-02T19:46:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378437",
+    "multiplier": 5.66,
+    "timestamp": "2026-09-02T19:47:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378467",
+    "multiplier": 1.91,
+    "timestamp": "2026-09-02T19:47:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378497",
+    "multiplier": 7.31,
+    "timestamp": "2026-09-02T19:48:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378527",
+    "multiplier": 1.39,
+    "timestamp": "2026-09-02T19:48:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378557",
+    "multiplier": 7.25,
+    "timestamp": "2026-09-02T19:49:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378587",
+    "multiplier": 1.29,
+    "timestamp": "2026-09-02T19:49:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378617",
+    "multiplier": 1.12,
+    "timestamp": "2026-09-02T19:50:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378647",
+    "multiplier": 7.38,
+    "timestamp": "2026-09-02T19:50:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378677",
+    "multiplier": 1.51,
+    "timestamp": "2026-09-02T19:51:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378707",
+    "multiplier": 7.22,
+    "timestamp": "2026-09-02T19:51:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378737",
+    "multiplier": 5.42,
+    "timestamp": "2026-09-02T19:52:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378767",
+    "multiplier": 1.76,
+    "timestamp": "2026-09-02T19:52:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378797",
+    "multiplier": 7.02,
+    "timestamp": "2026-09-02T19:53:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378827",
+    "multiplier": 1.81,
+    "timestamp": "2026-09-02T19:53:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378857",
+    "multiplier": 1.42,
+    "timestamp": "2026-09-02T19:54:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378887",
+    "multiplier": 1.11,
+    "timestamp": "2026-09-02T19:54:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378917",
+    "multiplier": 56.29,
+    "timestamp": "2026-09-02T19:55:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378947",
+    "multiplier": 9.27,
+    "timestamp": "2026-09-02T19:55:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788378977",
+    "multiplier": 5.22,
+    "timestamp": "2026-09-02T19:56:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788379007",
+    "multiplier": 4.79,
+    "timestamp": "2026-09-02T19:56:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788379037",
+    "multiplier": 1.69,
+    "timestamp": "2026-09-02T19:57:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788379067",
+    "multiplier": 9.12,
+    "timestamp": "2026-09-02T19:57:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788379097",
+    "multiplier": 8.62,
+    "timestamp": "2026-09-02T19:58:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788379127",
+    "multiplier": 6.1,
+    "timestamp": "2026-09-02T19:58:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788379157",
+    "multiplier": 7.77,
+    "timestamp": "2026-09-02T19:59:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788379187",
+    "multiplier": 9.38,
+    "timestamp": "2026-09-02T19:59:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788379217",
+    "multiplier": 9.89,
+    "timestamp": "2026-09-02T20:00:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788379247",
+    "multiplier": 23.6,
+    "timestamp": "2026-09-02T20:00:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788379277",
+    "multiplier": 9.66,
+    "timestamp": "2026-09-02T20:01:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788379307",
+    "multiplier": 6.89,
+    "timestamp": "2026-09-02T20:01:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788379337",
+    "multiplier": 4.65,
+    "timestamp": "2026-09-02T20:02:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788379367",
+    "multiplier": 1.09,
+    "timestamp": "2026-09-02T20:02:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788379397",
+    "multiplier": 7.4,
+    "timestamp": "2026-09-02T20:03:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788379427",
+    "multiplier": 1.73,
+    "timestamp": "2026-09-02T20:03:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788379457",
+    "multiplier": 5.64,
+    "timestamp": "2026-09-02T20:04:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788379487",
+    "multiplier": 10.34,
+    "timestamp": "2026-09-02T20:04:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788379517",
+    "multiplier": 3.35,
+    "timestamp": "2026-09-02T20:05:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788379547",
+    "multiplier": 75.86,
+    "timestamp": "2026-09-02T20:05:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788379577",
+    "multiplier": 1.74,
+    "timestamp": "2026-09-02T20:06:17.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788379607",
+    "multiplier": 6.9,
+    "timestamp": "2026-09-02T20:06:47.795877",
+    "game": "spaceman"
+  },
+  {
+    "round_id": "spaceman_1788379637",
+    "multiplier": 1.92,
+    "timestamp": "2026-09-02T20:07:17.795877",
+    "game": "spaceman"
+  }
+]

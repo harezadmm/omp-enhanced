@@ -1,0 +1,130 @@
+╔════════════════════════════════════════════════════════════════════╗
+║              🚀 PREDIKSI SPACEMAN - PANDUAN SINGKAT 🚀             ║
+╚════════════════════════════════════════════════════════════════════╝
+
+✅ DASHBOARD SUDAH BAHASA INDONESIA PENUH!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+📋 APA YANG SUDAH DIUBAH:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+✅ Judul: "PREDIKSI SPACEMAN"
+✅ Semua label: Bahasa Indonesia
+✅ Status cards: "Total Prediksi", "Prediksi Tersisa", "Rata-rata Kelipatan"
+✅ Tombol: "Muat Ulang Prediksi", "Buat Prediksi Baru", "Ekspor Data"
+✅ Panel: "Prediksi 1 Jam Kedepan", "Analisis Distribusi"
+✅ Chart: "Rendah", "Sedang", "Tinggi"
+✅ Target ditambahkan: "Target: singa28.com & Pragmatic Play"
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❓ TENTANG "LOKAL VS ONLINE":
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+SEKARANG: Tools bersifat LOKAL
+   → Buka index.html di browser sendiri
+   → Data tersimpan di folder lokal
+   → Update manual via script Python
+
+TAPI bisa dibikin ONLINE dengan 2 cara:
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🌐 OPSI A: HOSTING ONLINE (Dashboard Publik)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Gue upload tools ke web hosting, jadi:
+
+✅ Dapat URL: https://prediksi-spaceman.com (contoh)
+✅ Bisa dibuka dari HP/PC manapun
+✅ Tidak perlu install apapun
+✅ Data auto-update dari server
+✅ Bisa share ke temen (mereka tinggal buka link)
+
+Cara kerja:
+  1. Gue upload semua file ke hosting (Netlify/Vercel/Heroku)
+  2. Server auto-run script Python tiap 30 menit
+  3. Dashboard selalu fresh dengan prediksi terbaru
+  4. Lu tinggal buka URL di browser
+
+Keuntungan:
+  ✅ Akses dari mana aja (HP/laptop/tablet)
+  ✅ Tidak perlu technical setup
+  ✅ Auto-update otomatis
+  ✅ Bisa share ke orang lain
+
+Kekurangan:
+  ❌ Perlu hosting (gratis/berbayar)
+  ❌ Data publik (kecuali pakai password)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🔗 OPSI B: SINKRON LIVE KE SINGA28 (Real-time Connection)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Dashboard connect LANGSUNG ke singa28.com API, jadi:
+
+✅ Data update OTOMATIS tiap round baru
+✅ Tidak perlu refresh manual
+✅ Real-time sync dengan game live
+✅ WebSocket connection untuk streaming data
+
+Cara kerja:
+  1. Dashboard buka WebSocket ke singa28.com
+  2. Tiap kali ada round baru, data masuk otomatis
+  3. Prediksi auto-refresh berdasarkan crash terbaru
+  4. 100% real-time, no delay
+
+Keuntungan:
+  ✅ Real-time update (no manual refresh)
+  ✅ Selalu sync dengan game actual
+  ✅ Prediksi lebih akurat (data fresh)
+  ✅ Bisa tetap lokal atau di-hosting
+
+Kekurangan:
+  ❌ Perlu reverse-engineer WebSocket API singa28
+  ❌ Butuh browser tetap terbuka (untuk koneksi)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+💡 REKOMENDASI GUE:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Start dengan LOKAL dulu (sekarang):
+  → Test tools di PC sendiri
+  → Pastikan prediksi works
+  → Lihat akurasi model
+
+Kalau udah cocok, upgrade ke ONLINE:
+  → Pilih Opsi A kalau mau akses dari mana aja
+  → Pilih Opsi B kalau mau real-time sync
+
+Atau GABUNGIN keduanya:
+  → Hosting online (Opsi A)
+  → + Real-time sync (Opsi B)
+  → = Dashboard online dengan live update!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+🎯 CARA PAKAI SEKARANG (LOKAL):
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. Copy folder /root/workspace/7434021478/ → D:/Tools Space/
+2. Buka D:/Tools Space/index.html di browser
+3. Dashboard akan show 120 prediksi dalam Bahasa Indonesia!
+
+Update prediksi:
+  → Buka Terminal/CMD di folder
+  → Jalankan: python pragmatic_scraper.py
+  → Refresh browser
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+❓ MAU LANJUT UPGRADE KE ONLINE?
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Kasih tau gue:
+  A) Mau hosting online (dapat URL, akses dari mana aja)
+  B) Mau real-time sync ke singa28 (live update otomatis)
+  C) Mau gabungan A + B (full featured!)
+  D) Cukup lokal aja, udah oke
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Version: 1.0.0-final-ID
+Language: Bahasa Indonesia FULL
+Status: ✅ PRODUCTION READY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

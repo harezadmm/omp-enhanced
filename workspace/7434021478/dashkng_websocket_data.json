@@ -1,0 +1,17 @@
+[
+  {
+    "timestamp": "2026-09-02T20:24:43.839472",
+    "endpoint": "wss://dashkng-88-ind-929.com/fpapi/ws/collect",
+    "type": "json",
+    "data": {
+      "id": "-2803761376972032446",
+      "type": "id"
+    }
+  },
+  {
+    "timestamp": "2026-09-02T20:24:58.832600",
+    "endpoint": "wss://dashkng-88-ind-929.com/direct-feed/feed?brand=VPM&X-Api-Key=3d21f3fb-d753-44ce-8062-1d27794585d5",
+    "type": "raw",
+    "data": "{\"error\":\"Handshake was canceled.\"}\u001e"
+  }
+]

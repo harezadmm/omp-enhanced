@@ -1,0 +1,78 @@
+{
+  "domain": "singa28.com",
+  "scan_date": "2026-09-02",
+  "results": [
+    {
+      "url": "https://singa28.com",
+      "status": 200,
+      "content_type": "text/html",
+      "accessible": true,
+      "description": "Homepage"
+    },
+    {
+      "url": "https://singa28.com/robots.txt",
+      "status": 200,
+      "content_type": "text/plain;charset=UTF-8",
+      "accessible": true,
+      "description": "Robots.txt"
+    },
+    {
+      "url": "https://singa28.com/sitemap.xml",
+      "status": 200,
+      "content_type": "application/xml",
+      "accessible": true,
+      "description": "Sitemap"
+    },
+    {
+      "url": "https://singa28.com/admin",
+      "status": 404,
+      "accessible": false,
+      "description": "Admin Panel",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://singa28.com/wp-admin",
+      "status": 200,
+      "content_type": "text/html",
+      "accessible": true,
+      "description": "WordPress Admin"
+    },
+    {
+      "url": "https://singa28.com/administrator",
+      "status": 404,
+      "accessible": false,
+      "description": "Administrator",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://singa28.com/backend",
+      "status": 404,
+      "accessible": false,
+      "description": "Backend Panel",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://singa28.com/login",
+      "status": 404,
+      "accessible": false,
+      "description": "Login Page",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://singa28.com/api",
+      "status": 404,
+      "accessible": false,
+      "description": "API Endpoint",
+      "error": "HTTP Error 404: Not Found"
+    },
+    {
+      "url": "https://singa28.com/games",
+      "status": 404,
+      "accessible": false,
+      "description": "Games Section",
+      "error": "HTTP Error 404: Not Found"
+    }
+  ],
+  "accessible_count": 4,
+  "not_accessible_count": 6
+}

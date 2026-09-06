@@ -1,0 +1,848 @@
+[
+  {
+    "type": "sent",
+    "data": {
+      "connect": {
+        "data": {},
+        "name": "js"
+      },
+      "id": 1
+    },
+    "time": "2026-09-02T20:43:22.979044"
+  },
+  {
+    "type": "received",
+    "data": {
+      "id": 1,
+      "connect": {
+        "client": "8bbb3e90-d781-4216-ac1e-1b88c8c9c216",
+        "version": "5.2.2",
+        "ping": 25,
+        "pong": true
+      }
+    },
+    "time": "2026-09-02T20:43:23.157613"
+  },
+  {
+    "type": "sent",
+    "data": {
+      "publish": {
+        "channel": "clickstream:track",
+        "data": {
+          "schema": "iglu:com.snowplowanalytics.snowplow/payload_data/jsonschema/1-0-4",
+          "data": [
+            {
+              "e": "pv",
+              "url": "https://dashkng-88-ind-929.com/en/casino/instant-games/game/pragmatic-spaceman-insta",
+              "page": "...",
+              "eid": "5ecb4158-94c7-42d7-be2c-de920dca1329",
+              "tv": "js-3.8.1",
+              "tna": "main",
+              "aid": "betbook",
+              "p": "web",
+              "cookie": "1",
+              "cs": "UTF-8",
+              "lang": "en-US",
+              "res": "1920x1080",
+              "cd": "24",
+              "dtm": "1788381802158",
+              "cx": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy9jb250ZXh0cy9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6W3sic2NoZW1hIjoiaWdsdTpjb20uc25vd3Bsb3dhbmFseXRpY3Muc25vd3Bsb3cvd2ViX3BhZ2UvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiaWQiOiJlM2YxZGJiYi01Yjk5LTRmMTMtYWMyYi0xMTg5ODlhOGUyYzAifX0seyJzY2hlbWEiOiJpZ2x1OmNvbS5nb29nbGUuYW5hbHl0aWNzL2Nvb2tpZXMvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnt9fSx7InNjaGVtYSI6ImlnbHU6Y29tLnBzcC9iaWdfYnJvdGhlcl9tZXRhL2pzb25zY2hlbWEvMS0wLTAiLCJkYXRhIjp7InYiOiIxLjE1LjAifX0seyJzY2hlbWEiOiJpZ2x1OmNvbS5wc3AvY29udGV4dC9qc29uc2NoZW1hLzItMC0wIiwiZGF0YSI6eyJicmFuZCI6IlZQTSIsImxhbmd1YWdlIjoiZW4iLCJjaGFubmVsIjoiREVTS1RPUF9BSVJfUE0iLCJvcGVyYXRvcl9pZCI6IlBNVU5JVEVEIn19XX0",
+              "vp": "1920x1080",
+              "ds": "1920x1080",
+              "vid": "1",
+              "sid": "b37a3795-ba17-4a51-bd39-93c77933b5fb",
+              "duid": "bd0a2743-2aa1-4d0f-92b6-f22f9fa746c4",
+              "stm": "1788381803156"
+            }
+          ]
+        }
+      },
+      "id": 2
+    },
+    "time": "2026-09-02T20:43:23.157848"
+  },
+  {
+    "type": "received",
+    "data": {
+      "id": 2,
+      "publish": {}
+    },
+    "time": "2026-09-02T20:43:23.492229"
+  },
+  {
+    "type": "sent",
+    "data": {
+      "connect": {
+        "data": {},
+        "name": "js"
+      },
+      "id": 1
+    },
+    "time": "2026-09-02T20:43:24.326527"
+  },
+  {
+    "type": "received",
+    "data": {
+      "id": 1,
+      "connect": {
+        "client": "ddaa2250-ceee-437b-8ea6-98517b32fb40",
+        "version": "5.2.2",
+        "ping": 25,
+        "pong": true
+      }
+    },
+    "time": "2026-09-02T20:43:24.492401"
+  },
+  {
+    "type": "sent",
+    "data": {
+      "publish": {
+        "channel": "clickstream:track",
+        "data": {
+          "schema": "iglu:com.snowplowanalytics.snowplow/payload_data/jsonschema/1-0-4",
+          "data": [
+            {
+              "e": "ue",
+              "eid": "cd94ad7e-919f-4dc1-929d-4101022f7826",
+              "tv": "js-3.8.1",
+              "tna": "widgets-toolkit_mtkkcmganydh038da",
+              "aid": "betbook",
+              "p": "web",
+              "cookie": "1",
+              "cs": "UTF-8",
+              "lang": "en-US",
+              "res": "1920x1080",
+              "cd": "24",
+              "dtm": "1788381803781",
+              "vp": "1920x1080",
+              "ds": "1920x1136",
+              "vid": "1",
+              "sid": "b37a3795-ba17-4a51-bd39-93c77933b5fb",
+              "duid": "bd0a2743-2aa1-4d0f-92b6-f22f9fa746c4",
+              "url": "https://dashkng-88-ind-929.com/en/casino/instant-games/game/pragmatic-spaceman-insta",
+              "ue_px": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy91bnN0cnVjdF9ldmVudC9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6eyJzY2hlbWEiOiJpZ2x1OmNvbS5wc3Avd2lkZ2V0X3BsYXRmb3JtX3ZpZXcvanNvbnNjaGVtYS81LTAtMCIsImRhdGEiOnsicGFnZV9pZCI6Ijg5ZTFiZWRlLTU0MjMtNDRlNy1hM2NhLTgwODg2MDE5ZDBmMiIsInBhZ2VfbmFtZSI6IkNvbnRleHQgZ2FtZSBsYXVuY2ggcGFnZSIsInBhZ2VfdHlwZSI6IkNhc2lub0dhbWVMYXVuY2giLCJwYWdlX3ZhcmlhbnRfaWQiOiIxZTI0ZWFhZS1hYmIwLTQyZTEtODhhMS1mOWMzMDg1ZDc4ZDIiLCJwYWdlX3ZhcmlhbnRfbmFtZSI6IkRlZmF1bHQiLCJleHBlcmltZW50X2lkIjpudWxsLCJleHBlcmltZW50X25hbWUiOm51bGwsImV4cGVyaW1lbnRfZ3JvdXBfY29udGVudF9pZCI6bnVsbCwiZXhwZXJpbWVudF9ncm91cF9jb250ZW50X25hbWUiOm51bGwsImVudGl0eSI6InBhZ2UifX19",
+              "cx": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy9jb250ZXh0cy9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6W3sic2NoZW1hIjoiaWdsdTpjb20uc25vd3Bsb3dhbmFseXRpY3Muc25vd3Bsb3cvd2ViX3BhZ2UvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiaWQiOiJlM2YxZGJiYi01Yjk5LTRmMTMtYWMyYi0xMTg5ODlhOGUyYzAifX0seyJzY2hlbWEiOiJpZ2x1OmNvbS5nb29nbGUuYW5hbHl0aWNzL2Nvb2tpZXMvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiX2dhIjoiR0ExLjEuMTU0NjY3OTYxMC4xNzg4MzgxODAzIn19LHsic2NoZW1hIjoiaWdsdTpjb20ucHNwL2JpZ19icm90aGVyX21ldGEvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsidiI6IjEuMTUuMCJ9fSx7InNjaGVtYSI6ImlnbHU6Y29tLnBzcC9jb250ZXh0L2pzb25zY2hlbWEvMi0wLTAiLCJkYXRhIjp7Imxhbmd1YWdlIjoiZW4iLCJjaGFubmVsIjoiREVTS1RPUF9BSVJfUE0iLCJicmFuZCI6IlZQTSIsIm9wZXJhdG9yX2lkIjoiUE1VTklURUQifX1dfQ",
+              "stm": "1788381804491"
+            }
+          ]
+        }
+      },
+      "id": 2
+    },
+    "time": "2026-09-02T20:43:24.492550"
+  },
+  {
+    "type": "received",
+    "data": {
+      "id": 2,
+      "publish": {}
+    },
+    "time": "2026-09-02T20:43:24.664080"
+  },
+  {
+    "type": "sent",
+    "data": {
+      "url": "https://dashkng-88-ind-929.com/en/casino/instant-games/game/pragmatic-spaceman-insta",
+      "window_id": "1788381803164",
+      "counter": "0",
+      "script_version": 16,
+      "cleaner": "false",
+      "nat_token": null,
+      "doc_ref": ""
+    },
+    "time": "2026-09-02T20:43:25.050909"
+  },
+  {
+    "type": "sent",
+    "data": {
+      "type": "browserData",
+      "data": {
+        "browser_discover": {
+          "is_webkit": false,
+          "is_firefox": false,
+          "is_ya": false,
+          "is_opera": false,
+          "is_safari": false,
+          "is_chrome": false,
+          "is_ie": false,
+          "is_edge": false,
+          "is_samsung_browser": false
+        },
+        "is_private_mode": false,
+        "is_canvas_defender_enable": false,
+        "is_canvas_noise_spoofed": false,
+        "is_headless_webkit": true,
+        "is_headless_gecko": false,
+        "is_webkit_user_agent_spoofed": false,
+        "is_gecko_user_agent_spoofed": false,
+        "is_webkit_emulated": false,
+        "is_webgl_defender_enable": null,
+        "is_webgl_2_supported": false,
+        "is_plugins_blocked": true,
+        "is_bot_detected": true,
+        "is_browser_navigator_spoofed": true,
+        "is_audio_spoofed": false,
+        "is_bluetooth_available": false,
+        "is_browser_engine_spoofed": false,
+        "is_fonts_spoofed": false,
+        "is_web_rtc_available": true,
+        "is_gyro_api_supported": true,
+        "webdriver": true,
+        "device_memory": 32,
+        "hardware_concurrency": 8,
+        "screen": {
+          "height": 1080,
+          "width": 1920,
+          "color_depth": 24,
+          "device_pixel_ratio": 1,
+          "avail_height": 1080,
+          "avail_width": 1920,
+          "avail_top": -1,
+          "avail_left": -1,
+          "max_touch_points": 0,
+          "orientation": "landscape-primary"
+        },
+        "timezone_offset": 0,
+        "timezone": "UTC",
+        "storage": {
+          "usage": 1788,
+          "quota": 6442452732
+        },
+        "session_storage": true,
+        "local_storage": true,
+        "indexed_db": true,
+        "add_behavior": false,
+        "open_database": false,
+        "cpu_class": "not available",
+        "platform": "Linux x86_64",
+        "plugins": [],
+        "canvas_fp": "cc25106c8de155bc31de56694d5941531cf2676d882974464faba767f79aeb87",
+        "webgl": null,
+        "canvas_hash": "",
+        "webgl_vendor_and_renderer": "UNAVAILABLE",
+        "ad_block": false,
+        "has_lied_languages": false,
+        "has_lied_resolution": false,
+        "has_lied_os": true,
+        "has_lied_browser": false,
+        "touch_support": [
+          0,
+          false,
+          false
+        ],
+        "fonts": [
+          "American Typewriter",
+          "Andale Mono",
+          "Arial",
+          "Arial Black",
+          "Arial Narrow",
+          "Arial Rounded MT Bold",
+          "Arial Unicode MS",
+          "Avenir",
+          "Avenir Next",
+          "Avenir Next Condensed",
+          "Bahnschrift",
+          "Baskerville",
+          "Big Caslon",
+          "Bodoni 72",
+          "Bodoni 72 Oldstyle",
+          "Bodoni 72 Smallcaps",
+          "Bradley Hand",
+          "Brush Script MT",
+          "Calibri",
+          "Cambria",
+          "Cambria Math",
+          "Candara",
+          "Chalkboard",
+          "Chalkboard SE",
+          "Chalkduster",
+          "Charter",
+          "Cochin",
+          "Comic Sans MS",
+          "Consolas",
+          "Constantia",
+          "Copperplate",
+          "Corbel",
+          "Courier",
+          "Courier New",
+          "DIN Alternate",
+          "DIN Condensed",
+          "Didot",
+          "Ebrima",
+          "Franklin Gothic Medium",
+          "Futura",
+          "Gabriola",
+          "Gadugi",
+          "Geneva",
+          "Georgia",
+          "Gill Sans",
+          "Helvetica",
+          "Helvetica Neue",
+          "Herculanum",
+          "Hoefler Text",
+          "HoloLens MDL2 Assets",
+          "Impact",
+          "Ink Free",
+          "Javanese Text",
+          "Leelawadee UI",
+          "Lucida Console",
+          "Lucida Grande",
+          "Lucida Sans Unicode",
+          "Luminari",
+          "MS Gothic",
+          "MV Boli",
+          "Malgun Gothic",
+          "Marker Felt",
+          "Marlett",
+          "Menlo",
+          "Microsoft Himalaya",
+          "Microsoft JhengHei",
+          "Microsoft New Tai Lue",
+          "Microsoft PhagsPa",
+          "Microsoft Sans Serif",
+          "Microsoft Tai Le",
+          "Microsoft YaHei",
+          "Microsoft Yi Baiti",
+          "MingLiU-ExtB",
+          "Monaco",
+          "Mongolian Baiti",
+          "Myanmar Text",
+          "Nirmala UI",
+          "Noteworthy",
+          "Optima",
+          "Palatino",
+          "Palatino Linotype",
+          "Papyrus",
+          "Phosphate",
+          "Rockwell",
+          "Savoye LET",
+          "Segoe MDL2 Assets",
+          "Segoe Print",
+          "Segoe Script",
+          "Segoe UI",
+          "Segoe UI Emoji",
+          "Segoe UI Historic",
+          "Segoe UI Symbol",
+          "SignPainter",
+          "SimSun",
+          "Sitka",
+          "Skia",
+          "Snell Roundhand",
+          "Sylfaen",
+          "Symbol",
+          "Tahoma",
+          "Times",
+          "Times New Roman",
+          "Trattatello",
+          "Trebuchet MS",
+          "Verdana",
+          "Webdings",
+          "Wingdings",
+          "Yu Gothic",
+          "Zapfino"
+        ],
+        "connection": {
+          "downlink": 9.7,
+          "effective_type": "4g",
+          "rtt": -1
+        },
+        "battery": {
+          "charging": true,
+          "charging_time": 0,
+          "discharging_time": null,
+          "charge_level": 100
+        }
+      }
+    },
+    "time": "2026-09-02T20:43:25.051091"
+  },
+  {
+    "type": "received",
+    "data": {
+      "id": "-6123040788929740801",
+      "type": "id"
+    },
+    "time": "2026-09-02T20:43:25.051224"
+  },
+  {
+    "type": "received",
+    "data": {
+      "type": "cookie",
+      "name": "fuid",
+      "value": "1.4746572963434749115",
+      "days": 730
+    },
+    "time": "2026-09-02T20:43:25.268740"
+  },
+  {
+    "type": "sent",
+    "data": {
+      "publish": {
+        "channel": "clickstream:track",
+        "data": {
+          "schema": "iglu:com.snowplowanalytics.snowplow/payload_data/jsonschema/1-0-4",
+          "data": [
+            {
+              "e": "ue",
+              "eid": "2a139307-067e-4f47-a379-bb9779e81ea6",
+              "tv": "js-3.8.1",
+              "tna": "widgets-toolkit_mtkkcmganydh038da",
+              "aid": "betbook",
+              "p": "web",
+              "cookie": "1",
+              "cs": "UTF-8",
+              "lang": "en-US",
+              "res": "1920x1080",
+              "cd": "24",
+              "dtm": "1788381805789",
+              "vp": "1920x1080",
+              "ds": "1920x1136",
+              "vid": "1",
+              "sid": "b37a3795-ba17-4a51-bd39-93c77933b5fb",
+              "duid": "bd0a2743-2aa1-4d0f-92b6-f22f9fa746c4",
+              "url": "https://dashkng-88-ind-929.com/en/casino/instant-games/game/pragmatic-spaceman-insta",
+              "ue_px": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy91bnN0cnVjdF9ldmVudC9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6eyJzY2hlbWEiOiJpZ2x1OmNvbS5wc3Avd2lkZ2V0X3BsYXRmb3JtX3ZpZXcvanNvbnNjaGVtYS81LTAtMCIsImRhdGEiOnsiZW50aXR5Ijoid2lkZ2V0IiwiaXRlbV9pZCI6InByYWdtYXRpYy1zcGFjZW1hbi1pbnN0YSIsIml0ZW1fdHlwZSI6Imluc3RhbnQtZ2FtZXMiLCJ3aWRnZXRfaWQiOiIyOWI3Y2UyZC03MWJkLTQ5MTgtYTViNi04NDA2YThlYjMyOTAiLCJ3aWRnZXRfbmFtZSI6IkdhbWUgbGF1bmNoIHdpZGdldCIsIndpZGdldF90eXBlIjoiQ29udGV4dEdhbWVMYXVuY2hXaWRnZXQiLCJ3aWRnZXRfcG9zaXRpb24iOjEsInBhZ2VfaWQiOiI4OWUxYmVkZS01NDIzLTQ0ZTctYTNjYS04MDg4NjAxOWQwZjIiLCJwYWdlX25hbWUiOiJDb250ZXh0IGdhbWUgbGF1bmNoIHBhZ2UiLCJwYWdlX3R5cGUiOiJDYXNpbm9HYW1lTGF1bmNoIiwicGFnZV92YXJpYW50X2lkIjoiMWUyNGVhYWUtYWJiMC00MmUxLTg4YTEtZjljMzA4NWQ3OGQyIiwicGFnZV92YXJpYW50X25hbWUiOiJEZWZhdWx0In19fQ",
+              "cx": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy9jb250ZXh0cy9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6W3sic2NoZW1hIjoiaWdsdTpjb20uc25vd3Bsb3dhbmFseXRpY3Muc25vd3Bsb3cvd2ViX3BhZ2UvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiaWQiOiJlM2YxZGJiYi01Yjk5LTRmMTMtYWMyYi0xMTg5ODlhOGUyYzAifX0seyJzY2hlbWEiOiJpZ2x1OmNvbS5nb29nbGUuYW5hbHl0aWNzL2Nvb2tpZXMvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiX2dhIjoiR0ExLjEuMTU0NjY3OTYxMC4xNzg4MzgxODAzIn19LHsic2NoZW1hIjoiaWdsdTpjb20ucHNwL2JpZ19icm90aGVyX21ldGEvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsidiI6IjEuMTUuMCJ9fSx7InNjaGVtYSI6ImlnbHU6Y29tLnBzcC9jb250ZXh0L2pzb25zY2hlbWEvMi0wLTAiLCJkYXRhIjp7Imxhbmd1YWdlIjoiZW4iLCJjaGFubmVsIjoiREVTS1RPUF9BSVJfUE0iLCJicmFuZCI6IlZQTSIsIm9wZXJhdG9yX2lkIjoiUE1VTklURUQifX1dfQ",
+              "stm": "1788381805790"
+            }
+          ]
+        }
+      },
+      "id": 3
+    },
+    "time": "2026-09-02T20:43:25.795638"
+  },
+  {
+    "type": "received",
+    "data": {
+      "id": 3,
+      "publish": {}
+    },
+    "time": "2026-09-02T20:43:25.962843"
+  },
+  {
+    "type": "sent",
+    "data": {
+      "publish": {
+        "channel": "clickstream:track",
+        "data": {
+          "schema": "iglu:com.snowplowanalytics.snowplow/payload_data/jsonschema/1-0-4",
+          "data": [
+            {
+              "e": "ue",
+              "eid": "f93d0866-772d-41e0-b4d7-56dfc4114c0e",
+              "tv": "js-3.8.1",
+              "tna": "widgets-toolkit_mtkkcmganydh038da",
+              "aid": "betbook",
+              "p": "web",
+              "cookie": "1",
+              "cs": "UTF-8",
+              "lang": "en-US",
+              "res": "1920x1080",
+              "cd": "24",
+              "dtm": "1788381806368",
+              "vp": "1920x1080",
+              "ds": "1920x1080",
+              "vid": "1",
+              "sid": "b37a3795-ba17-4a51-bd39-93c77933b5fb",
+              "duid": "bd0a2743-2aa1-4d0f-92b6-f22f9fa746c4",
+              "url": "https://dashkng-88-ind-929.com/en/casino/instant-games/game/pragmatic-spaceman-insta",
+              "ue_px": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy91bnN0cnVjdF9ldmVudC9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6eyJzY2hlbWEiOiJpZ2x1OmNvbS5wc3Avd2lkZ2V0X3BsYXRmb3JtX3ZpZXcvanNvbnNjaGVtYS81LTAtMCIsImRhdGEiOnsiZW50aXR5IjoiYXBwbGljYXRpb24tc2V0dGluZyIsImFwcGxpY2F0aW9uX3NldHRpbmdfdmFyaWFudF9pZCI6ImIxY2Q3Mzc3LTJmNDctNDc5NS1iNmIzLTA1ZDA5YWY5M2ZiZSIsImFwcGxpY2F0aW9uX3NldHRpbmdfdmFyaWFudF9uYW1lIjoiRGVmYXVsdCAoaW1wb3J0ZWQgYXQgMjAyNi0wMi0wOVQxMDo1OToyMy41MTdaKSIsImFwcGxpY2F0aW9uX3NldHRpbmdfdHlwZSI6IkRlc2t0b3BIZWFkZXIifX19",
+              "cx": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy9jb250ZXh0cy9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6W3sic2NoZW1hIjoiaWdsdTpjb20uc25vd3Bsb3dhbmFseXRpY3Muc25vd3Bsb3cvd2ViX3BhZ2UvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiaWQiOiJlM2YxZGJiYi01Yjk5LTRmMTMtYWMyYi0xMTg5ODlhOGUyYzAifX0seyJzY2hlbWEiOiJpZ2x1OmNvbS5nb29nbGUuYW5hbHl0aWNzL2Nvb2tpZXMvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiX2dhIjoiR0ExLjEuMTU0NjY3OTYxMC4xNzg4MzgxODAzIn19LHsic2NoZW1hIjoiaWdsdTpjb20ucHNwL2JpZ19icm90aGVyX21ldGEvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsidiI6IjEuMTUuMCJ9fSx7InNjaGVtYSI6ImlnbHU6Y29tLnBzcC9jb250ZXh0L2pzb25zY2hlbWEvMi0wLTAiLCJkYXRhIjp7Imxhbmd1YWdlIjoiZW4iLCJjaGFubmVsIjoiREVTS1RPUF9BSVJfUE0iLCJicmFuZCI6IlZQTSIsIm9wZXJhdG9yX2lkIjoiUE1VTklURUQifX1dfQ",
+              "stm": "1788381806374"
+            }
+          ]
+        }
+      },
+      "id": 4
+    },
+    "time": "2026-09-02T20:43:26.379072"
+  },
+  {
+    "type": "received",
+    "data": {
+      "id": 4,
+      "publish": {}
+    },
+    "time": "2026-09-02T20:43:26.544038"
+  },
+  {
+    "type": "sent",
+    "data": {
+      "publish": {
+        "channel": "clickstream:track",
+        "data": {
+          "schema": "iglu:com.snowplowanalytics.snowplow/payload_data/jsonschema/1-0-4",
+          "data": [
+            {
+              "e": "ue",
+              "eid": "e57b74bc-a866-465a-945e-1aea2daf4c9f",
+              "tv": "js-3.8.1",
+              "tna": "widgets-toolkit_mtkkcmganydh038da",
+              "aid": "betbook",
+              "p": "web",
+              "cookie": "1",
+              "cs": "UTF-8",
+              "lang": "en-US",
+              "res": "1920x1080",
+              "cd": "24",
+              "dtm": "1788381806569",
+              "vp": "1920x1080",
+              "ds": "1920x1080",
+              "vid": "1",
+              "sid": "b37a3795-ba17-4a51-bd39-93c77933b5fb",
+              "duid": "bd0a2743-2aa1-4d0f-92b6-f22f9fa746c4",
+              "url": "https://dashkng-88-ind-929.com/en/casino/instant-games/game/pragmatic-spaceman-insta",
+              "ue_px": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy91bnN0cnVjdF9ldmVudC9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6eyJzY2hlbWEiOiJpZ2x1OmNvbS5wc3Avd2lkZ2V0X3BsYXRmb3JtX3ZpZXcvanNvbnNjaGVtYS81LTAtMCIsImRhdGEiOnsiYXBwbGljYXRpb25fc2V0dGluZ192YXJpYW50X2lkIjoiYjFjZDczNzctMmY0Ny00Nzk1LWI2YjMtMDVkMDlhZjkzZmJlIiwiYXBwbGljYXRpb25fc2V0dGluZ192YXJpYW50X25hbWUiOiJEZWZhdWx0IChpbXBvcnRlZCBhdCAyMDI2LTAyLTA5VDEwOjU5OjIzLjUxN1opIiwiYXBwbGljYXRpb25fc2V0dGluZ190eXBlIjoiRGVza3RvcEhlYWRlciIsImVudGl0eSI6IndpZGdldC1pdGVtIiwiaXRlbV9pZCI6Im1lbnUiLCJpdGVtX25hbWUiOiJtZW51IiwiaXRlbV90eXBlIjoiRGVza3RvcE5hdmlnYXRpb25JdGVtIiwiaXRlbV9wb3NpdGlvbiI6MH19fQ",
+              "cx": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy9jb250ZXh0cy9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6W3sic2NoZW1hIjoiaWdsdTpjb20uc25vd3Bsb3dhbmFseXRpY3Muc25vd3Bsb3cvd2ViX3BhZ2UvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiaWQiOiJlM2YxZGJiYi01Yjk5LTRmMTMtYWMyYi0xMTg5ODlhOGUyYzAifX0seyJzY2hlbWEiOiJpZ2x1OmNvbS5nb29nbGUuYW5hbHl0aWNzL2Nvb2tpZXMvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiX2dhIjoiR0ExLjEuMTU0NjY3OTYxMC4xNzg4MzgxODAzIn19LHsic2NoZW1hIjoiaWdsdTpjb20ucHNwL2JpZ19icm90aGVyX21ldGEvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsidiI6IjEuMTUuMCJ9fSx7InNjaGVtYSI6ImlnbHU6Y29tLnBzcC9jb250ZXh0L2pzb25zY2hlbWEvMi0wLTAiLCJkYXRhIjp7Imxhbmd1YWdlIjoiZW4iLCJjaGFubmVsIjoiREVTS1RPUF9BSVJfUE0iLCJicmFuZCI6IlZQTSIsIm9wZXJhdG9yX2lkIjoiUE1VTklURUQifX1dfQ",
+              "stm": "1788381806570"
+            }
+          ]
+        }
+      },
+      "id": 5
+    },
+    "time": "2026-09-02T20:43:26.582922"
+  },
+  {
+    "type": "received",
+    "data": {
+      "id": 5,
+      "publish": {}
+    },
+    "time": "2026-09-02T20:43:26.750756"
+  },
+  {
+    "type": "sent",
+    "data": {
+      "publish": {
+        "channel": "clickstream:track",
+        "data": {
+          "schema": "iglu:com.snowplowanalytics.snowplow/payload_data/jsonschema/1-0-4",
+          "data": [
+            {
+              "e": "ue",
+              "eid": "cb857288-d48f-428a-a842-806cf456adca",
+              "tv": "js-3.8.1",
+              "tna": "widgets-toolkit_mtkkcmganydh038da",
+              "aid": "betbook",
+              "p": "web",
+              "cookie": "1",
+              "cs": "UTF-8",
+              "lang": "en-US",
+              "res": "1920x1080",
+              "cd": "24",
+              "dtm": "1788381806570",
+              "vp": "1920x1080",
+              "ds": "1920x1080",
+              "vid": "1",
+              "sid": "b37a3795-ba17-4a51-bd39-93c77933b5fb",
+              "duid": "bd0a2743-2aa1-4d0f-92b6-f22f9fa746c4",
+              "url": "https://dashkng-88-ind-929.com/en/casino/instant-games/game/pragmatic-spaceman-insta",
+              "ue_px": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy91bnN0cnVjdF9ldmVudC9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6eyJzY2hlbWEiOiJpZ2x1OmNvbS5wc3Avd2lkZ2V0X3BsYXRmb3JtX3ZpZXcvanNvbnNjaGVtYS81LTAtMCIsImRhdGEiOnsiYXBwbGljYXRpb25fc2V0dGluZ192YXJpYW50X2lkIjoiYjFjZDczNzctMmY0Ny00Nzk1LWI2YjMtMDVkMDlhZjkzZmJlIiwiYXBwbGljYXRpb25fc2V0dGluZ192YXJpYW50X25hbWUiOiJEZWZhdWx0IChpbXBvcnRlZCBhdCAyMDI2LTAyLTA5VDEwOjU5OjIzLjUxN1opIiwiYXBwbGljYXRpb25fc2V0dGluZ190eXBlIjoiRGVza3RvcEhlYWRlciIsImVudGl0eSI6IndpZGdldC1pdGVtIiwiaXRlbV9pZCI6ImxvZ28iLCJpdGVtX25hbWUiOiJMb2dvIG5hbWUiLCJpdGVtX3R5cGUiOiJEZXNrdG9wTmF2aWdhdGlvbkl0ZW0iLCJpdGVtX3Bvc2l0aW9uIjoxfX19",
+              "cx": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy9jb250ZXh0cy9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6W3sic2NoZW1hIjoiaWdsdTpjb20uc25vd3Bsb3dhbmFseXRpY3Muc25vd3Bsb3cvd2ViX3BhZ2UvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiaWQiOiJlM2YxZGJiYi01Yjk5LTRmMTMtYWMyYi0xMTg5ODlhOGUyYzAifX0seyJzY2hlbWEiOiJpZ2x1OmNvbS5nb29nbGUuYW5hbHl0aWNzL2Nvb2tpZXMvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiX2dhIjoiR0ExLjEuMTU0NjY3OTYxMC4xNzg4MzgxODAzIn19LHsic2NoZW1hIjoiaWdsdTpjb20ucHNwL2JpZ19icm90aGVyX21ldGEvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsidiI6IjEuMTUuMCJ9fSx7InNjaGVtYSI6ImlnbHU6Y29tLnBzcC9jb250ZXh0L2pzb25zY2hlbWEvMi0wLTAiLCJkYXRhIjp7Imxhbmd1YWdlIjoiZW4iLCJjaGFubmVsIjoiREVTS1RPUF9BSVJfUE0iLCJicmFuZCI6IlZQTSIsIm9wZXJhdG9yX2lkIjoiUE1VTklURUQifX1dfQ",
+              "stm": "1788381806749"
+            },
+            {
+              "e": "ue",
+              "eid": "4e0324a9-9da7-4f78-bc29-d3dca8f69e65",
+              "tv": "js-3.8.1",
+              "tna": "widgets-toolkit_mtkkcmganydh038da",
+              "aid": "betbook",
+              "p": "web",
+              "cookie": "1",
+              "cs": "UTF-8",
+              "lang": "en-US",
+              "res": "1920x1080",
+              "cd": "24",
+              "dtm": "1788381806571",
+              "vp": "1920x1080",
+              "ds": "1920x1080",
+              "vid": "1",
+              "sid": "b37a3795-ba17-4a51-bd39-93c77933b5fb",
+              "duid": "bd0a2743-2aa1-4d0f-92b6-f22f9fa746c4",
+              "url": "https://dashkng-88-ind-929.com/en/casino/instant-games/game/pragmatic-spaceman-insta",
+              "ue_px": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy91bnN0cnVjdF9ldmVudC9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6eyJzY2hlbWEiOiJpZ2x1OmNvbS5wc3Avd2lkZ2V0X3BsYXRmb3JtX3ZpZXcvanNvbnNjaGVtYS81LTAtMCIsImRhdGEiOnsiYXBwbGljYXRpb25fc2V0dGluZ192YXJpYW50X2lkIjoiYjFjZDczNzctMmY0Ny00Nzk1LWI2YjMtMDVkMDlhZjkzZmJlIiwiYXBwbGljYXRpb25fc2V0dGluZ192YXJpYW50X25hbWUiOiJEZWZhdWx0IChpbXBvcnRlZCBhdCAyMDI2LTAyLTA5VDEwOjU5OjIzLjUxN1opIiwiYXBwbGljYXRpb25fc2V0dGluZ190eXBlIjoiRGVza3RvcEhlYWRlciIsImVudGl0eSI6IndpZGdldC1pdGVtIiwiaXRlbV9pZCI6Ijc2Yjc3MDY0LWNhYWQtNDgzNi05NTRkLTg2MWRjMWI4MGRmMiIsIml0ZW1fbmFtZSI6IlByb21vIChIZWFkZXIpIChpbXBvcnRlZCBhdCAyMDI2LTAyLTA5VDEwOjU5OjIzLjUxOFopIiwiaXRlbV90eXBlIjoiRGVza3RvcE5hdmlnYXRpb25JdGVtIiwiaXRlbV9wb3NpdGlvbiI6Mn19fQ",
+              "cx": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy9jb250ZXh0cy9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6W3sic2NoZW1hIjoiaWdsdTpjb20uc25vd3Bsb3dhbmFseXRpY3Muc25vd3Bsb3cvd2ViX3BhZ2UvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiaWQiOiJlM2YxZGJiYi01Yjk5LTRmMTMtYWMyYi0xMTg5ODlhOGUyYzAifX0seyJzY2hlbWEiOiJpZ2x1OmNvbS5nb29nbGUuYW5hbHl0aWNzL2Nvb2tpZXMvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiX2dhIjoiR0ExLjEuMTU0NjY3OTYxMC4xNzg4MzgxODAzIn19LHsic2NoZW1hIjoiaWdsdTpjb20ucHNwL2JpZ19icm90aGVyX21ldGEvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsidiI6IjEuMTUuMCJ9fSx7InNjaGVtYSI6ImlnbHU6Y29tLnBzcC9jb250ZXh0L2pzb25zY2hlbWEvMi0wLTAiLCJkYXRhIjp7Imxhbmd1YWdlIjoiZW4iLCJjaGFubmVsIjoiREVTS1RPUF9BSVJfUE0iLCJicmFuZCI6IlZQTSIsIm9wZXJhdG9yX2lkIjoiUE1VTklURUQifX1dfQ",
+              "stm": "1788381806749"
+            },
+            {
+              "e": "ue",
+              "eid": "38d93d69-e7ed-410f-a2c4-9c5d1557a890",
+              "tv": "js-3.8.1",
+              "tna": "widgets-toolkit_mtkkcmganydh038da",
+              "aid": "betbook",
+              "p": "web",
+              "cookie": "1",
+              "cs": "UTF-8",
+              "lang": "en-US",
+              "res": "1920x1080",
+              "cd": "24",
+              "dtm": "1788381806576",
+              "vp": "1920x1080",
+              "ds": "1920x1080",
+              "vid": "1",
+              "sid": "b37a3795-ba17-4a51-bd39-93c77933b5fb",
+              "duid": "bd0a2743-2aa1-4d0f-92b6-f22f9fa746c4",
+              "url": "https://dashkng-88-ind-929.com/en/casino/instant-games/game/pragmatic-spaceman-insta",
+              "ue_px": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy91bnN0cnVjdF9ldmVudC9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6eyJzY2hlbWEiOiJpZ2x1OmNvbS5wc3Avd2lkZ2V0X3BsYXRmb3JtX3ZpZXcvanNvbnNjaGVtYS81LTAtMCIsImRhdGEiOnsiYXBwbGljYXRpb25fc2V0dGluZ192YXJpYW50X2lkIjoiYjFjZDczNzctMmY0Ny00Nzk1LWI2YjMtMDVkMDlhZjkzZmJlIiwiYXBwbGljYXRpb25fc2V0dGluZ192YXJpYW50X25hbWUiOiJEZWZhdWx0IChpbXBvcnRlZCBhdCAyMDI2LTAyLTA5VDEwOjU5OjIzLjUxN1opIiwiYXBwbGljYXRpb25fc2V0dGluZ190eXBlIjoiRGVza3RvcEhlYWRlciIsImVudGl0eSI6IndpZGdldC1pdGVtIiwiaXRlbV9pZCI6IjQ5YTUzN2YwLTU1Y2YtNGZmNy1hNTA0LWY3NDYzNTNjMGJmYSIsIml0ZW1fbmFtZSI6IlNwb3J0cyAoSGVhZGVyKSAoaW1wb3J0ZWQgYXQgMjAyNi0wMi0wOVQxMDo1OToyMy41MThaKSIsIml0ZW1fdHlwZSI6IkRlc2t0b3BOYXZpZ2F0aW9uSXRlbSIsIml0ZW1fcG9zaXRpb24iOjN9fX0",
+              "cx": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy9jb250ZXh0cy9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6W3sic2NoZW1hIjoiaWdsdTpjb20uc25vd3Bsb3dhbmFseXRpY3Muc25vd3Bsb3cvd2ViX3BhZ2UvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiaWQiOiJlM2YxZGJiYi01Yjk5LTRmMTMtYWMyYi0xMTg5ODlhOGUyYzAifX0seyJzY2hlbWEiOiJpZ2x1OmNvbS5nb29nbGUuYW5hbHl0aWNzL2Nvb2tpZXMvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiX2dhIjoiR0ExLjEuMTU0NjY3OTYxMC4xNzg4MzgxODAzIn19LHsic2NoZW1hIjoiaWdsdTpjb20ucHNwL2JpZ19icm90aGVyX21ldGEvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsidiI6IjEuMTUuMCJ9fSx7InNjaGVtYSI6ImlnbHU6Y29tLnBzcC9jb250ZXh0L2pzb25zY2hlbWEvMi0wLTAiLCJkYXRhIjp7Imxhbmd1YWdlIjoiZW4iLCJjaGFubmVsIjoiREVTS1RPUF9BSVJfUE0iLCJicmFuZCI6IlZQTSIsIm9wZXJhdG9yX2lkIjoiUE1VTklURUQifX1dfQ",
+              "stm": "1788381806749"
+            },
+            {
+              "e": "ue",
+              "eid": "609d8021-499d-4232-8065-c7551973d214",
+              "tv": "js-3.8.1",
+              "tna": "widgets-toolkit_mtkkcmganydh038da",
+              "aid": "betbook",
+              "p": "web",
+              "cookie": "1",
+              "cs": "UTF-8",
+              "lang": "en-US",
+              "res": "1920x1080",
+              "cd": "24",
+              "dtm": "1788381806577",
+              "vp": "1920x1080",
+              "ds": "1920x1080",
+              "vid": "1",
+              "sid": "b37a3795-ba17-4a51-bd39-93c77933b5fb",
+              "duid": "bd0a2743-2aa1-4d0f-92b6-f22f9fa746c4",
+              "url": "https://dashkng-88-ind-929.com/en/casino/instant-games/game/pragmatic-spaceman-insta",
+              "ue_px": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy91bnN0cnVjdF9ldmVudC9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6eyJzY2hlbWEiOiJpZ2x1OmNvbS5wc3Avd2lkZ2V0X3BsYXRmb3JtX3ZpZXcvanNvbnNjaGVtYS81LTAtMCIsImRhdGEiOnsiYXBwbGljYXRpb25fc2V0dGluZ192YXJpYW50X2lkIjoiYjFjZDczNzctMmY0Ny00Nzk1LWI2YjMtMDVkMDlhZjkzZmJlIiwiYXBwbGljYXRpb25fc2V0dGluZ192YXJpYW50X25hbWUiOiJEZWZhdWx0IChpbXBvcnRlZCBhdCAyMDI2LTAyLTA5VDEwOjU5OjIzLjUxN1opIiwiYXBwbGljYXRpb25fc2V0dGluZ190eXBlIjoiRGVza3RvcEhlYWRlciIsImVudGl0eSI6IndpZGdldC1pdGVtIiwiaXRlbV9pZCI6IjQ0NmZiNmQzLTU2ZDUtNDBhMC1hMTg2LWMzZDcyODIxYzliZCIsIml0ZW1fbmFtZSI6IkNhc2lubyAoSGVhZGVyKSAoaW1wb3J0ZWQgYXQgMjAyNi0wMi0wOVQxMDo1OToyMy41MThaKSIsIml0ZW1fdHlwZSI6IkRlc2t0b3BOYXZpZ2F0aW9uSXRlbSIsIml0ZW1fcG9zaXRpb24iOjR9fX0",
+              "cx": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy9jb250ZXh0cy9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6W3sic2NoZW1hIjoiaWdsdTpjb20uc25vd3Bsb3dhbmFseXRpY3Muc25vd3Bsb3cvd2ViX3BhZ2UvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiaWQiOiJlM2YxZGJiYi01Yjk5LTRmMTMtYWMyYi0xMTg5ODlhOGUyYzAifX0seyJzY2hlbWEiOiJpZ2x1OmNvbS5nb29nbGUuYW5hbHl0aWNzL2Nvb2tpZXMvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiX2dhIjoiR0ExLjEuMTU0NjY3OTYxMC4xNzg4MzgxODAzIn19LHsic2NoZW1hIjoiaWdsdTpjb20ucHNwL2JpZ19icm90aGVyX21ldGEvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsidiI6IjEuMTUuMCJ9fSx7InNjaGVtYSI6ImlnbHU6Y29tLnBzcC9jb250ZXh0L2pzb25zY2hlbWEvMi0wLTAiLCJkYXRhIjp7Imxhbmd1YWdlIjoiZW4iLCJjaGFubmVsIjoiREVTS1RPUF9BSVJfUE0iLCJicmFuZCI6IlZQTSIsIm9wZXJhdG9yX2lkIjoiUE1VTklURUQifX1dfQ",
+              "stm": "1788381806749"
+            },
+            {
+              "e": "ue",
+              "eid": "7337719e-03b0-4d35-be02-21ac97b32ad7",
+              "tv": "js-3.8.1",
+              "tna": "widgets-toolkit_mtkkcmganydh038da",
+              "aid": "betbook",
+              "p": "web",
+              "cookie": "1",
+              "cs": "UTF-8",
+              "lang": "en-US",
+              "res": "1920x1080",
+              "cd": "24",
+              "dtm": "1788381806578",
+              "vp": "1920x1080",
+              "ds": "1920x1080",
+              "vid": "1",
+              "sid": "b37a3795-ba17-4a51-bd39-93c77933b5fb",
+              "duid": "bd0a2743-2aa1-4d0f-92b6-f22f9fa746c4",
+              "url": "https://dashkng-88-ind-929.com/en/casino/instant-games/game/pragmatic-spaceman-insta",
+              "ue_px": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy91bnN0cnVjdF9ldmVudC9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6eyJzY2hlbWEiOiJpZ2x1OmNvbS5wc3Avd2lkZ2V0X3BsYXRmb3JtX3ZpZXcvanNvbnNjaGVtYS81LTAtMCIsImRhdGEiOnsiYXBwbGljYXRpb25fc2V0dGluZ192YXJpYW50X2lkIjoiYjFjZDczNzctMmY0Ny00Nzk1LWI2YjMtMDVkMDlhZjkzZmJlIiwiYXBwbGljYXRpb25fc2V0dGluZ192YXJpYW50X25hbWUiOiJEZWZhdWx0IChpbXBvcnRlZCBhdCAyMDI2LTAyLTA5VDEwOjU5OjIzLjUxN1opIiwiYXBwbGljYXRpb25fc2V0dGluZ190eXBlIjoiRGVza3RvcEhlYWRlciIsImVudGl0eSI6IndpZGdldC1pdGVtIiwiaXRlbV9pZCI6IjU5YWMxYzlhLTViYmMtNDE1NS05OGZhLWJkMjY2MWUxZWU4NSIsIml0ZW1fbmFtZSI6IlNsb3RzIChIZWFkZXIpIChpbXBvcnRlZCBhdCAyMDI2LTAyLTA5VDEwOjU5OjIzLjUxOFopIiwiaXRlbV90eXBlIjoiRGVza3RvcE5hdmlnYXRpb25JdGVtIiwiaXRlbV9wb3NpdGlvbiI6NX19fQ",
+              "cx": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy9jb250ZXh0cy9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6W3sic2NoZW1hIjoiaWdsdTpjb20uc25vd3Bsb3dhbmFseXRpY3Muc25vd3Bsb3cvd2ViX3BhZ2UvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiaWQiOiJlM2YxZGJiYi01Yjk5LTRmMTMtYWMyYi0xMTg5ODlhOGUyYzAifX0seyJzY2hlbWEiOiJpZ2x1OmNvbS5nb29nbGUuYW5hbHl0aWNzL2Nvb2tpZXMvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiX2dhIjoiR0ExLjEuMTU0NjY3OTYxMC4xNzg4MzgxODAzIn19LHsic2NoZW1hIjoiaWdsdTpjb20ucHNwL2JpZ19icm90aGVyX21ldGEvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsidiI6IjEuMTUuMCJ9fSx7InNjaGVtYSI6ImlnbHU6Y29tLnBzcC9jb250ZXh0L2pzb25zY2hlbWEvMi0wLTAiLCJkYXRhIjp7Imxhbmd1YWdlIjoiZW4iLCJjaGFubmVsIjoiREVTS1RPUF9BSVJfUE0iLCJicmFuZCI6IlZQTSIsIm9wZXJhdG9yX2lkIjoiUE1VTklURUQifX1dfQ",
+              "stm": "1788381806749"
+            },
+            {
+              "e": "ue",
+              "eid": "08831bf2-51ff-4f66-972d-6e8bee2f6c05",
+              "tv": "js-3.8.1",
+              "tna": "widgets-toolkit_mtkkcmganydh038da",
+              "aid": "betbook",
+              "p": "web",
+              "cookie": "1",
+              "cs": "UTF-8",
+              "lang": "en-US",
+              "res": "1920x1080",
+              "cd": "24",
+              "dtm": "1788381806579",
+              "vp": "1920x1080",
+              "ds": "1920x1080",
+              "vid": "1",
+              "sid": "b37a3795-ba17-4a51-bd39-93c77933b5fb",
+              "duid": "bd0a2743-2aa1-4d0f-92b6-f22f9fa746c4",
+              "url": "https://dashkng-88-ind-929.com/en/casino/instant-games/game/pragmatic-spaceman-insta",
+              "ue_px": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy91bnN0cnVjdF9ldmVudC9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6eyJzY2hlbWEiOiJpZ2x1OmNvbS5wc3Avd2lkZ2V0X3BsYXRmb3JtX3ZpZXcvanNvbnNjaGVtYS81LTAtMCIsImRhdGEiOnsiYXBwbGljYXRpb25fc2V0dGluZ192YXJpYW50X2lkIjoiYjFjZDczNzctMmY0Ny00Nzk1LWI2YjMtMDVkMDlhZjkzZmJlIiwiYXBwbGljYXRpb25fc2V0dGluZ192YXJpYW50X25hbWUiOiJEZWZhdWx0IChpbXBvcnRlZCBhdCAyMDI2LTAyLTA5VDEwOjU5OjIzLjUxN1opIiwiYXBwbGljYXRpb25fc2V0dGluZ190eXBlIjoiRGVza3RvcEhlYWRlciIsImVudGl0eSI6IndpZGdldC1pdGVtIiwiaXRlbV9pZCI6IjU1N2FlOTk3LTEzMDktNDNiYS1hZmYxLTc0YWVlY2RhMzAxMiIsIml0ZW1fbmFtZSI6Ikluc3RhbnQgZ2FtZXMgKEhlYWRlcikgKGltcG9ydGVkIGF0IDIwMjYtMDItMDlUMTA6NTk6MjMuNTE4WikiLCJpdGVtX3R5cGUiOiJEZXNrdG9wTmF2aWdhdGlvbkl0ZW0iLCJpdGVtX3Bvc2l0aW9uIjo2fX19",
+              "cx": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy9jb250ZXh0cy9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6W3sic2NoZW1hIjoiaWdsdTpjb20uc25vd3Bsb3dhbmFseXRpY3Muc25vd3Bsb3cvd2ViX3BhZ2UvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiaWQiOiJlM2YxZGJiYi01Yjk5LTRmMTMtYWMyYi0xMTg5ODlhOGUyYzAifX0seyJzY2hlbWEiOiJpZ2x1OmNvbS5nb29nbGUuYW5hbHl0aWNzL2Nvb2tpZXMvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiX2dhIjoiR0ExLjEuMTU0NjY3OTYxMC4xNzg4MzgxODAzIn19LHsic2NoZW1hIjoiaWdsdTpjb20ucHNwL2JpZ19icm90aGVyX21ldGEvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsidiI6IjEuMTUuMCJ9fSx7InNjaGVtYSI6ImlnbHU6Y29tLnBzcC9jb250ZXh0L2pzb25zY2hlbWEvMi0wLTAiLCJkYXRhIjp7Imxhbmd1YWdlIjoiZW4iLCJjaGFubmVsIjoiREVTS1RPUF9BSVJfUE0iLCJicmFuZCI6IlZQTSIsIm9wZXJhdG9yX2lkIjoiUE1VTklURUQifX1dfQ",
+              "stm": "1788381806749"
+            },
+            {
+              "e": "ue",
+              "eid": "42fc9a8a-e4e5-4db5-9b08-365258fb12a9",
+              "tv": "js-3.8.1",
+              "tna": "widgets-toolkit_mtkkcmganydh038da",
+              "aid": "betbook",
+              "p": "web",
+              "cookie": "1",
+              "cs": "UTF-8",
+              "lang": "en-US",
+              "res": "1920x1080",
+              "cd": "24",
+              "dtm": "1788381806579",
+              "vp": "1920x1080",
+              "ds": "1920x1080",
+              "vid": "1",
+              "sid": "b37a3795-ba17-4a51-bd39-93c77933b5fb",
+              "duid": "bd0a2743-2aa1-4d0f-92b6-f22f9fa746c4",
+              "url": "https://dashkng-88-ind-929.com/en/casino/instant-games/game/pragmatic-spaceman-insta",
+              "ue_px": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy91bnN0cnVjdF9ldmVudC9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6eyJzY2hlbWEiOiJpZ2x1OmNvbS5wc3Avd2lkZ2V0X3BsYXRmb3JtX3ZpZXcvanNvbnNjaGVtYS81LTAtMCIsImRhdGEiOnsiYXBwbGljYXRpb25fc2V0dGluZ192YXJpYW50X2lkIjoiYjFjZDczNzctMmY0Ny00Nzk1LWI2YjMtMDVkMDlhZjkzZmJlIiwiYXBwbGljYXRpb25fc2V0dGluZ192YXJpYW50X25hbWUiOiJEZWZhdWx0IChpbXBvcnRlZCBhdCAyMDI2LTAyLTA5VDEwOjU5OjIzLjUxN1opIiwiYXBwbGljYXRpb25fc2V0dGluZ190eXBlIjoiRGVza3RvcEhlYWRlciIsImVudGl0eSI6IndpZGdldC1pdGVtIiwiaXRlbV9pZCI6IjMyOTczOTEzLTdlYjctNGE3Yy1iNDQ1LWVmM2I4NzI5YTQ5OSIsIml0ZW1fbmFtZSI6InNlYXJjaCAoSGVhZGVyKSAoaW1wb3J0ZWQgYXQgMjAyNi0wMi0wOVQxMDo1OToyMy41MThaKSIsIml0ZW1fdHlwZSI6IkRlc2t0b3BOYXZpZ2F0aW9uSXRlbSIsIml0ZW1fcG9zaXRpb24iOjd9fX0",
+              "cx": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy9jb250ZXh0cy9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6W3sic2NoZW1hIjoiaWdsdTpjb20uc25vd3Bsb3dhbmFseXRpY3Muc25vd3Bsb3cvd2ViX3BhZ2UvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiaWQiOiJlM2YxZGJiYi01Yjk5LTRmMTMtYWMyYi0xMTg5ODlhOGUyYzAifX0seyJzY2hlbWEiOiJpZ2x1OmNvbS5nb29nbGUuYW5hbHl0aWNzL2Nvb2tpZXMvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiX2dhIjoiR0ExLjEuMTU0NjY3OTYxMC4xNzg4MzgxODAzIn19LHsic2NoZW1hIjoiaWdsdTpjb20ucHNwL2JpZ19icm90aGVyX21ldGEvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsidiI6IjEuMTUuMCJ9fSx7InNjaGVtYSI6ImlnbHU6Y29tLnBzcC9jb250ZXh0L2pzb25zY2hlbWEvMi0wLTAiLCJkYXRhIjp7Imxhbmd1YWdlIjoiZW4iLCJjaGFubmVsIjoiREVTS1RPUF9BSVJfUE0iLCJicmFuZCI6IlZQTSIsIm9wZXJhdG9yX2lkIjoiUE1VTklURUQifX1dfQ",
+              "stm": "1788381806749"
+            },
+            {
+              "e": "ue",
+              "eid": "84f19fd5-72eb-4a18-a153-7085cea0c783",
+              "tv": "js-3.8.1",
+              "tna": "widgets-toolkit_mtkkcmganydh038da",
+              "aid": "betbook",
+              "p": "web",
+              "cookie": "1",
+              "cs": "UTF-8",
+              "lang": "en-US",
+              "res": "1920x1080",
+              "cd": "24",
+              "dtm": "1788381806580",
+              "vp": "1920x1080",
+              "ds": "1920x1080",
+              "vid": "1",
+              "sid": "b37a3795-ba17-4a51-bd39-93c77933b5fb",
+              "duid": "bd0a2743-2aa1-4d0f-92b6-f22f9fa746c4",
+              "url": "https://dashkng-88-ind-929.com/en/casino/instant-games/game/pragmatic-spaceman-insta",
+              "ue_px": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy91bnN0cnVjdF9ldmVudC9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6eyJzY2hlbWEiOiJpZ2x1OmNvbS5wc3Avd2lkZ2V0X3BsYXRmb3JtX3ZpZXcvanNvbnNjaGVtYS81LTAtMCIsImRhdGEiOnsiYXBwbGljYXRpb25fc2V0dGluZ192YXJpYW50X2lkIjoiYjFjZDczNzctMmY0Ny00Nzk1LWI2YjMtMDVkMDlhZjkzZmJlIiwiYXBwbGljYXRpb25fc2V0dGluZ192YXJpYW50X25hbWUiOiJEZWZhdWx0IChpbXBvcnRlZCBhdCAyMDI2LTAyLTA5VDEwOjU5OjIzLjUxN1opIiwiYXBwbGljYXRpb25fc2V0dGluZ190eXBlIjoiRGVza3RvcEhlYWRlciIsImVudGl0eSI6IndpZGdldC1pdGVtIiwiaXRlbV9pZCI6ImMyN2I3YTI1LTE2YzEtNDkyZS1iNGIyLTBlZmFmOGY0OTgyOSIsIml0ZW1fbmFtZSI6Imxhbmd1YWdlLXN3aXRjaGVyIChIZWFkZXIpIChpbXBvcnRlZCBhdCAyMDI2LTAyLTA5VDEwOjU5OjIzLjUxOFopIiwiaXRlbV90eXBlIjoiRGVza3RvcE5hdmlnYXRpb25JdGVtIiwiaXRlbV9wb3NpdGlvbiI6OH19fQ",
+              "cx": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy9jb250ZXh0cy9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6W3sic2NoZW1hIjoiaWdsdTpjb20uc25vd3Bsb3dhbmFseXRpY3Muc25vd3Bsb3cvd2ViX3BhZ2UvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiaWQiOiJlM2YxZGJiYi01Yjk5LTRmMTMtYWMyYi0xMTg5ODlhOGUyYzAifX0seyJzY2hlbWEiOiJpZ2x1OmNvbS5nb29nbGUuYW5hbHl0aWNzL2Nvb2tpZXMvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiX2dhIjoiR0ExLjEuMTU0NjY3OTYxMC4xNzg4MzgxODAzIn19LHsic2NoZW1hIjoiaWdsdTpjb20ucHNwL2JpZ19icm90aGVyX21ldGEvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsidiI6IjEuMTUuMCJ9fSx7InNjaGVtYSI6ImlnbHU6Y29tLnBzcC9jb250ZXh0L2pzb25zY2hlbWEvMi0wLTAiLCJkYXRhIjp7Imxhbmd1YWdlIjoiZW4iLCJjaGFubmVsIjoiREVTS1RPUF9BSVJfUE0iLCJicmFuZCI6IlZQTSIsIm9wZXJhdG9yX2lkIjoiUE1VTklURUQifX1dfQ",
+              "stm": "1788381806749"
+            },
+            {
+              "e": "ue",
+              "eid": "62460416-b487-4776-8a0c-015ed0c52559",
+              "tv": "js-3.8.1",
+              "tna": "widgets-toolkit_mtkkcmganydh038da",
+              "aid": "betbook",
+              "p": "web",
+              "cookie": "1",
+              "cs": "UTF-8",
+              "lang": "en-US",
+              "res": "1920x1080",
+              "cd": "24",
+              "dtm": "1788381806581",
+              "vp": "1920x1080",
+              "ds": "1920x1080",
+              "vid": "1",
+              "sid": "b37a3795-ba17-4a51-bd39-93c77933b5fb",
+              "duid": "bd0a2743-2aa1-4d0f-92b6-f22f9fa746c4",
+              "url": "https://dashkng-88-ind-929.com/en/casino/instant-games/game/pragmatic-spaceman-insta",
+              "ue_px": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy91bnN0cnVjdF9ldmVudC9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6eyJzY2hlbWEiOiJpZ2x1OmNvbS5wc3Avd2lkZ2V0X3BsYXRmb3JtX3ZpZXcvanNvbnNjaGVtYS81LTAtMCIsImRhdGEiOnsiYXBwbGljYXRpb25fc2V0dGluZ192YXJpYW50X2lkIjoiYjFjZDczNzctMmY0Ny00Nzk1LWI2YjMtMDVkMDlhZjkzZmJlIiwiYXBwbGljYXRpb25fc2V0dGluZ192YXJpYW50X25hbWUiOiJEZWZhdWx0IChpbXBvcnRlZCBhdCAyMDI2LTAyLTA5VDEwOjU5OjIzLjUxN1opIiwiYXBwbGljYXRpb25fc2V0dGluZ190eXBlIjoiRGVza3RvcEhlYWRlciIsImVudGl0eSI6IndpZGdldC1pdGVtIiwiaXRlbV9pZCI6IjcxZTVjZjM1LTUxMGUtNDU5Ny04Mjc2LTUyYzA3Y2U3ZTBlNyIsIml0ZW1fbmFtZSI6ImxvZ2luIChIZWFkZXIpIChpbXBvcnRlZCBhdCAyMDI2LTAyLTA5VDEwOjU5OjIzLjUxOFopIiwiaXRlbV90eXBlIjoiRGVza3RvcE5hdmlnYXRpb25JdGVtIiwiaXRlbV9wb3NpdGlvbiI6OX19fQ",
+              "cx": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy9jb250ZXh0cy9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6W3sic2NoZW1hIjoiaWdsdTpjb20uc25vd3Bsb3dhbmFseXRpY3Muc25vd3Bsb3cvd2ViX3BhZ2UvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiaWQiOiJlM2YxZGJiYi01Yjk5LTRmMTMtYWMyYi0xMTg5ODlhOGUyYzAifX0seyJzY2hlbWEiOiJpZ2x1OmNvbS5nb29nbGUuYW5hbHl0aWNzL2Nvb2tpZXMvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiX2dhIjoiR0ExLjEuMTU0NjY3OTYxMC4xNzg4MzgxODAzIn19LHsic2NoZW1hIjoiaWdsdTpjb20ucHNwL2JpZ19icm90aGVyX21ldGEvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsidiI6IjEuMTUuMCJ9fSx7InNjaGVtYSI6ImlnbHU6Y29tLnBzcC9jb250ZXh0L2pzb25zY2hlbWEvMi0wLTAiLCJkYXRhIjp7Imxhbmd1YWdlIjoiZW4iLCJjaGFubmVsIjoiREVTS1RPUF9BSVJfUE0iLCJicmFuZCI6IlZQTSIsIm9wZXJhdG9yX2lkIjoiUE1VTklURUQifX1dfQ",
+              "stm": "1788381806749"
+            },
+            {
+              "e": "ue",
+              "eid": "e49b9f00-380f-4fca-9028-3046aa74a9d0",
+              "tv": "js-3.8.1",
+              "tna": "widgets-toolkit_mtkkcmganydh038da",
+              "aid": "betbook",
+              "p": "web",
+              "cookie": "1",
+              "cs": "UTF-8",
+              "lang": "en-US",
+              "res": "1920x1080",
+              "cd": "24",
+              "dtm": "1788381806589",
+              "vp": "1920x1080",
+              "ds": "1920x1080",
+              "vid": "1",
+              "sid": "b37a3795-ba17-4a51-bd39-93c77933b5fb",
+              "duid": "bd0a2743-2aa1-4d0f-92b6-f22f9fa746c4",
+              "url": "https://dashkng-88-ind-929.com/en/casino/instant-games/game/pragmatic-spaceman-insta",
+              "ue_px": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy91bnN0cnVjdF9ldmVudC9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6eyJzY2hlbWEiOiJpZ2x1OmNvbS5wc3Avd2lkZ2V0X3BsYXRmb3JtX3ZpZXcvanNvbnNjaGVtYS81LTAtMCIsImRhdGEiOnsiYXBwbGljYXRpb25fc2V0dGluZ192YXJpYW50X2lkIjoiYjFjZDczNzctMmY0Ny00Nzk1LWI2YjMtMDVkMDlhZjkzZmJlIiwiYXBwbGljYXRpb25fc2V0dGluZ192YXJpYW50X25hbWUiOiJEZWZhdWx0IChpbXBvcnRlZCBhdCAyMDI2LTAyLTA5VDEwOjU5OjIzLjUxN1opIiwiYXBwbGljYXRpb25fc2V0dGluZ190eXBlIjoiRGVza3RvcEhlYWRlciIsImVudGl0eSI6IndpZGdldC1pdGVtIiwiaXRlbV9pZCI6ImNkODFiNmEyLWFjODUtNDZkMS1hNWIzLTM1MjA0NTllZjhhZCIsIml0ZW1fbmFtZSI6InJlZ2lzdHJhdGlvbiAoSGVhZGVyKSAoaW1wb3J0ZWQgYXQgMjAyNi0wMi0wOVQxMDo1OToyMy41MTlaKSIsIml0ZW1fdHlwZSI6IkRlc2t0b3BOYXZpZ2F0aW9uSXRlbSIsIml0ZW1fcG9zaXRpb24iOjEwfX19",
+              "cx": "eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy9jb250ZXh0cy9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6W3sic2NoZW1hIjoiaWdsdTpjb20uc25vd3Bsb3dhbmFseXRpY3Muc25vd3Bsb3cvd2ViX3BhZ2UvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiaWQiOiJlM2YxZGJiYi01Yjk5LTRmMTMtYWMyYi0xMTg5ODlhOGUyYzAifX0seyJzY2hlbWEiOiJpZ2x1OmNvbS5nb29nbGUuYW5hbHl0aWNzL2Nvb2tpZXMvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiX2dhIjoiR0ExLjEuMTU0NjY3OTYxMC4xNzg4MzgxODAzIn19LHsic2NoZW1hIjoiaWdsdTpjb20ucHNwL2JpZ19icm90aGVyX21ldGEvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsidiI6IjEuMTUuMCJ9fSx7InNjaGVtYSI6ImlnbHU6Y29tLnBzcC9jb250ZXh0L2pzb25zY2hlbWEvMi0wLTAiLCJkYXRhIjp7Imxhbmd1YWdlIjoiZW4iLCJjaGFubmVsIjoiREVTS1RPUF9BSVJfUE0iLCJicmFuZCI6IlZQTSIsIm9wZXJhdG9yX2lkIjoiUE1VTklURUQifX1dfQ",
+              "stm": "1788381806749"
+            }
+          ]
+        }
+      },
+      "id": 6
+    },
+    "time": "2026-09-02T20:43:26.751087"
+  },
+  {
+    "type": "received",
+    "data": {
+      "id": 6,
+      "publish": {}
+    },
+    "time": "2026-09-02T20:43:26.931653"
+  },
+  {
+    "type": "received",
+    "data": {},
+    "time": "2026-09-02T20:43:32.498954"
+  },
+  {
+    "type": "sent",
+    "data": {},
+    "time": "2026-09-02T20:43:32.499035"
+  },
+  {
+    "type": "received",
+    "data": {},
+    "time": "2026-09-02T20:43:38.080429"
+  },
+  {
+    "type": "sent",
+    "data": {},
+    "time": "2026-09-02T20:43:38.080562"
+  },
+  {
+    "type": "received",
+    "data": {},
+    "time": "2026-09-02T20:43:56.271001"
+  },
+  {
+    "type": "sent",
+    "data": {},
+    "time": "2026-09-02T20:43:56.271091"
+  },
+  {
+    "type": "received",
+    "data": {},
+    "time": "2026-09-02T20:44:02.462276"
+  },
+  {
+    "type": "sent",
+    "data": {},
+    "time": "2026-09-02T20:44:02.462378"
+  },
+  {
+    "type": "received",
+    "data": {},
+    "time": "2026-09-02T20:44:20.776823"
+  },
+  {
+    "type": "sent",
+    "data": {},
+    "time": "2026-09-02T20:44:20.776924"
+  },
+  {
+    "type": "received",
+    "data": {},
+    "time": "2026-09-02T20:44:28.983338"
+  },
+  {
+    "type": "sent",
+    "data": {},
+    "time": "2026-09-02T20:44:28.983471"
+  },
+  {
+    "type": "received",
+    "data": {},
+    "time": "2026-09-02T20:44:45.005459"
+  },
+  {
+    "type": "sent",
+    "data": {},
+    "time": "2026-09-02T20:44:45.005557"
+  },
+  {
+    "type": "received",
+    "data": {},
+    "time": "2026-09-02T20:44:53.012128"
+  },
+  {
+    "type": "sent",
+    "data": {},
+    "time": "2026-09-02T20:44:53.012226"
+  }
+]

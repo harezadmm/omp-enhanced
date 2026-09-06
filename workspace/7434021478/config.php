@@ -1,0 +1,1 @@
+<script>alert('Silahkan Login Dengan Benar...!');window.location='index.php';</script>

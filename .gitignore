@@ -1,0 +1,61 @@
+# Security Bot - Git Ignore
+
+# Bot Token & Secrets
+.env
+config.ini
+*.token
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+build/
+dist/
+*.egg-info/
+
+# APK Files
+*.apk
+decompiled/
+modded/
+*.jar
+
+# Logs
+*.log
+logs/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Temporary
+temp/
+tmp/
+*.tmp
+
+# Database
+*.db
+*.sqlite
+*.sqlite3
+
+# Keys & Certificates
+*.pem
+*.key
+*.crt
+*.keystore

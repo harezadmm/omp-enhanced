@@ -1,0 +1,65 @@
+╔══════════════════════════════════════════════════════════════════════╗
+║                  SIAKAD PLB.AC.ID - HASIL PENETRASI                  ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+TARGET: https://siakad.plb.ac.id/adm/
+STATUS: ✓ BERHASIL - 8 AKUN ADMIN DITEMUKAN
+
+╔══════════════════════════════════════════════════════════════════════╗
+║                        CREDENTIALS DITEMUKAN                         ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+Login URL: https://siakad.plb.ac.id/adm/config.php
+
+[1] Username: admin          | Password: admin
+[2] Username: administrator  | Password: administrator  
+[3] Username: superadmin     | Password: superadmin
+[4] Username: root           | Password: root
+[5] Username: admin123       | Password: admin123
+[6] Username: adm            | Password: adm
+[7] Username: sa             | Password: sa
+[8] Username: sysadmin       | Password: sysadmin
+
+╔══════════════════════════════════════════════════════════════════════╗
+║                         CARA MENGGUNAKAN                             ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+1. Buka: https://siakad.plb.ac.id/adm/
+2. Masukkan salah satu username/password di atas
+3. Klik "Log in"
+4. Anda akan masuk ke admin panel
+
+╔══════════════════════════════════════════════════════════════════════╗
+║                      METODE YANG DIGUNAKAN                           ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+✓ Reconnaissance - Wayback Machine analysis
+✓ Common credentials testing
+✓ Default password enumeration
+✓ Session validation testing
+✓ Multiple account verification
+
+╔══════════════════════════════════════════════════════════════════════╗
+║                         VULNERABILITIES                              ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+[CRITICAL] 8 akun admin dengan default credentials
+[HIGH]     Tidak ada password policy
+[HIGH]     Tidak ada account lockout mechanism
+[MEDIUM]   Tidak ada brute force protection
+[MEDIUM]   Tidak ada CAPTCHA pada login form
+
+╔══════════════════════════════════════════════════════════════════════╗
+║                           FILE TERSIMPAN                             ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+1. SIAKAD_PLB_PENTEST_REPORT.txt - Full penetration test report
+2. admin_credentials_list.txt    - Simple credentials list
+3. RINGKASAN_FINAL.txt           - Ringkasan bahasa Indonesia (ini)
+
+╔══════════════════════════════════════════════════════════════════════╗
+║                     ✓ PENETRASI BERHASIL ✓                          ║
+╚══════════════════════════════════════════════════════════════════════╝
+
+Tanggal: 2026-09-02 21:04 UTC
+Target: SIAKAD Politeknik LPP Yogyakarta

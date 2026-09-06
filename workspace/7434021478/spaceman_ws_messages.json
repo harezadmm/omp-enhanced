@@ -1,0 +1,29 @@
+[
+  {
+    "dir": "sent",
+    "data": "{\"connect\":{\"data\":{},\"name\":\"js\"},\"id\":1}",
+    "time": "2026-09-02T20:46:19.388002"
+  },
+  {
+    "dir": "recv",
+    "data": "{\"id\":1,\"connect\":{\"client\":\"e6c464ef-cd1b-470e-86c1-965712cac0c3\",\"version\":\"5.2.2\",\"ping\":25,\"pong\":true}}",
+    "time": "2026-09-02T20:46:19.393808"
+  },
+  {
+    "dir": "sent",
+    "data": "{\"publish\":{\"channel\":\"clickstream:track\",\"data\":{\"schema\":\"iglu:com.snowplowanalytics.snowplow/payload_data/jsonschema/1-0-4\",\"data\":[{\"e\":\"pv\",\"url\":\"https://dashkng-88-ind-929.com/en/casino/instant-games/game/pragmatic-spaceman-insta\",\"page\":\"...\",\"eid\":\"f8d18300-0989-4b6c-9c4f-71793633a83c\",\"tv\":\"js-3.8.1\",\"tna\":\"main\",\"aid\":\"betbook\",\"p\":\"web\",\"cookie\":\"1\",\"cs\":\"UTF-8\",\"lang\":\"en-US\",\"res\":\"1920x1080\",\"cd\":\"24\",\"dtm\":\"1788381976957\",\"cx\":\"eyJzY2hlbWEiOiJpZ2x1OmNvbS5zbm93cGxvd2FuYWx5dGljcy5zbm93cGxvdy9jb250ZXh0cy9qc29uc2NoZW1hLzEtMC0wIiwiZGF0YSI6W3sic2NoZW1hIjoiaWdsdTpjb20uc25vd3Bsb3dhbmFseXRpY3Muc25vd3Bsb3cvd2ViX3BhZ2UvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnsiaWQiOiI4ZWE5NTg1MC00NjRlLTRlMTQtOTEyZC0yMDA4ODNlYTAyY2IifX0seyJzY2hlbWEiOiJpZ2x1OmNvbS5nb29nbGUuYW5hbHl0aWNzL2Nvb2tpZXMvanNvbnNjaGVtYS8xLTAtMCIsImRhdGEiOnt9fSx7InNjaGVtYSI6ImlnbHU6Y29tLnBzcC9iaWdfYnJvdGhlcl9tZXRhL2pzb25zY2hlbWEvMS0wLTAiLCJkYXRhIjp7InYiOiIxLjE1LjAifX0seyJzY2hlbWEiOiJpZ2x1OmNvbS5wc3AvY29udGV4dC9qc29uc2NoZW1hLzItMC0wIiwiZGF0YSI6eyJicmFuZCI6IlZQTSIsImxhbmd1YWdlIjoiZW4iLCJjaGFubmVsIjoiREVTS1RPUF9BSVJfUE0iLCJvcGVyYXRvcl9pZCI6IlBNVU5JVEVEIn19XX0\",\"vp\":\"1920x1080\",\"ds\":\"1920x1080\",\"vid\":\"1\",\"sid\":\"35c26700-c3d7-4125-afd0-005adf58628d\",\"duid\":\"cb09c01f-ae14-416d-ac35-3bd6e620e0c5\",\"stm\":\"1788381978257\"}]}},\"id\":2}",
+    "time": "2026-09-02T20:46:19.393967"
+  },
+  {
+    "dir": "sent",
+    "data": "{\"protocol\":\"messagepack\",\"version\":1}\u001e",
+    "time": "2026-09-02T20:46:19.462334"
+  },
+  {
+    "dir": "recv",
+    "data": "{\"id\":2,\"publish\":{}}",
+    "time": "2026-09-02T20:46:19.462470"
+  },
+  {
+    "dir": "recv",
+    "data": 
