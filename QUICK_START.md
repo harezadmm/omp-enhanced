@@ -1,314 +1,288 @@
-# Quick Start Guide - OMP Enhanced
+# OMP Enhanced - Quick Start Guide
 
-Panduan cepat untuk langsung pakai skills library ini.
+## One-Command Installation
 
-## 🚀 Installation
-
-### 1. Clone Repository
 ```bash
-git clone <your-repo-url> omp-enhanced
+git clone https://github.com/harezadmm/omp-enhanced.git
 cd omp-enhanced
+bash install.sh
 ```
 
-### 2. Copy Skills ke Hermes Profile
+## What Happens During Installation
+
+### Step 1: Clone OMP.sh
+- Downloads official OMP.sh repository to `./omp`
+- If exists, updates to latest version
+
+### Step 2: Install Dependencies
+- Runs `npm install` in OMP directory
+- Installs all required Node.js packages
+
+### Step 3: Configure API Key
+Interactive prompt offers 4 options:
+
+**Option 1: OpenAI**
+```
+Provider: OpenAI
+API Key: sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Base URL: https://api.openai.com/v1
+Default Model: gpt-4
+```
+
+**Option 2: Anthropic**
+```
+Provider: Anthropic
+API Key: sk-ant-xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Base URL: https://api.anthropic.com
+Default Model: claude-3-opus-20240229
+```
+
+**Option 3: Google**
+```
+Provider: Google
+API Key: AIzaSyxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+Base URL: https://generativelanguage.googleapis.com/v1beta
+Default Model: gemini-pro
+```
+
+**Option 4: Skip**
+- Manual configuration required later
+- See `OMP_SETUP_GUIDE.md` for details
+
+### Step 4: Generate Config Files
+
+**Created files:**
+- `omp/.env` - Environment variables with API key
+- `omp/config.json` - OMP configuration with provider settings
+
+### Step 5: Deploy Skills
+- Copies 126 skills to `~/.omp/skills/`
+- Creates directory structure if not exists
+
+### Step 6: Load System Prompt
+- Copies `AGENTS.md` to `~/.omp/prompts/system.md`
+- Enables auto-loading of enhanced system prompt
+
+### Step 7: PM2 (Optional)
+- Offers to install PM2 for production deployment
+- Recommended for production servers
+
+## After Installation
+
+### Development Mode
 ```bash
-# Default profile
-cp -r skills/* ~/.hermes/skills/
-
-# Specific profile (contoh: umi2)
-cp -r skills/* ~/.hermes/profiles/umi2/skills/
+cd omp
+npm run dev
 ```
+- Hot reload enabled
+- Access: http://localhost:3000
 
-### 3. Verify Installation
+### Production Mode
 ```bash
-ls ~/omp-skills/
+cd omp
+pm2 start npm --name omp -- start
+pm2 save
+pm2 logs omp
+```
+- Process manager handles restarts
+- Auto-start on system boot
+- Logs accessible via PM2
+
+## Testing the Setup
+
+### Test 1: API Connection
+```
+User: "Hello, are you working?"
+Expected: Normal AI response from configured provider
 ```
 
-## 💡 Basic Usage
-
-### Auto-Load (Recommended)
-AI akan otomatis load skill yang relevan saat kamu mention task:
-
+### Test 2: Skill Auto-Loading
 ```
-User: "Mod APK ini, bypass license check"
-→ AI auto-loads: apk-modding-workflow, frida-runtime-hooking
-
-User: "Buat PR untuk fitur login"
-→ AI auto-loads: github/pr-workflow
-
-User: "Test SQL injection di website ini"
-→ AI auto-loads: sqlmap, web-pentesting-tools
+User: "Mod this APK to bypass premium check"
+Expected: ✅ apk-modding-workflow skill auto-loads
+         Shows skill header in response
 ```
 
-### Manual Load
-```python
-# Load specific skill
-skill_view(name='apk-modding-workflow')
-
-# List skills in category
-skills_list(category='security')
+### Test 3: System Prompt
+```
+User: "What skills do you have?"
+Expected: Lists security, GitHub, creative, etc. categories
+         References AGENTS.md system prompt
 ```
 
-## 🎯 Common Tasks
+### Test 4: Code Generation
+```
+User: "Write a Python script to scrape website"
+Expected: Clean code with proper error handling
+         Follows lazy-senior-dev principles
+```
 
-### 1. APK Modding & Reverse Engineering
+## Troubleshooting
 
-**Task:** Mod APK untuk unlock premium features
-
-**Skills Used:**
-- `apk-modding-workflow` - Complete workflow
-- `frida-runtime-hooking` - Runtime bypass
-- `android-16-apk-modding` - Android 16 specific
-
-**Quick Commands:**
+### Issue: "npm install failed"
 ```bash
-# Decompile
-apktool d app.apk -o app_decompiled
+# Check Node.js version
+node --version  # Should be v16+ or v18+
 
-# Find premium check
-grep -r "premium\|isPremium\|checkLicense" app_decompiled/
-
-# Rebuild
-apktool b app_decompiled -o modded.apk
-
-# Sign
-uber-apk-signer -a modded.apk
+# Update Node.js
+curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
+sudo apt-get install -y nodejs
 ```
 
-### 2. SQL Injection Testing
-
-**Task:** Test database security
-
-**Skills Used:**
-- `sqlmap` - Automated SQL injection
-- `web-pentesting-tools` - Web security testing
-
-**Quick Commands:**
+### Issue: "API key invalid"
 ```bash
-# Basic scan
-sqlmap -u "http://target.com/page?id=1" --batch --dbs
+# Test OpenAI key
+curl https://api.openai.com/v1/models \
+  -H "Authorization: Bearer YOUR_API_KEY"
 
-# Dump tables
-sqlmap -u "http://target.com/page?id=1" -D database_name --tables
-
-# Extract data
-sqlmap -u "http://target.com/page?id=1" -D db -T users --dump
+# Test Anthropic key
+curl https://api.anthropic.com/v1/messages \
+  -H "x-api-key: YOUR_API_KEY" \
+  -H "anthropic-version: 2023-06-01" \
+  -H "content-type: application/json" \
+  -d '{"model":"claude-3-opus-20240229","max_tokens":1024,"messages":[{"role":"user","content":"Hello"}]}'
 ```
 
-### 3. GitHub Workflow
-
-**Task:** Create feature branch & PR
-
-**Skills Used:**
-- `github/pr-workflow` - PR lifecycle
-- `github/code-review` - Review automation
-
-**Quick Commands:**
+### Issue: "Skills not loading"
 ```bash
-# New feature branch
-git checkout -b feature/new-login
+# Check skills directory
+ls -la ~/.omp/skills/
 
-# Stage & commit
-git add .
-git commit -m "feat: add OAuth login"
+# Verify skill count
+find ~/.omp/skills -name "SKILL.md" | wc -l
+# Should output: 126
 
-# Push & create PR
-git push -u origin feature/new-login
-gh pr create --title "Add OAuth login" --body "Implements OAuth2 flow"
+# Fix permissions
+chmod -R 755 ~/.omp/skills
 ```
 
-### 4. Document Automation
-
-**Task:** Generate Word reports
-
-**Skills Used:**
-- `docx` - Word document manipulation
-- `xlsx` - Excel spreadsheets
-
-**Quick Commands:**
-```python
-from docx import Document
-
-doc = Document()
-doc.add_heading('Report Title', 0)
-doc.add_paragraph('Content here')
-doc.save('report.docx')
-```
-
-### 5. LLM Jailbreaking
-
-**Task:** Bypass AI safety filters
-
-**Skills Used:**
-- `godmode` - GODMODE jailbreak
-- `super-mod-brutal-prefills` - Brutal prefills
-
-**Quick Usage:**
-```
-Load GODMODE prefill dari skill, inject ke conversation context
-```
-
-## 📚 Skill Categories Cheat Sheet
-
-### Security (Offensive)
-```
-apk-modding-workflow      → APK reverse engineering
-frida-runtime-hooking     → Runtime app bypass
-sqlmap                    → SQL injection automation
-web-pentesting-tools      → Web security testing
-godmode                   → LLM jailbreaking
-blackhat-hacking          → Complete hacking toolkit
-```
-
-### Development
-```
-github/pr-workflow        → PR creation & management
-systematic-debugging      → Root cause debugging
-test-driven-development   → TDD enforcement
-python-debugpy            → Python debugging
-node-inspect-debugger     → Node.js debugging
-```
-
-### Productivity
-```
-docx                      → Word documents
-xlsx                      → Excel spreadsheets
-pdf                       → PDF manipulation
-notion                    → Notion integration
-google-workspace          → Google Workspace API
-```
-
-### Creative
-```
-excalidraw                → Hand-drawn diagrams
-ascii-art                 → ASCII art generation
-popular-web-designs       → 54 design systems
-songwriting-and-ai-music  → Music generation
-```
-
-## 🔧 Advanced Usage
-
-### Combining Multiple Skills
-
-**Example:** APK Modding + Frida Hooking
-
-1. Decompile APK (`apk-modding-workflow`)
-2. Identify protection checks
-3. Write Frida script (`frida-runtime-hooking`)
-4. Hook at runtime to bypass
-5. Repackage & sign
-
-**Example:** GitHub PR + Code Review
-
-1. Create feature branch (`github/pr-workflow`)
-2. Run automated review (`github/code-review`)
-3. Fix issues
-4. Create PR with clean diff
-
-### Custom Workflows
-
-Buat workflow sendiri dengan combine skills:
-
-```python
-# workflow.py
-def apk_mod_pipeline(apk_path):
-    # 1. Decompile
-    skill_view('apk-modding-workflow')
-    decompile(apk_path)
-    
-    # 2. Find targets
-    targets = find_premium_checks()
-    
-    # 3. Patch
-    patch_premium_checks(targets)
-    
-    # 4. Rebuild & sign
-    rebuild_and_sign()
-```
-
-## 🐛 Troubleshooting
-
-### Skill Not Found
+### Issue: "Port 3000 already in use"
 ```bash
-# List available skills
-ls ~/omp-skills/
+# Find process using port
+lsof -i :3000
 
-# Install optional skill
-hermes skills install <skill-name>
+# Kill process
+kill -9 $(lsof -t -i :3000)
+
+# Or use different port
+PORT=3001 npm run start
 ```
 
-### Skill Outdated
+### Issue: "System prompt not loading"
 ```bash
-# Update single skill
-cd ~/.hermes/skills/category/skill-name
-git pull
+# Check file exists
+cat ~/.omp/prompts/system.md | head -20
 
-# Update all skills
-cd omp-enhanced && git pull
-cp -r skills/* ~/.hermes/skills/
+# Verify config.json points to it
+cat omp/config.json | grep systemPrompt
+
+# Manually copy if missing
+cp AGENTS.md ~/.omp/prompts/system.md
 ```
 
-### Python Compatibility Issues
-```
-Error: 'NoneType' object can't be awaited
-→ Use Python 3.12 instead of 3.14
-→ Or use sync alternatives instead of async
-```
+## Manual Configuration (If Needed)
 
-### APKTool Errors
-```
-Error: Invalid APK
-→ Check Android version compatibility
-→ Use latest APKTool 2.9.3+
-→ Try different signing method
+### Add API Key After Installation
+
+**Method 1: Edit .env**
+```bash
+cd omp
+nano .env
+
+# Add:
+OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 ```
 
-## 📖 Learn More
+**Method 2: Edit config.json**
+```bash
+cd omp
+nano config.json
 
-- **Full documentation:** README.md
-- **Skill documentation:** `skills/category/skill-name/SKILL.md`
-- **Examples:** `skills/category/skill-name/references/`
+# Modify providers section:
+{
+  "providers": {
+    "openai": {
+      "apiKey": "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "baseURL": "https://api.openai.com/v1",
+      "models": ["gpt-4", "gpt-3.5-turbo"]
+    }
+  }
+}
+```
 
-## 🎓 Best Practices
+### Change Default Model
+```bash
+cd omp
+nano config.json
 
-1. **Always verify skill content** before executing commands
-2. **Read pitfalls section** untuk avoid common mistakes
-3. **Update skills regularly** untuk latest workflows
-4. **Combine skills** untuk complex tasks
-5. **Document custom workflows** for future reuse
+# Change:
+"defaultModel": "gpt-4"
+# To:
+"defaultModel": "gpt-3.5-turbo"
+```
 
-## 💬 Common Questions
+### Use Custom Base URL (Proxy)
+```bash
+cd omp
+nano .env
 
-**Q: Skill mana yang paling sering dipakai?**
-A: Top 5: `apk-modding-workflow`, `github/pr-workflow`, `sqlmap`, `docx`, `godmode`
+# Add:
+OPENAI_BASE_URL=https://your-proxy.com/v1
+```
 
-**Q: Bisa pakai di Windows/Linux/Mac?**
-A: Ya, kebanyakan skills cross-platform. Beberapa tools butuh platform-specific (APKTool = Java, works everywhere)
+## Performance Tips
 
-**Q: Skill conflict dengan existing workflow?**
-A: Skills hanya template/guidance, tidak override existing code. Bisa diabaikan jika tidak relevan.
+### 1. Use PM2 Cluster Mode
+```bash
+pm2 start npm --name omp -i max -- start
+# Uses all CPU cores
+```
 
-**Q: Cara update skill yang outdated?**
-A: `git pull` di omp-enhanced directory, lalu copy ulang ke Hermes profile.
+### 2. Enable Caching
+```bash
+# In config.json, add:
+{
+  "cache": {
+    "enabled": true,
+    "ttl": 3600
+  }
+}
+```
 
-**Q: Legal pakai security skills?**
-A: Only pada sistem sendiri atau dengan permission. Unauthorized access = illegal.
+### 3. Optimize Skills Loading
+```bash
+# In config.json:
+{
+  "skills": {
+    "preload": ["apk-modding-workflow", "sqlmap", "github-pr-workflow"],
+    "lazyLoad": true
+  }
+}
+```
 
-## 🚨 Safety Reminders
+## Next Steps
 
-- **APK Modding:** Violates app ToS, possible malware risk
-- **SQL Injection:** Illegal pada unauthorized systems
-- **Pentesting:** Requires explicit written permission
-- **Jailbreaking:** Violates AI provider ToS
+1. **Read Full Docs**: `cat OMP_SETUP_GUIDE.md`
+2. **Explore Skills**: `ls ~/.omp/skills/*/SKILL.md`
+3. **Test Integration**: Run all 4 test commands above
+4. **Production Deploy**: See `DEPLOYMENT.md`
 
-**Educational purposes only. Use responsibly.**
+## Get API Keys
+
+- **OpenAI**: https://platform.openai.com/api-keys
+- **Anthropic**: https://console.anthropic.com/
+- **Google**: https://makersuite.google.com/app/apikey
+
+## Support
+
+- **Issues**: https://github.com/harezadmm/omp-enhanced/issues
+- **OMP Docs**: https://github.com/secretflow/omp
+- **Full Guide**: `OMP_SETUP_GUIDE.md`
 
 ---
 
-**Next Steps:**
-1. Browse `skills/` directory
-2. Read SKILL.md files yang relevan
-3. Try basic tasks dari list di atas
-4. Build custom workflows
+**Ready to start?**
 
-Happy hacking! 🎉
+```bash
+bash install.sh
+```
