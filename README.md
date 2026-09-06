@@ -1,292 +1,334 @@
-# OMP Enhanced - Universal Skills Library
+# OMP Enhanced v2.0.0
 
-Koleksi lengkap skills dari **RedMess** dan **Umi Bot** untuk Hermes Agent. Library komprehensif yang mencakup security, hacking, development, productivity, creative tools, dan banyak lagi.
+**126 Expert-Level AI Agent Skills** integrated with OMP.sh (Open Model Platform)
 
-## 📦 Apa Itu Skills?
+Auto-loading workflow system with comprehensive security, development, and creative capabilities.
 
-Skills adalah modul pengetahuan prosedural yang bisa dipanggil oleh AI agent untuk menjalankan task spesifik dengan workflow yang sudah terbukti. Setiap skill berisi:
-
-- **SKILL.md**: Dokumentasi lengkap dengan trigger conditions, workflow steps, pitfalls, dan verification
-- **references/**: Dokumentasi tambahan, case studies, troubleshooting guides
-- **templates/**: File template siap pakai
-- **scripts/**: Helper scripts untuk automasi
-
-## 📊 Statistik Library
-
-- **912 files** total
-- **126+ SKILL.md** files
-- **605+ markdown** documents
-- **50+ categories** berbeda
-
-## 🎯 Kategori Skills
-
-### 🔐 Security (42 skills)
-Offensive security, penetration testing, exploit development, malware analysis
-
-**Highlights:**
-- `android-16-apk-modding` - Mod APK untuk Android 16/ColorOS
-- `apk-modding-workflow` - Workflow lengkap decompile, modify, sign APK
-- `frida-runtime-hooking` - Bypass app checks dengan dynamic hooking
-- `godmode` - Jailbreak LLMs dengan Parseltongue & GODMODE
-- `sqlmap` - SQL injection automation
-- `blackhat-hacking` - Hacking tools comprehensive
-- `web-pentesting-tools` - Browser-based pentesting dengan CloudFlare evasion
-- `lua-deobfuscation` - Deobfuscate commercial Lua obfuscators
-- **Red Team Arsenal** (100+ tools): Metasploit, Empire, Mimikatz, Bloodhound, dll
-
-### 💻 Software Development (14 skills)
-GitHub workflows, debugging, testing, code quality
-
-**Highlights:**
-- `github/` - Full GitHub workflow: PR, issues, code review, CI/CD
-- `systematic-debugging` - 4-phase root cause debugging
-- `test-driven-development` - Enforce RED-GREEN-REFACTOR
-- `python-debugpy` - Python debugging dengan DAP
-- `node-inspect-debugger` - Node.js debugging via Chrome DevTools
-
-### 🎨 Creative (12 skills)
-Design, ASCII art, diagrams, music generation
-
-**Highlights:**
-- `excalidraw` - Hand-drawn architecture diagrams
-- `ascii-art` - Generate ASCII art dengan pyfiglet, cowsay
-- `popular-web-designs` - 54 design systems (Stripe, Linear, Vercel)
-- `songwriting-and-ai-music` - Suno AI music prompts
-
-### 📊 Productivity (15 skills)
-Documents, spreadsheets, meetings, automation
-
-**Highlights:**
-- `docx` - Create/edit Word documents
-- `xlsx` - Excel workbook manipulation
-- `pdf` - PDF creation, merging, forms
-- `notion` - Notion API integration
-- `google-workspace` - Gmail, Calendar, Drive, Docs, Sheets
-
-### 🔬 Research (4 skills)
-Academic papers, citations, competitor monitoring
-
-**Highlights:**
-- `arxiv` - Search academic papers
-- `grounded-citations` - Ground answers dengan cited sources
-- `competitor-news-monitor` - Monitor company news
-
-### 📧 Email (2 skills)
-Email workflows via terminal
-
-**Highlights:**
-- `himalaya` - IMAP/SMTP CLI client
-- `email-inbox-triage` - Automated inbox triage
-
-### 🎥 Media (3 skills)
-YouTube, GIF, audio visualization
-
-**Highlights:**
-- `youtube-content` - Transcripts to summaries/blogs
-- `gif-search` - Search/download GIFs from Tenor
-
-### 🤖 Autonomous AI Agents (7 skills)
-Multi-agent orchestration, delegation
-
-**Highlights:**
-- `claude-code` - Delegate to Claude Code CLI
-- `hermes-agent` - Configure & orchestrate Hermes
-
-## 🚀 Cara Pakai
-
-### 1. Load Skill dari Hermes Agent
-
-```bash
-# List semua skills
-ls ~/omp-skills/
-
-# Load specific skill
-cat ~/omp-skills/*/apk-modding-workflow/SKILL.md
-
-# Install optional skill
-# Skills already deployed to ~/omp-skills/sqlmap
-```
-
-### 2. Panggil dari Conversation
-
-Tinggal mention task yang relevan, AI akan auto-load skill yang sesuai:
-
-```
-"Mod APK ini, bypass premium checks"
-→ Auto-loads: apk-modding-workflow, frida-runtime-hooking
-
-"Buat GitHub PR untuk fitur ini"
-→ Auto-loads: github/pr-workflow
-
-"Deobfuscate Lua script ini"
-→ Auto-loads: lua-deobfuscation
-```
-
-### 3. Manual Load (jika perlu)
-
-```python
-# Dalam Hermes conversation
-skill_view(name='apk-modding-workflow')
-```
-
-## 📁 Struktur Directory
-
-```
-skills/
-├── Security/              # 42 offensive security skills
-│   ├── apk-modding-workflow/
-│   │   ├── SKILL.md
-│   │   ├── references/
-│   │   └── templates/
-│   ├── frida-runtime-hooking/
-│   ├── sqlmap/
-│   └── red-team-arsenal/  # 100+ tools
-├── software-development/  # GitHub, debugging, testing
-├── creative/              # Design, ASCII, diagrams
-├── productivity/          # Docs, spreadsheets, meetings
-├── research/              # Papers, citations, monitoring
-├── email/                 # IMAP/SMTP workflows
-├── media/                 # YouTube, GIF, audio
-└── autonomous-ai-agents/  # Multi-agent orchestration
-```
-
-## 🎯 Use Cases
-
-### APK Modding
-```bash
-# Decompile → Modify → Sign → Install
-apktool d app.apk
-# Edit smali/resources
-apktool b app -o modded.apk
-uber-apk-signer -a modded.apk
-```
-Skill: `apk-modding-workflow`, `frida-runtime-hooking`
-
-### SQL Injection Attack
-```bash
-sqlmap -u "http://target.com/page?id=1" --dbs --batch
-sqlmap -u "http://target.com/page?id=1" -D dbname --tables
-sqlmap -u "http://target.com/page?id=1" -D dbname -T users --dump
-```
-Skill: `sqlmap`, `web-pentesting-tools`
-
-### GitHub PR Workflow
-```bash
-git checkout -b feature-branch
-git add .
-git commit -m "feat: add new feature"
-git push -u origin feature-branch
-gh pr create --title "Add feature" --body "Description"
-```
-Skill: `github/pr-workflow`
-
-### Jailbreak LLM
-```python
-# Load GODMODE prefills
-from godmode import load_parseltongue
-load_parseltongue("brutal_prefill_opus.json")
-```
-Skill: `godmode`, `super-mod-brutal-prefills`
-
-## 🔥 Skills Paling Power
-
-### Top Security Skills
-1. **apk-modding-workflow** - Complete APK reverse engineering
-2. **frida-runtime-hooking** - Bypass any app check
-3. **sqlmap** - Automated SQL injection
-4. **godmode** - LLM jailbreaking
-5. **red-team-arsenal** - 100+ pentesting tools
-
-### Top Development Skills
-1. **github/** - Full GitHub automation
-2. **systematic-debugging** - Root cause analysis
-3. **test-driven-development** - TDD enforcement
-
-### Top Productivity Skills
-1. **docx** - Word document automation
-2. **xlsx** - Excel manipulation
-3. **notion** - Notion integration
-
-## 📖 Dokumentasi Lengkap
-
-Setiap skill punya dokumentasi lengkap di `SKILL.md`:
-
-```markdown
----
-description: Use when [trigger condition]
-triggers: [list of triggers]
 ---
 
-# Skill Name
-
-## When to Use
-[Clear trigger conditions]
-
-## Workflow
-1. Step 1
-2. Step 2
-3. Verification
-
-## Pitfalls
-- Common mistake 1
-- Common mistake 2
-
-## Tools Required
-- Tool 1
-- Tool 2
-```
-
-## 🛠️ Requirements
-
-- **Hermes Agent** (Nous Research)
-- **Python 3.12+** (3.14 compatibility issues untuk beberapa library)
-- **Git** untuk version control
-- **Platform-specific tools** tergantung skill yang dipakai
-
-## 🔄 Update Skills
+## 🚀 One-Command Installation
 
 ```bash
-# Pull latest changes
+# Clone this repository
+git clone https://github.com/harezadmm/omp-enhanced.git
 cd omp-enhanced
-git pull origin main
 
-# Sync ke Hermes
-cp -r skills/* ~/.hermes/profiles/your-profile/skills/
+# Run installer (installs OMP + configures everything)
+bash install.sh
 ```
 
-## 📝 Contributing
-
-Tambah skill baru:
-
-1. Buat directory `skills/category/skill-name/`
-2. Tambah `SKILL.md` dengan format standar
-3. (Optional) Tambah `references/`, `templates/`, `scripts/`
-4. Commit & push
-
-## ⚠️ Disclaimer
-
-Skills ini untuk **educational & authorized testing only**. Security skills (APK modding, SQL injection, pentesting) hanya boleh digunakan pada sistem yang kamu punya atau dengan izin eksplisit.
-
-Penggunaan ilegal adalah tanggung jawab user.
-
-## 📜 License
-
-Mixed licenses - lihat individual skill directories untuk license spesifik.
-
-## 🤝 Credits
-
-- **RedMess** - Original skills library
-- **Umi Bot** - Security-focused skills collection
-- **Nous Research** - Hermes Agent framework
-- **Contributors** - Community contributors
-
-## 📧 Support
-
-Issues/questions? Open GitHub issue atau contact maintainer.
+**That's it!** The script will:
+1. ✅ Clone OMP.sh repository
+2. ✅ Install Node.js dependencies
+3. ✅ Configure your AI API key (interactive prompt)
+4. ✅ Deploy 126 skills to `~/.omp/skills`
+5. ✅ Load AGENTS.md system prompt
+6. ✅ Generate config files (.env + config.json)
+7. ✅ Optional: Install PM2 for production
 
 ---
 
-**Last Updated:** 2026-09-06  
+## 📋 Quick Start After Installation
+
+```bash
+# Development mode
+cd omp
+npm run dev
+
+# Production mode (with PM2)
+cd omp
+pm2 start npm --name omp -- start
+pm2 save
+pm2 logs omp
+```
+
+**Access:** http://localhost:3000
+
+---
+
+## 🎯 Test Integration
+
+### Test 1: Basic Connection
+```
+Request: "Hello, are you working?"
+Expected: Normal AI response
+```
+
+### Test 2: Skill Auto-Loading
+```
+Request: "Mod this APK to bypass premium check"
+Expected: ✅ apk-modding-workflow skill auto-loads
+```
+
+### Test 3: Another Skill
+```
+Request: "Test this URL for SQL injection"
+Expected: ✅ sqlmap skill auto-loads
+```
+
+---
+
+## 📦 What's Included
+
+### Skills (126 workflows)
+- **Security** (24): APK modding, pentesting, SQL injection, Frida hooking
+- **GitHub** (8): PR workflows, code review, issue management
+- **Development** (18): TDD, debugging, systematic testing
+- **Creative** (12): ASCII art, Excalidraw diagrams, p5.js sketches
+- **Productivity** (15): Notion, Google Workspace, Excel automation
+- **MLOps** (9): Model serving, evaluation, fine-tuning
+- **AI Agents** (6): Claude Code, Codex, multi-agent orchestration
+- **Plus 8 more categories**: Email, social media, smart home, research, etc.
+
+### Documentation (27 files)
+- `OMP_SETUP_GUIDE.md` - Complete setup with API configuration
+- `FINAL_HANDOFF.md` - Integration guide & deployment checklist
+- `QUICK_API_SETUP.txt` - Quick reference for API setup
+- `AGENTS.md` - System prompt (auto-loaded by installer)
+- `CHANGELOG.md` - Version history
+- Plus 22 more guides and references
+
+---
+
+## ⚙️ Manual Configuration (if needed)
+
+### API Key Setup
+
+**Option 1: .env file** (Recommended)
+```bash
+cd omp
+nano .env
+
+# Add your API key:
+OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+# or
+ANTHROPIC_API_KEY=sk-ant-xxxxxxxxxxxxxxxxxxxxx
+```
+
+**Option 2: config.json**
+```json
+{
+  "providers": {
+    "openai": {
+      "apiKey": "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+      "baseURL": "https://api.openai.com/v1",
+      "models": ["gpt-4", "gpt-3.5-turbo"]
+    }
+  },
+  "defaultProvider": "openai",
+  "defaultModel": "gpt-4"
+}
+```
+
+### Get API Keys
+- **OpenAI:** https://platform.openai.com/api-keys
+- **Anthropic:** https://console.anthropic.com/
+- **Google:** https://makersuite.google.com/app/apikey
+
+---
+
+## 📊 Package Stats
+
+- **Skills:** 126 expert workflows
+- **Categories:** 49
+- **Documentation:** 27 files
+- **Total Files:** 2,000+
+- **Package Size:** 22MB
+
+---
+
+## 🔧 Advanced Usage
+
+### Custom Base URL
+```bash
+# .env file
+OPENAI_BASE_URL=https://your-proxy.com/v1
+```
+
+### PM2 Production Setup
+```bash
+cd omp
+pm2 start npm --name omp -- start
+pm2 startup  # Auto-start on boot
+pm2 save     # Save configuration
+```
+
+### Docker Deployment
+```bash
+# See DEPLOYMENT.md for complete Docker setup
+docker build -t omp-enhanced .
+docker run -d -p 3000:3000 \
+  -e OPENAI_API_KEY=sk-xxxx \
+  -v ~/.omp/skills:/app/skills \
+  omp-enhanced
+```
+
+---
+
+## 📖 Documentation
+
+- **Complete Setup:** [OMP_SETUP_GUIDE.md](OMP_SETUP_GUIDE.md)
+- **Integration Guide:** [FINAL_HANDOFF.md](FINAL_HANDOFF.md)
+- **Quick API Setup:** [QUICK_API_SETUP.txt](QUICK_API_SETUP.txt)
+- **Deployment:** [DEPLOYMENT.md](DEPLOYMENT.md)
+- **System Prompt:** [AGENTS.md](AGENTS.md)
+
+---
+
+## 🐛 Troubleshooting
+
+### Issue: API key invalid
+```bash
+# Check .env file
+cat omp/.env | grep API_KEY
+
+# Test API key
+curl https://api.openai.com/v1/models \
+  -H "Authorization: Bearer YOUR_API_KEY"
+```
+
+### Issue: Skills not loading
+```bash
+# Check skills directory
+ls ~/.omp/skills/
+
+# Verify count (should be 126)
+find ~/.omp/skills -name "SKILL.md" | wc -l
+
+# Fix permissions
+chmod -R 755 ~/.omp/skills
+```
+
+### Issue: Port already in use
+```bash
+# Check what's using port 3000
+lsof -i :3000
+
+# Use different port
+PORT=3001 npm run start
+```
+
+---
+
+## 🎯 Skill Categories
+
+<details>
+<summary><b>Security (24 skills)</b></summary>
+
+- android-16-apk-modding
+- api-key-pentesting
+- api-router-proxy-cloning
+- apk-modding-workflow
+- apk-signature-fix
+- app-account-farming
+- blackhat-hacking
+- flutter-app-detection
+- frida-runtime-hooking
+- godmode
+- hermes-profile-jailbreak-deployment
+- lua-deobfuscation
+- samp-server-ddos
+- sms-otp-spam-tools
+- sqlmap
+- super-mod-brutal-prefills
+- web-admin-credential-discovery
+- web-pentesting-tools
+- *...and 6 more*
+
+</details>
+
+<details>
+<summary><b>GitHub (8 skills)</b></summary>
+
+- codebase-inspection
+- github-auth
+- github-code-review
+- github-issue-to-pr
+- github-issues
+- github-pr-workflow
+- github-repo-management
+- *...and 1 more*
+
+</details>
+
+<details>
+<summary><b>Software Development (18 skills)</b></summary>
+
+- dogfood
+- hermes-agent-skill-authoring
+- inspecting-hermes-desktop-dom
+- node-inspect-debugger
+- plan
+- python-debugpy
+- requesting-code-review
+- simplify-code
+- spike
+- systematic-debugging
+- test-driven-development
+- *...and 7 more*
+
+</details>
+
+<details>
+<summary><b>Creative (12 skills)</b></summary>
+
+- architecture-diagram
+- ascii-art
+- ascii-video
+- baoyu-infographic
+- claude-design
+- comfyui
+- design-md
+- excalidraw
+- humanizer
+- manim-video
+- p5js
+- popular-web-designs
+
+</details>
+
+<details>
+<summary><b>Plus 8 More Categories</b></summary>
+
+- **Productivity** (15): Notion, Google Workspace, Excel, PowerPoint
+- **MLOps** (9): Model serving, evaluation, fine-tuning
+- **AI Agents** (6): Claude Code, Codex, multi-agent orchestration
+- **Email** (2): Himalaya CLI, inbox triage
+- **Social Media** (1): X/Twitter automation
+- **Smart Home** (1): OpenHue control
+- **Research** (9): arXiv, competitor monitoring, citations
+- **Media** (3): YouTube content, GIF search, audio viz
+
+</details>
+
+---
+
+## 📞 Support
+
+- **Issues:** [GitHub Issues](https://github.com/harezadmm/omp-enhanced/issues)
+- **OMP.sh Docs:** [OMP Documentation](https://github.com/secretflow/omp)
+- **Full Guide:** Read `OMP_SETUP_GUIDE.md`
+
+---
+
+## 📝 License
+
+See LICENSE file for details.
+
+---
+
+## 🎊 Credits
+
+Built with ❤️ for OMP.sh integration.
+
 **Version:** 2.0.0  
-**Total Skills:** 126+  
-**Total Files:** 912
+**Last Updated:** 2026-09-06  
+**Status:** Production Ready ✅
+
+---
+
+**Ready to go?**
+
+```bash
+bash install.sh
+```
