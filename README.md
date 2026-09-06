@@ -8,32 +8,60 @@ Auto-loading workflow system with comprehensive security, development, and creat
 
 ## 🚀 One-Command Installation
 
+### Using Bun (Recommended - Fast)
+
 ```bash
-# Clone this repository
+# Clone repository
 git clone https://github.com/harezadmm/omp-enhanced.git
 cd omp-enhanced
 
-# Run installer (installs OMP + configures everything)
+# Install with Bun (fastest)
+bun install.sh
+```
+
+### Using Bash (Alternative)
+
+```bash
+# Clone repository
+git clone https://github.com/harezadmm/omp-enhanced.git
+cd omp-enhanced
+
+# Install with bash
 bash install.sh
 ```
 
 **That's it!** The script will:
-1. ✅ Clone OMP.sh repository
-2. ✅ Install Node.js dependencies
-3. ✅ Configure your AI API key (interactive prompt)
-4. ✅ Deploy 126 skills to `~/.omp/skills`
-5. ✅ Load AGENTS.md system prompt
-6. ✅ Generate config files (.env + config.json)
-7. ✅ Optional: Install PM2 for production
+1. ✅ Deploy 126 skills to `~/.omp/skills`
+2. ✅ Load AGENTS.md system prompt to `~/.omp/prompts/system.md`
+3. ✅ Configure API keys (interactive - or skip for manual setup)
+4. ✅ Generate config files (.env + config.json)
+5. ✅ Optional: Install PM2 for production
 
 ---
 
 ## 📋 Quick Start After Installation
 
+### Integration with Hermes Agent
+
+If using with **Hermes Agent** (recommended):
+
+```bash
+# Skills already deployed to ~/.omp/skills/
+# Hermes will auto-load skills when needed
+
+# Test skill loading
+hermes chat "Mod this APK to bypass premium"
+# Expected: apk-modding-workflow auto-loads
+```
+
+### Standalone Server Mode
+
 ```bash
 # Development mode
 cd omp
 npm run dev
+# or with Bun
+bun run dev
 
 # Production mode (with PM2)
 cd omp
@@ -167,6 +195,7 @@ docker run -d -p 3000:3000 \
 
 ## 📖 Documentation
 
+- **Installation Guide:** [INSTALL.md](INSTALL.md) ⭐ **Start here!**
 - **Complete Setup:** [OMP_SETUP_GUIDE.md](OMP_SETUP_GUIDE.md)
 - **Integration Guide:** [FINAL_HANDOFF.md](FINAL_HANDOFF.md)
 - **Quick API Setup:** [QUICK_API_SETUP.txt](QUICK_API_SETUP.txt)

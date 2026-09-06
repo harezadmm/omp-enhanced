@@ -23,11 +23,11 @@ cat << "EOF"
 EOF
 echo -e "${NC}"
 
-# Check if running as root
-if [ "$EUID" -eq 0 ]; then 
-   echo -e "${RED}❌ Please don't run as root${NC}"
-   exit 1
-fi
+# Check if running as root (disabled for Docker/root environments)
+# if [ "$EUID" -eq 0 ]; then 
+#    echo -e "${RED}❌ Please don't run as root${NC}"
+#    exit 1
+# fi
 
 echo -e "${YELLOW}📋 Starting installation...${NC}\n"
 
