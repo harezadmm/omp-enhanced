@@ -94,26 +94,45 @@ Multi-agent orchestration, delegation
 
 ## 🚀 Instalasi
 
-### Windows (Automated Installer)
+### Windows (One-Click Installer) ⚡
 
-Download dan jalankan installer otomatis:
+**Cara Termudah - Automated Installer:**
 
-```bash
-# 1. Download installer
-git clone https://github.com/harezadmm/omp-enhanced.git
-cd omp-enhanced/windows-installer
+1. **Download Repository**
+   ```bash
+   git clone https://github.com/harezadmm/omp-enhanced.git
+   cd omp-enhanced
+   ```
 
-# 2. Run installer (Admin privileges recommended)
-install.bat
+2. **Jalankan Installer**
+   ```bash
+   cd windows-installer
+   install.bat
+   ```
+   
+   **✨ Installer otomatis akan:**
+   - ✅ Deteksi & install Java JDK 21 (jika belum ada)
+   - ✅ Download & setup Android SDK + command-line tools
+   - ✅ Install Gradle 9.7.1
+   - ✅ Setup environment variables (JAVA_HOME, ANDROID_HOME, PATH)
+   - ✅ Install Hermes Agent
+   - ✅ Verify semua instalasi
 
-# Installer akan otomatis:
-# - Download Java JDK 21 (jika belum ada)
-# - Setup Android SDK & tools
-# - Install Hermes Agent
-# - Configure environment variables
-```
+3. **Restart Terminal**
+   ```bash
+   # Setelah instalasi selesai, restart terminal agar environment variables aktif
+   ```
 
-**Manual Installation:** Lihat `windows-installer/INSTALL-GUIDE.txt` untuk panduan lengkap.
+**Requirements:**
+- Windows 10/11
+- PowerShell (untuk auto-download Java)
+- Admin privileges (recommended untuk environment variables)
+- Internet connection (untuk download dependencies)
+
+**Manual Installation:** 
+Jika installer otomatis gagal, lihat `windows-installer/INSTALL-GUIDE.txt` atau `windows-installer/README-WINDOWS.txt` untuk panduan step-by-step lengkap.
+
+---
 
 ### Linux/Mac
 
