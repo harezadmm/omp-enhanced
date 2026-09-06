@@ -1,18 +1,76 @@
+# Python
 __pycache__/
-*.pyc
-*.pyo
-*.pyd
-.Python
+*.py[cod]
+*$py.class
 *.so
-*.egg
-*.egg-info/
-dist/
+.Python
+env/
+venv/
+ENV/
 build/
-*.tar.gz
-*.zip
-/tmp/
-*.log
-.env
-*.key
-node_modules/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
 .DS_Store
+
+# Hermes
+.hermes/
+*.db
+*.sqlite
+*.sqlite3
+
+# Logs
+*.log
+logs/
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Credentials
+.env
+.env.local
+credentials.json
+secrets.json
+*.key
+*.pem
+
+# APK modding artifacts
+*.apk
+*.dex
+*.odex
+decompiled/
+output/
+
+# Build artifacts
+node_modules/
+package-lock.json
+yarn.lock
+
+# Test artifacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# OS
+Thumbs.db
+desktop.ini
