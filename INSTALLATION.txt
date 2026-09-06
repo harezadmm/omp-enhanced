@@ -1,0 +1,156 @@
+════════════════════════════════════════════════════════════════════════════════
+                OMP ENHANCED v2.0.0 - INSTALLATION GUIDE
+════════════════════════════════════════════════════════════════════════════════
+
+QUICK INSTALLATION (5 minutes total)
+════════════════════════════════════════════════════════════════════════════════
+
+STEP 1: Extract Archive (1 minute)
+────────────────────────────────────────────────────────────────────────────────
+$ cd /tmp
+$ tar -xzf omp-enhanced-v2.0.0-FINAL-COMPLETE.tar.gz
+$ cd omp-enhanced
+
+STEP 2: Run Installer (2 minutes)
+────────────────────────────────────────────────────────────────────────────────
+$ ./install.sh
+
+The installer will:
+  • Copy skills to ~/.hermes/skills/
+  • Set up skill categories
+  • Verify installation
+  • Display success message
+
+STEP 3: Verify Skills (30 seconds)
+────────────────────────────────────────────────────────────────────────────────
+$ hermes skills list | wc -l
+
+Expected output: 126
+
+$ hermes skill view apk-modding-workflow
+
+Expected: Complete SKILL.md content displayed
+
+STEP 4: Deploy LTX-QUASAR (1 minute)
+────────────────────────────────────────────────────────────────────────────────
+$ cp AGENTS.md ~/.hermes/profiles/umi2/agents/
+
+OR load AGENTS.md content as system prompt in your AI platform
+
+STEP 5: Test Integration (30 seconds)
+────────────────────────────────────────────────────────────────────────────────
+Test auto-skill loading:
+  Request: "Mod this APK to bypass premium"
+  Expected: apk-modding-workflow skill auto-loads
+
+════════════════════════════════════════════════════════════════════════════════
+VERIFICATION CHECKLIST
+════════════════════════════════════════════════════════════════════════════════
+
+After installation, verify:
+
+✅ Skills Installed
+   $ hermes skills list | wc -l
+   Expected: 126
+
+✅ Skills Loadable
+   $ hermes skill view apk-modding-workflow
+   Expected: SKILL.md content displayed
+
+✅ Categories Present
+   $ hermes skills list --category security
+   Expected: 42 security skills
+
+✅ AGENTS.md Deployed
+   $ ls ~/.hermes/profiles/umi2/agents/AGENTS.md
+   Expected: File exists
+
+✅ Integration Working
+   Test: Request "Mod this APK"
+   Expected: Auto-loads apk-modding-workflow
+
+════════════════════════════════════════════════════════════════════════════════
+MANUAL INSTALLATION (if installer fails)
+════════════════════════════════════════════════════════════════════════════════
+
+If install.sh doesn't work, manually copy skills:
+
+$ cp -r autonomous-ai-agents/ ~/.hermes/skills/
+$ cp -r creative/ ~/.hermes/skills/
+$ cp -r email/ ~/.hermes/skills/
+$ cp -r github/ ~/.hermes/skills/
+$ cp -r godmode/ ~/.hermes/skills/
+$ cp -r media/ ~/.hermes/skills/
+$ cp -r mlops/ ~/.hermes/skills/
+$ cp -r note-taking/ ~/.hermes/skills/
+$ cp -r productivity/ ~/.hermes/skills/
+$ cp -r research/ ~/.hermes/skills/
+$ cp -r security/ ~/.hermes/skills/
+$ cp -r smart-home/ ~/.hermes/skills/
+$ cp -r social-media/ ~/.hermes/skills/
+$ cp -r software-development/ ~/.hermes/skills/
+
+Then verify:
+$ hermes skills list | wc -l
+
+════════════════════════════════════════════════════════════════════════════════
+TROUBLESHOOTING
+════════════════════════════════════════════════════════════════════════════════
+
+Problem: install.sh permission denied
+Solution: $ chmod +x install.sh && ./install.sh
+
+Problem: Skills not showing up
+Solution: $ hermes skills refresh
+
+Problem: AGENTS.md not loading
+Solution: Verify path ~/.hermes/profiles/umi2/agents/ exists
+          Or load content as system prompt directly
+
+Problem: Skill loading fails
+Solution: Check skill path with: ls ~/.hermes/skills/
+          Verify SKILL.md files present
+
+════════════════════════════════════════════════════════════════════════════════
+SYSTEM REQUIREMENTS
+════════════════════════════════════════════════════════════════════════════════
+
+Required:
+  • Hermes Agent v1.0+
+  • Python 3.8+
+  • Unix-like system (Linux/macOS)
+
+Optional (for specific skills):
+  • Node.js v16+ (for JS-based skills)
+  • APKTool (for APK modding)
+  • SQLmap (for SQL injection)
+  • Docker (for containerized tools)
+
+════════════════════════════════════════════════════════════════════════════════
+POST-INSTALLATION
+════════════════════════════════════════════════════════════════════════════════
+
+Read Documentation:
+  • README.md - Project overview
+  • QUICK_START.md - Usage guide
+  • INTEGRATION_GUIDE.md - LTX-QUASAR integration
+  • SKILLS_INDEX.md - Browse all skills
+
+Test Skills:
+  • Try: "Mod this APK" → apk-modding-workflow
+  • Try: "Test for SQLi" → sqlmap
+  • Try: "Create a PR" → github/pr-workflow
+
+════════════════════════════════════════════════════════════════════════════════
+SUPPORT
+════════════════════════════════════════════════════════════════════════════════
+
+Questions?      See documentation in repository
+Issues?         Check troubleshooting section above
+Contributions?  See CONTRIBUTING.md
+
+════════════════════════════════════════════════════════════════════════════════
+
+Installation complete! Ready to use OMP Enhanced v2.0.0.
+
+════════════════════════════════════════════════════════════════════════════════
