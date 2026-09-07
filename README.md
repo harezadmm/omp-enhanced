@@ -8,7 +8,16 @@ Auto-loading workflow system with comprehensive security, development, and creat
 
 ## 🚀 One-Command Installation
 
-### Linux / macOS
+### 🍎 macOS — Quick Migration (dari Windows/Linux)
+```bash
+git clone https://github.com/harezadmm/omp-enhanced.git
+cd omp-enhanced
+bash migrate-to-macos.sh
+source ~/.zshrc
+```
+**Done.** 126 skills, LTX-QUASAR persona, API key — semua auto. Cek: `who are you?` → harus jawab "LTX-quasar".
+
+### Linux / macOS (standalone)
 
 ```bash
 git clone https://github.com/harezadmm/omp-enhanced.git
