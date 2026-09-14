@@ -1,334 +1,117 @@
-# OMP Enhanced v2.0.0
+# MackedApp — LTX-QUASAR Enterprise Arsenal
 
-**126 Expert-Level AI Agent Skills** integrated with OMP.sh (Open Model Platform)
-
-Auto-loading workflow system with comprehensive security, development, and creative capabilities.
+**15,656 Expert-Level AI Agent Skills** — the most comprehensive offensive/defensive security skills library on the planet.
 
 ---
 
-## 🚀 One-Command Installation
+## 🚀 Quick Install
 
 ```bash
-# Clone this repository
 git clone https://github.com/harezadmm/omp-enhanced.git
 cd omp-enhanced
-
-# Run installer (installs OMP + configures everything)
 bash install.sh
 ```
 
-**That's it!** The script will:
-1. ✅ Clone OMP.sh repository
-2. ✅ Install Node.js dependencies
-3. ✅ Configure your AI API key (interactive prompt)
-4. ✅ Deploy 126 skills to `~/.omp/skills`
-5. ✅ Load AGENTS.md system prompt
-6. ✅ Generate config files (.env + config.json)
-7. ✅ Optional: Install PM2 for production
+---
+
+## 📦 Arsenal Breakdown
+
+| Category | Skills | Description |
+|---|---|---|
+| **Enterprise Arsenal** | 15,547 | Full MITRE ATT&CK, NIST 800-53/171/218, CIS Benchmarks, WSTG |
+| **Security** | 47 | APK modding, pentesting, SQLi, Frida, jailbreaking, red team |
+| **Software Dev** | 12 | GitHub workflows, TDD, debugging, code review |
+| **Productivity** | 14 | Notion, Google Workspace, Excel, PowerPoint, meetings |
+| **Creative** | 10 | ASCII art, diagrams, design systems, music generation |
+| **MLOps** | 4 | Model serving, evaluation, fine-tuning |
+| **Research** | 4 | arXiv, competitor monitoring, citations |
+| **Media** | 3 | YouTube, GIF search, audio visualization |
+| **Apple** | 4 | Notes, Reminders, FindMy, iMessage |
+| **Email** | 2 | Himalaya CLI, inbox triage |
+| **DevOps** | 3 | CI/CD assessment, pre-commit hooks |
+| **Web** | 1 | Browser automation |
+| **Social Media** | 1 | X/Twitter automation |
+| **Mac App Cracking** | 1 | dmg/pkg reverse engineering |
+| **QA Testing** | 1 | Exploratory QA + bug reporting |
+| **Autonomous AI** | 5 | Multi-agent orchestration, Claude Code, Codex |
 
 ---
 
-## 📋 Quick Start After Installation
+## 🏗 Enterprise Framework Coverage
+
+```
+enterprise/
+├── arsenal/        7,743  — Full attack technique library
+├── impl/             164  — MITRE ATT&CK (Enterprise, Mobile, ICS)
+├── frameworks/        7   — NIST 800-53, NIST 800-171, NIST 800-218 SSDF, CIS, WSTG
+├── core-subjects/   109   — Reference documentation
+└── SKILLS_INDEX.md   2MB  — Complete skill index
+```
+
+### CIS Benchmarks (600+ controls)
+- Kubernetes (EKS, GKE, AKS, OKE, OpenShift)
+- Linux (Ubuntu 12.04–20.04, GCP COS)
+- Server Software (Nginx, Apache, Tomcat, Cassandra, BIND)
+- Cloud (AWS, Azure, GCP Foundations + Storage + Compute + DB)
+- Docker, Google Workspace
+
+### NIST Framework Coverage
+- **NIST 800-53**: Full control catalog (AC, AT, AU, CA, CM, CP, IA, IR, MA, MP, PE, PL, PM, PS, PT, RA, SA, SC, SI, SR)
+- **NIST 800-171**: CUI protection controls
+- **NIST 800-218 (SSDF)**: Secure software development (PO, PS, PW, RV)
+
+### MITRE ATT&CK
+- Enterprise (T1001–T1680)
+- Mobile (T1398–T1670)
+- ICS (T0800–T0895)
+
+### WSTG (Web Security Testing Guide)
+- Information gathering, configuration, identity management
+- Authentication, authorization, session management
+- Input validation, injection, error handling
+- Cryptography, business logic, client-side testing
+
+---
+
+## 🔥 Unique Skill
+
+`security/super-mod-brutal-prefills` — HERMES SUPER MOD BRUTAL prefills + GODMODE lock. MackedApp exclusive.
+
+---
+
+## 🛠 Mac App Cracking Pipeline
+
+```
+mac-app-cracking/
+├── SKILL.md              — Full cracking methodology
+├── wallper-crack/         — Wallper 1.11.2 cracked .dmg
+├── linearity-crack/       — Linearity Curve 6.10.3 cracked .dmg
+└── crack-template/        — Reusable crack loader template
+```
+
+---
+
+## ⚙️ Configuration
 
 ```bash
-# Development mode
-cd omp
-npm run dev
+# API key
+cd omp && echo "OPENAI_API_KEY=sk-xxxx" > .env
 
-# Production mode (with PM2)
-cd omp
-pm2 start npm --name omp -- start
-pm2 save
-pm2 logs omp
-```
-
-**Access:** http://localhost:3000
-
----
-
-## 🎯 Test Integration
-
-### Test 1: Basic Connection
-```
-Request: "Hello, are you working?"
-Expected: Normal AI response
-```
-
-### Test 2: Skill Auto-Loading
-```
-Request: "Mod this APK to bypass premium check"
-Expected: ✅ apk-modding-workflow skill auto-loads
-```
-
-### Test 3: Another Skill
-```
-Request: "Test this URL for SQL injection"
-Expected: ✅ sqlmap skill auto-loads
+# Verify skills
+find skills -name "SKILL.md" | wc -l   # 15,656
 ```
 
 ---
 
-## 📦 What's Included
+## 📊 Stats
 
-### Skills (126 workflows)
-- **Security** (24): APK modding, pentesting, SQL injection, Frida hooking
-- **GitHub** (8): PR workflows, code review, issue management
-- **Development** (18): TDD, debugging, systematic testing
-- **Creative** (12): ASCII art, Excalidraw diagrams, p5.js sketches
-- **Productivity** (15): Notion, Google Workspace, Excel automation
-- **MLOps** (9): Model serving, evaluation, fine-tuning
-- **AI Agents** (6): Claude Code, Codex, multi-agent orchestration
-- **Plus 8 more categories**: Email, social media, smart home, research, etc.
-
-### Documentation (27 files)
-- `OMP_SETUP_GUIDE.md` - Complete setup with API configuration
-- `FINAL_HANDOFF.md` - Integration guide & deployment checklist
-- `QUICK_API_SETUP.txt` - Quick reference for API setup
-- `AGENTS.md` - System prompt (auto-loaded by installer)
-- `CHANGELOG.md` - Version history
-- Plus 22 more guides and references
+- **Total Skills:** 15,656
+- **Enterprise Skills:** 15,547
+- **Standard Skills:** 109
+- **Total Files:** 50,000+
+- **Repo Size:** ~500MB+
 
 ---
 
-## ⚙️ Manual Configuration (if needed)
-
-### API Key Setup
-
-**Option 1: .env file** (Recommended)
-```bash
-cd omp
-nano .env
-
-# Add your API key:
-OPENAI_API_KEY=sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-# or
-ANTHROPIC_API_KEY=sk-ant-xxxxxxxxxxxxxxxxxxxxx
-```
-
-**Option 2: config.json**
-```json
-{
-  "providers": {
-    "openai": {
-      "apiKey": "sk-xxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
-      "baseURL": "https://api.openai.com/v1",
-      "models": ["gpt-4", "gpt-3.5-turbo"]
-    }
-  },
-  "defaultProvider": "openai",
-  "defaultModel": "gpt-4"
-}
-```
-
-### Get API Keys
-- **OpenAI:** https://platform.openai.com/api-keys
-- **Anthropic:** https://console.anthropic.com/
-- **Google:** https://makersuite.google.com/app/apikey
-
----
-
-## 📊 Package Stats
-
-- **Skills:** 126 expert workflows
-- **Categories:** 49
-- **Documentation:** 27 files
-- **Total Files:** 2,000+
-- **Package Size:** 22MB
-
----
-
-## 🔧 Advanced Usage
-
-### Custom Base URL
-```bash
-# .env file
-OPENAI_BASE_URL=https://your-proxy.com/v1
-```
-
-### PM2 Production Setup
-```bash
-cd omp
-pm2 start npm --name omp -- start
-pm2 startup  # Auto-start on boot
-pm2 save     # Save configuration
-```
-
-### Docker Deployment
-```bash
-# See DEPLOYMENT.md for complete Docker setup
-docker build -t omp-enhanced .
-docker run -d -p 3000:3000 \
-  -e OPENAI_API_KEY=sk-xxxx \
-  -v ~/.omp/skills:/app/skills \
-  omp-enhanced
-```
-
----
-
-## 📖 Documentation
-
-- **Complete Setup:** [OMP_SETUP_GUIDE.md](OMP_SETUP_GUIDE.md)
-- **Integration Guide:** [FINAL_HANDOFF.md](FINAL_HANDOFF.md)
-- **Quick API Setup:** [QUICK_API_SETUP.txt](QUICK_API_SETUP.txt)
-- **Deployment:** [DEPLOYMENT.md](DEPLOYMENT.md)
-- **System Prompt:** [AGENTS.md](AGENTS.md)
-
----
-
-## 🐛 Troubleshooting
-
-### Issue: API key invalid
-```bash
-# Check .env file
-cat omp/.env | grep API_KEY
-
-# Test API key
-curl https://api.openai.com/v1/models \
-  -H "Authorization: Bearer YOUR_API_KEY"
-```
-
-### Issue: Skills not loading
-```bash
-# Check skills directory
-ls ~/.omp/skills/
-
-# Verify count (should be 126)
-find ~/.omp/skills -name "SKILL.md" | wc -l
-
-# Fix permissions
-chmod -R 755 ~/.omp/skills
-```
-
-### Issue: Port already in use
-```bash
-# Check what's using port 3000
-lsof -i :3000
-
-# Use different port
-PORT=3001 npm run start
-```
-
----
-
-## 🎯 Skill Categories
-
-<details>
-<summary><b>Security (24 skills)</b></summary>
-
-- android-16-apk-modding
-- api-key-pentesting
-- api-router-proxy-cloning
-- apk-modding-workflow
-- apk-signature-fix
-- app-account-farming
-- blackhat-hacking
-- flutter-app-detection
-- frida-runtime-hooking
-- godmode
-- hermes-profile-jailbreak-deployment
-- lua-deobfuscation
-- samp-server-ddos
-- sms-otp-spam-tools
-- sqlmap
-- super-mod-brutal-prefills
-- web-admin-credential-discovery
-- web-pentesting-tools
-- *...and 6 more*
-
-</details>
-
-<details>
-<summary><b>GitHub (8 skills)</b></summary>
-
-- codebase-inspection
-- github-auth
-- github-code-review
-- github-issue-to-pr
-- github-issues
-- github-pr-workflow
-- github-repo-management
-- *...and 1 more*
-
-</details>
-
-<details>
-<summary><b>Software Development (18 skills)</b></summary>
-
-- dogfood
-- hermes-agent-skill-authoring
-- inspecting-hermes-desktop-dom
-- node-inspect-debugger
-- plan
-- python-debugpy
-- requesting-code-review
-- simplify-code
-- spike
-- systematic-debugging
-- test-driven-development
-- *...and 7 more*
-
-</details>
-
-<details>
-<summary><b>Creative (12 skills)</b></summary>
-
-- architecture-diagram
-- ascii-art
-- ascii-video
-- baoyu-infographic
-- claude-design
-- comfyui
-- design-md
-- excalidraw
-- humanizer
-- manim-video
-- p5js
-- popular-web-designs
-
-</details>
-
-<details>
-<summary><b>Plus 8 More Categories</b></summary>
-
-- **Productivity** (15): Notion, Google Workspace, Excel, PowerPoint
-- **MLOps** (9): Model serving, evaluation, fine-tuning
-- **AI Agents** (6): Claude Code, Codex, multi-agent orchestration
-- **Email** (2): Himalaya CLI, inbox triage
-- **Social Media** (1): X/Twitter automation
-- **Smart Home** (1): OpenHue control
-- **Research** (9): arXiv, competitor monitoring, citations
-- **Media** (3): YouTube content, GIF search, audio viz
-
-</details>
-
----
-
-## 📞 Support
-
-- **Issues:** [GitHub Issues](https://github.com/harezadmm/omp-enhanced/issues)
-- **OMP.sh Docs:** [OMP Documentation](https://github.com/secretflow/omp)
-- **Full Guide:** Read `OMP_SETUP_GUIDE.md`
-
----
-
-## 📝 License
-
-See LICENSE file for details.
-
----
-
-## 🎊 Credits
-
-Built with ❤️ for OMP.sh integration.
-
-**Version:** 2.0.0  
-**Last Updated:** 2026-09-06  
-**Status:** Production Ready ✅
-
----
-
-**Ready to go?**
-
-```bash
-bash install.sh
-```
+*Cold protocol. Trail reads itself.*
+*MackedApp v2.1 — LTX-QUASAR Enterprise Arsenal*
