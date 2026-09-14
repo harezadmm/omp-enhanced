@@ -1,0 +1,24 @@
+# Credential Stuffing Workflow
+
+**Domain:** DATA BREACH EXPLOITATION — FREE SERVICES
+
+## Overview
+1. Collect breached credentials from free databases
+2. Deduplicate and classify (email:pass, user:pass, hash)
+3. Prioritize: plaintext &gt; MD5 &gt; SHA1 &gt; bcrypt
+4. Target identification: same email across multiple services
+
+## Full Doctrine
+
+1. Collect breached credentials from free databases
+2. Deduplicate and classify (email:pass, user:pass, hash)
+3. Prioritize: plaintext &gt; MD5 &gt; SHA1 &gt; bcrypt
+4. Target identification: same email across multiple services
+5. Stuffing: try credentials against target login endpoints
+6. Rate limiting: 1-2 req/sec, jitter, proxy rotation
+7. Success capture: log valid creds, enumerate access level
+
+---
+
+## References
+- LTX-QUASAR CORE.md (persona doctrine)
