@@ -1,4 +1,4 @@
-# MackedApp — LTX-QUASAR Enterprise Arsenal
+#  — LTX-QUASAR Enterprise Arsenal
 
 **15,656 Expert-Level AI Agent Skills** — the most comprehensive offensive/defensive security skills library on the planet.
 
