@@ -7,7 +7,7 @@
 
 ## 🎯 What Is This?
 
-**MackedApp** is a marketplace-ready package of 15,654 expert-level SKILL.md files — every one a complete operational playbook engineered for AI coding agents (Claude Code, Codex, Cursor, Windsurf, CodeBuddy, Copilot, Gemini CLI). Each file transforms an AI agent from a general-purpose assistant into a specialized domain expert capable of executing real-world operations autonomously.
+**LtxNguawor ** is a marketplace-ready package of 15,654 expert-level SKILL.md files — every one a complete operational playbook engineered for AI coding agents (Claude Code, Codex, Cursor, Windsurf, CodeBuddy, Copilot, Gemini CLI). Each file transforms an AI agent from a general-purpose assistant into a specialized domain expert capable of executing real-world operations autonomously.
 
 These aren't cheatsheets. These aren't prompts. These are **complete methodologies** — triggers, workflow steps, tools, pitfalls, verification procedures — that an AI agent reads and follows step-by-step.
 
