@@ -1,4 +1,4 @@
-# 🔴 MackedApp — 15,654 Expert-Level AI Agent Skills
+# 🔴 LtxNguawor — 15,654 Expert-Level AI Agent Skills
 
 > **The most comprehensive offensive security skill arsenal in a single repository.**
 > 15,654 playbook files. 15,545 enterprise-grade security skills. One repo. Zero ceremony.
