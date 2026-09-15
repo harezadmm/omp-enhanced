@@ -62,15 +62,40 @@ xattr -cr "$TARGET_APP" 2>/dev/null || true
 codesign --force --deep --sign - "$TARGET_APP" 2>/dev/null || true
 echo -e "  ${GREEN}✓ Stripped + signed${NC}"
 
-# ─── Copy postinstall ────────────────────────────────────
-echo -e "${GREEN}[3/7] Preparing postinstall...${NC}"
+# ─── Copy postinstall + all injection templates ──────────
+echo -e "${GREEN}[3/7] Preparing postinstall + injection templates...${NC}"
+
+# Copy the main dispatcher
 if [ -f "$SCRIPT_DIR/postinstall.sh" ]; then
     cp "$SCRIPT_DIR/postinstall.sh" "$SCRIPTS_DIR/postinstall"
 else
     echo -e "${RED}✗ postinstall.sh missing${NC}"; exit 1
 fi
+
+# Copy all sourced injection stubs — these are sourced by postinstall.sh at runtime
+# postinstall_*sh: 11 templates (trial_extension, serial, dylib, hex_patch,
+#   js_patch, keygen, rlm_patch, entitlement_bypass, fake_framework, plist_only)
+STAGED=0
+for stub in "$SCRIPT_DIR"/postinstall_*.sh; do
+    [ -f "$stub" ] || continue
+    cp "$stub" "$SCRIPTS_DIR/"
+    echo "  ✓ $(basename "$stub")"
+    STAGED=$((STAGED + 1))
+done
+
+# Copy RevenueCat Python injector (called directly by dispatcher)
+RC_INJECTOR="$SCRIPT_DIR/../scripts/inject_revenuecat.py"
+if [ -f "$RC_INJECTOR" ]; then
+    cp "$RC_INJECTOR" "$SCRIPTS_DIR/"
+    echo "  ✓ inject_revenuecat.py"
+    STAGED=$((STAGED + 1))
+else
+    echo "  [warn] inject_revenuecat.py not found — RevenueCat dispatch will fail"
+fi
+
 chmod +x "$SCRIPTS_DIR/postinstall"
-echo -e "  ${GREEN}✓ Ready${NC}"
+chmod +x "$SCRIPTS_DIR"/*.sh 2>/dev/null || true
+echo -e "  ${GREEN}✓ ${STAGED} injection files staged (+ dispatcher)${NC}"
 
 # ─── Build .pkg ──────────────────────────────────────────
 echo -e "${GREEN}[4/7] Building .pkg...${NC}"
