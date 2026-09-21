@@ -51,15 +51,23 @@ bash build_pkg_dmg.sh /path/to/app.dmg   # from original DMG
 
 ```
 mac-app-cracking/
-├── SKILL.md                     # Full OMP skill definition (9KB)
-├── README.md                    # This file
+├── maccrack.md                       # 1,056 lines — full methodology (16 crack types)
+├── README.md                         # This file
+├── references/
+│   ├── TNT.md                        # TNT scene: DMG structure, PGP verification, RLM bypass
+│   ├── SCENE_RELEASES.md             # TNT vs EDiSO vs appstorrent comparison matrix
+│   ├── BINARY_PATCHING.md            # Hopper dylib injection, Swift name-mangled, EDiSO hex
+│   ├── TAURI_ELECTRON.md             # Tauri/Electron JS-level patching, V8 JSC, keygen
+│   ├── REVENUECAT.md                 # RevenueCat plist internals deep dive
+│   └── CRACK_SITES.md                # 13 Mac crack sites + sourcing workflow
 ├── templates/
-│   ├── build_pkg_dmg.sh         # Builder: source → .pkg → .dmg
-│   └── postinstall.sh           # 3 inject methods + API block + re-sign
+│   ├── build_pkg_dmg.sh              # Builder: source → .pkg → .dmg
+│   ├── postinstall.sh                # 3-method inject + API block + re-sign
+│   ├── postinstall_trial_extension.sh# extend_trial() — trial date extension (source-able)
+│   ├── postinstall_serial.sh         # inject_serial() — license key injection (source-able)
+│   └── classify_crack_type.sh        # Auto-detect: 11 crack types from .app structure
 ├── scripts/
-│   └── inject_revenuecat.py     # Standalone RevenueCat injector
-└── references/
-    └── REVENUECAT.md            # RevenueCat plist internals deep dive
+│   └── inject_revenuecat.py          # Standalone RevenueCat injector
 ```
 
 ## 🔪 The Kill Chain
