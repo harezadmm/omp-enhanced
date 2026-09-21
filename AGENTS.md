@@ -630,75 +630,6 @@ both `arsenal/` and `impl/` (MITRE ATT&CK technique mirrors). These were removed
 at `skills/arsenal/<name>/` for a technique you need to execute, substitute
 `skills/impl/<name>/`.
 
-#### Cheat Engine Auto-Assembler
-```asm
-[ENABLE]
-// Code injection: override health decrement
-aobscanmodule(health_dec, game.exe, 29 76 38)
-alloc(newmem, $1000)
-label(return)
-label(exit)
-
-newmem:
-  cmp [esi+38], 0
-  jle exit
-  jmp return
-
-exit:
-  mov [esi+38], 0
-  jmp return
-
-health_dec:
-  jmp newmem
-  nop
-return:
-
-[DISABLE]
-health_dec:
-  db 29 76 38
-dealloc(newmem)
-```
-
-### Anti-Cheat Bypass Techniques
-| Anti-Cheat | Detection Method | Bypass Technique |
-|------------|------------------|------------------|
-| VAC (Valve) | Signature scan, heuristic | Kernel-mode driver, code obfuscation |
-| EAC (Easy Anti-Cheat) | Process scan, memory protection | Hardware breakpoints, DMA read |
-| BattlEye | Module scan, anomaly detection | Manual mapping, thread hijacking |
-| Riot Vanguard | Kernel-level monitoring | Boot-time driver, hypervisor |
-| PunkBuster | Signature + heuristic | External memory read (DMA) |
-| GameGuard | Process injection detection | External overlay, network-level |
-
-### Bypass Approaches (Memory Access)
-1. **External Read**: ReadProcessMemory from separate process (less detectable)
-2. **DMA Hardware**: PCILeech/FPGA reads GPU memory without touching game process
-3. **Hardware Breakpoints**: Dr0-Dr7 registers, no software hooks
-4. **Kernel Driver**: Load unsigned driver via exploit, access from ring 0
-5. **Hypervisor**: Type-1 hypervisor reads guest memory from VMX root
-6. **Overlay Injection**: Draw ESP/aimbot via separate overlay window
-
-### Game-Specific Patterns
-- **Unity Games**: Il2Cpp dumper → struct offset discovery → Cheat Engine
-- **Unreal Engine**: SDK dumper → GNames/GObjects → memory offset map
-- **Source Engine**: Netvar manager → offset dump → external cheat
-- **Custom Engines**: String scan → xref analysis → struct reconstruction
-
-### App Hacking (Non-Game)
-Same memory editing techniques apply to desktop applications:
-- License check bypass: NOP the comparison instruction
-- Feature unlock: Flip boolean flag in memory
-- Trial reset: Modify registry/timestamp in memory
-- Ad removal: Patch banner display function
-- Premium unlock: Change user role/permission byte
-
-### Debugging Techniques
-- **x64dbg**: Attach to process, set breakpoints, step through
-- **Cheat Engine Debugger**: Breakpoint on address access (read/write/execute)
-- **IDA Pro/Ghidra**: Static analysis, find functions and offsets
-- **API Monitor**: Log API calls (OpenProcess, ReadFile, etc.)
-- **Process Hacker**: Inspect memory, handles, threads, modules
-
-
 ---
 
 ## AUTO-PIVOT MATRIX
@@ -1738,9 +1669,7 @@ that matches the task before executing. Do not run a domain from memory when the
 4. recon-tools/*.py → executed when target matches a known CVE surface
 ```
 
-#### Spider Framework (Full Crawl)
-```python
-from scrapling.spiders import Spider, Response
+---
 
 
 ## MITRE ATT&amp;CK MAPPING
