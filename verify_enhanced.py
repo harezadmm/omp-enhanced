@@ -37,16 +37,50 @@ def check_initialization():
 def check_feature_1_cascade(client):
     """Check feature #5: Multi-model fallback cascade"""
     print("\n🔍 Feature #1: Multi-model fallback cascade")
-    
-    # Check cascade configuration
-    print(f"   Default cascade: {len(client.default_cascade)} providers")
-    for provider, model in client.default_cascade:
-        print(f"      - {provider}: {model[:50]}")
-    
-    # Check custom cascade support
-    custom = [("groq", "llama-3.3-70b-versatile")]
-    print(f"   ✅ Custom cascade support: OK")
-    
+
+    bandelbanget = client.providers.get("bandelbanget")
+    if not bandelbanget:
+        print("   ❌ bandelbanget provider missing")
+        return False
+
+    models = bandelbanget["models"]
+    print(f"   bandelbanget models: {len(models)}")
+    for model in models:
+        print(f"      - {model}")
+
+    required = {
+        "deepseek-v4-mod",
+        "deepseek-v4-flash",
+        "deepseek-v4-flash-0731",
+        "deepseek-v4-flash-vision-exp",
+        "deepseek-v4-pro",
+        "deepseek-v4-pro-0813",
+        "claude-opus-5",
+        "glm-5.1",
+        "glm-5.2",
+        "glm-5.3",
+        "glm-5.3-flash",
+        "gpt-5.6-luna",
+        "gpt-5.6-sol",
+        "gpt-5.6-terra",
+        "hy3",
+        "kimi-k2.7-code",
+        "kimi-k2.7-code-highspeed",
+        "kimi-k3",
+        "mimo-v2.5-pro",
+        "minimax-m3",
+        "auto",
+    }
+
+    if set(models) != required:
+        print("   ❌ bandelbanget model list is incomplete")
+        return False
+
+    if not client.default_cascade or client.default_cascade[0][0] != "bandelbanget":
+        print("   ❌ Default cascade does not start with bandelbanget")
+        return False
+
+    print("   ✅ bandelbanget cascade: OK")
     return True
 
 def check_feature_2_templates(client):
@@ -110,24 +144,26 @@ def check_feature_3_caching(client):
     else:
         print(f"   ❌ Cache set/get: FAILED")
         return False
-    
+
     # Check cache clearing
     cleared = client.clear_cache()
     print(f"   ✅ Cache clearing: OK ({cleared} files cleared)")
-    
+
     return True
 
 def check_api_keys():
     """Check if any API keys are configured"""
     print("\n🔍 Checking API keys...")
-    
+
     import os
     keys = {
+        "BANDELBANGET_API_KEY": os.getenv("BANDELBANGET_API_KEY"),
+        "OPENAI_API_KEY": os.getenv("OPENAI_API_KEY"),
         "DEEPINFRA_API_KEY": os.getenv("DEEPINFRA_API_KEY"),
         "GROQ_API_KEY": os.getenv("GROQ_API_KEY"),
-        "OPENROUTER_API_KEY": os.getenv("OPENROUTER_API_KEY")
+        "OPENROUTER_API_KEY": os.getenv("OPENROUTER_API_KEY"),
     }
-    
+
     found = 0
     for name, value in keys.items():
         if value:
@@ -135,29 +171,18 @@ def check_api_keys():
             found += 1
         else:
             print(f"   ⚠️  {name}: not set")
-    
+
     # Check Ollama
     import subprocess
     try:
         result = subprocess.run(['which', 'ollama'], capture_output=True, timeout=2)
         if result.returncode == 0:
-            print(f"   ✅ Ollama: installed (local inference available)")
-            found += 1
+            print(f"   ✅ Ollama: installed")
         else:
             print(f"   ⚠️  Ollama: not installed")
     except:
         print(f"   ⚠️  Ollama: not installed")
-    
-    if found == 0:
-        print("\n   ⚠️  WARNING: No API keys or Ollama found!")
-        print("   Set at least one API key to use OMP Enhanced:")
-        print("      export DEEPINFRA_API_KEY='your_key'")
-        print("      export GROQ_API_KEY='your_key'")
-        print("      export OPENROUTER_API_KEY='your_key'")
-        print("   Or install Ollama for local inference")
-    else:
-        print(f"\n   ✅ {found} provider(s) available")
-    
+
     return found > 0
 
 def check_files():

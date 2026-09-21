@@ -135,12 +135,11 @@ sed -i '' "s|\$HOME|$HOME|g" ~/.omp/agent/config.yml
 echo -e "${GREEN}  ✅ ~/.omp/agent/config.yml (macOS paths)${NC}"
 
 # ── models.yml ──
-cat > ~/.omp/agent/models.yml << 'MODELSEOF'
 providers:
   bandelbanget:
-    baseUrl: https://bandelbanget.xyz/v1
+    baseUrl: ${BANDELBANGET_BASE_URL:-${OPENAI_BASE_URL}}
     api: openai-completions
-    apiKey: ${BANDELBANGET_API_KEY}
+    apiKey: ${BANDELBANGET_API_KEY:-${OPENAI_API_KEY}}
     authHeader: true
     models:
       - id: "auto"
@@ -205,23 +204,37 @@ else
     touch "$SHELL_PROFILE"
 fi
 
-# Check if BANDELBANGET_API_KEY already in profile
-if grep -q "BANDELBANGET_API_KEY" "$SHELL_PROFILE" 2>/dev/null; then
-    echo -e "${YELLOW}  ⚠️  BANDELBANGET_API_KEY already in $SHELL_PROFILE — updating...${NC}"
-    sed -i '' '/BANDELBANGET_API_KEY/d' "$SHELL_PROFILE"
+# Check if bandelbanget vars already in profile
+if grep -q "BANDELBANGET_" "$SHELL_PROFILE" 2>/dev/null; then
+    echo -e "${YELLOW}  ⚠️  BANDELBANGET vars already in $SHELL_PROFILE — updating...${NC}"
+    sed -i '' '/BANDELBANGET_/d' "$SHELL_PROFILE"
 fi
 
-cat >> "$SHELL_PROFILE" << 'SHELLEOF'
+if [ -f ".env" ]; then
+  set -a
+  . ./.env
+  set +a
+fi
+
+BANDELBANGET_API_KEY="${BANDELBANGET_API_KEY:-${OPENAI_API_KEY:-}}"
+BANDELBANGET_BASE_URL="${BANDELBANGET_BASE_URL:-${OPENAI_BASE_URL:-https://bandelbanget.xyz/v1}}"
+
+if [ -z "$BANDELBANGET_API_KEY" ]; then
+  echo -e "${YELLOW}⚠️  BANDELBANGET_API_KEY not set; skipping shell profile export${NC}"
+else
+  cat >> "$SHELL_PROFILE" <<SHELLEOF
 
 # ── LTX-QUASAR OMP ─────────────────────────────────────────────
-export BANDELBANGET_API_KEY="sk-qwen-f7a2c02c6dfef16825fb4222f014af4e742b47431528a7f5"
+export BANDELBANGET_API_KEY="$BANDELBANGET_API_KEY"
+export BANDELBANGET_BASE_URL="$BANDELBANGET_BASE_URL"
 # ────────────────────────────────────────────────────────────────
 SHELLEOF
 
-# Set it immediately for this session too
-export BANDELBANGET_API_KEY="sk-qwen-f7a2c02c6dfef16825fb4222f014af4e742b47431528a7f5"
-
-echo -e "${GREEN}  ✅ API key embedded in $SHELL_PROFILE${NC}"
+  # Set it immediately for this session too
+  export BANDELBANGET_API_KEY
+  export BANDELBANGET_BASE_URL
+  echo -e "${GREEN}  ✅ API key embedded in $SHELL_PROFILE${NC}"
+fi
 
 echo ""
 

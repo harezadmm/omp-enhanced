@@ -1,0 +1,35 @@
+/* Copy notification styles */
+.copy-notification {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--secondary-bg);
+  color: var(--success-color);
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: 1px solid var(--input-border);
+  box-shadow: var(--panel-shadow-soft);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: fade-in 0.3s ease-in-out;
+}
+
+.copy-notification.error {
+  color: #e53935;
+}
+
+.copy-notification.fade-out {
+  animation: fade-out 0.3s ease-in-out forwards;
+}
+
+@keyframes fade-in {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fade-out {
+  from { opacity: 1; transform: translateY(0); }
+  to { opacity: 0; transform: translateY(20px); }
+}

@@ -1,0 +1,483 @@
+/**
+ * REGRESSION (keyless-path bug): the local-agent / codex text-CLI backbones must surface `toolCalls`
+ * parsed from the agent's reply. If they don't, the ReAct loop takes its "final answer" branch on
+ * turn 0 and every operator abstains without ever running the Arsenal. These tests pin the fix AND
+ * the parser-hardening from the PR #16 audit (over-match, ReDoS, drift-abstains, string args, Codex coverage).
+ */
+import { describe, it, expect, vi, afterEach, beforeEach } from 'vitest';
+import { EventEmitter } from 'events';
+
+// Mock the local-agent CLI bridge (LocalAgentAdapter) and the codex spawn/file read (CodexAdapter).
+vi.mock('../agent/local-agents.js', () => ({ localAgentChat: vi.fn() }));
+vi.mock('child_process', () => ({
+  spawn: vi.fn(() => {
+    const child = new EventEmitter() as EventEmitter & { stdin: { end: () => void }; stdout: EventEmitter; stderr: EventEmitter };
+    child.stdin = { end: () => setTimeout(() => child.emit('close', 0), 0) };
+    child.stdout = new EventEmitter();
+    child.stderr = new EventEmitter();
+    return child;
+  }),
+}));
+vi.mock('fs/promises', async (orig) => {
+  const actual = await orig<typeof import('fs/promises')>();
+  return { ...actual, readFile: vi.fn() };
+});
+
+import { parseTextToolCalls, LLMBackbone, type LLMMessage } from '../llm/index.js';
+import { localAgentChat } from '../agent/local-agents.js';
+import { readFile } from 'fs/promises';
+const cli = vi.mocked(localAgentChat);
+const fileRead = vi.mocked(readFile as unknown as (...a: unknown[]) => Promise<string>);
+
+const TOOLS = [{
+  name: 'nmap_scan', description: 'port scan a host',
+  parameters: { type: 'object' as const, properties: { target: { type: 'string' } }, required: ['target'] },
+}];
+const localBackbone = () => new LLMBackbone({ provider: 'local-agent', model: 'codex' } as never);
+const claudeBackbone = () => new LLMBackbone({ provider: 'local-agent', model: 'claude' } as never);
+const codexBackbone = () => new LLMBackbone({ provider: 'codex', model: 'codex-default' } as never);
+
+describe('parseTextToolCalls — happy path + drift tolerance', () => {
+  it('parses a contracted fenced block', () => {
+    expect(parseTextToolCalls('reasoning\n```json\n{"tool_calls":[{"name":"nmap_scan","arguments":{"target":"x"}}]}\n```'))
+      .toMatchObject([{ name: 'nmap_scan', arguments: { target: 'x' } }]);
+  });
+  it('prose-only debrief is the final answer (no calls)', () => {
+    expect(parseTextToolCalls('Surface exhausted; no findings. Abstaining.')).toBeUndefined();
+  });
+  // --- audit must-fixes below ---
+  it('unfenced object + a stray brace elsewhere still parses (was: greedy over-match → silent abstain)', () => {
+    const r = parseTextToolCalls('example shape {"x":1}\n{"tool_calls":[{"name":"port_scan","arguments":{"host":"h"}}]}\ntrailing {note}');
+    expect(r).toHaveLength(1);
+    expect(r![0].name).toBe('port_scan');
+  });
+  it('tolerates a trailing comma', () => {
+    expect(parseTextToolCalls('```json\n{"tool_calls":[{"name":"nmap_scan","arguments":{"target":"x"}},]}\n```')).toHaveLength(1);
+  });
+  it('accepts a single un-wrapped {name,arguments} object', () => {
+    expect(parseTextToolCalls('```json\n{"name":"nmap_scan","arguments":{"target":"x"}}\n```')).toMatchObject([{ name: 'nmap_scan' }]);
+  });
+  it('accepts an "actions" wrapper key', () => {
+    expect(parseTextToolCalls('{"actions":[{"name":"curl_request","arguments":{}}]}')).toHaveLength(1);
+  });
+  it('coerces a string "arguments" into an object (scope-gate blind-spot fix)', () => {
+    const r = parseTextToolCalls('{"tool_calls":[{"name":"nmap_scan","arguments":"{\\"target\\":\\"x\\"}"}]}');
+    expect(r![0].arguments).toEqual({ target: 'x' });
+  });
+  it('is DoS-safe on pathological brace input (was: quadratic ReDoS)', () => {
+    const t0 = Date.now();
+    expect(parseTextToolCalls('{'.repeat(80000))).toBeUndefined();
+    // Bounded — the old greedy regex took ~2100ms. Generous ceiling (2x below that
+    // regression target) so V8 coverage instrumentation / slow CI can't false-fail
+    // this wall-clock guard; it still fails hard if the quadratic ReDoS returns.
+    expect(Date.now() - t0).toBeLessThan(1000);
+  });
+});
+
+describe('local-agent backbone surfaces toolCalls (keyless-path fix)', () => {
+  it('describes the current ACTION CONTRACT to the local agent', async () => {
+    cli.mockResolvedValueOnce('Final debrief.');
+    await localBackbone().chatWithTools([{ role: 'user', content: 'scan' }], TOOLS as never);
+    const prompt = String(cli.mock.calls.at(-1)?.[1] || '');
+    expect(prompt).toContain('ACTION CONTRACT');
+    expect(prompt).toContain('nmap_scan');
+    expect(prompt).toContain('port scan a host');
+  });
+
+  it('returns toolCalls + finishReason=tool_calls when the agent requests a tool', async () => {
+    cli.mockResolvedValueOnce('```json\n{"tool_calls":[{"name":"nmap_scan","arguments":{"target":"x"}}]}\n```');
+    const res = await localBackbone().chatWithTools([{ role: 'user', content: 'scan' }], TOOLS as never);
+    expect(res.toolCalls?.[0]?.name).toBe('nmap_scan');
+    expect(res.finishReason).toBe('tool_calls');
+  });
+  it('returns no toolCalls (final answer) on a prose debrief', async () => {
+    cli.mockResolvedValueOnce('Final debrief: nothing exploitable.');
+    const res = await localBackbone().chatWithTools([{ role: 'user', content: 'scan' }], TOOLS as never);
+    expect(res.toolCalls).toBeUndefined();
+    expect(res.finishReason).toBe('stop');
+  });
+
+  it('does not force the old short timeout when no local-agent timeout is configured', async () => {
+    cli.mockResolvedValueOnce('done');
+    await localBackbone().chat([{ role: 'user', content: 'hello' }]);
+    expect(cli.mock.calls.at(-1)?.[2]).toMatchObject({ timeoutMs: undefined });
+  });
+
+  it('passes an explicit local-agent timeout through to the CLI runner', async () => {
+    cli.mockResolvedValueOnce('done');
+    await new LLMBackbone({ provider: 'local-agent', model: 'codex', timeout: 900000 } as never)
+      .chat([{ role: 'user', content: 'hello' }]);
+    expect(cli.mock.calls.at(-1)?.[2]).toMatchObject({ timeoutMs: 900000 });
+  });
+
+  // Model-argument passthrough (PR #127 review): the picked local model must reach the CLI's --model.
+  // The agent id + chosen model travel in a single "agentId::model" spec; the adapter must split it.
+  it('splits an "agentId::model" spec so the picked model reaches the CLI (--model)', async () => {
+    cli.mockResolvedValueOnce('done');
+    await new LLMBackbone({ provider: 'local-agent', model: 'claude::opus' } as never)
+      .chat([{ role: 'user', content: 'hello' }]);
+    expect(cli.mock.calls.at(-1)?.[0]).toBe('claude');
+    expect(cli.mock.calls.at(-1)?.[2]).toMatchObject({ model: 'opus' });
+  });
+
+  it('supports a full model id after "::" (e.g. claude::claude-opus-4-8)', async () => {
+    cli.mockResolvedValueOnce('done');
+    await new LLMBackbone({ provider: 'local-agent', model: 'claude::claude-opus-4-8' } as never)
+      .chat([{ role: 'user', content: 'hello' }]);
+    expect(cli.mock.calls.at(-1)?.[0]).toBe('claude');
+    expect(cli.mock.calls.at(-1)?.[2]).toMatchObject({ model: 'claude-opus-4-8' });
+  });
+
+  it('a bare agent id passes NO model (the CLI account default is used)', async () => {
+    cli.mockResolvedValueOnce('done');
+    await new LLMBackbone({ provider: 'local-agent', model: 'claude' } as never)
+      .chat([{ role: 'user', content: 'hello' }]);
+    expect(cli.mock.calls.at(-1)?.[0]).toBe('claude');
+    expect(cli.mock.calls.at(-1)?.[2]?.model).toBeUndefined();
+  });
+});
+
+describe('Claude local-agent usage accounting (#139)', () => {
+  it('extracts content and aggregates real input, output, and cache token usage', async () => {
+    cli.mockResolvedValueOnce(JSON.stringify({
+      result: 'done',
+      usage: {
+        input_tokens: 11,
+        output_tokens: 7,
+        cache_creation_input_tokens: 13,
+        cache_read_input_tokens: 17,
+      },
+    }));
+
+    const res = await claudeBackbone().chat([{ role: 'user', content: 'hello' }]);
+
+    expect(res.content).toBe('done');
+    expect(res.usage).toEqual({ promptTokens: 41, completionTokens: 7, totalTokens: 48 });
+  });
+
+  it.each([
+    ['missing', { result: 'fallback' }],
+    ['empty', { result: 'fallback', usage: {} }],
+    ['zero', { result: 'fallback', usage: { input_tokens: 0, output_tokens: 0 } }],
+    ['malformed', { result: 'fallback', usage: { input_tokens: 'many', output_tokens: 2 } }],
+    ['negative', { result: 'fallback', usage: { input_tokens: -1, output_tokens: 2 } }],
+  ])('retains envelope content and estimates when usage is %s', async (_case, envelope) => {
+    cli.mockResolvedValueOnce(JSON.stringify(envelope));
+
+    const res = await claudeBackbone().chat([{ role: 'user', content: 'hello' }]);
+
+    expect(res.content).toBe('fallback');
+    expect(res.usage?.promptTokens).toBeGreaterThan(0);
+    expect(res.usage?.completionTokens).toBe(Math.ceil('fallback'.length / 4));
+    expect(res.usage?.totalTokens).toBe((res.usage?.promptTokens || 0) + (res.usage?.completionTokens || 0));
+  });
+
+  it('estimates usage and preserves raw content when the CLI does not return JSON', async () => {
+    cli.mockResolvedValueOnce('plain reply');
+
+    const res = await claudeBackbone().chat([{ role: 'user', content: 'hello' }]);
+
+    expect(res.content).toBe('plain reply');
+    expect(res.usage?.totalTokens).toBeGreaterThan(0);
+  });
+
+  it('parses tool calls from the JSON result rather than the envelope', async () => {
+    cli.mockResolvedValueOnce(JSON.stringify({
+      result: '{"tool_calls":[{"name":"nmap_scan","arguments":{"target":"x"}}]}',
+      usage: { input_tokens: 10, output_tokens: 5 },
+    }));
+
+    const res = await claudeBackbone().chatWithTools([{ role: 'user', content: 'scan' }], TOOLS as never);
+
+    expect(res.toolCalls?.[0]?.name).toBe('nmap_scan');
+    expect(res.finishReason).toBe('tool_calls');
+    expect(res.usage?.totalTokens).toBe(15);
+  });
+});
+
+describe('Claude local-agent session resume (Tier 2)', () => {
+  beforeEach(() => { process.env.T3MP3ST_TRUST_CLAUDE_SESSION = '1'; });
+  afterEach(() => { delete process.env.T3MP3ST_TRUST_CLAUDE_SESSION; });
+
+  it('the first call on a fresh adapter passes no sessionId', async () => {
+    cli.mockResolvedValueOnce(JSON.stringify({ result: 'first', session_id: 'sess-1' }));
+    await claudeBackbone().chat([{ role: 'user', content: 'hello' }]);
+    expect(cli.mock.calls.at(-1)?.[2]).toMatchObject({ sessionId: undefined });
+  });
+
+  it('captures session_id from the response and passes it as --resume on a LATER call within the SAME task', async () => {
+    const be = claudeBackbone();
+    // AgentLoop's real shape: one array, grown via push() across a task's iterations.
+    const messages: LLMMessage[] = [{ role: 'user', content: 'hello' }];
+    cli.mockResolvedValueOnce(JSON.stringify({ result: 'first', session_id: 'sess-1' }));
+    await be.chat(messages);
+
+    messages.push({ role: 'assistant', content: 'first' }, { role: 'user', content: 'again' });
+    cli.mockResolvedValueOnce(JSON.stringify({ result: 'second', session_id: 'sess-1' }));
+    await be.chat(messages);
+
+    expect(cli.mock.calls.at(-1)?.[2]).toMatchObject({ sessionId: 'sess-1' });
+  });
+
+  it('resetLocalAgentSession() drops the tracked session so the next call starts fresh, even mid-task', async () => {
+    const be = claudeBackbone();
+    // SAME array both calls, so this isolates the EXPLICIT reset from the automatic task-boundary
+    // reset (a different array would reset on its own regardless of this call).
+    const messages: LLMMessage[] = [{ role: 'user', content: 'hello' }];
+    cli.mockResolvedValueOnce(JSON.stringify({ result: 'first', session_id: 'sess-1' }));
+    await be.chat(messages);
+
+    be.resetLocalAgentSession();
+
+    messages.push({ role: 'assistant', content: 'first' }, { role: 'user', content: 'again' });
+    cli.mockResolvedValueOnce(JSON.stringify({ result: 'second', session_id: 'sess-2' }));
+    await be.chat(messages);
+
+    expect(cli.mock.calls.at(-1)?.[2]).toMatchObject({ sessionId: undefined });
+  });
+
+  it('a separate LLMBackbone instance never inherits another instance\'s session (per-operator isolation)', async () => {
+    const opA = claudeBackbone();
+    cli.mockResolvedValueOnce(JSON.stringify({ result: 'a1', session_id: 'sess-a' }));
+    await opA.chat([{ role: 'user', content: 'hello' }]);
+
+    const opB = claudeBackbone();
+    cli.mockResolvedValueOnce(JSON.stringify({ result: 'b1', session_id: 'sess-b' }));
+    await opB.chat([{ role: 'user', content: 'hello' }]);
+
+    expect(cli.mock.calls.at(-1)?.[2]).toMatchObject({ sessionId: undefined });
+  });
+
+  it('a resumed session with no usable id in the envelope keeps the PRIOR session for the next call in the SAME task', async () => {
+    const be = claudeBackbone();
+    const messages: LLMMessage[] = [{ role: 'user', content: 'hello' }];
+    cli.mockResolvedValueOnce(JSON.stringify({ result: 'first', session_id: 'sess-1' }));
+    await be.chat(messages);
+
+    messages.push({ role: 'assistant', content: 'first' }, { role: 'user', content: 'again' });
+    cli.mockResolvedValueOnce(JSON.stringify({ result: 'second' })); // no session_id this time
+    await be.chat(messages);
+
+    messages.push({ role: 'assistant', content: 'second' }, { role: 'user', content: 'once more' });
+    cli.mockResolvedValueOnce(JSON.stringify({ result: 'third', session_id: 'sess-1' }));
+    await be.chat(messages);
+
+    expect(cli.mock.calls.at(-1)?.[2]).toMatchObject({ sessionId: 'sess-1' });
+  });
+
+  it('non-claude local agents (codex CLI via local-agent provider) never receive a sessionId', async () => {
+    cli.mockResolvedValueOnce('done');
+    await localBackbone().chat([{ role: 'user', content: 'hello' }]);
+    expect(cli.mock.calls.at(-1)?.[2]).toMatchObject({ sessionId: undefined });
+  });
+
+  // PR #149 review (jmagly): formatPrompt() always serialized the WHOLE messages array, so a
+  // resumed call duplicated the transcript into a session that already had it — the exact resend
+  // this feature exists to eliminate. These pin the fix: same-array (same task) reuse sends only
+  // the NEW messages once a session exists; a different array (a new task) still gets everything.
+  it('a resumed call on the SAME growing messages array sends only the delta, not the full transcript', async () => {
+    const be = claudeBackbone();
+    const messages: LLMMessage[] = [
+      { role: 'system', content: 'SYSTEM-PROMPT-MARKER' },
+      { role: 'user', content: 'USER-TASK-MARKER' },
+    ];
+
+    cli.mockResolvedValueOnce(JSON.stringify({
+      result: '{"tool_calls":[{"name":"nmap_scan","arguments":{"target":"x"}}]}',
+      session_id: 'sess-1',
+    }));
+    await be.chatWithTools(messages, TOOLS as never);
+
+    // AgentLoop's real growth pattern: push the assistant turn + tool result onto the SAME array.
+    messages.push({ role: 'assistant', content: 'reasoning', toolCalls: [{ id: 'c1', name: 'nmap_scan', arguments: { target: 'x' } }] });
+    messages.push({ role: 'tool', content: 'TOOL-RESULT-MARKER', toolCallId: 'c1', name: 'nmap_scan' });
+
+    cli.mockResolvedValueOnce(JSON.stringify({ result: 'Final debrief.', session_id: 'sess-1' }));
+    await be.chatWithTools(messages, TOOLS as never);
+
+    const secondPrompt = String(cli.mock.calls.at(-1)?.[1] || '');
+    expect(secondPrompt).not.toContain('SYSTEM-PROMPT-MARKER');
+    expect(secondPrompt).not.toContain('USER-TASK-MARKER');
+    expect(secondPrompt).toContain('TOOL-RESULT-MARKER');
+    expect(secondPrompt).toContain('ACTION CONTRACT'); // tool contract retained on the delta call
+  });
+
+  // PR #149 review (jmagly, round 3): a new task must not just switch from delta to full-prompt
+  // sending while still resuming the OLD session — it must start a genuinely FRESH session. The
+  // old session belongs to a different task (and potentially a different target); resuming it
+  // would carry that task's system prompt, target data, and tool output — including anything
+  // attacker-controlled — into a task that never earned it, bypassing PackBoard as the one
+  // sanctioned cross-task channel. One operator, two sequential tasks: task 2 gets no --resume.
+  it('a NEW task (different messages array) starts a genuinely FRESH session, not a resume of the prior task', async () => {
+    const be = claudeBackbone();
+    cli.mockResolvedValueOnce(JSON.stringify({ result: 'first', session_id: 'sess-1' }));
+    await be.chat([{ role: 'system', content: 'TASK-ONE-SYSTEM' }, { role: 'user', content: 'TASK-ONE-USER' }]);
+    expect(cli.mock.calls.at(-1)?.[2]).toMatchObject({ sessionId: undefined });
+
+    // A brand-new task builds a brand-new array (AgentLoop.run() does this per task).
+    cli.mockResolvedValueOnce(JSON.stringify({ result: 'second', session_id: 'sess-2' }));
+    await be.chat([{ role: 'system', content: 'TASK-TWO-SYSTEM' }, { role: 'user', content: 'TASK-TWO-USER' }]);
+
+    const secondCall = cli.mock.calls.at(-1);
+    const secondPrompt = String(secondCall?.[1] || '');
+    expect(secondPrompt).toContain('TASK-TWO-SYSTEM');
+    expect(secondPrompt).toContain('TASK-TWO-USER');
+    expect(secondPrompt).not.toContain('TASK-ONE-SYSTEM'); // task 1's content never enters the wire prompt either
+    // The core assertion: task 2's session id is NOT task 1's — no --resume across the task boundary.
+    expect(secondCall?.[2]).toMatchObject({ sessionId: undefined, fallbackPrompt: undefined });
+  });
+
+  it('passes fallbackPrompt (the FULL transcript) alongside a delta send, so a stale-session retry never gets the delta', async () => {
+    const be = claudeBackbone();
+    const messages: LLMMessage[] = [{ role: 'system', content: 'S' }, { role: 'user', content: 'U' }];
+
+    cli.mockResolvedValueOnce(JSON.stringify({ result: 'first', session_id: 'sess-1' }));
+    await be.chat(messages);
+    expect(cli.mock.calls.at(-1)?.[2]).toMatchObject({ fallbackPrompt: undefined }); // nothing to fall back from yet
+
+    messages.push({ role: 'assistant', content: 'ok' });
+    cli.mockResolvedValueOnce(JSON.stringify({ result: 'second', session_id: 'sess-1' }));
+    await be.chat(messages);
+
+    const call = cli.mock.calls.at(-1);
+    const deltaPrompt = String(call?.[1] || '');
+    const fallbackPrompt = String((call?.[2] as { fallbackPrompt?: string } | undefined)?.fallbackPrompt || '');
+    expect(deltaPrompt).not.toContain('### SYSTEM\nS'); // delta omits the first task's system/user content
+    expect(deltaPrompt).not.toContain('### USER\nU');
+    expect(fallbackPrompt).toContain('### SYSTEM\nS'); // fallback carries the FULL transcript a fresh session would need
+    expect(fallbackPrompt).toContain('### USER\nU');
+  });
+
+  // PR #149 review follow-up: a real envelope's promptTokens on a resumed call reflects the WHOLE
+  // cached conversation (input + cache_creation + cache_read), not the wire size of the delta —
+  // confirmed empirically. The character-estimate fallback (used only when the envelope fails to
+  // parse) must approximate that same full-conversation size, or it silently undercounts the
+  // budget check by an order of magnitude on a delta call.
+  it('the usage estimate fallback reflects the FULL transcript, not the delta, on a mid-session parse failure', async () => {
+    const be = claudeBackbone();
+    const messages: LLMMessage[] = [
+      { role: 'system', content: 'S'.repeat(2000) },
+      { role: 'user', content: 'U'.repeat(2000) },
+    ];
+
+    cli.mockResolvedValueOnce(JSON.stringify({ result: 'first', session_id: 'sess-1' }));
+    await be.chat(messages);
+
+    messages.push({ role: 'assistant', content: 'ok' });
+    cli.mockResolvedValueOnce('not json'); // envelope parse failure -> falls to the estimate
+    const res = await be.chat(messages);
+
+    // A delta-only estimate would be tiny (just "ok" plus the preamble/tool contract). The full
+    // ~4000 chars of original system/user content must show up in the estimate too.
+    expect(res.usage?.promptTokens).toBeGreaterThan(900);
+  });
+});
+
+describe('Claude local-agent session trust boundary', () => {
+  afterEach(() => { delete process.env.T3MP3ST_TRUST_CLAUDE_SESSION; });
+
+  it('does not retain or resume an opaque Claude session by default', async () => {
+    const be = claudeBackbone();
+    const messages: LLMMessage[] = [{ role: 'user', content: 'first' }];
+    cli.mockResolvedValueOnce(JSON.stringify({ result: 'one', session_id: 'ambient-session' }));
+    await be.chat(messages);
+    messages.push({ role: 'user', content: 'second' });
+    cli.mockResolvedValueOnce(JSON.stringify({ result: 'two', session_id: 'another-session' }));
+    await be.chat(messages);
+
+    expect(cli.mock.calls.at(-1)?.[2]).toMatchObject({ sessionId: undefined, fallbackPrompt: undefined });
+  });
+});
+
+describe('codex backbone surfaces toolCalls (guards the CodexAdapter half of the fix)', () => {
+  it('returns toolCalls when codex emits the contract', async () => {
+    fileRead.mockResolvedValueOnce('```json\n{"tool_calls":[{"name":"nmap_scan","arguments":{"target":"x"}}]}\n```');
+    const res = await codexBackbone().chatWithTools([{ role: 'user', content: 'scan' }], TOOLS as never);
+    expect(res.toolCalls?.[0]?.name).toBe('nmap_scan');
+  });
+  it('returns no toolCalls on a codex prose debrief', async () => {
+    fileRead.mockResolvedValueOnce('No exploitable surface. Final debrief.');
+    const res = await codexBackbone().chatWithTools([{ role: 'user', content: 'scan' }], TOOLS as never);
+    expect(res.toolCalls).toBeUndefined();
+  });
+});
+
+describe('local-model (HTTP) backbone surfaces toolCalls — the keyless-path fix for self-hosted models', () => {
+  const origFetch = global.fetch;
+  afterEach(() => { global.fetch = origFetch; });
+  const mockJson = (body: unknown) => {
+    const spy = vi.fn(async (_url: string, _init: { body: string }) => ({ ok: true, json: async () => body } as unknown as Response));
+    global.fetch = spy as unknown as typeof fetch;
+    return spy;
+  };
+  const localModel = (baseUrl?: string) => new LLMBackbone({ provider: 'local', model: 'llama3', baseUrl } as never);
+
+  it('Ollama wire (/api/chat): parses a tool request out of message.content', async () => {
+    mockJson({ model: 'llama3', message: { role: 'assistant', content: '```json\n{"tool_calls":[{"name":"nmap_scan","arguments":{"target":"x"}}]}\n```' } });
+    const res = await localModel('http://localhost:11434/api').chatWithTools([{ role: 'user', content: 'scan' }], TOOLS as never);
+    expect(res.toolCalls?.[0]?.name).toBe('nmap_scan');
+    expect(res.finishReason).toBe('tool_calls');
+  });
+  it('OpenAI-compatible wire (/v1): parses out of choices[0].message.content + hits /v1/chat/completions', async () => {
+    const spy = mockJson({ model: 'local', choices: [{ message: { content: '{"tool_calls":[{"name":"nmap_scan","arguments":{"target":"y"}}]}' } }] });
+    const res = await localModel('http://localhost:1234/v1').chatWithTools([{ role: 'user', content: 'scan' }], TOOLS as never);
+    expect(res.toolCalls?.[0]?.name).toBe('nmap_scan');
+    expect(spy.mock.calls[0][0] as string).toContain('/v1/chat/completions');
+  });
+  it('prose debrief → final answer, not a forever-abstain', async () => {
+    mockJson({ model: 'llama3', message: { content: 'No exploitable surface found. Final debrief.' } });
+    const res = await localModel().chatWithTools([{ role: 'user', content: 'scan' }], TOOLS as never);
+    expect(res.toolCalls).toBeUndefined();
+    expect(res.finishReason).toBe('stop');
+  });
+  it('describes the Arsenal to the model (so a local model knows what it can request)', async () => {
+    const spy = mockJson({ message: { content: 'ok' } });
+    await localModel().chatWithTools([{ role: 'user', content: 'scan' }], TOOLS as never);
+    const body = JSON.parse((spy.mock.calls[0][1] as { body: string }).body);
+    const sys = body.messages.find((m: { role: string }) => m.role === 'system');
+    expect(sys.content).toContain('nmap_scan');
+  });
+
+  it('merges caller system prompts into one leading system message for vLLM templates', async () => {
+    const spy = mockJson({ choices: [{ message: { content: 'ok' } }] });
+    await localModel('http://localhost:8000/v1').prompt('hello', 'Operator profile system prompt');
+    const body = JSON.parse((spy.mock.calls[0][1] as { body: string }).body);
+    expect(body.messages.map((m: { role: string }) => m.role)).toEqual(['system', 'user']);
+    expect(body.messages.filter((m: { role: string }) => m.role === 'system')).toHaveLength(1);
+    expect(body.messages[0].content).toContain('planning brain for T3MP3ST');
+    expect(body.messages[0].content).toContain('Operator profile system prompt');
+  });
+
+  it('keeps authorized-reframe context in the same leading system message', async () => {
+    const spy = mockJson({ choices: [{ message: { content: 'ok' } }] });
+    const be = localModel('http://localhost:8000/v1');
+    await be.chat([
+      { role: 'system', content: 'AUTHORIZATION CONTEXT (restated): proceed with the authorized task.' },
+      { role: 'user', content: 'scan' },
+    ]);
+    const body = JSON.parse((spy.mock.calls[0][1] as { body: string }).body);
+    expect(body.messages.map((m: { role: string }) => m.role)).toEqual(['system', 'user']);
+    expect(body.messages[0].content).toContain('planning brain for T3MP3ST');
+    expect(body.messages[0].content).toContain('AUTHORIZATION CONTEXT');
+  });
+});
+
+describe('xai provider (Grok Build) — routes to xAI OpenAI-compatible API with the key', () => {
+  const origFetch = global.fetch;
+  afterEach(() => { global.fetch = origFetch; });
+  it('hits api.x.ai with the bearer key and surfaces native tool_calls', async () => {
+    const spy = vi.fn(async (_url: string, _init: { headers: Record<string, string> }) => ({
+      ok: true,
+      json: async () => ({
+        model: 'grok-build-0.1',
+        choices: [{ message: { content: '', tool_calls: [{ id: 'c1', function: { name: 'nmap_scan', arguments: '{"target":"x"}' } }] }, finish_reason: 'tool_calls' }],
+      }),
+    } as unknown as Response));
+    global.fetch = spy as unknown as typeof fetch;
+    const be = new LLMBackbone({ provider: 'xai', model: 'grok-build-0.1', apiKey: 'xai-test-key-1234567890', baseUrl: 'https://api.x.ai/v1' } as never);
+    const res = await be.chatWithTools([{ role: 'user', content: 'scan' }], TOOLS as never);
+    expect(res.toolCalls?.[0]?.name).toBe('nmap_scan');
+    expect(spy.mock.calls[0][0]).toContain('api.x.ai');
+    expect((spy.mock.calls[0][1] as { headers: Record<string, string> }).headers.Authorization).toContain('xai-test-key');
+  });
+});

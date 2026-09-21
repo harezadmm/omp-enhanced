@@ -1,0 +1,40 @@
+{
+  "title": "T3MP3ST Documentation",
+  "description": "Operator and developer documentation for T3MP3ST, the local offensive-security command center for authorized testing.",
+  "brandMark": "T3MP3ST",
+  "brandSub": "Docs",
+  "tagline": "Authorized testing, evidence-first workflows, and developer integration.",
+  "copyright": "T3MP3ST contributors",
+  "language": "en-US",
+  "layout": "docs",
+  "navPosition": "left",
+  "navCollapse": "overlay",
+  "pageToc": {
+    "placement": "rail",
+    "minHeadings": 2
+  },
+  "codeCopy": true,
+  "readingProgress": true,
+  "accentColor": "#00d4ff",
+  "surfaceColor": "#f7fafc",
+  "seo": {
+    "siteUrl": "https://elder-plinius.github.io/T3MP3ST/t3mp3st-docs",
+    "discoverabilityProfile": "open",
+    "generateStaticPages": true,
+    "generateSitemap": true,
+    "generateRobotsTxt": true,
+    "generateLlmsTxt": true,
+    "generateCorpusArtifacts": true,
+    "defaultChangeFreq": "weekly"
+  },
+  "share": {
+    "enabled": true,
+    "services": [
+      "copy",
+      "email",
+      "x",
+      "linkedin",
+      "reddit"
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: t3mp3st
+    restart: unless-stopped
+    env_file:
+      - .env
+    environment:
+      - T3MP3ST_PORT=3333
+    volumes:
+      - ./reports:/app/reports
+      - ./evidence:/app/evidence
+    ports:
+      - "127.0.0.1:3333:3333"
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://localhost:3333/api/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s

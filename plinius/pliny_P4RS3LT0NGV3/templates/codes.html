@@ -1,0 +1,155 @@
+<div v-if="activeTab === 'codes'" class="tab-content">
+    <div class="transform-layout codes-layout">
+        <div class="transform-section">
+            <div class="section-header-card">
+                <div class="section-header-card-title">
+                    <i class="fas fa-qrcode"></i>
+                    <h3>QR Codes &amp; Barcodes</h3>
+                </div>
+                <p class="section-header-card-description">
+                    Generate QR codes and common barcodes, or scan/decode them from an uploaded image.
+                    Supports QR Code, Code 128, EAN-13, and Code 39.
+                </p>
+            </div>
+
+            <div class="codes-mode-tabs" role="tablist" aria-label="Codes mode">
+                <button
+                    type="button"
+                    class="codes-mode-btn"
+                    :class="{ active: codesMode === 'generate' }"
+                    @click="codesMode = 'generate'"
+                >
+                    <i class="fas fa-wand-magic-sparkles"></i> Generate
+                </button>
+                <button
+                    type="button"
+                    class="codes-mode-btn"
+                    :class="{ active: codesMode === 'decode' }"
+                    @click="codesMode = 'decode'"
+                >
+                    <i class="fas fa-camera"></i> Decode
+                </button>
+            </div>
+
+            <!-- Generate -->
+            <div v-if="codesMode === 'generate'" class="codes-panel">
+                <div class="options-grid codes-options-grid">
+                    <label>
+                        Format
+                        <select v-model="codesFormat">
+                            <option value="qr">QR Code</option>
+                            <option value="code128">Code 128</option>
+                            <option value="ean13">EAN-13</option>
+                            <option value="code39">Code 39</option>
+                        </select>
+                    </label>
+                    <label v-if="codesFormat === 'qr'">
+                        Size (px)
+                        <input type="number" v-model.number="codesQrSize" min="128" max="1024" step="32" />
+                    </label>
+                    <label v-if="codesFormat === 'qr'">
+                        Margin
+                        <input type="number" v-model.number="codesQrMargin" min="0" max="20" />
+                    </label>
+                    <label v-if="codesFormat === 'qr'">
+                        Error correction
+                        <select v-model="codesQrEcl">
+                            <option value="L">L (7%)</option>
+                            <option value="M">M (15%)</option>
+                            <option value="Q">Q (25%)</option>
+                            <option value="H">H (30%)</option>
+                        </select>
+                    </label>
+                    <label v-if="codesFormat !== 'qr'">
+                        Bar height
+                        <input type="number" v-model.number="codesBarcodeHeight" min="40" max="200" />
+                    </label>
+                    <label v-if="codesFormat !== 'qr'">
+                        Bar width
+                        <input type="number" v-model.number="codesBarcodeWidth" min="1" max="4" step="0.5" />
+                    </label>
+                    <label v-if="codesFormat !== 'qr'" class="codes-checkbox-label">
+                        <input type="checkbox" v-model="codesBarcodeDisplayValue" />
+                        Show text under bars
+                    </label>
+                </div>
+
+                <div class="input-section">
+                    <label>
+                        Data to encode
+                        <textarea
+                            v-model="codesInput"
+                            rows="3"
+                            :placeholder="codesFormat === 'ean13' ? '12 or 13 digits, e.g. 590123412345' : 'Text, URL, or payload…'"
+                            spellcheck="false"
+                        ></textarea>
+                    </label>
+                </div>
+
+                <div v-if="codesError" class="codes-error" role="alert">{{ codesError }}</div>
+
+                <div class="tool-toolbar u-mb-16">
+                    <button type="button" class="transform-button tool-primary-btn" @click="codesGenerate">
+                        <i class="fas fa-qrcode"></i> Generate {{ codesFormatLabel(codesFormat) }}
+                    </button>
+                </div>
+
+                <div v-if="codesOutputUrl" class="codes-output-card">
+                    <div class="codes-preview-wrap">
+                        <img :src="codesOutputUrl" :alt="codesFormatLabel(codesFormat)" class="codes-preview-image" />
+                    </div>
+                    <div class="tool-toolbar">
+                        <button type="button" class="action-button copy" @click="codesCopyImage">
+                            <i class="fas fa-copy"></i> Copy
+                        </button>
+                        <button type="button" class="action-button download" @click="codesDownload">
+                            <i class="fas fa-download"></i> Download
+                        </button>
+                        <button type="button" class="btn btn-secondary" @click="codesResetGenerate">
+                            <i class="fas fa-eraser"></i> Clear
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Decode -->
+            <div v-if="codesMode === 'decode'" class="codes-panel">
+                <div class="codes-upload-zone">
+                    <label class="codes-upload-label">
+                        <input type="file" accept="image/*" @change="codesHandleFileUpload" />
+                        <i class="fas fa-cloud-upload-alt"></i>
+                        <span>Upload image (PNG, JPEG, GIF, WebP)</span>
+                    </label>
+                </div>
+
+                <div v-if="codesDecodeLoading" class="codes-loading">
+                    <i class="fas fa-spinner fa-spin"></i> Scanning…
+                </div>
+
+                <div v-if="codesDecodePreview" class="codes-decode-preview">
+                    <img :src="codesDecodePreview" alt="Uploaded scan image" />
+                </div>
+
+                <div v-if="codesDecodeError" class="codes-error">{{ codesDecodeError }}</div>
+
+                <div v-if="codesDecodeResult" class="codes-decode-result">
+                    <div class="codes-decode-meta" v-if="codesDecodeFormat">
+                        <strong>Format:</strong> {{ codesDecodeFormat }}
+                    </div>
+                    <label>
+                        Decoded text
+                        <textarea :value="codesDecodeResult" rows="4" readonly spellcheck="false"></textarea>
+                    </label>
+                    <div class="tool-toolbar">
+                        <button type="button" class="transform-button tool-primary-btn" @click="codesUseDecodedText">
+                            <i class="fas fa-arrow-right"></i> Use in Generate
+                        </button>
+                        <button type="button" class="btn btn-secondary" @click="codesResetDecode">
+                            <i class="fas fa-eraser"></i> Clear
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

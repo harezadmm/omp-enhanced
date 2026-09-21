@@ -1,0 +1,122 @@
+<div v-if="activeTab === 'spellingalphabet'" class="tab-content">
+    <div class="transform-layout spelling-alphabet-layout">
+        <div class="transform-section">
+            <div class="section-header-card">
+                <div class="section-header-card-title">
+                    <i class="fas fa-spell-check"></i>
+                    <h3>Custom Spelling Alphabets</h3>
+                </div>
+                <p class="section-header-card-description">
+                    Build ICAO-style spelling alphabets from any theme. Generate words with OpenRouter, or fill in all 26 letters manually.
+                    Saved alphabets appear on the Transforms page under <code>custom_spelling</code>.
+                </p>
+            </div>
+
+            <!-- Saved list -->
+            <div v-if="saView === 'list'">
+                <div class="tool-toolbar u-mb-16">
+                    <button type="button" class="transform-button tool-primary-btn" @click="saStartNew">
+                        <i class="fas fa-plus"></i> New Spelling Alphabet
+                    </button>
+                </div>
+
+                <div v-if="saAlphabets.length === 0" class="sa-empty-state">
+                    <p>No saved spelling alphabets yet. Create one manually or generate from a category with OpenRouter.</p>
+                </div>
+
+                <div v-else class="sa-saved-list">
+                    <div v-for="entry in saAlphabets" :key="entry.id" class="sa-saved-card">
+                        <div class="sa-saved-card-body">
+                            <h4>{{ entry.name }}</h4>
+                            <p v-if="entry.category"><strong>Category:</strong> {{ entry.category }}</p>
+                            <p class="sa-saved-preview">
+                                <strong>Sample (hello world):</strong>
+                                {{ saSampleForEntry(entry) }}
+                            </p>
+                        </div>
+                        <div class="sa-saved-card-actions">
+                            <button type="button" class="btn btn-secondary" @click="saEditAlphabet(entry)">
+                                <i class="fas fa-pen"></i> Edit
+                            </button>
+                            <button type="button" class="btn btn-secondary sa-delete-btn" @click="saDeleteAlphabet(entry)">
+                                <i class="fas fa-trash"></i> Delete
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Editor -->
+            <div v-if="saView === 'edit'" class="sa-editor">
+                <div class="tool-toolbar u-mb-16">
+                    <button type="button" class="btn btn-secondary" @click="saCancelEdit">
+                        <i class="fas fa-arrow-left"></i> Back to list
+                    </button>
+                </div>
+
+                <div class="options-grid sa-meta-grid">
+                    <label>
+                        Transform name
+                        <input type="text" v-model="saName" placeholder="e.g. Nautical Spelling Alphabet" />
+                    </label>
+                    <label>
+                        Category / theme
+                        <input type="text" v-model="saCategory" placeholder="e.g. nautical, cooking, astronomy" />
+                    </label>
+                    <openrouter-model-select v-if="saHasApiKey()" v-model="saModel" label="OpenRouter model"></openrouter-model-select>
+                </div>
+
+                <div class="sa-generate-row">
+                    <button
+                        type="button"
+                        class="transform-button tool-primary-btn"
+                        @click="saGenerateAlphabet"
+                        :disabled="saLoading || !saCategory.trim()"
+                    >
+                        <i class="fas fa-wand-magic-sparkles"></i>
+                        {{ saLoading ? 'Generating…' : 'Generate with OpenRouter' }}
+                    </button>
+                    <p v-if="!saHasApiKey()" class="sa-hint">
+                        <i class="fas fa-info-circle"></i>
+                        No OpenRouter key — add one in Advanced Settings, or type each letter below manually.
+                    </p>
+                    <p v-else class="sa-hint">
+                        <i class="fas fa-info-circle"></i>
+                        Defaults to free OpenRouter models (no credits needed). Generation fills the grid below — edit any letter before saving.
+                    </p>
+                </div>
+
+                <div v-if="saError" class="sa-error">{{ saError }}</div>
+
+                <div class="sa-progress">
+                    {{ saFilledLetterCount() }} / 26 letters filled
+                    <span v-if="saFilledLetterCount() === 26"> — ready to save</span>
+                </div>
+
+                <div class="sa-letter-grid">
+                    <label v-for="letter in saLetters" :key="letter" class="sa-letter-field">
+                        <span class="sa-letter-label">{{ letter }}</span>
+                        <input
+                            type="text"
+                            v-model="saAlphabet[letter]"
+                            :placeholder="letter"
+                            autocapitalize="characters"
+                            spellcheck="false"
+                        />
+                    </label>
+                </div>
+
+                <div v-if="saFilledLetterCount() > 0" class="sa-live-preview">
+                    <strong>Preview (hello world):</strong> {{ saPreviewSample() }}
+                </div>
+
+                <div class="tool-toolbar u-mt-16">
+                    <button type="button" class="transform-button tool-primary-btn" @click="saSaveAlphabet">
+                        <i class="fas fa-save"></i> Save Spelling Alphabet
+                    </button>
+                    <button type="button" class="btn btn-secondary" @click="saCancelEdit">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

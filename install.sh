@@ -44,12 +44,13 @@ echo -e "${GREEN}✅ Standalone mode${NC}\n"
 echo -e "${BLUE}[3/7]${NC} Configuring API keys..."
 echo ""
 echo -e "${YELLOW}Choose your AI provider:${NC}"
-echo "1) OpenAI (GPT-4, GPT-3.5)"
-echo "2) Anthropic (Claude)"
-echo "3) Google (Gemini)"
-echo "4) Skip (configure manually later)"
+echo "1) BandelBanget (OpenAI-compatible, all local bandelbanget models)"
+echo "2) OpenAI (GPT-4, GPT-3.5)"
+echo "3) Anthropic (Claude)"
+echo "4) Google (Gemini)"
+echo "5) Skip (configure manually later)"
 echo ""
-read -p "Select [1-4]: " provider_choice
+read -p "Select [1-5]: " provider_choice
 
 API_KEY=""
 BASE_URL=""
@@ -57,24 +58,30 @@ DEFAULT_MODEL=""
 
 case $provider_choice in
     1)
+        read -p "Enter BandelBanget API key (sk-...): " API_KEY
+        BASE_URL="https://bandelbanget.xyz/v1"
+        DEFAULT_MODEL="deepseek-v4-mod"
+        PROVIDER="bandelbanget"
+        ;;
+    2)
         read -p "Enter OpenAI API key (sk-...): " API_KEY
         BASE_URL="https://api.openai.com/v1"
         DEFAULT_MODEL="gpt-4"
         PROVIDER="openai"
         ;;
-    2)
+    3)
         read -p "Enter Anthropic API key (sk-ant-...): " API_KEY
         BASE_URL="https://api.anthropic.com"
         DEFAULT_MODEL="claude-3-opus-20240229"
         PROVIDER="anthropic"
         ;;
-    3)
+    4)
         read -p "Enter Google API key: " API_KEY
         BASE_URL="https://generativelanguage.googleapis.com/v1beta"
         DEFAULT_MODEL="gemini-pro"
         PROVIDER="google"
         ;;
-    4)
+    5)
         echo -e "${YELLOW}⚠️  Skipping API configuration${NC}"
         ;;
     *)

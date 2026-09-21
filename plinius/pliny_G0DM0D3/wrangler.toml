@@ -1,0 +1,18 @@
+# Cloudflare Pages — KV Namespace for telemetry batching
+#
+# PRODUCTION: Bind in Cloudflare Pages Dashboard:
+#   Settings → Functions → KV namespace bindings
+#   Variable name: TELEMETRY_KV
+#   KV namespace: (create one named "g0dm0d3-telemetry" first)
+#
+# LOCAL DEV: Create a preview namespace and set the id below,
+#   then run `wrangler pages dev` to test locally.
+#
+# If TELEMETRY_KV is not bound, telemetry buffers in the Worker
+# isolate's memory and flushes to HF in batches (zero-config fallback).
+# KV is preferred because it survives isolate eviction.
+
+# Uncomment and set a real namespace ID for local dev:
+# [[kv_namespaces]]
+# binding = "TELEMETRY_KV"
+# id = "<your-namespace-id-from-dashboard>"

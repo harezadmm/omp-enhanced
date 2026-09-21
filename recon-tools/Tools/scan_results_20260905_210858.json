@@ -1,0 +1,908 @@
+[
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/admin/login.php [200]",
+    "time": "2026-09-05T21:08:17.984078"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/admin/index.php [200]",
+    "time": "2026-09-05T21:08:17.984145"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/dashboard [200]",
+    "time": "2026-09-05T21:08:17.984158"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/control.php [200]",
+    "time": "2026-09-05T21:08:17.984165"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/auth [200]",
+    "time": "2026-09-05T21:08:17.984172"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/administrator [200]",
+    "time": "2026-09-05T21:08:17.984179"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/wp-admin [200]",
+    "time": "2026-09-05T21:08:17.984186"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/auth/login [200]",
+    "time": "2026-09-05T21:08:17.984193"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/panel [200]",
+    "time": "2026-09-05T21:08:17.984199"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/signin.php [200]",
+    "time": "2026-09-05T21:08:17.984207"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/panel.php [200]",
+    "time": "2026-09-05T21:08:17.984214"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/manager [200]",
+    "time": "2026-09-05T21:08:17.984220"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/wp-login.php [200]",
+    "time": "2026-09-05T21:08:17.984227"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/signin [200]",
+    "time": "2026-09-05T21:08:17.984233"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/admin.php [200]",
+    "time": "2026-09-05T21:08:17.984240"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/admin [200]",
+    "time": "2026-09-05T21:08:17.984247"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/manager.php [200]",
+    "time": "2026-09-05T21:08:17.984253"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/manager/login [200]",
+    "time": "2026-09-05T21:08:17.984260"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/dashboard/login [200]",
+    "time": "2026-09-05T21:08:17.984266"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/administrator/index.php [200]",
+    "time": "2026-09-05T21:08:17.984273"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/panel/admin [200]",
+    "time": "2026-09-05T21:08:17.984280"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/login [200]",
+    "time": "2026-09-05T21:08:17.984286"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/backend/login [200]",
+    "time": "2026-09-05T21:08:17.984293"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/backend [200]",
+    "time": "2026-09-05T21:08:17.984299"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/user/login [200]",
+    "time": "2026-09-05T21:08:17.984306"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/control [200]",
+    "time": "2026-09-05T21:08:17.984313"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/controlpanel [200]",
+    "time": "2026-09-05T21:08:17.984319"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/dashboard.php [200]",
+    "time": "2026-09-05T21:08:17.984326"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/admin/login [200]",
+    "time": "2026-09-05T21:08:17.984332"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/panel/login [200]",
+    "time": "2026-09-05T21:08:17.984339"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/login.php [200]",
+    "time": "2026-09-05T21:08:17.984345"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/user [200]",
+    "time": "2026-09-05T21:08:17.984352"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/phpMyAdmin [200]",
+    "time": "2026-09-05T21:08:17.984358"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/plesk [200]",
+    "time": "2026-09-05T21:08:17.984365"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/cpanel [200]",
+    "time": "2026-09-05T21:08:17.984372"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/plesk/login.php [200]",
+    "time": "2026-09-05T21:08:17.984378"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/roundcube [200]",
+    "time": "2026-09-05T21:08:17.984385"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/pma [200]",
+    "time": "2026-09-05T21:08:17.984391"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/roundcube/index.php [200]",
+    "time": "2026-09-05T21:08:17.984398"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/webmin/index.cgi [200]",
+    "time": "2026-09-05T21:08:17.984404"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/webmail [200]",
+    "time": "2026-09-05T21:08:17.984411"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/jenkins [200]",
+    "time": "2026-09-05T21:08:17.984418"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/adminer.php [200]",
+    "time": "2026-09-05T21:08:17.984425"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/phpmyadmin [200]",
+    "time": "2026-09-05T21:08:17.984432"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/gitlab [200]",
+    "time": "2026-09-05T21:08:17.984439"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/gitlab/users/sign_in [200]",
+    "time": "2026-09-05T21:08:17.984445"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/adminer [200]",
+    "time": "2026-09-05T21:08:17.984452"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/kibana/login [200]",
+    "time": "2026-09-05T21:08:17.984458"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/kibana [200]",
+    "time": "2026-09-05T21:08:17.984465"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/webmin [200]",
+    "time": "2026-09-05T21:08:17.984471"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/.env [200]",
+    "time": "2026-09-05T21:08:17.984478"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/directadmin/login.php [200]",
+    "time": "2026-09-05T21:08:17.984485"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/grafana/login [200]",
+    "time": "2026-09-05T21:08:17.984491"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/whm [200]",
+    "time": "2026-09-05T21:08:17.984498"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/wp-config.php [200]",
+    "time": "2026-09-05T21:08:17.984505"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/webmail.php [200]",
+    "time": "2026-09-05T21:08:17.984511"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/info.php [200]",
+    "time": "2026-09-05T21:08:17.984518"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/test.php [200]",
+    "time": "2026-09-05T21:08:17.984524"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/config.php.bak [200]",
+    "time": "2026-09-05T21:08:17.984531"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/jenkins/login [200]",
+    "time": "2026-09-05T21:08:17.984538"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/debug [200]",
+    "time": "2026-09-05T21:08:17.984544"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/directadmin [200]",
+    "time": "2026-09-05T21:08:17.984551"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/debug/default [200]",
+    "time": "2026-09-05T21:08:17.984557"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/grafana [200]",
+    "time": "2026-09-05T21:08:17.984564"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/config.php [200]",
+    "time": "2026-09-05T21:08:17.984570"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/phpinfo.php [200]",
+    "time": "2026-09-05T21:08:17.984578"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/server-info [200]",
+    "time": "2026-09-05T21:08:17.984584"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/actuator [200]",
+    "time": "2026-09-05T21:08:17.984591"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/server-status [200]",
+    "time": "2026-09-05T21:08:17.984597"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/robots.txt [200]",
+    "time": "2026-09-05T21:08:17.984604"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/actuator/health [200]",
+    "time": "2026-09-05T21:08:17.984611"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com/?lang=id",
+    "data": "https://www.whatsapp.com/?lang=id/sitemap.xml [200]",
+    "time": "2026-09-05T21:08:17.984617"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.google.com/chrome",
+    "data": "https://www.google.com/chrome/sitemap.xml [200]",
+    "time": "2026-09-05T21:08:21.601808"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com",
+    "data": "https://www.whatsapp.com/robots.txt [200]",
+    "time": "2026-09-05T21:08:29.731775"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.whatsapp.com",
+    "data": "https://www.whatsapp.com/sitemap.xml [200]",
+    "time": "2026-09-05T21:08:29.731788"
+  },
+  {
+    "category": "scan",
+    "target": "https://messages.google.com/web",
+    "data": "https://messages.google.com/web/signin [200]",
+    "time": "2026-09-05T21:08:32.732536"
+  },
+  {
+    "category": "scan",
+    "target": "https://chromewebstore.google.com",
+    "data": "https://chromewebstore.google.com/robots.txt [200]",
+    "time": "2026-09-05T21:08:38.393559"
+  },
+  {
+    "category": "scan",
+    "target": "https://chromewebstore.google.com",
+    "data": "https://chromewebstore.google.com/user/login [200]",
+    "time": "2026-09-05T21:08:38.393603"
+  },
+  {
+    "category": "scan",
+    "target": "https://www.google.com/intl/en_in/chrome",
+    "data": "https://www.google.com/intl/en_in/chrome/sitemap.xml [200]",
+    "time": "2026-09-05T21:08:50.928187"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/admin.php [200]",
+    "time": "2026-09-05T21:08:58.777756"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/admin/login.php [200]",
+    "time": "2026-09-05T21:08:58.777792"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/signin.php [200]",
+    "time": "2026-09-05T21:08:58.777804"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/admin/login [200]",
+    "time": "2026-09-05T21:08:58.777814"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/manager/login [200]",
+    "time": "2026-09-05T21:08:58.777825"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/manager.php [200]",
+    "time": "2026-09-05T21:08:58.777835"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/admin/index.php [200]",
+    "time": "2026-09-05T21:08:58.777845"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/dashboard [200]",
+    "time": "2026-09-05T21:08:58.777855"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/admin [200]",
+    "time": "2026-09-05T21:08:58.777865"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/backend [200]",
+    "time": "2026-09-05T21:08:58.777876"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/control [200]",
+    "time": "2026-09-05T21:08:58.777886"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/wp-admin [200]",
+    "time": "2026-09-05T21:08:58.777896"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/administrator [200]",
+    "time": "2026-09-05T21:08:58.777906"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/dashboard/login [200]",
+    "time": "2026-09-05T21:08:58.777916"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/manager [200]",
+    "time": "2026-09-05T21:08:58.777931"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/wp-login.php [200]",
+    "time": "2026-09-05T21:08:58.777942"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/auth [200]",
+    "time": "2026-09-05T21:08:58.777952"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/dashboard.php [200]",
+    "time": "2026-09-05T21:08:58.777962"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/backend/login [200]",
+    "time": "2026-09-05T21:08:58.777971"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/login.php [200]",
+    "time": "2026-09-05T21:08:58.777981"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/signin [200]",
+    "time": "2026-09-05T21:08:58.777993"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/administrator/index.php [200]",
+    "time": "2026-09-05T21:08:58.778003"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/panel/login [200]",
+    "time": "2026-09-05T21:08:58.778013"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/controlpanel [200]",
+    "time": "2026-09-05T21:08:58.778022"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/control.php [200]",
+    "time": "2026-09-05T21:08:58.778031"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/panel [200]",
+    "time": "2026-09-05T21:08:58.778040"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/panel/admin [200]",
+    "time": "2026-09-05T21:08:58.778050"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/panel.php [200]",
+    "time": "2026-09-05T21:08:58.778059"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/user/login [200]",
+    "time": "2026-09-05T21:08:58.778069"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/user [200]",
+    "time": "2026-09-05T21:08:58.778078"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/adminer [200]",
+    "time": "2026-09-05T21:08:58.778096"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/phpMyAdmin [200]",
+    "time": "2026-09-05T21:08:58.778106"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/adminer.php [200]",
+    "time": "2026-09-05T21:08:58.778116"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/cpanel [200]",
+    "time": "2026-09-05T21:08:58.778125"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/pma [200]",
+    "time": "2026-09-05T21:08:58.778134"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/webmin [200]",
+    "time": "2026-09-05T21:08:58.778144"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/roundcube/index.php [200]",
+    "time": "2026-09-05T21:08:58.778153"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/webmail.php [200]",
+    "time": "2026-09-05T21:08:58.778162"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/directadmin [200]",
+    "time": "2026-09-05T21:08:58.778172"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/auth/login [200]",
+    "time": "2026-09-05T21:08:58.778181"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/webmin/index.cgi [200]",
+    "time": "2026-09-05T21:08:58.778191"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/plesk [200]",
+    "time": "2026-09-05T21:08:58.778201"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/jenkins [200]",
+    "time": "2026-09-05T21:08:58.778211"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/gitlab [200]",
+    "time": "2026-09-05T21:08:58.778220"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/plesk/login.php [200]",
+    "time": "2026-09-05T21:08:58.778229"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/phpmyadmin [200]",
+    "time": "2026-09-05T21:08:58.778239"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/directadmin/login.php [200]",
+    "time": "2026-09-05T21:08:58.778248"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/webmail [200]",
+    "time": "2026-09-05T21:08:58.778257"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/whm [200]",
+    "time": "2026-09-05T21:08:58.778267"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/gitlab/users/sign_in [200]",
+    "time": "2026-09-05T21:08:58.778276"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/kibana/login [200]",
+    "time": "2026-09-05T21:08:58.778286"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/grafana [200]",
+    "time": "2026-09-05T21:08:58.778296"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/roundcube [200]",
+    "time": "2026-09-05T21:08:58.778305"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/robots.txt [200]",
+    "time": "2026-09-05T21:08:58.778314"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/jenkins/login [200]",
+    "time": "2026-09-05T21:08:58.778323"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/phpinfo.php [200]",
+    "time": "2026-09-05T21:08:58.778333"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/wp-config.php [200]",
+    "time": "2026-09-05T21:08:58.778343"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/.env [200]",
+    "time": "2026-09-05T21:08:58.778352"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/info.php [200]",
+    "time": "2026-09-05T21:08:58.778362"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/debug [200]",
+    "time": "2026-09-05T21:08:58.778371"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/kibana [200]",
+    "time": "2026-09-05T21:08:58.778381"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/server-status [200]",
+    "time": "2026-09-05T21:08:58.778390"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/actuator/health [200]",
+    "time": "2026-09-05T21:08:58.778399"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/actuator [200]",
+    "time": "2026-09-05T21:08:58.778409"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/config.php [200]",
+    "time": "2026-09-05T21:08:58.778418"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/config.php.bak [200]",
+    "time": "2026-09-05T21:08:58.778428"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/test.php [200]",
+    "time": "2026-09-05T21:08:58.778437"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/sitemap.xml [200]",
+    "time": "2026-09-05T21:08:58.778447"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/debug/default [200]",
+    "time": "2026-09-05T21:08:58.778456"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/grafana/login [200]",
+    "time": "2026-09-05T21:08:58.778466"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/server-info [200]",
+    "time": "2026-09-05T21:08:58.778476"
+  },
+  {
+    "category": "scan",
+    "target": "https://web.whatsapp.com",
+    "data": "https://web.whatsapp.com/login [200]",
+    "time": "2026-09-05T21:08:58.778486"
+  }
+]

@@ -1,0 +1,21 @@
+# Breach Data Processing
+
+**Domain:** DATA BREACH EXPLOITATION — FREE SERVICES
+
+## Overview
+- Multi-format parsing: colon/semicolon/pipe-delimited, ULP format
+- Deduplication: set-based exact + Bloom filter (billion-entry)
+- Classification: password vs hash vs token vs API key auto-detect
+- Scoring: entropy bits, strength bucket, domain correlation
+
+## Full Doctrine
+
+- Multi-format parsing: colon/semicolon/pipe-delimited, ULP format
+- Deduplication: set-based exact + Bloom filter (billion-entry)
+- Classification: password vs hash vs token vs API key auto-detect
+- Scoring: entropy bits, strength bucket, domain correlation
+- Export: ULP↔combo↔log, per-domain splitting
+- Parallel streaming: multi-threaded, bounded memory
+
+## References
+- LTX-QUASAR CORE.md (persona doctrine)

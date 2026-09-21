@@ -1,0 +1,77 @@
+# "SQLi only" lab: WordPress 6.8.3 (author__not_in SQLi present, batch route
+# confusion ABSENT) plus a facilitator mu-plugin that forwards a raw string to
+# WP_Query — reproducing the vector CVE-2026-60137 needs on 6.8.x.
+#
+#   docker compose -f lab/docker-compose.sqli.yml up -d
+#   # wait for LAB READY, then:
+#   ./wp2shell.py sqli http://localhost:8082 --endpoint '/?wp2shell_faccheck=1' \
+#        --param author_not_in --true-contains ROWS:YES --preset fingerprint
+#   docker compose -f lab/docker-compose.sqli.yml down -v
+
+name: wp2shell-sqli
+
+services:
+  db:
+    image: mariadb:11
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wp
+      MYSQL_PASSWORD: wp
+      MYSQL_ROOT_PASSWORD: root
+    tmpfs:
+      - /var/lib/mysql
+    healthcheck:
+      test: ["CMD-SHELL", "mariadb-admin ping -uroot -proot --silent 2>/dev/null || mysqladmin ping -uroot -proot --silent 2>/dev/null"]
+      interval: 4s
+      timeout: 4s
+      retries: 40
+
+  wp:
+    image: wordpress:6.8.3-apache
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8082:80"
+    volumes:
+      - wp_data:/var/www/html
+      # facilitating sink (mu-plugins auto-load); overlays the named volume
+      - ./sqli-only/facilitator.php:/var/www/html/wp-content/mu-plugins/facilitator.php:ro
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wp
+      WORDPRESS_DB_PASSWORD: wp
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_HOME',    'http://localhost:8082');
+        define('WP_SITEURL', 'http://localhost:8082');
+
+  wpcli:
+    image: wordpress:cli
+    depends_on:
+      db:
+        condition: service_healthy
+      wp:
+        condition: service_started
+    volumes:
+      - wp_data:/var/www/html
+    user: "33:33"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wp
+      WORDPRESS_DB_PASSWORD: wp
+      WORDPRESS_DB_NAME: wordpress
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        until [ -f /var/www/html/wp-config.php ]; do sleep 2; done
+        until wp core is-installed 2>/dev/null; do
+          wp core install --url="http://localhost:8082" --title="wp2shell-sqli-lab" \
+            --admin_user=admin --admin_password='Admin!2345' --admin_email=admin@lab.test \
+            --skip-email 2>/dev/null || sleep 3
+        done
+        echo "[wpcli] WordPress $$(wp core version) (SQLi-only lab) ready — posts: $$(wp post list --post_status=publish --format=count)"
+        echo "LAB READY"
+
+volumes:
+  wp_data:

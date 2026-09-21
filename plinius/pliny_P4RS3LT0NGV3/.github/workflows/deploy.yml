@@ -1,0 +1,70 @@
+name: Build and Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main, master ]
+  # Allow manual trigger from Actions tab
+  workflow_dispatch:
+
+# Sets permissions for GitHub Pages deployment
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Allow only one concurrent deployment
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v5
+      
+      - name: Setup Node.js
+        uses: actions/setup-node@v5
+        with:
+          node-version: '24'
+          cache: 'npm'
+      
+      - name: Install dependencies
+        run: npm ci
+      
+      - name: Run tests
+        run: npm run test:all
+      
+      - name: Build project
+        run: |
+          echo "Running full build..."
+          npm run build
+          echo "Build complete!"
+      
+      - name: Verify build output
+        run: |
+          test -f dist/index.html || (echo "❌ dist/index.html missing!" && exit 1)
+          test -f dist/js/bundles/transforms-bundle.js || (echo "❌ dist/js/bundles/transforms-bundle.js missing!" && exit 1)
+          test -f dist/js/data/emojiData.js || (echo "❌ dist/js/data/emojiData.js missing!" && exit 1)
+          echo "✅ All critical build files present"
+      
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: 'dist/'
+          retention-days: 7
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v5

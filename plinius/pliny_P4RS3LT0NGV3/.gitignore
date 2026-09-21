@@ -1,0 +1,70 @@
+# Dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.venv/
+__pycache__/
+*.py[cod]
+
+# Build outputs
+dist/
+.cache/
+*.log
+
+# Generated files (now in dist/, but keeping for backwards compatibility)
+index.html
+src/transformers/index.js
+js/bundles/transforms-bundle.js
+js/data/emojiData.js
+
+# Environment variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE & Editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# OS files
+Thumbs.db
+desktop.ini
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# Temporary files
+*.tmp
+*.temp
+.tmp/
+.temp/
+
+# Coverage & Testing
+coverage/
+.nyc_output/
+*.lcov
+
+# Package manager locks (optional - uncomment if you want to ignore)
+# package-lock.json
+# yarn.lock
+# pnpm-lock.yaml
+
+# Debug files
+npm-debug.log
+yarn-debug.log
+lerna-debug.log
+
+# Misc
+*.bak
+*.backup
+*.orig
+.sass-cache/

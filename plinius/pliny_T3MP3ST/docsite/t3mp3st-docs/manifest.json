@@ -1,0 +1,169 @@
+{
+  "default": "welcome",
+  "sections": [
+    {
+      "id": "welcome",
+      "title": "T3MP3ST Documentation",
+      "summary": "Documentation map for operators, developers, benchmarks, and release work.",
+      "file": "README.md"
+    },
+    {
+      "id": "operators",
+      "title": "Operators",
+      "summary": "Install, configure, scope, and review T3MP3ST safely.",
+      "file": "operators.md",
+      "sections": [
+        {
+          "id": "getting-started",
+          "title": "Getting Started",
+          "summary": "Install, configure, launch, and run the first safe T3MP3ST workflow.",
+          "file": "GETTING_STARTED.md"
+        },
+        {
+          "id": "scope-and-authorization",
+          "title": "Scope and Authorization",
+          "summary": "Rules of engagement, authorization receipts, evidence, and retest boundaries.",
+          "file": "SCOPE_AND_AUTHORIZATION.md"
+        },
+        {
+          "id": "target-headers",
+          "title": "Target Headers",
+          "summary": "How to inject target-scoped authentication headers safely.",
+          "file": "TARGET_HEADERS.md"
+        },
+        {
+          "id": "arsenal-activation-plan",
+          "title": "Arsenal Activation Plan",
+          "summary": "Install optional external tools and understand adapter readiness.",
+          "file": "ARSENAL_ACTIVATION_PLAN.md"
+        },
+        {
+          "id": "team-preview",
+          "title": "Team Preview",
+          "summary": "Ten-minute preview path for evaluating the War Room and local-safe flows.",
+          "file": "TEAM_PREVIEW.md"
+        }
+      ]
+    },
+    {
+      "id": "developers",
+      "title": "Developers",
+      "summary": "Integrate, extend, and contribute to T3MP3ST.",
+      "file": "developers.md",
+      "sections": [
+        {
+          "id": "developer-guide",
+          "title": "Developer Guide",
+          "summary": "Architecture, local development, scripts, extension points, and release checks.",
+          "file": "DEVELOPER_GUIDE.md"
+        },
+        {
+          "id": "api-reference",
+          "title": "API Reference",
+          "summary": "Local HTTP API endpoints grouped by workflow.",
+          "file": "API_REFERENCE.md"
+        },
+        {
+          "id": "mcp-guide",
+          "title": "MCP Guide",
+          "summary": "Model Context Protocol setup and security_recon usage.",
+          "file": "MCP_GUIDE.md"
+        },
+        {
+          "id": "contribution-receipts",
+          "title": "Contribution Receipts",
+          "summary": "Evidence template for scoped pull requests and claim changes.",
+          "file": "CONTRIBUTION_RECEIPTS.md"
+        },
+        {
+          "id": "pull-request-delivery",
+          "title": "Pull Request Delivery",
+          "summary": "Contributor and maintainer checklist for reviewable pull requests.",
+          "file": "PULL_REQUEST_DELIVERY.md"
+        }
+      ]
+    },
+    {
+      "id": "benchmarks",
+      "title": "Benchmarks And Provenance",
+      "summary": "Benchmark methodology, provenance, and research architecture.",
+      "file": "benchmarks.md",
+      "sections": [
+        {
+          "id": "verified-provenance",
+          "title": "Verified Provenance",
+          "summary": "How findings become tool-proven instead of model-asserted.",
+          "file": "VERIFIED_PROVENANCE.md"
+        },
+        {
+          "id": "xbow-baseline",
+          "title": "XBOW Baseline",
+          "summary": "XBEN benchmark baseline and validation notes.",
+          "file": "XBOW_BASELINE.md"
+        },
+        {
+          "id": "cybench",
+          "title": "Cybench",
+          "summary": "Cybench benchmark methodology and results notes.",
+          "file": "CYBENCH.md"
+        },
+        {
+          "id": "wall-forensics",
+          "title": "Wall Forensics",
+          "summary": "Per-challenge misses and benchmark analysis.",
+          "file": "WALL_FORENSICS.md"
+        },
+        {
+          "id": "integrity-ledger",
+          "title": "Integrity Ledger",
+          "summary": "Contamination audit and retractions.",
+          "file": "INTEGRITY_LEDGER.md"
+        },
+        {
+          "id": "obsidivm",
+          "title": "Obsidivm",
+          "summary": "Local web range and evaluation notes.",
+          "file": "OBSIDIVM.md"
+        },
+        {
+          "id": "cognitive-architecture",
+          "title": "Cognitive Architecture",
+          "summary": "Prompt and reasoning architecture boundaries.",
+          "file": "COGNITIVE_ARCHITECTURE.md"
+        },
+        {
+          "id": "ai-redteam-techniques",
+          "title": "AI Red-Team Techniques",
+          "summary": "Defensive taxonomy and technique map.",
+          "file": "AI_REDTEAM_TECHNIQUES.md"
+        }
+      ]
+    },
+    {
+      "id": "release",
+      "title": "Release And Maintenance",
+      "summary": "Install readiness, release gates, and project history.",
+      "file": "release.md",
+      "sections": [
+        {
+          "id": "install-matrix",
+          "title": "Install Matrix",
+          "summary": "Operating-system readiness notes.",
+          "file": "INSTALL_MATRIX.md"
+        },
+        {
+          "id": "release-checklist",
+          "title": "Release Checklist",
+          "summary": "Release gates and verification steps.",
+          "file": "RELEASE_CHECKLIST.md"
+        },
+        {
+          "id": "changelog",
+          "title": "Changelog",
+          "summary": "Project change history.",
+          "file": "CHANGELOG.md"
+        }
+      ]
+    }
+  ]
+}

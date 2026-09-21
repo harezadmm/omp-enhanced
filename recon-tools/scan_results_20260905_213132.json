@@ -1,0 +1,3140 @@
+[
+  {
+    "category": "scan",
+    "target": "https://brightdata.com",
+    "data": "https://brightdata.com/wp-login.php [403]",
+    "time": "2026-09-05T21:16:12.701416"
+  },
+  {
+    "category": "scan",
+    "target": "https://brightdata.com",
+    "data": "https://brightdata.com/dashboard [200]",
+    "time": "2026-09-05T21:16:12.701439"
+  },
+  {
+    "category": "scan",
+    "target": "https://brightdata.com",
+    "data": "https://brightdata.com/wp-admin [403]",
+    "time": "2026-09-05T21:16:12.701442"
+  },
+  {
+    "category": "scan",
+    "target": "https://brightdata.com",
+    "data": "https://brightdata.com/.env [403]",
+    "time": "2026-09-05T21:16:12.701445"
+  },
+  {
+    "category": "scan",
+    "target": "https://brightdata.com",
+    "data": "https://brightdata.com/wp-config.php [403]",
+    "time": "2026-09-05T21:16:12.701447"
+  },
+  {
+    "category": "scan",
+    "target": "https://iproyal.com",
+    "data": "https://iproyal.com/login [200]",
+    "time": "2026-09-05T21:16:24.216035"
+  },
+  {
+    "category": "scan",
+    "target": "https://iproyal.com",
+    "data": "https://iproyal.com/robots.txt [200]",
+    "time": "2026-09-05T21:16:24.216078"
+  },
+  {
+    "category": "scan",
+    "target": "https://iproyal.com",
+    "data": "https://iproyal.com/sitemap.xml [200]",
+    "time": "2026-09-05T21:16:24.216086"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxyscrape.com",
+    "data": "https://proxyscrape.com/sitemap.xml [200]",
+    "time": "2026-09-05T21:16:36.844289"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxyscrape.com",
+    "data": "https://proxyscrape.com/robots.txt [200]",
+    "time": "2026-09-05T21:16:36.844328"
+  },
+  {
+    "category": "scan",
+    "target": "https://byteful.com",
+    "data": "https://byteful.com/robots.txt [200]",
+    "time": "2026-09-05T21:16:52.986164"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/login.php [403]",
+    "time": "2026-09-05T21:17:04.093761"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/signin.php [403]",
+    "time": "2026-09-05T21:17:04.093780"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/manager.php [403]",
+    "time": "2026-09-05T21:17:04.093784"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/dashboard [200]",
+    "time": "2026-09-05T21:17:04.093787"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/dashboard/login [200]",
+    "time": "2026-09-05T21:17:04.093790"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/adminer.php [200]",
+    "time": "2026-09-05T21:17:04.093793"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/dashboard.php [200]",
+    "time": "2026-09-05T21:17:04.093796"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/admin/login.php [200]",
+    "time": "2026-09-05T21:17:04.093800"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/auth/login [200]",
+    "time": "2026-09-05T21:17:04.093803"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/webmail.php [403]",
+    "time": "2026-09-05T21:17:04.093806"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/control.php [403]",
+    "time": "2026-09-05T21:17:04.093809"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/roundcube/index.php [403]",
+    "time": "2026-09-05T21:17:04.093812"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/wp-login.php [403]",
+    "time": "2026-09-05T21:17:04.093815"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/admin.php [200]",
+    "time": "2026-09-05T21:17:04.093818"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/admin [200]",
+    "time": "2026-09-05T21:17:04.093821"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/panel.php [403]",
+    "time": "2026-09-05T21:17:04.093825"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/administrator/index.php [200]",
+    "time": "2026-09-05T21:17:04.093827"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/wp-admin [403]",
+    "time": "2026-09-05T21:17:04.093830"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/admin/index.php [200]",
+    "time": "2026-09-05T21:17:04.093833"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/admin/login [200]",
+    "time": "2026-09-05T21:17:04.093836"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/plesk/login.php [403]",
+    "time": "2026-09-05T21:17:04.093839"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/administrator [200]",
+    "time": "2026-09-05T21:17:04.093842"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/adminer [200]",
+    "time": "2026-09-05T21:17:04.093846"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/directadmin/login.php [403]",
+    "time": "2026-09-05T21:17:04.093849"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/config.php [403]",
+    "time": "2026-09-05T21:17:04.093852"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/test.php [403]",
+    "time": "2026-09-05T21:17:04.093855"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/info.php [403]",
+    "time": "2026-09-05T21:17:04.093858"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/wp-config.php [403]",
+    "time": "2026-09-05T21:17:04.093861"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/phpinfo.php [403]",
+    "time": "2026-09-05T21:17:04.093864"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/sitemap.xml [200]",
+    "time": "2026-09-05T21:17:04.093867"
+  },
+  {
+    "category": "scan",
+    "target": "https://1001proxy.io",
+    "data": "https://1001proxy.io/robots.txt [200]",
+    "time": "2026-09-05T21:17:04.093870"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxyrack.com",
+    "data": "https://proxyrack.com/actuator/health [403]",
+    "time": "2026-09-05T21:17:17.417792"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/admin/index.php [403]",
+    "time": "2026-09-05T21:17:35.067852"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/login.php [403]",
+    "time": "2026-09-05T21:17:35.067889"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/admin.php [403]",
+    "time": "2026-09-05T21:17:35.067897"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/admin/login.php [403]",
+    "time": "2026-09-05T21:17:35.067904"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/wp-admin [403]",
+    "time": "2026-09-05T21:17:35.067910"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/panel.php [403]",
+    "time": "2026-09-05T21:17:35.067916"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/manager.php [403]",
+    "time": "2026-09-05T21:17:35.067922"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/dashboard.php [403]",
+    "time": "2026-09-05T21:17:35.067929"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/administrator/index.php [403]",
+    "time": "2026-09-05T21:17:35.067935"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/phpmyadmin [403]",
+    "time": "2026-09-05T21:17:35.067941"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/adminer.php [403]",
+    "time": "2026-09-05T21:17:35.067949"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/wp-login.php [403]",
+    "time": "2026-09-05T21:17:35.067955"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/webmail.php [403]",
+    "time": "2026-09-05T21:17:35.067962"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/roundcube/index.php [403]",
+    "time": "2026-09-05T21:17:35.067968"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/signin.php [403]",
+    "time": "2026-09-05T21:17:35.067976"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/control.php [403]",
+    "time": "2026-09-05T21:17:35.067982"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/plesk/login.php [403]",
+    "time": "2026-09-05T21:17:35.067989"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/directadmin/login.php [403]",
+    "time": "2026-09-05T21:17:35.067995"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/config.php.bak [403]",
+    "time": "2026-09-05T21:17:35.068001"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/config.php [403]",
+    "time": "2026-09-05T21:17:35.068007"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/wp-config.php [403]",
+    "time": "2026-09-05T21:17:35.068014"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/phpinfo.php [403]",
+    "time": "2026-09-05T21:17:35.068020"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/info.php [403]",
+    "time": "2026-09-05T21:17:35.068027"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/test.php [403]",
+    "time": "2026-09-05T21:17:35.068033"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/robots.txt [200]",
+    "time": "2026-09-05T21:17:35.068039"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/dashboard [200]",
+    "time": "2026-09-05T21:17:35.068046"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/auth/login [200]",
+    "time": "2026-09-05T21:17:35.068052"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/admin [200]",
+    "time": "2026-09-05T21:17:35.068058"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/sitemap.xml [200]",
+    "time": "2026-09-05T21:17:35.068064"
+  },
+  {
+    "category": "scan",
+    "target": "https://catproxies.com",
+    "data": "https://catproxies.com/.env [403]",
+    "time": "2026-09-05T21:17:35.068070"
+  },
+  {
+    "category": "scan",
+    "target": "https://socks5.io",
+    "data": "https://socks5.io/robots.txt [200]",
+    "time": "2026-09-05T21:18:01.715626"
+  },
+  {
+    "category": "scan",
+    "target": "https://socks5.io",
+    "data": "https://socks5.io/sitemap.xml [200]",
+    "time": "2026-09-05T21:18:01.715636"
+  },
+  {
+    "category": "scan",
+    "target": "https://databay.com",
+    "data": "https://databay.com/wp-config.php [403]",
+    "time": "2026-09-05T21:18:23.289074"
+  },
+  {
+    "category": "scan",
+    "target": "https://databay.com",
+    "data": "https://databay.com/sitemap.xml [200]",
+    "time": "2026-09-05T21:18:23.289097"
+  },
+  {
+    "category": "scan",
+    "target": "https://databay.com",
+    "data": "https://databay.com/robots.txt [200]",
+    "time": "2026-09-05T21:18:23.291304"
+  },
+  {
+    "category": "scan",
+    "target": "https://highproxies.com",
+    "data": "Plugin: elementor-pro (CVE-2024-2990)",
+    "time": "2026-09-05T21:18:45.454424"
+  },
+  {
+    "category": "scan",
+    "target": "https://highproxies.com",
+    "data": "https://highproxies.com/.env [403]",
+    "time": "2026-09-05T21:18:45.454439"
+  },
+  {
+    "category": "scan",
+    "target": "https://highproxies.com",
+    "data": "https://highproxies.com/wp-config.php [403]",
+    "time": "2026-09-05T21:18:45.454441"
+  },
+  {
+    "category": "scan",
+    "target": "https://highproxies.com",
+    "data": "https://highproxies.com/login [200]",
+    "time": "2026-09-05T21:18:45.454443"
+  },
+  {
+    "category": "scan",
+    "target": "https://highproxies.com",
+    "data": "https://highproxies.com/wp-login.php [200]",
+    "time": "2026-09-05T21:18:45.454445"
+  },
+  {
+    "category": "scan",
+    "target": "https://highproxies.com",
+    "data": "https://highproxies.com/config.php.bak [403]",
+    "time": "2026-09-05T21:18:45.454447"
+  },
+  {
+    "category": "scan",
+    "target": "https://highproxies.com",
+    "data": "https://highproxies.com/phpinfo.php [403]",
+    "time": "2026-09-05T21:18:45.454449"
+  },
+  {
+    "category": "scan",
+    "target": "https://highproxies.com",
+    "data": "https://highproxies.com/admin [200]",
+    "time": "2026-09-05T21:18:45.454451"
+  },
+  {
+    "category": "scan",
+    "target": "https://highproxies.com",
+    "data": "https://highproxies.com/robots.txt [200]",
+    "time": "2026-09-05T21:18:45.454453"
+  },
+  {
+    "category": "scan",
+    "target": "https://highproxies.com",
+    "data": "https://highproxies.com/dashboard [200]",
+    "time": "2026-09-05T21:18:45.454455"
+  },
+  {
+    "category": "scan",
+    "target": "https://highproxies.com",
+    "data": "https://highproxies.com/sitemap.xml [200]",
+    "time": "2026-09-05T21:18:45.454457"
+  },
+  {
+    "category": "scan",
+    "target": "https://highproxies.com",
+    "data": "https://highproxies.com/wp-admin [200]",
+    "time": "2026-09-05T21:18:45.454459"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxyorb.com",
+    "data": "https://proxyorb.com/wp-config.php [403]",
+    "time": "2026-09-05T21:19:02.298581"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxyorb.com",
+    "data": "https://proxyorb.com/sitemap.xml [200]",
+    "time": "2026-09-05T21:19:02.298619"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxyorb.com",
+    "data": "https://proxyorb.com/robots.txt [200]",
+    "time": "2026-09-05T21:19:02.298627"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxyheaven.io",
+    "data": "https://proxyheaven.io/admin/login [200]",
+    "time": "2026-09-05T21:19:22.207967"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxyheaven.io",
+    "data": "https://proxyheaven.io/sitemap.xml [200]",
+    "time": "2026-09-05T21:19:22.208004"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxyheaven.io",
+    "data": "https://proxyheaven.io/robots.txt [200]",
+    "time": "2026-09-05T21:19:22.208012"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxyheaven.io",
+    "data": "https://proxyheaven.io/admin [403]",
+    "time": "2026-09-05T21:19:22.208018"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxyheaven.io",
+    "data": "https://proxyheaven.io/.env [200]",
+    "time": "2026-09-05T21:19:22.208025"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxyheaven.io",
+    "data": "https://proxyheaven.io/admin/index.php [403]",
+    "time": "2026-09-05T21:19:22.208031"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxyheaven.io",
+    "data": "https://proxyheaven.io/admin.php [403]",
+    "time": "2026-09-05T21:19:22.208037"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxyheaven.io",
+    "data": "https://proxyheaven.io/admin/login.php [200]",
+    "time": "2026-09-05T21:19:22.208043"
+  },
+  {
+    "category": "scan",
+    "target": "https://fleetproxy.io",
+    "data": "https://fleetproxy.io/dashboard [200]",
+    "time": "2026-09-05T21:19:41.288048"
+  },
+  {
+    "category": "scan",
+    "target": "https://fleetproxy.io",
+    "data": "https://fleetproxy.io/wp-config.php [403]",
+    "time": "2026-09-05T21:19:41.288062"
+  },
+  {
+    "category": "scan",
+    "target": "https://fleetproxy.io",
+    "data": "https://fleetproxy.io/robots.txt [200]",
+    "time": "2026-09-05T21:19:41.288065"
+  },
+  {
+    "category": "scan",
+    "target": "https://fleetproxy.io",
+    "data": "https://fleetproxy.io/sitemap.xml [200]",
+    "time": "2026-09-05T21:19:41.288067"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/admin [200]",
+    "time": "2026-09-05T21:19:55.017767"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/admin/login.php [200]",
+    "time": "2026-09-05T21:19:55.017803"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/backend [200]",
+    "time": "2026-09-05T21:19:55.017811"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/dashboard.php [200]",
+    "time": "2026-09-05T21:19:55.017817"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/controlpanel [200]",
+    "time": "2026-09-05T21:19:55.017838"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/auth [200]",
+    "time": "2026-09-05T21:19:55.017845"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/dashboard [200]",
+    "time": "2026-09-05T21:19:55.017850"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/panel/admin [200]",
+    "time": "2026-09-05T21:19:55.017856"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/signin.php [200]",
+    "time": "2026-09-05T21:19:55.017862"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/manager [200]",
+    "time": "2026-09-05T21:19:55.017868"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/admin/index.php [200]",
+    "time": "2026-09-05T21:19:55.017873"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/control [200]",
+    "time": "2026-09-05T21:19:55.017879"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/manager.php [200]",
+    "time": "2026-09-05T21:19:55.017885"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/control.php [200]",
+    "time": "2026-09-05T21:19:55.017891"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/dashboard/login [200]",
+    "time": "2026-09-05T21:19:55.017896"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/wp-admin [200]",
+    "time": "2026-09-05T21:19:55.017904"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/manager/login [200]",
+    "time": "2026-09-05T21:19:55.017910"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/wp-login.php [200]",
+    "time": "2026-09-05T21:19:55.017915"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/administrator [200]",
+    "time": "2026-09-05T21:19:55.017921"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/signin [200]",
+    "time": "2026-09-05T21:19:55.017927"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/user/login [200]",
+    "time": "2026-09-05T21:19:55.017933"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/user [200]",
+    "time": "2026-09-05T21:19:55.017939"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/phpMyAdmin [200]",
+    "time": "2026-09-05T21:19:55.017945"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/administrator/index.php [200]",
+    "time": "2026-09-05T21:19:55.017951"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/phpmyadmin [200]",
+    "time": "2026-09-05T21:19:55.017957"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/whm [200]",
+    "time": "2026-09-05T21:19:55.017963"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/webmail [200]",
+    "time": "2026-09-05T21:19:55.017969"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/roundcube [200]",
+    "time": "2026-09-05T21:19:55.017974"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/webmail.php [200]",
+    "time": "2026-09-05T21:19:55.017980"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/webmin/index.cgi [200]",
+    "time": "2026-09-05T21:19:55.017986"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/plesk [200]",
+    "time": "2026-09-05T21:19:55.017992"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/plesk/login.php [200]",
+    "time": "2026-09-05T21:19:55.017998"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/admin/login [200]",
+    "time": "2026-09-05T21:19:55.018004"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/directadmin [200]",
+    "time": "2026-09-05T21:19:55.018010"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/jenkins [200]",
+    "time": "2026-09-05T21:19:55.018015"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/jenkins/login [200]",
+    "time": "2026-09-05T21:19:55.018021"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/gitlab [200]",
+    "time": "2026-09-05T21:19:55.018027"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/grafana/login [200]",
+    "time": "2026-09-05T21:19:55.018033"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/kibana [200]",
+    "time": "2026-09-05T21:19:55.018039"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/cpanel [200]",
+    "time": "2026-09-05T21:19:55.018044"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/.env [200]",
+    "time": "2026-09-05T21:19:55.018050"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/config.php.bak [200]",
+    "time": "2026-09-05T21:19:55.018056"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/panel.php [200]",
+    "time": "2026-09-05T21:19:55.018062"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/phpinfo.php [200]",
+    "time": "2026-09-05T21:19:55.018067"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/debug/default [200]",
+    "time": "2026-09-05T21:19:55.018074"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/actuator [200]",
+    "time": "2026-09-05T21:19:55.018079"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/server-status [200]",
+    "time": "2026-09-05T21:19:55.018086"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/test.php [200]",
+    "time": "2026-09-05T21:19:55.018091"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/actuator/health [200]",
+    "time": "2026-09-05T21:19:55.018097"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/gitlab/users/sign_in [200]",
+    "time": "2026-09-05T21:19:55.018103"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/webmin [200]",
+    "time": "2026-09-05T21:19:55.018109"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/grafana [200]",
+    "time": "2026-09-05T21:19:55.018114"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/auth/login [200]",
+    "time": "2026-09-05T21:19:55.018120"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/kibana/login [200]",
+    "time": "2026-09-05T21:19:55.018126"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/server-info [200]",
+    "time": "2026-09-05T21:19:55.018132"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/debug [200]",
+    "time": "2026-09-05T21:19:55.018138"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/panel/login [200]",
+    "time": "2026-09-05T21:19:55.018144"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/robots.txt [200]",
+    "time": "2026-09-05T21:19:55.018150"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/backend/login [200]",
+    "time": "2026-09-05T21:19:55.018156"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/admin.php [200]",
+    "time": "2026-09-05T21:19:55.018161"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/login.php [200]",
+    "time": "2026-09-05T21:19:55.018168"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/wp-config.php [403]",
+    "time": "2026-09-05T21:19:55.018173"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/login [200]",
+    "time": "2026-09-05T21:19:55.018179"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/adminer [200]",
+    "time": "2026-09-05T21:19:55.018185"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/adminer.php [200]",
+    "time": "2026-09-05T21:19:55.018190"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/pma [200]",
+    "time": "2026-09-05T21:19:55.018196"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/roundcube/index.php [200]",
+    "time": "2026-09-05T21:19:55.018202"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/config.php [200]",
+    "time": "2026-09-05T21:19:55.018208"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/directadmin/login.php [200]",
+    "time": "2026-09-05T21:19:55.018214"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/sitemap.xml [200]",
+    "time": "2026-09-05T21:19:55.018220"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/info.php [200]",
+    "time": "2026-09-05T21:19:55.018225"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipstar.io",
+    "data": "https://ipstar.io/panel [200]",
+    "time": "2026-09-05T21:19:55.018231"
+  },
+  {
+    "category": "scan",
+    "target": "https://dataimpulse.com",
+    "data": "Plugin: contact-form-7 (CVE-2020-35489)",
+    "time": "2026-09-05T21:20:28.082700"
+  },
+  {
+    "category": "scan",
+    "target": "https://dataimpulse.com",
+    "data": "Plugin: akismet (detected)",
+    "time": "2026-09-05T21:20:28.082718"
+  },
+  {
+    "category": "scan",
+    "target": "https://dataimpulse.com",
+    "data": "https://dataimpulse.com/wp-login.php [403]",
+    "time": "2026-09-05T21:20:28.082722"
+  },
+  {
+    "category": "scan",
+    "target": "https://dataimpulse.com",
+    "data": "https://dataimpulse.com/wp-admin [403]",
+    "time": "2026-09-05T21:20:28.082725"
+  },
+  {
+    "category": "scan",
+    "target": "https://dataimpulse.com",
+    "data": "https://dataimpulse.com/admin [403]",
+    "time": "2026-09-05T21:20:28.082728"
+  },
+  {
+    "category": "scan",
+    "target": "https://dataimpulse.com",
+    "data": "https://dataimpulse.com/login [403]",
+    "time": "2026-09-05T21:20:28.082730"
+  },
+  {
+    "category": "scan",
+    "target": "https://dataimpulse.com",
+    "data": "https://dataimpulse.com/dashboard [403]",
+    "time": "2026-09-05T21:20:28.082733"
+  },
+  {
+    "category": "scan",
+    "target": "https://dataimpulse.com",
+    "data": "https://dataimpulse.com/wp-config.php [403]",
+    "time": "2026-09-05T21:20:28.082736"
+  },
+  {
+    "category": "scan",
+    "target": "https://dataimpulse.com",
+    "data": "https://dataimpulse.com/.env [403]",
+    "time": "2026-09-05T21:20:28.082739"
+  },
+  {
+    "category": "scan",
+    "target": "https://dataimpulse.com",
+    "data": "https://dataimpulse.com/config.php.bak [403]",
+    "time": "2026-09-05T21:20:28.082741"
+  },
+  {
+    "category": "scan",
+    "target": "https://dataimpulse.com",
+    "data": "https://dataimpulse.com/robots.txt [200]",
+    "time": "2026-09-05T21:20:28.082744"
+  },
+  {
+    "category": "scan",
+    "target": "https://dataimpulse.com",
+    "data": "https://dataimpulse.com/sitemap.xml [200]",
+    "time": "2026-09-05T21:20:28.082747"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipburger.com",
+    "data": "User: aj (AJ Tait)",
+    "time": "2026-09-05T21:20:57.825848"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipburger.com",
+    "data": "User: wpx_ipburger (donald)",
+    "time": "2026-09-05T21:20:57.825888"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipburger.com",
+    "data": "User: ipburger (ipburger)",
+    "time": "2026-09-05T21:20:57.825898"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipburger.com",
+    "data": "User: justineconnor (justineconnor)",
+    "time": "2026-09-05T21:20:57.825905"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipburger.com",
+    "data": "User: louis (Louis)",
+    "time": "2026-09-05T21:20:57.825912"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipburger.com",
+    "data": "https://ipburger.com/admin.php [403]",
+    "time": "2026-09-05T21:20:57.825919"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipburger.com",
+    "data": "https://ipburger.com/login [200]",
+    "time": "2026-09-05T21:20:57.825925"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipburger.com",
+    "data": "https://ipburger.com/signin [200]",
+    "time": "2026-09-05T21:20:57.825932"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipburger.com",
+    "data": "https://ipburger.com/user [200]",
+    "time": "2026-09-05T21:20:57.825939"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipburger.com",
+    "data": "https://ipburger.com/.env [403]",
+    "time": "2026-09-05T21:20:57.825946"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipburger.com",
+    "data": "https://ipburger.com/wp-config.php [403]",
+    "time": "2026-09-05T21:20:57.825953"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipburger.com",
+    "data": "https://ipburger.com/config.php.bak [403]",
+    "time": "2026-09-05T21:20:57.825959"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipburger.com",
+    "data": "https://ipburger.com/phpinfo.php [403]",
+    "time": "2026-09-05T21:20:57.825971"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipburger.com",
+    "data": "https://ipburger.com/info.php [403]",
+    "time": "2026-09-05T21:20:57.825978"
+  },
+  {
+    "category": "scan",
+    "target": "https://ipburger.com",
+    "data": "https://ipburger.com/robots.txt [200]",
+    "time": "2026-09-05T21:20:57.825984"
+  },
+  {
+    "category": "scan",
+    "target": "https://spyderproxy.com",
+    "data": "https://spyderproxy.com/wp-config.php [403]",
+    "time": "2026-09-05T21:21:24.055619"
+  },
+  {
+    "category": "scan",
+    "target": "https://spyderproxy.com",
+    "data": "https://spyderproxy.com/dashboard [200]",
+    "time": "2026-09-05T21:21:24.055634"
+  },
+  {
+    "category": "scan",
+    "target": "https://spyderproxy.com",
+    "data": "https://spyderproxy.com/robots.txt [200]",
+    "time": "2026-09-05T21:21:24.055637"
+  },
+  {
+    "category": "scan",
+    "target": "https://spyderproxy.com",
+    "data": "https://spyderproxy.com/sitemap.xml [200]",
+    "time": "2026-09-05T21:21:24.055639"
+  },
+  {
+    "category": "scan",
+    "target": "https://webshare.io",
+    "data": "https://webshare.io/wp-login.php [403]",
+    "time": "2026-09-05T21:21:37.336698"
+  },
+  {
+    "category": "scan",
+    "target": "https://webshare.io",
+    "data": "https://webshare.io/wp-config.php [403]",
+    "time": "2026-09-05T21:21:37.336713"
+  },
+  {
+    "category": "scan",
+    "target": "https://webshare.io",
+    "data": "https://webshare.io/.env [403]",
+    "time": "2026-09-05T21:21:37.336716"
+  },
+  {
+    "category": "scan",
+    "target": "https://webshare.io",
+    "data": "https://webshare.io/config.php.bak [403]",
+    "time": "2026-09-05T21:21:37.336719"
+  },
+  {
+    "category": "scan",
+    "target": "https://webshare.io",
+    "data": "https://webshare.io/phpinfo.php [403]",
+    "time": "2026-09-05T21:21:37.336721"
+  },
+  {
+    "category": "scan",
+    "target": "https://webshare.io",
+    "data": "https://webshare.io/robots.txt [200]",
+    "time": "2026-09-05T21:21:37.336723"
+  },
+  {
+    "category": "scan",
+    "target": "https://webshare.io",
+    "data": "https://webshare.io/sitemap.xml [200]",
+    "time": "2026-09-05T21:21:37.336726"
+  },
+  {
+    "category": "scan",
+    "target": "https://rayobyte.com",
+    "data": "Plugin: all-in-one-wp-migration (CVE-2023-39999)",
+    "time": "2026-09-05T21:22:53.094072"
+  },
+  {
+    "category": "scan",
+    "target": "https://rayobyte.com",
+    "data": "https://rayobyte.com/wp-login.php [200]",
+    "time": "2026-09-05T21:22:53.094087"
+  },
+  {
+    "category": "scan",
+    "target": "https://rayobyte.com",
+    "data": "https://rayobyte.com/wp-config.php [403]",
+    "time": "2026-09-05T21:22:53.094090"
+  },
+  {
+    "category": "scan",
+    "target": "https://rayobyte.com",
+    "data": "https://rayobyte.com/.env [403]",
+    "time": "2026-09-05T21:22:53.094092"
+  },
+  {
+    "category": "scan",
+    "target": "https://rayobyte.com",
+    "data": "https://rayobyte.com/wp-admin [200]",
+    "time": "2026-09-05T21:22:53.094094"
+  },
+  {
+    "category": "scan",
+    "target": "https://rayobyte.com",
+    "data": "https://rayobyte.com/robots.txt [200]",
+    "time": "2026-09-05T21:22:53.094097"
+  },
+  {
+    "category": "scan",
+    "target": "https://rayobyte.com",
+    "data": "https://rayobyte.com/sitemap.xml [200]",
+    "time": "2026-09-05T21:22:53.094099"
+  },
+  {
+    "category": "scan",
+    "target": "https://smartproxy.com",
+    "data": "https://smartproxy.com/test.php [403]",
+    "time": "2026-09-05T21:23:12.791057"
+  },
+  {
+    "category": "scan",
+    "target": "https://smartproxy.com",
+    "data": "https://smartproxy.com/robots.txt [200]",
+    "time": "2026-09-05T21:23:12.791072"
+  },
+  {
+    "category": "scan",
+    "target": "https://smartproxy.com",
+    "data": "https://smartproxy.com/sitemap.xml [200]",
+    "time": "2026-09-05T21:23:12.791075"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/admin/login.php [200]",
+    "time": "2026-09-05T21:23:27.691661"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/admin.php [200]",
+    "time": "2026-09-05T21:23:27.691681"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/admin/login [200]",
+    "time": "2026-09-05T21:23:27.691685"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/dashboard [200]",
+    "time": "2026-09-05T21:23:27.691688"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/admin [200]",
+    "time": "2026-09-05T21:23:27.691691"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/panel.php [200]",
+    "time": "2026-09-05T21:23:27.691694"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/control [200]",
+    "time": "2026-09-05T21:23:27.691698"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/dashboard/login [200]",
+    "time": "2026-09-05T21:23:27.691701"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/manager/login [200]",
+    "time": "2026-09-05T21:23:27.691705"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/backend/login [200]",
+    "time": "2026-09-05T21:23:27.691708"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/admin/index.php [200]",
+    "time": "2026-09-05T21:23:27.691711"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/panel/admin [200]",
+    "time": "2026-09-05T21:23:27.691714"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/administrator [200]",
+    "time": "2026-09-05T21:23:27.691717"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/wp-admin [200]",
+    "time": "2026-09-05T21:23:27.691720"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/backend [200]",
+    "time": "2026-09-05T21:23:27.691723"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/panel [200]",
+    "time": "2026-09-05T21:23:27.691726"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/auth/login [200]",
+    "time": "2026-09-05T21:23:27.691729"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/dashboard.php [200]",
+    "time": "2026-09-05T21:23:27.691732"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/user [200]",
+    "time": "2026-09-05T21:23:27.691735"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/auth [200]",
+    "time": "2026-09-05T21:23:27.691738"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/adminer.php [200]",
+    "time": "2026-09-05T21:23:27.691741"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/roundcube/index.php [200]",
+    "time": "2026-09-05T21:23:27.691744"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/webmail.php [200]",
+    "time": "2026-09-05T21:23:27.691748"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/webmail [200]",
+    "time": "2026-09-05T21:23:27.691751"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/login [200]",
+    "time": "2026-09-05T21:23:27.691754"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/panel/login [200]",
+    "time": "2026-09-05T21:23:27.691757"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/controlpanel [200]",
+    "time": "2026-09-05T21:23:27.691760"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/control.php [200]",
+    "time": "2026-09-05T21:23:27.691763"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/manager [200]",
+    "time": "2026-09-05T21:23:27.691766"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/phpmyadmin [200]",
+    "time": "2026-09-05T21:23:27.691769"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/plesk/login.php [200]",
+    "time": "2026-09-05T21:23:27.691772"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/phpMyAdmin [200]",
+    "time": "2026-09-05T21:23:27.691775"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/.env [200]",
+    "time": "2026-09-05T21:23:27.691779"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/kibana/login [200]",
+    "time": "2026-09-05T21:23:27.691782"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/wp-login.php [200]",
+    "time": "2026-09-05T21:23:27.691785"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/directadmin/login.php [200]",
+    "time": "2026-09-05T21:23:27.691788"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/cpanel [200]",
+    "time": "2026-09-05T21:23:27.691791"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/wp-config.php [403]",
+    "time": "2026-09-05T21:23:27.691794"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/config.php.bak [200]",
+    "time": "2026-09-05T21:23:27.691797"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/pma [200]",
+    "time": "2026-09-05T21:23:27.691800"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/grafana [200]",
+    "time": "2026-09-05T21:23:27.691803"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/whm [200]",
+    "time": "2026-09-05T21:23:27.691806"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/webmin [200]",
+    "time": "2026-09-05T21:23:27.691809"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/kibana [200]",
+    "time": "2026-09-05T21:23:27.691812"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/directadmin [200]",
+    "time": "2026-09-05T21:23:27.691816"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/grafana/login [200]",
+    "time": "2026-09-05T21:23:27.691819"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/user/login [200]",
+    "time": "2026-09-05T21:23:27.691822"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/gitlab/users/sign_in [200]",
+    "time": "2026-09-05T21:23:27.691825"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/server-status [200]",
+    "time": "2026-09-05T21:23:27.691828"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/gitlab [200]",
+    "time": "2026-09-05T21:23:27.691831"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/info.php [200]",
+    "time": "2026-09-05T21:23:27.691834"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/server-info [200]",
+    "time": "2026-09-05T21:23:27.691837"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/config.php [200]",
+    "time": "2026-09-05T21:23:27.691840"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/debug/default [200]",
+    "time": "2026-09-05T21:23:27.691843"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/actuator [200]",
+    "time": "2026-09-05T21:23:27.691846"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/robots.txt [200]",
+    "time": "2026-09-05T21:23:27.691849"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/sitemap.xml [200]",
+    "time": "2026-09-05T21:23:27.691852"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/administrator/index.php [200]",
+    "time": "2026-09-05T21:23:27.691855"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/test.php [200]",
+    "time": "2026-09-05T21:23:27.691858"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/actuator/health [200]",
+    "time": "2026-09-05T21:23:27.691861"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/login.php [200]",
+    "time": "2026-09-05T21:23:27.691864"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/jenkins/login [200]",
+    "time": "2026-09-05T21:23:27.691867"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/debug [200]",
+    "time": "2026-09-05T21:23:27.691870"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/signin [200]",
+    "time": "2026-09-05T21:23:27.691873"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/adminer [200]",
+    "time": "2026-09-05T21:23:27.691877"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/manager.php [200]",
+    "time": "2026-09-05T21:23:27.691879"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/signin.php [200]",
+    "time": "2026-09-05T21:23:27.691883"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/roundcube [200]",
+    "time": "2026-09-05T21:23:27.691886"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/plesk [200]",
+    "time": "2026-09-05T21:23:27.691889"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/phpinfo.php [200]",
+    "time": "2026-09-05T21:23:27.691892"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/webmin/index.cgi [200]",
+    "time": "2026-09-05T21:23:27.691895"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "https://netnut.io/jenkins [200]",
+    "time": "2026-09-05T21:23:27.691898"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/fycghwui.php",
+    "time": "2026-09-05T21:23:27.691901"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/mwrgsmbx.php",
+    "time": "2026-09-05T21:23:27.691904"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/rzjhfoef.php",
+    "time": "2026-09-05T21:23:27.691907"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/drxkcwpk.php",
+    "time": "2026-09-05T21:23:27.691910"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/bdnjgzpl.php",
+    "time": "2026-09-05T21:23:27.691913"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/lfjqvgtn.php",
+    "time": "2026-09-05T21:23:27.691916"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/wefezcyq.php",
+    "time": "2026-09-05T21:23:27.691919"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/xddwrmbc.php",
+    "time": "2026-09-05T21:23:27.691922"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/gvswttzl.php",
+    "time": "2026-09-05T21:23:27.691925"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/unkdhlkm.php",
+    "time": "2026-09-05T21:23:27.691928"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/fawcypkd.php",
+    "time": "2026-09-05T21:23:27.691931"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/gaadspdf.php",
+    "time": "2026-09-05T21:23:27.691934"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/vwjwsnbz.php",
+    "time": "2026-09-05T21:23:27.691938"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/lymdvdfx.php",
+    "time": "2026-09-05T21:23:27.691941"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/qenystob.php",
+    "time": "2026-09-05T21:23:27.691944"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/cjunkcyz.php",
+    "time": "2026-09-05T21:23:27.691947"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/goyqmrhq.php",
+    "time": "2026-09-05T21:23:27.691950"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/xtxjnocy.php",
+    "time": "2026-09-05T21:23:27.691953"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/xifnxpqo.php",
+    "time": "2026-09-05T21:23:27.691956"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/mqqqsnfx.php",
+    "time": "2026-09-05T21:23:27.691959"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/yyustjbi.php",
+    "time": "2026-09-05T21:23:27.691962"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/hohiqzqu.php",
+    "time": "2026-09-05T21:23:27.691965"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/pqgjmddt.php",
+    "time": "2026-09-05T21:23:27.691968"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/ewpxfvfn.php",
+    "time": "2026-09-05T21:23:27.691971"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/rektntpr.php",
+    "time": "2026-09-05T21:23:27.691974"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/cdulcsbu.php",
+    "time": "2026-09-05T21:23:27.691977"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/ovvtfyua.php",
+    "time": "2026-09-05T21:23:27.691980"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/yxfkplow.php",
+    "time": "2026-09-05T21:23:27.691983"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/mwdrqkvj.php",
+    "time": "2026-09-05T21:23:27.691986"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/zqueypxm.php",
+    "time": "2026-09-05T21:23:27.691989"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/qjypnutd.php",
+    "time": "2026-09-05T21:23:27.691992"
+  },
+  {
+    "category": "scan",
+    "target": "https://netnut.io",
+    "data": "UPLOADED: https://netnut.io/uploads/iocwxmsl.php",
+    "time": "2026-09-05T21:23:27.691995"
+  },
+  {
+    "category": "scan",
+    "target": "https://asocks.com",
+    "data": "https://asocks.com/robots.txt [200]",
+    "time": "2026-09-05T21:24:05.057193"
+  },
+  {
+    "category": "scan",
+    "target": "https://asocks.com",
+    "data": "https://asocks.com/sitemap.xml [200]",
+    "time": "2026-09-05T21:24:05.057208"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/admin.php [403]",
+    "time": "2026-09-05T21:24:55.263650"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/admin/login.php [403]",
+    "time": "2026-09-05T21:24:55.263666"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/admin/index.php [403]",
+    "time": "2026-09-05T21:24:55.263671"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/backend/login [403]",
+    "time": "2026-09-05T21:24:55.263676"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/login [403]",
+    "time": "2026-09-05T21:24:55.263680"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/dashboard [403]",
+    "time": "2026-09-05T21:24:55.263685"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/auth/login [403]",
+    "time": "2026-09-05T21:24:55.263690"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/login.php [403]",
+    "time": "2026-09-05T21:24:55.263694"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/admin/login [403]",
+    "time": "2026-09-05T21:24:55.263699"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/dashboard.php [403]",
+    "time": "2026-09-05T21:24:55.263703"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/backend [403]",
+    "time": "2026-09-05T21:24:55.263708"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/panel [403]",
+    "time": "2026-09-05T21:24:55.263712"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/dashboard/login [403]",
+    "time": "2026-09-05T21:24:55.263717"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/signin [403]",
+    "time": "2026-09-05T21:24:55.263721"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/signin.php [403]",
+    "time": "2026-09-05T21:24:55.263726"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/auth [403]",
+    "time": "2026-09-05T21:24:55.263730"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/admin [403]",
+    "time": "2026-09-05T21:24:55.263735"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/panel.php [403]",
+    "time": "2026-09-05T21:24:55.263739"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/panel/login [403]",
+    "time": "2026-09-05T21:24:55.263744"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/manager [403]",
+    "time": "2026-09-05T21:24:55.263749"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/administrator [403]",
+    "time": "2026-09-05T21:24:55.263759"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/panel/admin [403]",
+    "time": "2026-09-05T21:24:55.263765"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/control [403]",
+    "time": "2026-09-05T21:24:55.264214"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/control.php [403]",
+    "time": "2026-09-05T21:24:55.264225"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/manager/login [403]",
+    "time": "2026-09-05T21:24:55.264228"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/manager.php [403]",
+    "time": "2026-09-05T21:24:55.264230"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/administrator/index.php [403]",
+    "time": "2026-09-05T21:24:55.264233"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/user/login [403]",
+    "time": "2026-09-05T21:24:55.264235"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/user [403]",
+    "time": "2026-09-05T21:24:55.264238"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/wp-admin [403]",
+    "time": "2026-09-05T21:24:55.264241"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/phpmyadmin [403]",
+    "time": "2026-09-05T21:24:55.264243"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/controlpanel [403]",
+    "time": "2026-09-05T21:24:55.264246"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/wp-login.php [403]",
+    "time": "2026-09-05T21:24:55.264249"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/pma [403]",
+    "time": "2026-09-05T21:24:55.264251"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/roundcube/index.php [403]",
+    "time": "2026-09-05T21:24:55.264254"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/phpMyAdmin [403]",
+    "time": "2026-09-05T21:24:55.264257"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/webmail [403]",
+    "time": "2026-09-05T21:24:55.264259"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/webmin/index.cgi [403]",
+    "time": "2026-09-05T21:24:55.264263"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/plesk/login.php [403]",
+    "time": "2026-09-05T21:24:55.264269"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/whm [403]",
+    "time": "2026-09-05T21:24:55.264275"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/roundcube [403]",
+    "time": "2026-09-05T21:24:55.264279"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/plesk [403]",
+    "time": "2026-09-05T21:24:55.264285"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/adminer.php [403]",
+    "time": "2026-09-05T21:24:55.264290"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/adminer [403]",
+    "time": "2026-09-05T21:24:55.264294"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/webmin [403]",
+    "time": "2026-09-05T21:24:55.264298"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/webmail.php [403]",
+    "time": "2026-09-05T21:24:55.264303"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/jenkins [403]",
+    "time": "2026-09-05T21:24:55.264306"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/cpanel [403]",
+    "time": "2026-09-05T21:24:55.264310"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/directadmin [403]",
+    "time": "2026-09-05T21:24:55.264314"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/directadmin/login.php [403]",
+    "time": "2026-09-05T21:24:55.264318"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/grafana [403]",
+    "time": "2026-09-05T21:24:55.264322"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/kibana [403]",
+    "time": "2026-09-05T21:24:55.264326"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/wp-config.php [403]",
+    "time": "2026-09-05T21:24:55.264330"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/jenkins/login [403]",
+    "time": "2026-09-05T21:24:55.264333"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/gitlab/users/sign_in [403]",
+    "time": "2026-09-05T21:24:55.264337"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/gitlab [403]",
+    "time": "2026-09-05T21:24:55.264342"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/kibana/login [403]",
+    "time": "2026-09-05T21:24:55.264346"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/grafana/login [403]",
+    "time": "2026-09-05T21:24:55.264350"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/config.php [403]",
+    "time": "2026-09-05T21:24:55.264353"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/.env [403]",
+    "time": "2026-09-05T21:24:55.264358"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/phpinfo.php [403]",
+    "time": "2026-09-05T21:24:55.264362"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/config.php.bak [403]",
+    "time": "2026-09-05T21:24:55.264367"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/debug [403]",
+    "time": "2026-09-05T21:24:55.264370"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/actuator [403]",
+    "time": "2026-09-05T21:24:55.264374"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/test.php [403]",
+    "time": "2026-09-05T21:24:55.264377"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/actuator/health [403]",
+    "time": "2026-09-05T21:24:55.264381"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/server-info [403]",
+    "time": "2026-09-05T21:24:55.264385"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/info.php [403]",
+    "time": "2026-09-05T21:24:55.264389"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/server-status [403]",
+    "time": "2026-09-05T21:24:55.264392"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/robots.txt [403]",
+    "time": "2026-09-05T21:24:55.264396"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/debug/default [403]",
+    "time": "2026-09-05T21:24:55.264401"
+  },
+  {
+    "category": "scan",
+    "target": "https://stormproxies.com",
+    "data": "https://stormproxies.com/sitemap.xml [403]",
+    "time": "2026-09-05T21:24:55.264405"
+  },
+  {
+    "category": "scan",
+    "target": "https://hydraproxy.com",
+    "data": "Plugin: contact-form-7 (CVE-2020-35489)",
+    "time": "2026-09-05T21:25:22.107016"
+  },
+  {
+    "category": "scan",
+    "target": "https://hydraproxy.com",
+    "data": "Plugin: akismet (detected)",
+    "time": "2026-09-05T21:25:22.107030"
+  },
+  {
+    "category": "scan",
+    "target": "https://hydraproxy.com",
+    "data": "https://hydraproxy.com/phpmyadmin [403]",
+    "time": "2026-09-05T21:25:22.107033"
+  },
+  {
+    "category": "scan",
+    "target": "https://hydraproxy.com",
+    "data": "https://hydraproxy.com/pma [403]",
+    "time": "2026-09-05T21:25:22.107035"
+  },
+  {
+    "category": "scan",
+    "target": "https://hydraproxy.com",
+    "data": "https://hydraproxy.com/.env [403]",
+    "time": "2026-09-05T21:25:22.107037"
+  },
+  {
+    "category": "scan",
+    "target": "https://hydraproxy.com",
+    "data": "https://hydraproxy.com/wp-login.php [200]",
+    "time": "2026-09-05T21:25:22.107039"
+  },
+  {
+    "category": "scan",
+    "target": "https://hydraproxy.com",
+    "data": "https://hydraproxy.com/login.php [200]",
+    "time": "2026-09-05T21:25:22.107041"
+  },
+  {
+    "category": "scan",
+    "target": "https://hydraproxy.com",
+    "data": "https://hydraproxy.com/login [200]",
+    "time": "2026-09-05T21:25:22.107043"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/dashboard.php [403]",
+    "time": "2026-09-05T21:25:27.923708"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/admin/login [403]",
+    "time": "2026-09-05T21:25:27.923732"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/login [403]",
+    "time": "2026-09-05T21:25:27.923735"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/admin.php [403]",
+    "time": "2026-09-05T21:25:27.923738"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/admin/login.php [403]",
+    "time": "2026-09-05T21:25:27.923740"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/panel [403]",
+    "time": "2026-09-05T21:25:27.923742"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/admin [403]",
+    "time": "2026-09-05T21:25:27.923744"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/panel.php [403]",
+    "time": "2026-09-05T21:25:27.923747"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/admin/index.php [403]",
+    "time": "2026-09-05T21:25:27.923749"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/dashboard/login [403]",
+    "time": "2026-09-05T21:25:27.923751"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/auth [403]",
+    "time": "2026-09-05T21:25:27.923753"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/signin [403]",
+    "time": "2026-09-05T21:25:27.923755"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/control [403]",
+    "time": "2026-09-05T21:25:27.923758"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/signin.php [403]",
+    "time": "2026-09-05T21:25:27.923760"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/login.php [403]",
+    "time": "2026-09-05T21:25:27.923762"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/panel/login [403]",
+    "time": "2026-09-05T21:25:27.923764"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/dashboard [403]",
+    "time": "2026-09-05T21:25:27.923766"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/manager.php [403]",
+    "time": "2026-09-05T21:25:27.923769"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/panel/admin [403]",
+    "time": "2026-09-05T21:25:27.923771"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/manager/login [403]",
+    "time": "2026-09-05T21:25:27.923774"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/manager [403]",
+    "time": "2026-09-05T21:25:27.923776"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/wp-admin [403]",
+    "time": "2026-09-05T21:25:27.923779"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/controlpanel [403]",
+    "time": "2026-09-05T21:25:27.923781"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/backend [403]",
+    "time": "2026-09-05T21:25:27.923783"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/control.php [403]",
+    "time": "2026-09-05T21:25:27.923785"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/user/login [403]",
+    "time": "2026-09-05T21:25:27.923789"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/backend/login [403]",
+    "time": "2026-09-05T21:25:27.923792"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/administrator/index.php [403]",
+    "time": "2026-09-05T21:25:27.923794"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/wp-login.php [403]",
+    "time": "2026-09-05T21:25:27.923796"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/user [403]",
+    "time": "2026-09-05T21:25:27.923798"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/phpmyadmin [403]",
+    "time": "2026-09-05T21:25:27.923800"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/adminer [403]",
+    "time": "2026-09-05T21:25:27.923802"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/administrator [403]",
+    "time": "2026-09-05T21:25:27.923805"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/phpMyAdmin [403]",
+    "time": "2026-09-05T21:25:27.923807"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/pma [403]",
+    "time": "2026-09-05T21:25:27.923810"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/whm [403]",
+    "time": "2026-09-05T21:25:27.923812"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/cpanel [403]",
+    "time": "2026-09-05T21:25:27.923817"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/webmail [403]",
+    "time": "2026-09-05T21:25:27.923823"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/adminer.php [403]",
+    "time": "2026-09-05T21:25:27.923834"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/webmail.php [403]",
+    "time": "2026-09-05T21:25:27.923842"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/webmin/index.cgi [403]",
+    "time": "2026-09-05T21:25:27.923847"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/roundcube [403]",
+    "time": "2026-09-05T21:25:27.923852"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/webmin [403]",
+    "time": "2026-09-05T21:25:27.923856"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/plesk [403]",
+    "time": "2026-09-05T21:25:27.923861"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/plesk/login.php [403]",
+    "time": "2026-09-05T21:25:27.923865"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/directadmin [403]",
+    "time": "2026-09-05T21:25:27.923869"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/auth/login [403]",
+    "time": "2026-09-05T21:25:27.923904"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/directadmin/login.php [403]",
+    "time": "2026-09-05T21:25:27.923911"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/grafana [403]",
+    "time": "2026-09-05T21:25:27.923916"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/roundcube/index.php [403]",
+    "time": "2026-09-05T21:25:27.923922"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/gitlab [403]",
+    "time": "2026-09-05T21:25:27.923927"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/jenkins [403]",
+    "time": "2026-09-05T21:25:27.923933"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/grafana/login [403]",
+    "time": "2026-09-05T21:25:27.923937"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/jenkins/login [403]",
+    "time": "2026-09-05T21:25:27.923942"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/wp-config.php [403]",
+    "time": "2026-09-05T21:25:27.923948"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/.env [403]",
+    "time": "2026-09-05T21:25:27.923953"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/kibana/login [403]",
+    "time": "2026-09-05T21:25:27.923959"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/kibana [403]",
+    "time": "2026-09-05T21:25:27.923964"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/config.php.bak [403]",
+    "time": "2026-09-05T21:25:27.923969"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/config.php [403]",
+    "time": "2026-09-05T21:25:27.923976"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/gitlab/users/sign_in [403]",
+    "time": "2026-09-05T21:25:27.923981"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/test.php [403]",
+    "time": "2026-09-05T21:25:27.923986"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/debug [403]",
+    "time": "2026-09-05T21:25:27.923991"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/phpinfo.php [403]",
+    "time": "2026-09-05T21:25:27.923995"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/info.php [403]",
+    "time": "2026-09-05T21:25:27.924000"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/debug/default [403]",
+    "time": "2026-09-05T21:25:27.924005"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/server-status [403]",
+    "time": "2026-09-05T21:25:27.924010"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/actuator/health [403]",
+    "time": "2026-09-05T21:25:27.924016"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/actuator [403]",
+    "time": "2026-09-05T21:25:27.924023"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/server-info [403]",
+    "time": "2026-09-05T21:25:27.924029"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/robots.txt [403]",
+    "time": "2026-09-05T21:25:27.924034"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-seller.com",
+    "data": "https://proxy-seller.com/sitemap.xml [403]",
+    "time": "2026-09-05T21:25:27.924047"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-cheap.com",
+    "data": "Port 2083: 200",
+    "time": "2026-09-05T21:25:45.387653"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-cheap.com",
+    "data": "Port 2087: 200",
+    "time": "2026-09-05T21:25:45.387669"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-cheap.com",
+    "data": "https://proxy-cheap.com/dashboard [200]",
+    "time": "2026-09-05T21:25:45.387672"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-cheap.com",
+    "data": "https://proxy-cheap.com/robots.txt [200]",
+    "time": "2026-09-05T21:25:45.387675"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy-cheap.com",
+    "data": "https://proxy-cheap.com/sitemap.xml [200]",
+    "time": "2026-09-05T21:25:45.387677"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy6.net",
+    "data": "https://proxy6.net/phpmyadmin [403]",
+    "time": "2026-09-05T21:26:13.671741"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy6.net",
+    "data": "https://proxy6.net/admin/login [200]",
+    "time": "2026-09-05T21:26:13.671775"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy6.net",
+    "data": "https://proxy6.net/.env [403]",
+    "time": "2026-09-05T21:26:13.671783"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy6.net",
+    "data": "https://proxy6.net/wp-config.php [403]",
+    "time": "2026-09-05T21:26:13.671789"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy6.net",
+    "data": "https://proxy6.net/admin/login.php [200]",
+    "time": "2026-09-05T21:26:13.671795"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy6.net",
+    "data": "https://proxy6.net/admin/index.php [200]",
+    "time": "2026-09-05T21:26:13.671802"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy6.net",
+    "data": "https://proxy6.net/roundcube [403]",
+    "time": "2026-09-05T21:26:13.671807"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy6.net",
+    "data": "https://proxy6.net/robots.txt [200]",
+    "time": "2026-09-05T21:26:13.671814"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy6.net",
+    "data": "https://proxy6.net/admin [200]",
+    "time": "2026-09-05T21:26:13.671820"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy6.net",
+    "data": "https://proxy6.net/roundcube/index.php [200]",
+    "time": "2026-09-05T21:26:13.671825"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy6.net",
+    "data": "https://proxy6.net/user [200]",
+    "time": "2026-09-05T21:26:13.671832"
+  },
+  {
+    "category": "scan",
+    "target": "https://proxy6.net",
+    "data": "https://proxy6.net/user/login [200]",
+    "time": "2026-09-05T21:26:13.671838"
+  },
+  {
+    "category": "scan",
+    "target": "https://sslprivateproxy.com",
+    "data": "User: ssl-private-proxy (SSLPrivateProxy)",
+    "time": "2026-09-05T21:26:59.999563"
+  },
+  {
+    "category": "scan",
+    "target": "https://sslprivateproxy.com",
+    "data": "https://sslprivateproxy.com/wp-login.php [403]",
+    "time": "2026-09-05T21:26:59.999587"
+  },
+  {
+    "category": "scan",
+    "target": "https://sslprivateproxy.com",
+    "data": "https://sslprivateproxy.com/wp-admin [403]",
+    "time": "2026-09-05T21:26:59.999593"
+  },
+  {
+    "category": "scan",
+    "target": "https://sslprivateproxy.com",
+    "data": "https://sslprivateproxy.com/dashboard [403]",
+    "time": "2026-09-05T21:26:59.999596"
+  },
+  {
+    "category": "scan",
+    "target": "https://sslprivateproxy.com",
+    "data": "https://sslprivateproxy.com/login [403]",
+    "time": "2026-09-05T21:26:59.999600"
+  },
+  {
+    "category": "scan",
+    "target": "https://sslprivateproxy.com",
+    "data": "https://sslprivateproxy.com/.env [403]",
+    "time": "2026-09-05T21:26:59.999604"
+  },
+  {
+    "category": "scan",
+    "target": "https://sslprivateproxy.com",
+    "data": "https://sslprivateproxy.com/wp-config.php [403]",
+    "time": "2026-09-05T21:26:59.999608"
+  },
+  {
+    "category": "scan",
+    "target": "https://sslprivateproxy.com",
+    "data": "https://sslprivateproxy.com/config.php.bak [403]",
+    "time": "2026-09-05T21:26:59.999611"
+  },
+  {
+    "category": "scan",
+    "target": "https://sslprivateproxy.com",
+    "data": "https://sslprivateproxy.com/phpinfo.php [403]",
+    "time": "2026-09-05T21:26:59.999615"
+  },
+  {
+    "category": "scan",
+    "target": "https://sslprivateproxy.com",
+    "data": "https://sslprivateproxy.com/admin [403]",
+    "time": "2026-09-05T21:26:59.999618"
+  },
+  {
+    "category": "scan",
+    "target": "https://sslprivateproxy.com",
+    "data": "https://sslprivateproxy.com/admin/index.php [403]",
+    "time": "2026-09-05T21:26:59.999622"
+  },
+  {
+    "category": "scan",
+    "target": "https://sslprivateproxy.com",
+    "data": "https://sslprivateproxy.com/robots.txt [200]",
+    "time": "2026-09-05T21:26:59.999625"
+  },
+  {
+    "category": "scan",
+    "target": "https://sslprivateproxy.com",
+    "data": "https://sslprivateproxy.com/sitemap.xml [200]",
+    "time": "2026-09-05T21:26:59.999629"
+  },
+  {
+    "category": "scan",
+    "target": "https://instantproxies.com",
+    "data": "https://instantproxies.com/wp-config.php [403]",
+    "time": "2026-09-05T21:29:55.899666"
+  },
+  {
+    "category": "scan",
+    "target": "https://blazingseollc.com",
+    "data": "Plugin: all-in-one-wp-migration (CVE-2023-39999)",
+    "time": "2026-09-05T21:31:32.247310"
+  },
+  {
+    "category": "scan",
+    "target": "https://blazingseollc.com",
+    "data": "https://blazingseollc.com/wp-login.php [200]",
+    "time": "2026-09-05T21:31:32.247327"
+  },
+  {
+    "category": "scan",
+    "target": "https://blazingseollc.com",
+    "data": "https://blazingseollc.com/.env [403]",
+    "time": "2026-09-05T21:31:32.247334"
+  },
+  {
+    "category": "scan",
+    "target": "https://blazingseollc.com",
+    "data": "https://blazingseollc.com/wp-config.php [403]",
+    "time": "2026-09-05T21:31:32.247340"
+  },
+  {
+    "category": "scan",
+    "target": "https://blazingseollc.com",
+    "data": "https://blazingseollc.com/config.php.bak [403]",
+    "time": "2026-09-05T21:31:32.247346"
+  },
+  {
+    "category": "scan",
+    "target": "https://blazingseollc.com",
+    "data": "https://blazingseollc.com/phpinfo.php [403]",
+    "time": "2026-09-05T21:31:32.247353"
+  },
+  {
+    "category": "scan",
+    "target": "https://blazingseollc.com",
+    "data": "https://blazingseollc.com/robots.txt [200]",
+    "time": "2026-09-05T21:31:32.247359"
+  },
+  {
+    "category": "scan",
+    "target": "https://blazingseollc.com",
+    "data": "https://blazingseollc.com/wp-admin [200]",
+    "time": "2026-09-05T21:31:32.248504"
+  },
+  {
+    "category": "scan",
+    "target": "https://blazingseollc.com",
+    "data": "https://blazingseollc.com/sitemap.xml [200]",
+    "time": "2026-09-05T21:31:32.248516"
+  }
+]

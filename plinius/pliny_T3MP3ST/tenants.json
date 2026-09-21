@@ -1,0 +1,19 @@
+{
+  "tenants": [
+    {
+      "id": "t3mp3st-docs",
+      "source": {
+        "type": "local",
+        "path": "./docsite/t3mp3st-docs"
+      },
+      "strictLinks": true,
+      "language": "en-US",
+      "accessibility": {
+        "strict": false,
+        "report": {
+          "enabled": true
+        }
+      }
+    }
+  ]
+}

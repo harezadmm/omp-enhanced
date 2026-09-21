@@ -1,0 +1,95 @@
+# Minimal WordPress lab for CVE-2026-63030 (wp2shell) research.
+#
+#   WordPress 6.9.4  -> last build in the 6.9 branch BEFORE the 6.9.5 patch,
+#                       i.e. inside the "full RCE chain" range (6.9.0-6.9.4).
+#   MariaDB 11       -> ephemeral (tmpfs), thrown away on `down`.
+#   wordpress:cli    -> one-shot installer: `wp core install`, pretty
+#                       permalinks (so /wp-json/batch/v1 resolves), and it
+#                       leaves the default published "Hello world!" post in
+#                       place (the SQLi SLEEP() runs once per matching post row).
+#
+# Bring up:   docker compose -f lab/docker-compose.yml up -d
+# Wait for:   docker compose -f lab/docker-compose.yml logs -f wpcli   (until "LAB READY")
+# Target:     http://localhost:8080
+# Admin:      admin / Admin!2345   (plaintext known ONLY so the lab can demo
+#                                    the post-auth `shell` step; a real attacker
+#                                    recovers the *hash* via SQLi and cracks it)
+# Tear down:  docker compose -f lab/docker-compose.yml down -v
+
+name: wp2shell-lab
+
+services:
+  db:
+    image: mariadb:11
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: wp
+      MARIADB_PASSWORD: wp
+      MARIADB_ROOT_PASSWORD: root
+    tmpfs:
+      - /var/lib/mysql          # ephemeral: no data persists across `down`
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      interval: 5s
+      timeout: 5s
+      retries: 30
+
+  wp:
+    image: wordpress:6.9.4-apache
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8080:80"
+    volumes:
+      - wp_data:/var/www/html
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wp
+      WORDPRESS_DB_PASSWORD: wp
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DEBUG: "0"
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_HOME',    'http://localhost:8080');
+        define('WP_SITEURL', 'http://localhost:8080');
+
+  # One-shot installer. Exits 0 once the site is installed and print "LAB READY".
+  wpcli:
+    image: wordpress:cli
+    depends_on:
+      db:
+        condition: service_healthy
+      wp:
+        condition: service_started
+    volumes:
+      - wp_data:/var/www/html
+    user: "33:33"               # www-data, matches the apache container's uid
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wp
+      WORDPRESS_DB_PASSWORD: wp
+      WORDPRESS_DB_NAME: wordpress
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        echo "[wpcli] waiting for wp-config.php ..."
+        until [ -f /var/www/html/wp-config.php ]; do sleep 2; done
+        echo "[wpcli] installing WordPress ..."
+        until wp core is-installed 2>/dev/null; do
+          wp core install \
+            --url="http://localhost:8080" \
+            --title="wp2shell-lab" \
+            --admin_user=admin \
+            --admin_password='Admin!2345' \
+            --admin_email=admin@lab.test \
+            --skip-email 2>/dev/null || { echo "[wpcli] retrying install ..."; sleep 3; }
+        done
+        wp rewrite structure '/%postname%/' --hard >/dev/null 2>&1 || true
+        wp rewrite flush --hard >/dev/null 2>&1 || true
+        POSTS=$$(wp post list --post_type=post --post_status=publish --format=count)
+        echo "[wpcli] WordPress $$(wp core version) installed; published posts: $$POSTS"
+        echo "[wpcli] REST batch endpoint: http://localhost:8080/wp-json/batch/v1"
+        echo "LAB READY"
+
+volumes:
+  wp_data:

@@ -1,0 +1,404 @@
+/**
+ * REGRESSION (issue #78 — macOS/POSIX): the local-agent detector resolved the CLI binary
+ * against the SERVER process PATH. When T3MP3ST is launched from Finder, the desktop app, or
+ * any non-interactive shell, launchd hands it a minimal PATH (/usr/bin:/bin:/usr/sbin:/sbin) —
+ * missing ~/.local/bin (Claude Code's native install), Homebrew, npm-global, and version-manager
+ * shims (mise/nvm/fnm). `execFile('claude', …)` then throws ENOENT and an installed, working CLI
+ * is reported `installed:false` (the Settings checkboxes go dead — reads like a UI bug).
+ *
+ * The fix is `resolveBin()`: pure-fs resolution over PATH + a curated set of well-known install
+ * dirs under the real agent home, with an executable-file check, fail-open to the bare name.
+ * These tests pin the resolver in isolation, the detector wiring, AND the two spawn call-sites
+ * (runLocalAgent / localAgentChat) the fix rewired — all through the public API.
+ *
+ * POSIX-focused, with a small Windows boundary assertion: unresolved Windows shims fail closed
+ * instead of returning a bare name that would bypass the safe .cmd/.bat launch path.
+ */
+import { describe, it, expect, afterEach } from 'vitest';
+import { mkdtempSync, mkdirSync, writeFileSync, symlinkSync, rmSync } from 'fs';
+import { tmpdir } from 'os';
+import { join } from 'path';
+import { resolveBin, detectLocalAgents, runLocalAgent, localAgentChat } from '../agent/local-agents.js';
+
+const FAKE_CLI = '#!/bin/sh\necho "1.2.3"\n';
+// For the chat path, which writes the prompt to the child's stdin: drain it before replying so the
+// parent's write()/end() completes cleanly (no EPIPE races), then emit a clean, non-error reply.
+const FAKE_CLI_STDIN = '#!/bin/sh\ncat >/dev/null 2>&1\necho "1.2.3"\n';
+const FAKE_OPENCODE = `#!/bin/sh
+if [ "$1" = "--version" ]; then echo "opencode 1.2.3"; exit 0; fi
+prompt=$(cat)
+printf '%s\\n' "$OPENCODE_PERMISSION|$*|$prompt"
+`;
+const FAKE_OMP = `#!/bin/sh
+if [ "$1" = "--version" ]; then echo "omp 1.2.3"; exit 0; fi
+prompt=$(cat)
+printf '%s\\n' "$*|$prompt"
+`;
+const tmpDirs: string[] = [];
+const savedEnv = { PATH: process.env.PATH, AGENT_HOME: process.env.T3MP3ST_AGENT_HOME };
+
+/** A throwaway dir; tracked for afterEach cleanup. */
+function scratch(): string {
+  const d = mkdtempSync(join(tmpdir(), 't3mp3st-pathres-'));
+  tmpDirs.push(d);
+  return d;
+}
+
+/** Drop an executable (0o755) fake binary at `dir/name`; returns its absolute path. */
+function putExe(dir: string, name: string, content: string = FAKE_CLI): string {
+  mkdirSync(dir, { recursive: true });
+  const p = join(dir, name);
+  writeFileSync(p, content, { mode: 0o755 });
+  return p;
+}
+
+afterEach(() => {
+  process.env.PATH = savedEnv.PATH;
+  if (savedEnv.AGENT_HOME === undefined) delete process.env.T3MP3ST_AGENT_HOME; else process.env.T3MP3ST_AGENT_HOME = savedEnv.AGENT_HOME;
+  for (const d of tmpDirs.splice(0)) { try { rmSync(d, { recursive: true, force: true }); } catch { /* noop */ } }
+});
+
+describe.runIf(process.platform !== 'win32')('resolveBin — macOS/POSIX well-known-dir resolution (issue #78)', () => {
+  it('finds a CLI in ~/.local/bin even when PATH omits it (the reported bug)', () => {
+    const home = scratch();
+    const bin = putExe(join(home, '.local', 'bin'), 'faketool');
+    process.env.T3MP3ST_AGENT_HOME = home;      // real agent home for this scan
+    process.env.PATH = '/usr/bin:/bin';         // minimal launchd-style PATH — omits ~/.local/bin
+
+    expect(resolveBin('faketool')).toBe(bin);
+  });
+
+  // A representative spread of the curated dirs (not just index-0 ~/.local/bin) so a typo or
+  // reorder in any entry is caught. Paths are relative to the agent home.
+  it.each([
+    ['.asdf/shims'],
+    ['.bun/bin'],
+    ['.opencode/bin'],
+    ['.local/share/pnpm'],
+  ])('resolves a CLI installed under the well-known dir %s', (rel) => {
+    const home = scratch();
+    const bin = putExe(join(home, ...rel.split('/')), 'faketool');
+    process.env.T3MP3ST_AGENT_HOME = home;
+    process.env.PATH = '/usr/bin:/bin';
+    expect(resolveBin('faketool')).toBe(bin);
+  });
+
+  it('finds a CLI under an nvm per-version bin dir (dynamic enumeration)', () => {
+    const home = scratch();
+    const bin = putExe(join(home, '.nvm', 'versions', 'node', 'v20.11.0', 'bin'), 'faketool');
+    process.env.T3MP3ST_AGENT_HOME = home;
+    process.env.PATH = '/usr/bin:/bin';
+    expect(resolveBin('faketool')).toBe(bin);
+  });
+
+  it('finds a CLI under an fnm per-version bin dir (dynamic enumeration)', () => {
+    const home = scratch();
+    const bin = putExe(join(home, '.local', 'share', 'fnm', 'node-versions', 'v20.11.0', 'installation', 'bin'), 'faketool');
+    process.env.T3MP3ST_AGENT_HOME = home;
+    process.env.PATH = '/usr/bin:/bin';
+    expect(resolveBin('faketool')).toBe(bin);
+  });
+
+  it('resolves via PATH when the CLI is on it (rich-shell launch still works)', () => {
+    const dir = scratch();
+    const bin = putExe(dir, 'faketool');
+    process.env.T3MP3ST_AGENT_HOME = scratch(); // empty home — force the hit to come from PATH
+    process.env.PATH = `/usr/bin:${dir}`;
+
+    expect(resolveBin('faketool')).toBe(bin);
+  });
+
+  it('prefers a PATH match over a well-known-dir match when both exist (shell precedence)', () => {
+    const home = scratch();
+    const wellKnown = putExe(join(home, '.local', 'bin'), 'faketool');
+    const pathDir = scratch();
+    const onPath = putExe(pathDir, 'faketool');
+    process.env.T3MP3ST_AGENT_HOME = home;
+    process.env.PATH = `/usr/bin:${pathDir}`;    // PATH scanned before well-known dirs
+
+    expect(resolveBin('faketool')).toBe(onPath);
+    expect(resolveBin('faketool')).not.toBe(wellKnown);
+  });
+
+  it('follows a symlink to an executable (asdf/nvm shims & Claude Code\'s own install are symlinks)', () => {
+    const home = scratch();
+    const real = putExe(join(home, 'tools'), 'realtool');
+    const linkDir = join(home, '.local', 'bin');
+    mkdirSync(linkDir, { recursive: true });
+    const link = join(linkDir, 'faketool');
+    symlinkSync(real, link);
+    process.env.T3MP3ST_AGENT_HOME = home;
+    process.env.PATH = '/usr/bin:/bin';
+
+    expect(resolveBin('faketool')).toBe(link);   // the resolved candidate path, symlink followed for the file-check
+  });
+
+  it('skips a non-executable match (parity with execFile X_OK) and fails open to the bare name', () => {
+    const home = scratch();
+    const p = join(home, '.local', 'bin', 'faketool');
+    mkdirSync(join(home, '.local', 'bin'), { recursive: true });
+    writeFileSync(p, 'not executable', { mode: 0o644 });  // present but not +x
+    process.env.T3MP3ST_AGENT_HOME = home;
+    process.env.PATH = '/usr/bin:/bin';
+
+    expect(resolveBin('faketool')).toBe('faketool');       // not the non-exec path
+  });
+
+  it('does NOT match a directory named like the CLI (dirs carry the search bit; execvp would skip it)', () => {
+    // Regression guard: a bare `accessSync(X_OK)` passes for a directory, so resolveBin would return
+    // the dir → execFile fails EACCES (not ENOENT) → a false installed:true. Require a regular file.
+    const home = scratch();
+    mkdirSync(join(home, '.local', 'bin', 'faketool'), { recursive: true });  // a DIRECTORY, not a binary
+    process.env.T3MP3ST_AGENT_HOME = home;
+    process.env.PATH = '/usr/bin:/bin';
+    expect(resolveBin('faketool')).toBe('faketool');                          // bare name, not the dir path
+  });
+
+  it('returns an already-qualified path unchanged (the bin.includes("/") guard — no re-resolution)', () => {
+    expect(resolveBin('/opt/custom/claude')).toBe('/opt/custom/claude');
+    expect(resolveBin('./rel/claude')).toBe('./rel/claude');
+  });
+
+  it('fails open to the bare name when nothing matches anywhere', () => {
+    process.env.T3MP3ST_AGENT_HOME = scratch();
+    process.env.PATH = '/usr/bin:/bin';
+    expect(resolveBin('definitely-not-a-real-cli-xyz')).toBe('definitely-not-a-real-cli-xyz');
+  });
+
+  it('does NOT scan POSIX dirs on win32 — unresolved shims fail closed', () => {
+    const home = scratch();
+    putExe(join(home, '.local', 'bin'), 'faketool');
+    process.env.T3MP3ST_AGENT_HOME = home;
+    process.env.PATH = '/usr/bin:/bin';
+    const orig = Object.getOwnPropertyDescriptor(process, 'platform') || { value: process.platform, configurable: true };
+    Object.defineProperty(process, 'platform', { value: 'win32', configurable: true });
+    try {
+      expect(resolveBin('faketool')).toBeUndefined();
+    } finally {
+      Object.defineProperty(process, 'platform', orig);
+    }
+  });
+});
+
+describe.runIf(process.platform !== 'win32')('detectLocalAgents — wiring: a well-known-dir CLI is reported installed (issue #78)', () => {
+  it('reports Claude Code installed + versioned when `claude` lives in ~/.local/bin and PATH omits it', async () => {
+    const home = scratch();
+    const claudePath = putExe(join(home, '.local', 'bin'), 'claude');
+    process.env.T3MP3ST_AGENT_HOME = home;
+    process.env.PATH = '/usr/bin:/bin';         // pre-fix: execFile('claude') → ENOENT → installed:false
+    delete process.env.T3MP3ST_DISABLE_LOCAL_AGENTS;  // insurance: a leaked disable flag would short-circuit to []
+
+    const agents = await detectLocalAgents();
+    const claude = agents.find((a) => a.id === 'claude');
+    expect(claude?.installed).toBe(true);
+    expect(claude?.path).toBe(claudePath);
+    expect(claude?.version).toBe('1.2.3');       // parsed from the resolved binary's --version output
+    // Do not assert that another real agent is absent: detection intentionally
+    // also scans system-wide install locations such as /usr/local/bin, so that
+    // result depends on the maintainer/CI host rather than this fixture.
+  });
+
+  it('detects authenticated OpenCode and Oh My Pi installations (#136)', async () => {
+    const home = scratch();
+    const binDir = join(home, '.local', 'bin');
+    putExe(binDir, 'opencode', FAKE_OPENCODE);
+    putExe(binDir, 'omp', FAKE_OMP);
+    mkdirSync(join(home, '.local', 'share', 'opencode'), { recursive: true });
+    writeFileSync(join(home, '.local', 'share', 'opencode', 'auth.json'), '{}');
+    mkdirSync(join(home, '.omp', 'agent'), { recursive: true });
+    writeFileSync(join(home, '.omp', 'agent', 'agent.db'), 'fixture');
+    process.env.T3MP3ST_AGENT_HOME = home;
+    process.env.PATH = '/usr/bin:/bin';
+    delete process.env.T3MP3ST_DISABLE_LOCAL_AGENTS;
+
+    const agents = await detectLocalAgents();
+    expect(agents.find((a) => a.id === 'opencode')).toMatchObject({ installed: true, authed: true, ready: true, version: '1.2.3' });
+    expect(agents.find((a) => a.id === 'omp')).toMatchObject({ installed: true, authed: true, ready: true, version: '1.2.3' });
+  });
+});
+
+describe.runIf(process.platform !== 'win32')('spawn call-sites use the resolved path (issue #78 — detected-but-unspawnable would be worse)', () => {
+  // Behavioral, not a spawn spy: if the rewiring regressed to the bare `spec.bin`, spawn('claude')
+  // under PATH=/usr/bin:/bin throws ENOENT → ok:false / reject. Success proves the resolved path ran.
+  it('runLocalAgent launches the well-known-dir CLI (not the bare name)', async () => {
+    const home = scratch();
+    putExe(join(home, '.local', 'bin'), 'claude');
+    process.env.T3MP3ST_AGENT_HOME = home;
+    process.env.PATH = '/usr/bin:/bin';
+
+    const res = await runLocalAgent('claude', 'ping', { timeoutMs: 4000 });
+    expect(res.ok).toBe(true);
+    expect(res.output).toContain('1.2.3');
+  });
+
+  it('keeps OpenCode tools denied on the one-shot ping/dispatch path (#136)', async () => {
+    const home = scratch();
+    putExe(join(home, '.local', 'bin'), 'opencode', FAKE_OPENCODE);
+    process.env.T3MP3ST_AGENT_HOME = home;
+    process.env.PATH = '/usr/bin:/bin';
+
+    const res = await runLocalAgent('opencode', 'ping', { model: 'openai/gpt-5', timeoutMs: 4000 });
+    expect(res.ok).toBe(true);
+    expect(res.output).toBe('{"*":"deny"}|run --model openai/gpt-5 ping|');
+  });
+
+  it('keeps Oh My Pi tools disabled on the one-shot ping/dispatch path (#136)', async () => {
+    const home = scratch();
+    putExe(join(home, '.local', 'bin'), 'omp', FAKE_OMP);
+    process.env.T3MP3ST_AGENT_HOME = home;
+    process.env.PATH = '/usr/bin:/bin';
+
+    const res = await runLocalAgent('omp', 'ping', { model: 'anthropic/claude-sonnet-4-5', timeoutMs: 4000 });
+    expect(res.ok).toBe(true);
+    expect(res.output).toBe('--no-tools -p --model anthropic/claude-sonnet-4-5 ping|');
+  });
+
+  it('localAgentChat launches the well-known-dir CLI (not the bare name)', async () => {
+    const home = scratch();
+    putExe(join(home, '.local', 'bin'), 'claude', FAKE_CLI_STDIN);
+    process.env.T3MP3ST_AGENT_HOME = home;
+    process.env.PATH = '/usr/bin:/bin';
+
+    await expect(localAgentChat('claude', 'ping', { timeoutMs: 4000 })).resolves.toContain('1.2.3');
+  });
+
+  it('drives OpenCode through stdin with model routing and all internal tools denied (#136)', async () => {
+    const home = scratch();
+    putExe(join(home, '.local', 'bin'), 'opencode', FAKE_OPENCODE);
+    process.env.T3MP3ST_AGENT_HOME = home;
+    process.env.PATH = '/usr/bin:/bin';
+
+    await expect(localAgentChat('opencode', 'long planning prompt', {
+      model: 'anthropic/claude-sonnet-4-5', timeoutMs: 4000,
+    })).resolves.toBe('{"*":"deny"}|run --model anthropic/claude-sonnet-4-5|long planning prompt');
+  });
+
+  it('drives Oh My Pi through stdin with model routing and internal tools disabled (#136)', async () => {
+    const home = scratch();
+    putExe(join(home, '.local', 'bin'), 'omp', FAKE_OMP);
+    process.env.T3MP3ST_AGENT_HOME = home;
+    process.env.PATH = '/usr/bin:/bin';
+
+    await expect(localAgentChat('omp', 'long planning prompt', {
+      model: 'openai-codex/gpt-5', timeoutMs: 4000,
+    })).resolves.toBe('--no-tools --model openai-codex/gpt-5|long planning prompt');
+  });
+});
+
+/**
+ * REGRESSION guard (Tier 2 — #139 follow-up, session resume): confirmed empirically against the
+ * real Claude Code CLI that an unknown/expired --resume id is a hard, fast failure (nonzero exit,
+ * "No conversation found with session ID: ..." on stderr, no JSON on stdout) — the CLI never falls
+ * back to a fresh session on its own. localAgentChat does that fallback itself, once. These tests
+ * drive the REAL function (not mocked) through a fake CLI script so the retry wiring is pinned,
+ * not just the higher-level LocalAgentAdapter call-shape covered in local-agent-tool-calling.test.ts.
+ */
+const FAKE_CLI_RESUME_STALE = `#!/bin/sh
+cat >/dev/null 2>&1
+case "$*" in
+  *--resume*) echo "No conversation found with session ID: fake" >&2; exit 1 ;;
+  *) echo '{"result":"fresh ok","session_id":"new-session-123"}' ;;
+esac
+`;
+
+// Echoes exactly what it received on stdin back to stdout on the fresh (non-resume) path — lets a
+// test prove WHICH prompt string a fresh-session retry actually received, not just that it succeeded.
+const FAKE_CLI_ECHO_ON_FRESH = `#!/bin/sh
+prompt=$(cat)
+case "$*" in
+  *--resume*) echo "No conversation found with session ID: fake" >&2; exit 1 ;;
+  *) printf '%s' "$prompt" ;;
+esac
+`;
+
+// A --resume failure that is NOT the stale-session error. If a fallback retry incorrectly fired,
+// the fresh (non-resume) branch below would resolve successfully — so a test asserting this
+// REJECTS proves no retry happened, not just that the final error text matches.
+const FAKE_CLI_NONSTALE_RESUME_ERROR = `#!/bin/sh
+cat >/dev/null 2>&1
+case "$*" in
+  *--resume*) echo "connection refused" >&2; exit 1 ;;
+  *) echo '{"result":"should not be reached — a retry fired for a non-stale error","session_id":"x"}' ;;
+esac
+`;
+
+describe('localAgentChat — stale Claude session fallback (Tier 2)', () => {
+  it('retries WITHOUT --resume when the resumed session is stale, and succeeds', async () => {
+    const home = scratch();
+    putExe(join(home, '.local', 'bin'), 'claude', FAKE_CLI_RESUME_STALE);
+    process.env.T3MP3ST_AGENT_HOME = home;
+    process.env.PATH = '/usr/bin:/bin';
+
+    const out = await localAgentChat('claude', 'ping', { sessionId: 'stale-uuid', timeoutMs: 4000 });
+    expect(JSON.parse(out).result).toBe('fresh ok');
+  });
+
+  it('never adds --resume when no sessionId is supplied (no unnecessary retry path)', async () => {
+    const home = scratch();
+    putExe(join(home, '.local', 'bin'), 'claude', FAKE_CLI_RESUME_STALE);
+    process.env.T3MP3ST_AGENT_HOME = home;
+    process.env.PATH = '/usr/bin:/bin';
+
+    const out = await localAgentChat('claude', 'ping', { timeoutMs: 4000 });
+    expect(JSON.parse(out).result).toBe('fresh ok');
+  });
+
+  it('a genuine failure with no session in play still rejects (no unnecessary-retry regression)', async () => {
+    const home = scratch();
+    putExe(join(home, '.local', 'bin'), 'claude', '#!/bin/sh\ncat >/dev/null 2>&1\necho "boom" >&2\nexit 1\n');
+    process.env.T3MP3ST_AGENT_HOME = home;
+    process.env.PATH = '/usr/bin:/bin';
+
+    await expect(localAgentChat('claude', 'ping', { timeoutMs: 4000 })).rejects.toThrow(/boom/);
+  });
+
+  it('a non-stale failure with a session in play propagates without a fallback retry (narrowed trigger, PR #149 review)', async () => {
+    const home = scratch();
+    putExe(join(home, '.local', 'bin'), 'claude', FAKE_CLI_NONSTALE_RESUME_ERROR);
+    process.env.T3MP3ST_AGENT_HOME = home;
+    process.env.PATH = '/usr/bin:/bin';
+
+    // If the (old, unnarrowed) fallback fired here, this would RESOLVE with the fresh branch's
+    // success text instead of rejecting — a rejection proves no retry happened.
+    await expect(localAgentChat('claude', 'ping', { sessionId: 'whatever', timeoutMs: 4000 }))
+      .rejects.toThrow(/connection refused/);
+  });
+
+  it('the specific stale-session error still triggers exactly one fallback retry', async () => {
+    const home = scratch();
+    putExe(join(home, '.local', 'bin'), 'claude', FAKE_CLI_RESUME_STALE);
+    process.env.T3MP3ST_AGENT_HOME = home;
+    process.env.PATH = '/usr/bin:/bin';
+
+    const out = await localAgentChat('claude', 'ping', { sessionId: 'stale-uuid', timeoutMs: 4000 });
+    expect(JSON.parse(out).result).toBe('fresh ok');
+  });
+
+  // PR #149 review (jmagly): the fresh-session retry has no history at all, so it must receive the
+  // FULL transcript (fallbackPrompt) — never the delta sized for the (failed) resumed attempt.
+  it('the fresh-session retry receives fallbackPrompt, not the delta prompt of the failed resumed attempt', async () => {
+    const home = scratch();
+    putExe(join(home, '.local', 'bin'), 'claude', FAKE_CLI_ECHO_ON_FRESH);
+    process.env.T3MP3ST_AGENT_HOME = home;
+    process.env.PATH = '/usr/bin:/bin';
+
+    const out = await localAgentChat('claude', 'DELTA-ONLY-CONTENT', {
+      sessionId: 'stale-uuid',
+      fallbackPrompt: 'FULL-TRANSCRIPT-CONTENT',
+      timeoutMs: 4000,
+    });
+
+    expect(out).toBe('FULL-TRANSCRIPT-CONTENT');
+    expect(out).not.toContain('DELTA-ONLY-CONTENT');
+  });
+
+  it('falls back to the (delta) prompt itself when no fallbackPrompt is supplied', async () => {
+    const home = scratch();
+    putExe(join(home, '.local', 'bin'), 'claude', FAKE_CLI_ECHO_ON_FRESH);
+    process.env.T3MP3ST_AGENT_HOME = home;
+    process.env.PATH = '/usr/bin:/bin';
+
+    const out = await localAgentChat('claude', 'ONLY-PROMPT-CONTENT', { sessionId: 'stale-uuid', timeoutMs: 4000 });
+    expect(out).toBe('ONLY-PROMPT-CONTENT');
+  });
+});

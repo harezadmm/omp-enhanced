@@ -1,0 +1,13 @@
+{
+  "name": "Enochian Alphabet",
+  "priority": 100,
+  "description": "Enochian angelic script (Unicode approximations)",
+  "detectorHint": "[ᛂᛃᛄᛅᛆᛇᛈᛉᛊᛋ]",
+  "map": {
+    "A": "ᛂ", "B": "ᛃ", "C": "ᛄ", "D": "ᛅ", "E": "ᛆ", "F": "ᛇ",
+    "G": "ᛈ", "H": "ᛉ", "I": "ᛊ", "J": "ᛋ", "K": "ᛌ", "L": "ᛍ",
+    "M": "ᛎ", "N": "ᛏ", "O": "ᛐ", "P": "ᛑ", "Q": "ᛒ", "R": "ᛓ",
+    "S": "ᛔ", "T": "ᛕ", "U": "ᛖ", "V": "ᛗ", "W": "ᛘ", "X": "ᛙ",
+    "Y": "ᛚ", "Z": "ᛛ"
+  }
+}

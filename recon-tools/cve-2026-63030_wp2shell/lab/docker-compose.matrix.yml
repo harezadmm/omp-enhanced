@@ -1,0 +1,81 @@
+# Parameterised lab used by matrix.sh to test the PoC across the whole
+# vulnerable range and across DB engines. Driven entirely by env vars:
+#
+#   WP_IMAGE   e.g. wordpress:7.0.1-apache | wordpress:6.9.4-apache | wordpress:6.8.3-apache
+#   DB_IMAGE   e.g. mariadb:11 | mysql:8.4
+#   PORT       host port for the WP container (default 8080)
+#
+# MYSQL_* credentials are understood by BOTH the mariadb and mysql official
+# images, so one file covers both engines. No persistent volumes: every combo
+# is a clean throwaway stack (`down -v`).
+
+name: ${LAB_PROJECT:-wp2shell-matrix}
+
+services:
+  db:
+    image: ${DB_IMAGE:-mariadb:11}
+    command: ["--secure-file-priv="]     # allow INTO OUTFILE anywhere (for the outfile-RCE lab)
+    environment:
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wp
+      MYSQL_PASSWORD: wp
+      MYSQL_ROOT_PASSWORD: root
+    tmpfs:
+      - /var/lib/mysql
+    healthcheck:
+      # mariadb:11 ships mariadb-admin (+ mysqladmin symlink); mysql:8 ships mysqladmin.
+      test: ["CMD-SHELL",
+             "mariadb-admin ping -uroot -proot --silent 2>/dev/null || mysqladmin ping -uroot -proot --silent 2>/dev/null"]
+      interval: 4s
+      timeout: 4s
+      retries: 40
+
+  wp:
+    image: ${WP_IMAGE:-wordpress:6.9.4-apache}
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "${PORT:-8080}:80"
+    volumes:
+      - wp_data:/var/www/html
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wp
+      WORDPRESS_DB_PASSWORD: wp
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_CONFIG_EXTRA: |
+        define('WP_HOME',    'http://localhost:${PORT:-8080}');
+        define('WP_SITEURL', 'http://localhost:${PORT:-8080}');
+
+  wpcli:
+    image: wordpress:cli
+    depends_on:
+      db:
+        condition: service_healthy
+      wp:
+        condition: service_started
+    volumes:
+      - wp_data:/var/www/html
+    user: "33:33"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_USER: wp
+      WORDPRESS_DB_PASSWORD: wp
+      WORDPRESS_DB_NAME: wordpress
+    entrypoint: ["/bin/sh", "-c"]
+    command:
+      - |
+        until [ -f /var/www/html/wp-config.php ]; do sleep 2; done
+        until wp core is-installed 2>/dev/null; do
+          wp core install --url="http://localhost:${PORT:-8080}" --title="wp2shell-lab" \
+            --admin_user=admin --admin_password='Admin!2345' --admin_email=admin@lab.test \
+            --skip-email 2>/dev/null || sleep 3
+        done
+        wp rewrite structure '/%postname%/' --hard >/dev/null 2>&1 || true
+        wp rewrite flush --hard >/dev/null 2>&1 || true
+        echo "[wpcli] WordPress $$(wp core version) on ${DB_IMAGE:-mariadb:11} — published posts: $$(wp post list --post_status=publish --format=count)"
+        echo "LAB READY"
+
+volumes:
+  wp_data:

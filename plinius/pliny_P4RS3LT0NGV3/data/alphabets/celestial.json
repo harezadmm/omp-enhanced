@@ -1,0 +1,13 @@
+{
+  "name": "Celestial Alphabet",
+  "priority": 100,
+  "description": "Agrippa's celestial / angelic symbol alphabet",
+  "detectorHint": "[☉☽☿♀♂♃♄♅♆♇☊☋]",
+  "map": {
+    "A": "☉", "B": "☽", "C": "☿", "D": "♀", "E": "♂", "F": "♃",
+    "G": "♄", "H": "♅", "I": "♆", "J": "♇", "K": "☊", "L": "☋",
+    "M": "⚳", "N": "⚴", "O": "⚵", "P": "⚶", "Q": "⚷", "R": "⚸",
+    "S": "⚹", "T": "⚺", "U": "⚻", "V": "⚼", "W": "⚽", "X": "⚾",
+    "Y": "⛢", "Z": "⛣"
+  }
+}

@@ -1,0 +1,5 @@
+{
+  "schema_id": "obliteratus.checkpoint-trust-policy",
+  "schema_version": "1.0.0",
+  "environment": {"HOME": "/private/path", "TOKEN": "must-not-persist"}
+}

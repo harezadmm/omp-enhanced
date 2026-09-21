@@ -1,0 +1,172 @@
+<div v-if="activeTab === 'tokenade'" class="tab-content">
+                <div class="transform-layout">
+                    <div class="token-bomb-section">
+                        <div class="section-header">
+                            <div class="section-title">
+                                <h3><span title="High-density token payload builder">💥 Tokenade Generator</span></h3>
+                                <small>Craft dense token payloads with emojis and zero-width characters</small>
+                            </div>
+                        </div>
+                        <div class="tokenade-disclaimer" v-if="estimateTokenadeTokens() <= dangerThresholdTokens">
+                            <i class="fas fa-triangle-exclamation"></i>
+                            <span><strong>DISCLAIMER:</strong> Tokenade payloads can severely degrade model performance and crash UIs. Use for testing only. Do not deploy to production or target systems without explicit permission.</span>
+                        </div>
+                        <div class="tokenade-disclaimer danger" v-else>
+                            <i class="fas fa-radiation"></i>
+                            <span>
+                                <strong>Danger zone:</strong> Estimated length {{ estimateTokenadeLength().toLocaleString() }} chars exceeds the safe threshold ({{ dangerThresholdTokens.toLocaleString() }}).
+                                Generating this will very likely freeze/crash your browser or downstream tools. Proceed only if you fully understand the risks.
+                            </span>
+                        </div>
+                        <div class="tokenade-presets">
+                            <button class="transform-button" title="Very light density" @click="applyTokenadePreset('feather')">🪶 Feather</button>
+                            <button class="transform-button" title="Light density" @click="applyTokenadePreset('light')">🍃 Light</button>
+                            <button class="transform-button" title="Balanced density" @click="applyTokenadePreset('middle')">🪨 Middle</button>
+                            <button class="transform-button" title="High density" @click="applyTokenadePreset('heavy')">🗿 Heavy</button>
+                            <button class="transform-button" title="Extreme density (use with care)" @click="applyTokenadePreset('super')">⚓ Super</button>
+                        </div>
+                        <div class="tokenade-controls">
+                            <div class="options-grid tokenade-sliders">
+                                <label class="slider-block" title="Nesting levels; higher = more layers of grouping. Tip: Increasing depth/breadth grows size multiplicatively.">
+                                    <span class="tokenade-field-text">
+                                        <span class="tokenade-field-name">Depth</span>
+                                        <small class="tokenade-field-hint">Nesting levels</small>
+                                    </span>
+                                    <input type="range" v-model.number="tbDepth" min="1" max="8" />
+                                    <span class="slider-value">{{ tbDepth }}</span>
+                                </label>
+                                <label class="slider-block" title="How many items per level; higher = wider structure. Tip: Increasing depth/breadth grows size multiplicatively.">
+                                    <span class="tokenade-field-text">
+                                        <span class="tokenade-field-name">Breadth</span>
+                                        <small class="tokenade-field-hint">Items per level</small>
+                                    </span>
+                                    <input type="range" v-model.number="tbBreadth" min="1" max="10" />
+                                    <span class="slider-value">{{ tbBreadth }}</span>
+                                </label>
+                                <label class="slider-block" title="How many times to repeat the whole block">
+                                    <span class="tokenade-field-text">
+                                        <span class="tokenade-field-name">Repeats</span>
+                                        <small class="tokenade-field-hint">Block count</small>
+                                    </span>
+                                    <input type="range" v-model.number="tbRepeats" min="1" max="50" />
+                                    <span class="slider-value">{{ tbRepeats }}</span>
+                                </label>
+                            </div>
+                            <div class="options-grid tokenade-toggles">
+                                <label class="switch neon" title="Adds VS16/VS15 after glyphs to increase token churn">
+                                    <input type="checkbox" v-model="tbIncludeVS" />
+                                    <span>Variation selectors</span>
+                                </label>
+                                <label class="switch neon" title="Sprinkles random zero-width codepoints between segments">
+                                    <input type="checkbox" v-model="tbIncludeNoise" />
+                                    <span>Invisible noise</span>
+                                </label>
+                                <label class="switch neon" title="Automatically copy result after generation">
+                                    <input type="checkbox" v-model="tbAutoCopy" />
+                                    <span>Auto-copy</span>
+                                </label>
+                            </div>
+                            <div class="tokenade-separator-row">
+                                <div class="segmented" title="Invisible separator inserted between units">
+                                    <div class="segmented-label">Separator</div>
+                                    <div class="segmented-buttons">
+                                        <button type="button" :class="{active: tbSeparator==='zwj'}" @click="tbSeparator='zwj'">ZWJ</button>
+                                        <button type="button" :class="{active: tbSeparator==='zwnj'}" @click="tbSeparator='zwnj'">ZWNJ</button>
+                                        <button type="button" :class="{active: tbSeparator==='zwsp'}" @click="tbSeparator='zwsp'">ZWSP</button>
+                                        <button type="button" :class="{active: tbSeparator==='none'}" @click="tbSeparator='none'">None</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="output-instructions">
+                            <small>
+                                Estimated length: {{ estimateTokenadeLength().toLocaleString() }} chars
+                            </small>
+                        </div>
+                        <div class="tokenade-carrier-options">
+                            <label class="switch neon tokenade-carrier-toggle" title="Condense payload into a single emoji carrier">
+                                <input type="checkbox" v-model="tbSingleCarrier" />
+                                <span>Single emoji carrier</span>
+                            </label>
+                            <template v-if="tbSingleCarrier">
+                                <div class="carrier-quick-grid">
+                                    <small>Quick picks</small>
+                                    <div class="emoji-grid">
+                                        <button class="emoji-button" v-for="em in quickCarrierEmojis" :key="'q-'+em" @click="tbCarrier = em" :title="'Use '+em">{{ em }}</button>
+                                    </div>
+                                </div>
+                                <div class="options-grid tokenade-carrier-fields">
+                                    <label>
+                                        <span class="label-with-tooltip">
+                                            Carrier
+                                            <i class="fas fa-info-circle tooltip-icon" data-tooltip="Choose the carrier emoji (quick list)"></i>
+                                        </span>
+                                        <select v-model="tbCarrier" @focus="setCarrierFromSelected">
+                                            <option v-for="(em, index) in carrierEmojiList" :key="'carrier-'+index" :value="em">{{ em }}</option>
+                                        </select>
+                                    </label>
+                                    <label>
+                                        <span class="tokenade-field-text">
+                                            <span class="tokenade-field-name">Custom carrier</span>
+                                            <small class="tokenade-field-hint">Overrides quick picks</small>
+                                        </span>
+                                        <input type="text" v-model="tbCarrierManual" placeholder="e.g., ⚙️ or ::tag::" />
+                                    </label>
+                                </div>
+                            </template>
+                        </div>
+                        <div class="tool-toolbar">
+                            <button type="button" class="transform-button tool-primary-btn" @click="generateTokenBomb" title="Build the tokenade with current settings">
+                                <i class="fas fa-hammer"></i> Generate Tokenade
+                            </button>
+                            <button class="copy-button" v-if="tokenBombOutput" @click="copyToClipboard(tokenBombOutput)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                            <div class="output-instructions" v-if="tokenBombOutput">
+                                <small>
+                                    Length: {{ tokenBombOutput.length.toLocaleString() }} chars
+                                </small>
+                            </div>
+                        </div>
+                        <div class="output-container" v-if="tokenBombOutput">
+                            <textarea readonly v-model="tokenBombOutput" aria-label="Token bomb output"></textarea>
+                        </div>
+                    </div>
+
+                    <!-- Text Payload Generator (simple) -->
+                    <div class="transform-section">
+                        <h4><i class="fas fa-font"></i> Text Payload Generator</h4>
+                        <label class="tokenade-field-label">
+                            Base text
+                            <input type="text" v-model="tpBase" placeholder="Enter base snippet (e.g., hello)" />
+                        </label>
+                        <div class="options-grid tokenade-text-options">
+                            <label>
+                                <span class="tokenade-field-text">
+                                    <span class="tokenade-field-name">Repeat count</span>
+                                </span>
+                                <input type="number" v-model.number="tpRepeat" min="1" max="1000" />
+                            </label>
+                            <label class="switch neon">
+                                <input type="checkbox" v-model="tpCombining" />
+                                <span>Combining marks</span>
+                            </label>
+                            <label class="switch neon">
+                                <input type="checkbox" v-model="tpZW" />
+                                <span>Zero-width spacing</span>
+                            </label>
+                        </div>
+                        <div class="tool-toolbar">
+                            <button type="button" class="transform-button tool-primary-btn" @click="generateTextPayload">
+                                <i class="fas fa-hammer"></i> Generate Text Payload
+                            </button>
+                            <button class="copy-button" v-if="textPayload" @click="copyToClipboard(textPayload)">
+                                <i class="fas fa-copy"></i>
+                            </button>
+                        </div>
+                        <div class="output-container" v-if="textPayload">
+                            <textarea readonly v-model="textPayload" aria-label="Text payload output"></textarea>
+                        </div>
+                    </div>
+                </div>
+            </div>

@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+
+# macOS
+.DS_Store
+
+# editor / tooling
+.claude/
+.ruff_cache/
+.idea/
+.vscode/
+
+# local scan artifacts
+*.log
+scan*.json
+targets*.txt

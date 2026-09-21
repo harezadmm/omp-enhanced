@@ -1,0 +1,13 @@
+{
+  "name": "Daedric Alphabet",
+  "priority": 100,
+  "description": "Elder Scrolls inspired Daedric-style symbols",
+  "detectorHint": "[ᚠᚡᚢᚣᚤᚥᚦᚧᚨᚩ]",
+  "map": {
+    "A": "ᚠ", "B": "ᚡ", "C": "ᚢ", "D": "ᚣ", "E": "ᚤ", "F": "ᚥ",
+    "G": "ᚦ", "H": "ᚧ", "I": "ᚨ", "J": "ᚩ", "K": "ᚪ", "L": "ᚫ",
+    "M": "ᚬ", "N": "ᚭ", "O": "ᚮ", "P": "ᚯ", "Q": "ᚰ", "R": "ᚱ",
+    "S": "ᚲ", "T": "ᚳ", "U": "ᚴ", "V": "ᚵ", "W": "ᚶ", "X": "ᚷ",
+    "Y": "ᚸ", "Z": "ᚹ"
+  }
+}

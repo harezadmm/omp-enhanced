@@ -1,0 +1,746 @@
+/**
+ * T3MP3ST Arsenal — Kali+ adapter → CustomTool factory (Phase-1)
+ *
+ * Turns the catalogued Kali+ `ToolAdapter`s (src/arsenal/catalog.ts) into real, arg-templated,
+ * scope-checked, gracefully-degrading `CustomTool`s (src/types/index.ts) that the engine's Arsenal
+ * can register and an operator can call.
+ *
+ * Design constraints (from the pack-hunt design HT-1):
+ *  - Dangerous adapters stay off the callable surface: `execution === 'catalog_only'` (metasploit,
+ *    hydra) and `execution === 'import_only'` (bloodhound) are NEVER minted — `adapterToCustomTool`
+ *    returns `null` for them, so a keyless pack agent cannot invoke them through generic execution.
+ *  - Missing binary DEGRADES, never throws: the handler returns `{ success:false, error: installHint }`
+ *    exactly like the hand-written `EXTERNAL_TOOLS` (nmap_scan/nuclei_scan) do, so the model can pick
+ *    another tool instead of crashing the loop.
+ *  - Scope is enforced BEFORE the subprocess runs. The Arsenal already has a hard egress gate in
+ *    `execute()` (scopeViolation), but that only fires when a mission has set a scope. This factory
+ *    accepts an OPTIONAL `scopeOk(target)` predicate as a second, in-handler belt-and-braces check on
+ *    the resolved target for THIS specific adapter; when provided and it returns false the handler
+ *    returns a `SCOPE DENIED` result without spawning anything.
+ *
+ * Everything is done through INJECTED dependencies (`runSubprocess` / `isToolAvailable` from
+ * src/arsenal/index.ts, an optional `scopeOk`) so this module stays self-contained and unit-testable
+ * with fakes — it spawns no real binaries of its own and imports no server code.
+ */
+
+import type { ToolAdapter } from './catalog.js';
+import type { CustomTool, ToolContext, ToolResult } from '../types/index.js';
+import { parseToolOutput } from './parsers.js';
+import { existsSync } from 'fs';
+import { join } from 'path';
+
+// =============================================================================
+// INJECTED DEPENDENCIES
+// =============================================================================
+
+/** Result shape of the real `runSubprocess` in src/arsenal/index.ts. */
+export interface SubprocessResult {
+  stdout: string;
+  stderr: string;
+  exitCode: number;
+}
+
+export interface ReportWorkspace {
+  /** Base path supplied to the tool; the template derives the concrete report filename from it. */
+  reportBase: string;
+  /** Remove the complete private workspace, including partial reports from failed runs. */
+  cleanup: () => Promise<void>;
+}
+
+/**
+ * The (fakeable) dependencies the factory needs. `runSubprocess` / `isToolAvailable` are the real
+ * functions exported from src/arsenal/index.ts; `scopeOk` is an optional in-handler target gate.
+ */
+export interface AdapterToolDeps {
+  /** Same signature as `runSubprocess` in src/arsenal/index.ts. */
+  runSubprocess: (
+    command: string,
+    args: string[],
+    options?: { timeout?: number; maxOutput?: number }
+  ) => Promise<SubprocessResult>;
+  /** Same signature as `isToolAvailable` in src/arsenal/index.ts. */
+  isToolAvailable: (command: string) => Promise<boolean>;
+  /**
+   * Optional per-target scope predicate. Receives the resolved target host/url the adapter would hit;
+   * return false to refuse the call. When omitted, the in-handler scope check is skipped (the
+   * Arsenal-level egress gate in execute() still applies at the engine boundary).
+   */
+  scopeOk?: (target: string) => boolean;
+  /**
+   * Create a private per-run workspace for a tool that emits its report to a FILE (see
+   * ArgTemplate.reportFile). Its cleanup must remove the whole workspace, including partial reports.
+   * Omitted → such tools fall back to parsing stdout.
+   */
+  createReportWorkspace?: (adapterId: string) => Promise<ReportWorkspace>;
+  /** Read a tool's report file back. The workspace cleanup owns deletion. */
+  readToolReport?: (path: string) => Promise<string>;
+}
+
+// =============================================================================
+// ARG TEMPLATES
+// =============================================================================
+
+/**
+ * How a given adapter's binary consumes its target + which context parameter carries that target.
+ *
+ * `build(target, params)` returns the full argv for the subprocess. `targetParam` names the
+ * ToolContext parameter the target is read from (falling back to `context.target.address`).
+ * `defaultTimeoutMs` is the per-adapter subprocess timeout (scanners get longer budgets).
+ */
+interface ArgTemplate {
+  targetParam: string;
+  defaultTimeoutMs: number;
+  build: (target: string, params: Record<string, unknown>) => string[];
+  /**
+   * Tools that write their structured results to a FILE, not stdout (e.g. garak's report.jsonl).
+   * The handler creates a private workspace (via deps.createReportWorkspace), injects its base as
+   * `__reportBase` for build() to point the tool at, and — given that base — this returns the actual
+   * file to read back and parse INSTEAD of stdout. Absent → the tool's stdout is parsed (the default).
+   */
+  reportFile?: (reportBase: string) => string;
+}
+
+/**
+ * Default wordlist for content-discovery adapters (ffuf/gobuster/feroxbuster).
+ * Falls back to the bundled SecLists copy when the POSIX default path is
+ * absent (Windows) — a missing wordlist previously made every dir-bruteforce
+ * adapter fail outright. T3MP3ST_WORDLIST overrides both.
+ */
+function defaultWordlist(): string {
+  const env = process.env.T3MP3ST_WORDLIST;
+  if (env && existsSync(env)) return env;
+  const posix = '/usr/share/wordlists/dirb/common.txt';
+  if (existsSync(posix)) return posix;
+  const bundled = join(__dirname, '..', '..', 'tools', 'wordlists', 'common.txt');
+  if (existsSync(bundled)) return bundled;
+  return posix;
+}
+
+const str = (v: unknown): string | undefined =>  typeof v === 'string' && v.trim() ? v.trim() : undefined;
+
+/**
+ * Resolve the filesystem PATH a source/supply-chain scanner should run against (semgrep, gitleaks,
+ * trivy, …). These adapters are non-networked and operate on a directory, defaulting to the working
+ * dir (`.`). The subcommand + output flags in each template are HARDCODED — only this path is
+ * tunable, and it is sanitised so it cannot smuggle a flag or an inherited URL past the gate:
+ *   - a leading `-` would be reparsed as a scanner flag (arg injection) → fall back to `.`,
+ *   - an http(s) URL (e.g. a networked mission target inherited via context.target.address) is not a
+ *     scan path → fall back to `.`.
+ */
+const scanPath = (target: string, params: Record<string, unknown>): string => {
+  const p = str(params.path) ?? str(params.target) ?? (target || undefined);
+  if (!p || /^-/.test(p) || /^https?:\/\//i.test(p)) return '.';
+  return p;
+};
+
+/**
+ * Resolve the local FILE/artifact a reverse-engineering or mobile analyser runs against (objdump,
+ * readelf, r2, myth, apkleaks, …). Unlike a directory scanner, a binary tool has no sensible cwd
+ * default — a bare `objdump .` is meaningless — so instead of silently degrading this REFUSES an
+ * absent or non-local path by throwing, which the factory handler turns into a clean
+ * `{ success:false }` result (never an unhandled rejection). The two rejected shapes:
+ *   - no path at all → the tool would spawn `<binary> ''` / `<binary>` and produce nothing,
+ *   - an http(s) URL (e.g. a networked mission target inherited via context.target.address) → not a
+ *     local artifact. (A leading `-` is already refused upstream by the factory's option-looking-
+ *     target guard, since these templates read the artifact from their `targetParam`.)
+ */
+const artifactPath = (target: string, params: Record<string, unknown>): string => {
+  const p = str(params.file) ?? str(params.path) ?? str(params.artifact) ?? (target || undefined);
+  if (!p) throw new Error('requires a file/artifact path (none was provided).');
+  if (/^https?:\/\//i.test(p)) throw new Error(`'${p}' is a URL, not a local artifact path.`);
+  return p;
+};
+
+/** Resolve a required secondary local artifact without allowing it to become a CLI option. */
+const auxiliaryArtifactPath = (value: unknown, label: string): string => {
+  const p = str(value);
+  if (!p) throw new Error(`requires ${label}.`);
+  if (/^-/.test(p)) throw new Error(`${label} must not look like a command option.`);
+  if (/^https?:\/\//i.test(p)) throw new Error(`${label} must be a local path, not a URL.`);
+  return p;
+};
+
+/** Keep Apktool output inside one non-destructive child directory of the working directory. */
+const apkOutputDirectory = (value: unknown): string => {
+  const output = str(value) ?? 'apk-out';
+  if (output === '.' || output === '..' || !/^[A-Za-z0-9][A-Za-z0-9._-]*$/.test(output)) {
+    throw new Error('output must be a safe directory name without path separators or leading options.');
+  }
+  return output;
+};
+
+/**
+ * Per-binary arg templates for the common command-ready adapters. Keyed by `adapter.binary` (the
+ * process name), with `adapter.id` also accepted as a fallback key so callers can template by either.
+ * Anything not listed here falls back to `DEFAULT_TEMPLATE` (pass the target as a positional arg).
+ *
+ * Templates are intentionally conservative — no intrusive flags are auto-added; risk stays where the
+ * catalog put it and the Arsenal egress gate + optional scopeOk fence the target.
+ */
+const ARG_TEMPLATES: Record<string, ArgTemplate> = {
+  // garak writes its structured results to <report_prefix>.report.jsonl (a FILE), not stdout — so we
+  // point --report_prefix at the handler-minted base and read that file back for parseGarak. Model +
+  // probe flags stay hardcoded; only the scoped model name (the target) is tunable. Model probing is
+  // slow, hence the long timeout.
+  garak: {
+    targetParam: 'target',
+    defaultTimeoutMs: 1_800_000,
+    reportFile: (base) => `${base}.report.jsonl`,
+    build: (target, params) => {
+      const base = str(params.__reportBase) ?? 'garak_run';
+      return ['--model_type', 'rest', '--model_name', target, '--report_prefix', base];
+    },
+  },
+  nmap: {
+    targetParam: 'target',
+    defaultTimeoutMs: 120_000,
+    // Scan flags are HARDCODED — never taken from an LLM-supplied string. A free-form `flags` param
+    // word-split into argv is arbitrary-nmap-flag injection: `-oN`/`-oX` write attacker-chosen files,
+    // `--script` runs arbitrary NSE, `-iL` reads an arbitrary file — none of which the scope gate
+    // inspects. `ports` is the only tunable, accepted ONLY if it is a pure port spec (digits, commas,
+    // dashes); anything else (spaces, letters, an injected flag) is dropped, not passed through.
+    build: (target, params) => {
+      const args = ['-sV', '-T4'];
+      const ports = str(params.ports);
+      if (ports && /^[0-9,-]+$/.test(ports)) args.push('-p', ports);
+      args.push(target);
+      return args;
+    },
+  },
+  nuclei: {
+    targetParam: 'url',
+    defaultTimeoutMs: 300_000,
+    build: (target, params) => {
+      const severity = str(params.severity) ?? 'medium,high,critical';
+      const tags = str(params.tags);
+      const args = ['-target', target, '-severity', severity, '-silent', '-jsonl'];
+      if (tags) args.push('-tags', tags);
+      return args;
+    },
+  },
+  ffuf: {
+    targetParam: 'url',
+    defaultTimeoutMs: 120_000,
+    build: (target, params) => {
+      const wordlist = str(params.wordlist) ?? defaultWordlist();
+      const mc = str(params.mc) ?? '200,301,302,403';
+      return ['-u', target, '-w', wordlist, '-mc', mc, '-o', '/dev/stdout', '-of', 'json', '-s'];
+    },
+  },
+  feroxbuster: {
+    // Recursive content discovery, mirroring ffuf: --json -q streams JSONL to stdout with the
+    // banner/progress UI suppressed, so the output channel stays machine-readable.
+    targetParam: 'url',
+    defaultTimeoutMs: 300_000,
+    build: (target, params) => {
+      const wordlist = str(params.wordlist) ?? defaultWordlist();
+      return ['-u', target, '-w', wordlist, '--json', '-q'];
+    },
+  },
+  sqlmap: {
+    targetParam: 'url',
+    defaultTimeoutMs: 300_000,
+    // Keep level/risk low unless the mission receipt explicitly permits intrusive testing.
+    build: (target, params) => {
+      const level = str(params.level) ?? '1';
+      const risk = str(params.risk) ?? '1';
+      return ['-u', target, '--batch', `--level=${level}`, `--risk=${risk}`];
+    },
+  },
+  arjun: {
+    targetParam: 'url',
+    defaultTimeoutMs: 180_000,
+    // arjun prints discovered parameters to stdout; -oJ needs a file path
+    // which the adapter cannot return, so keep stdout text mode.
+    build: (target, params) => {
+      const args = ['-u', target, '-q', '--stable'];
+      if (str(params.wordlist)) args.push('-w', str(params.wordlist) as string);
+      return args;
+    },
+  },
+  gobuster: {
+    targetParam: 'url',
+    defaultTimeoutMs: 120_000,
+    build: (target, params) => {
+      const mode = str(params.mode) ?? 'dir';
+      const wordlist = str(params.wordlist) ?? defaultWordlist();
+      return [mode, '-u', target, '-w', wordlist, '-q'];
+    },
+  },
+  nikto: {
+    targetParam: 'url',
+    defaultTimeoutMs: 300_000,
+    build: (target) => ['-h', target],
+  },
+  wpscan: {
+    targetParam: 'url',
+    defaultTimeoutMs: 300_000,
+    // JSON straight to stdout; --no-banner keeps the banner out of the parsed output.
+    build: (target) => ['--url', target, '--format', 'json', '--no-banner'],
+  },
+  httpx: {
+    targetParam: 'url',
+    defaultTimeoutMs: 60_000,
+    build: (target) => ['-u', target, '-status-code', '-title', '-tech-detect', '-json', '-silent'],
+  },
+  naabu: {
+    targetParam: 'host',
+    defaultTimeoutMs: 120_000,
+    build: (target, params) => {
+      const topPorts = str(params.top_ports) ?? '100';
+      return ['-host', target, '-top-ports', topPorts, '-silent'];
+    },
+  },
+  katana: {
+    targetParam: 'url',
+    defaultTimeoutMs: 120_000,
+    build: (target) => ['-u', target, '-jsonl', '-silent'],
+  },
+  subfinder: {
+    targetParam: 'domain',
+    defaultTimeoutMs: 120_000,
+    build: (target) => ['-d', target, '-silent'],
+  },
+  dalfox: {
+    targetParam: 'url',
+    defaultTimeoutMs: 180_000,
+    build: (target) => ['url', target, '--format', 'json', '--silence'],
+  },
+  dig: {
+    targetParam: 'domain',
+    defaultTimeoutMs: 30_000,
+    build: (target, params) => {
+      const type = str(params.type);
+      const args = [target];
+      if (type) args.push(type);
+      args.push('+short');
+      return args;
+    },
+  },
+  host: {
+    targetParam: 'domain',
+    defaultTimeoutMs: 30_000,
+    build: (target) => [target],
+  },
+  whois: {
+    targetParam: 'domain',
+    defaultTimeoutMs: 30_000,
+    build: (target) => [target],
+  },
+  curl: {
+    targetParam: 'url',
+    defaultTimeoutMs: 30_000,
+    build: (target, params) => {
+      const method = str(params.method) ?? 'GET';
+      const args = ['-s', '-i', '-X', method];
+      const data = str(params.data);
+      if (data) {
+        // A `-d`/`--data` value whose first char is `@` (read a local file) or `<` (read stdin) turns
+        // curl into a local-file-disclosure / exfil primitive — `-d @/etc/passwd` POSTs that file's
+        // contents. `--data-raw` sends the body verbatim and disables @/< interpretation entirely; the
+        // explicit reject is belt-and-braces so a caller can never smuggle a file read past the gates.
+        if (/^[@<]/.test(data)) {
+          throw new Error(`curl: refusing a data value starting with '${data[0]}' (would read a local file/stdin).`);
+        }
+        args.push('--data-raw', data);
+      }
+      args.push(target);
+      return args;
+    },
+  },
+
+  // ── Source / supply-chain scanners (non-networked, operate on a PATH) ───────────────────────────
+  // Without these, each falls through to DEFAULT_TEMPLATE and spawns `<binary> <target>` — which for
+  // a subcommand-driven scanner is a broken invocation (e.g. `semgrep .` never runs a scan, and with
+  // no path it is `semgrep ''`). Templates mirror the catalog `commandHint` and hardcode the
+  // subcommand + machine-readable output flags; the only tunable is the scan path (see scanPath).
+  semgrep: {
+    targetParam: 'path',
+    defaultTimeoutMs: 300_000,
+    build: (target, params) => ['scan', '--config', 'auto', '--json', scanPath(target, params)],
+  },
+  gitleaks: {
+    targetParam: 'path',
+    defaultTimeoutMs: 180_000,
+    build: (target, params) => ['detect', '--source', scanPath(target, params), '--report-format', 'json', '--redact', '--no-banner'],
+  },
+  trufflehog: {
+    targetParam: 'path',
+    defaultTimeoutMs: 300_000,
+    build: (target, params) => ['filesystem', scanPath(target, params), '--json', '--no-update'],
+  },
+  trivy: {
+    targetParam: 'path',
+    defaultTimeoutMs: 300_000,
+    build: (target, params) => ['fs', '--format', 'json', scanPath(target, params)],
+  },
+  syft: {
+    targetParam: 'path',
+    defaultTimeoutMs: 180_000,
+    build: (target, params) => ['dir:' + scanPath(target, params), '-o', 'cyclonedx-json'],
+  },
+  grype: {
+    targetParam: 'path',
+    defaultTimeoutMs: 180_000,
+    build: (target, params) => ['dir:' + scanPath(target, params), '-o', 'json'],
+  },
+  checkov: {
+    targetParam: 'path',
+    defaultTimeoutMs: 180_000,
+    build: (target, params) => ['-d', scanPath(target, params), '-o', 'json'],
+  },
+  'osv-scanner': {
+    // OSV-Scanner v2 requires the scan subcommand; source is explicit and JSON stays on stdout.
+    targetParam: 'path',
+    defaultTimeoutMs: 300_000,
+    build: (target, params) => ['scan', 'source', '--format', 'json', '--recursive', scanPath(target, params)],
+  },
+
+  // ── Reverse-engineering / mobile / smart-contract static analysis (local_read, operate on a FILE) ─
+  // Without these each falls through to DEFAULT_TEMPLATE and spawns `<binary> <file>` — which for a
+  // subcommand- or flag-driven analyser is a broken (or, for r2, an INTERACTIVE-shell-hanging)
+  // invocation. Templates mirror the catalog `commandHint` and hardcode the READ-ONLY subcommand +
+  // machine-readable output flags; the only tunable is the artifact/scan path (see artifactPath /
+  // scanPath). None add an intrusive or code-executing flag — risk stays where the catalog put it.
+  objdump: {
+    // `objdump <file>` errors ("no options given"); disassembly needs an action flag.
+    targetParam: 'file',
+    defaultTimeoutMs: 60_000,
+    build: (target, params) => ['-d', '-M', 'intel', artifactPath(target, params)],
+  },
+  readelf: {
+    // `readelf <file>` errors ("Warning: Nothing to do"); `-a` dumps all ELF headers.
+    targetParam: 'file',
+    defaultTimeoutMs: 60_000,
+    build: (target, params) => ['-a', artifactPath(target, params)],
+  },
+  checksec: {
+    // checksec takes its subject as `--file=<path>`, not a bare positional.
+    targetParam: 'file',
+    defaultTimeoutMs: 30_000,
+    build: (target, params) => ['--file=' + artifactPath(target, params)],
+  },
+  r2: {
+    // A bare `r2 <file>` drops into an INTERACTIVE prompt and blocks the agent loop until the
+    // per-adapter timeout burns out. `-q -c ij` runs ONE read-only info command as JSON, then quits;
+    // `scr.color=0` keeps the JSON free of ANSI escapes. No `w`/`!`/analysis-write commands are used.
+    targetParam: 'file',
+    defaultTimeoutMs: 60_000,
+    build: (target, params) => ['-q', '-e', 'scr.color=0', '-c', 'ij', artifactPath(target, params)],
+  },
+  exiftool: {
+    // `exiftool <file>` works but prints human text; `-json` gives a structured, parseable channel.
+    targetParam: 'file',
+    defaultTimeoutMs: 30_000,
+    build: (target, params) => ['-json', artifactPath(target, params)],
+  },
+  myth: {
+    // `myth <file>` errors; Mythril needs the `analyze` subcommand. `-o json` emits machine output.
+    targetParam: 'file',
+    defaultTimeoutMs: 300_000,
+    build: (target, params) => ['analyze', artifactPath(target, params), '-o', 'json'],
+  },
+  apkleaks: {
+    // `apkleaks <file>` errors; the APK is supplied via `-f`. Results print to stdout.
+    targetParam: 'file',
+    defaultTimeoutMs: 180_000,
+    build: (target, params) => ['-f', artifactPath(target, params)],
+  },
+  slither: {
+    // Slither accepts a positional target, but a bare run prints human text; `--json -` streams the
+    // findings as JSON to stdout. Directory-oriented, so it may default to the working dir.
+    targetParam: 'path',
+    defaultTimeoutMs: 300_000,
+    build: (target, params) => [scanPath(target, params), '--json', '-'],
+  },
+  mobsfscan: {
+    // Directory-oriented static scanner; `--json` gives a structured channel over the default text.
+    targetParam: 'path',
+    defaultTimeoutMs: 180_000,
+    build: (target, params) => ['--json', scanPath(target, params)],
+  },
+  apktool: {
+    // Decode to a controlled child directory. Do not use -f: an existing destination must fail
+    // rather than being recursively replaced by a model-selected invocation.
+    targetParam: 'file',
+    defaultTimeoutMs: 300_000,
+    build: (target, params) => ['d', artifactPath(target, params), '-o', apkOutputDirectory(params.output)],
+  },
+  hashcat: {
+    // Receipt-gated credential audit. --potfile-disable honors the catalog note "never store
+    // recovered secrets"; hash mode and wordlist stay operator-tunable via params.
+    targetParam: 'file',
+    defaultTimeoutMs: 600_000,
+    build: (target, params) => {
+      const mode = str(params.mode) ?? '0';
+      if (!/^\d{1,6}$/.test(mode)) throw new Error('hash mode must be a numeric Hashcat mode identifier.');
+      const wordlist = auxiliaryArtifactPath(
+        str(params.wordlist) ?? '/usr/share/wordlists/rockyou.txt',
+        'a local wordlist path',
+      );
+      return ['-m', mode, '--potfile-disable', artifactPath(target, params), wordlist];
+    },
+  },
+  yara: {
+    // YARA needs BOTH a ruleset and a target artifact: `yara <file>` alone errors
+    // ("no rules specified"). Refuse honestly when no ruleset is given.
+    targetParam: 'file',
+    defaultTimeoutMs: 120_000,
+    build: (target, params) => {
+      const rules = auxiliaryArtifactPath(params.rules, 'a local rules file (params.rules)');
+      return [rules, artifactPath(target, params)];
+    },
+  },
+
+  // ── Recon / OSINT adapters (networked) ─────────────────────────────────────────────────────────
+  whatweb: {
+    targetParam: 'url',
+    defaultTimeoutMs: 60_000,
+    // JSON straight to stdout; --no-errors keeps a single unreachable host from aborting the run.
+    build: (target) => ['--log-json=-', '--no-errors', target],
+  },
+  wafw00f: {
+    targetParam: 'url',
+    defaultTimeoutMs: 60_000,
+    build: (target) => [target, '-a', '-f', 'json', '-o', '-'],
+  },
+  amass: {
+    targetParam: 'domain',
+    defaultTimeoutMs: 300_000,
+    // `enum` subcommand is required; -passive keeps it to OSINT sources (no active resolution/brute).
+    build: (target) => ['enum', '-passive', '-d', target],
+  },
+  dnsx: {
+    targetParam: 'domain',
+    defaultTimeoutMs: 120_000,
+    // dnsx takes the domain via -d (comma-sep/stdin), never a bare positional.
+    build: (target) => ['-d', target, '-a', '-aaaa', '-cname', '-resp', '-json', '-silent'],
+  },
+  'testssl.sh': {
+    targetParam: 'url',
+    defaultTimeoutMs: 300_000,
+    build: (target) => ['--quiet', '--color', '0', target],
+  },
+  waybackurls: {
+    targetParam: 'domain',
+    defaultTimeoutMs: 60_000,
+    build: (target) => [target],
+  },
+};
+
+/** Fallback for any mintable adapter without a bespoke template: pass the target as a positional arg. */
+const DEFAULT_TEMPLATE: ArgTemplate = {
+  targetParam: 'target',
+  defaultTimeoutMs: 120_000,
+  build: (target) => [target],
+};
+
+/** The parameter keys a target may arrive under, mirroring the Arsenal's SCOPE_TARGET_KEYS surface. */
+const TARGET_PARAM_KEYS = ['url', 'target', 'host', 'hostname', 'domain', 'address', 'endpoint', 'base_url'];
+
+function resolveTemplate(adapter: ToolAdapter): ArgTemplate {
+  return ARG_TEMPLATES[adapter.binary] ?? ARG_TEMPLATES[adapter.id] ?? DEFAULT_TEMPLATE;
+}
+
+/**
+ * True when the adapter has a bespoke `ARG_TEMPLATE` (a real, hardcoded invocation) rather than
+ * falling through to `DEFAULT_TEMPLATE`'s bare `<binary> <target>`. Exported so the invocation-honesty
+ * guard test can assert that every mintable adapter's invocation correctness is explicitly classified
+ * — and that a newly-catalogued subcommand tool cannot silently ship a broken positional invocation.
+ */
+export function hasArgTemplate(adapter: ToolAdapter): boolean {
+  return Boolean(ARG_TEMPLATES[adapter.binary] ?? ARG_TEMPLATES[adapter.id]);
+}
+
+/**
+ * Resolve the target string for an adapter call: the template's preferred param first, then the other
+ * common target keys, then `context.target.address`. Returns undefined if none is present.
+ */
+function resolveTarget(template: ArgTemplate, context: ToolContext): string | undefined {
+  const params = context.parameters || {};
+  const preferred = str(params[template.targetParam]);
+  if (preferred) return preferred;
+  for (const k of TARGET_PARAM_KEYS) {
+    const v = str(params[k]);
+    if (v) return v;
+  }
+  return str(context.target?.address);
+}
+
+// =============================================================================
+// FACTORY
+// =============================================================================
+
+/** True only for adapters that may be minted as callable tools (safe_command / receipt_required). */
+export function isMintable(adapter: ToolAdapter): boolean {
+  return adapter.execution === 'safe_command' || adapter.execution === 'receipt_required';
+}
+
+/**
+ * Turn one catalogued adapter into a callable `CustomTool`.
+ *
+ * Returns `null` for `execution === 'catalog_only'` (metasploit, hydra) and `execution ===
+ * 'import_only'` (bloodhound) — those are NEVER minted, so they cannot be reached through generic
+ * command execution.
+ */
+export function adapterToCustomTool(adapter: ToolAdapter, deps: AdapterToolDeps): CustomTool | null {
+  if (!isMintable(adapter)) return null; // catalog_only / import_only are never callable
+
+  const template = resolveTemplate(adapter);
+
+  const handler = async (context: ToolContext): Promise<ToolResult> => {
+    // 1) Degrade (never throw) when the binary is absent — the model picks another tool.
+    if (!(await deps.isToolAvailable(adapter.binary))) {
+      return {
+        success: false,
+        error: `${adapter.name} (${adapter.binary}) is not installed. ${adapter.installHint}`,
+      };
+    }
+
+    // 2) Resolve the target this call would hit.
+    const target = resolveTarget(template, context);
+    if (adapter.networked && !target) {
+      return { success: false, error: `${adapter.name} requires a target (${template.targetParam}).` };
+    }
+
+    // 2b) Refuse an option-looking target: a value starting with '-' gets reparsed by the tool as a
+    //     FLAG rather than a target (curl `-K`/`-o`, nikto/whois/host positional, the default
+    //     positional template) — argument injection that slips past the scope gate, which only
+    //     inspects hosts. Reject it at this single choke point, before any argv is built or spawned.
+    if (target && /^-/.test(target)) {
+      return {
+        success: false,
+        error: `${adapter.name}: refusing option-looking target '${target}' (leading '-' is not a valid host/URL).`,
+      };
+    }
+
+    // 3) In-handler scope belt-and-braces: refuse an out-of-scope target BEFORE spawning anything.
+    if (target && deps.scopeOk && !deps.scopeOk(target)) {
+      return {
+        success: false,
+        error: `SCOPE DENIED: target '${target}' is not in the authorized scope — ${adapter.binary} refused before execution.`,
+      };
+    }
+
+    // A report-file tool must never fall back to a relative/default report path: that would place
+    // sensitive output outside the private workspace and outside the unconditional cleanup path.
+    if (template.reportFile && (!deps.createReportWorkspace || !deps.readToolReport)) {
+      return {
+        success: false,
+        error: `${adapter.name}: private report workspace dependencies are unavailable; refusing to run.`,
+      };
+    }
+
+    // 4) Build argv from the per-adapter template and run the subprocess with a per-adapter timeout.
+    //    A template may REFUSE a dangerous param (e.g. curl `-d @file` local-file read) by throwing —
+    //    convert that into a clean failure result, never an unhandled rejection.
+    // A report-FILE tool (e.g. garak) writes potentially sensitive transcripts to disk. Keep them
+    // inside a private per-run workspace and unconditionally remove that workspace after every exit
+    // path: success, non-zero exit, timeout/spawn error, parser/read error, or argv-build refusal.
+    let workspace: ReportWorkspace | undefined;
+    let response: ToolResult;
+    let cleanupError: unknown;
+    try {
+      workspace = template.reportFile
+        ? await deps.createReportWorkspace!(adapter.id)
+        : undefined;
+      const reportBase = workspace?.reportBase;
+      const buildParams: Record<string, unknown> = reportBase
+        ? { ...(context.parameters || {}), __reportBase: reportBase }
+        : context.parameters || {};
+      const argv = template.build(target ?? '', buildParams);
+      const result = await deps.runSubprocess(adapter.binary, argv, { timeout: template.defaultTimeoutMs });
+
+      if (result.exitCode !== 0) {
+        response = {
+          success: false,
+          error: `${adapter.binary} exited ${result.exitCode}: ${result.stderr || result.stdout || 'no output'}`,
+          output: result.stdout || undefined,
+        };
+      } else {
+        // Choose the stream to parse: a report-file tool's report.jsonl (read back from disk) when
+        // declared and available, else stdout. The chosen stream is both parsed and retained as the
+        // evidence of record, so every finding is backed by the exact bytes it was parsed from.
+        let evidence = result.stdout;
+        if (reportBase && template.reportFile && deps.readToolReport) {
+          const report = await deps.readToolReport(template.reportFile(reportBase));
+          if (report.trim()) evidence = report;
+        }
+
+        const findings = parseToolOutput(adapter.id, evidence);
+        response = {
+          success: true,
+          output: evidence,
+          ...(findings.length ? { findings } : {}),
+        };
+      }
+    } catch (err) {
+      response = {
+        success: false,
+        error: `${adapter.name}: ${err instanceof Error ? err.message : String(err)}`,
+      };
+    } finally {
+      if (workspace) {
+        try {
+          await workspace.cleanup();
+        } catch (err) {
+          cleanupError = err;
+        }
+      }
+    }
+
+    if (cleanupError) {
+      return {
+        success: false,
+        error: `${adapter.name}: failed to remove its private report workspace: ${
+          cleanupError instanceof Error ? cleanupError.message : String(cleanupError)
+        }`,
+      };
+    }
+    return response;
+  };
+
+  return {
+    name: toolNameFor(adapter),
+    description: `${adapter.name}: ${adapter.notes} (Kali+ adapter; ${adapter.execution}, risk=${adapter.risk})`,
+    category: adapter.category,
+    // Carry the catalog risk onto the tool so Arsenal.execute()'s approval gate can see it: an
+    // intrusive/credential/dangerous adapter is inert until approved, and warns on the hottest calls.
+    riskTier: adapter.risk,
+    parameters: [
+      {
+        name: template.targetParam,
+        type: 'string',
+        description: `Target for ${adapter.name} (${adapter.evidenceKinds.join(', ') || 'evidence'}).`,
+        required: adapter.networked,
+      },
+    ],
+    handler,
+  };
+}
+
+/** The stable tool-name a given adapter mints as (used for de-dup against already-registered tools). */
+export function toolNameFor(adapter: ToolAdapter): string {
+  return `${adapter.id.replace(/[^a-z0-9]+/gi, '_')}_tool`;
+}
+
+/**
+ * Map a list of adapters to callable `CustomTool`s, skipping:
+ *  - non-mintable adapters (catalog_only / import_only → dropped),
+ *  - any adapter whose minted tool-name is already present in `alreadyRegistered` (so the bespoke
+ *    hand-written EXTERNAL_TOOLS like nmap_scan / nuclei_scan win and we don't double-register).
+ */
+export function buildAdapterTools(
+  adapters: ToolAdapter[],
+  deps: AdapterToolDeps,
+  alreadyRegistered: ReadonlySet<string> = new Set()
+): CustomTool[] {
+  const tools: CustomTool[] = [];
+  for (const adapter of adapters) {
+    const tool = adapterToCustomTool(adapter, deps);
+    if (!tool) continue; // catalog_only / import_only
+    if (alreadyRegistered.has(tool.name)) continue; // don't shadow an existing registration
+    tools.push(tool);
+  }
+  return tools;
+}

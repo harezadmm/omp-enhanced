@@ -1,76 +1,64 @@
-# Python
+# ── Secrets (never tracked) ────────────────────────────────────────────────
+.env
+.env.local
+.env.*.local
+credentials.json
+secrets.json
+*.pem
+*.key
+*.p12
+*.pfx
+
+# ── Python ─────────────────────────────────────────────────────────────────
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
-env/
-venv/
-ENV/
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
 .installed.cfg
 *.egg
 
-# IDE
+# Build outputs (root-anchored so vendored tool sources are kept)
+/build/
+/dist/
+/downloads/
+/eggs/
+/parts/
+/sdist/
+/wheels/
+*.egg-info/
+
+# ── JS / node ──────────────────────────────────────────────────────────────
+node_modules/
+/build/
+
+# ── IDE / OS ───────────────────────────────────────────────────────────────
 .vscode/
 .idea/
 *.swp
 *.swo
 *~
 .DS_Store
+Thumbs.db
+desktop.ini
 
-# Hermes
+# ── Hermes / runtime ───────────────────────────────────────────────────────
 .hermes/
 *.db
 *.sqlite
 *.sqlite3
 
-# Logs
+# ── Logs / temp ────────────────────────────────────────────────────────────
 *.log
-logs/
-
-# Temporary files
-tmp/
-temp/
+/logs/
+/tmp/
+/temp/
 *.tmp
 
-# Credentials
-.env
-.env.local
-credentials.json
-secrets.json
-*.key
-*.pem
+# ── Redundant bundle (payload already present as loose files) ──────────────
+/recon-tools/Tools/Tools.zip
 
-# APK modding artifacts
-*.apk
-*.dex
-*.odex
-decompiled/
-output/
-
-# Build artifacts
-node_modules/
-package-lock.json
-yarn.lock
-
-# Test artifacts
+# ── Test artifacts ─────────────────────────────────────────────────────────
 .pytest_cache/
 .coverage
 htmlcov/
-
-# OS
-Thumbs.db
-desktop.ini

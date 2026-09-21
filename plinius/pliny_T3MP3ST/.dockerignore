@@ -1,0 +1,42 @@
+# Environment files (may contain real secrets)
+.env
+.env.*
+!.env.example
+
+# Git
+.git
+.gitignore
+
+# Node modules (host might be glibc, container is musl)
+node_modules
+
+# Reports and evidence (mounted as volumes)
+reports
+evidence
+
+# Build artifacts
+dist
+*.log
+npm-debug.log*
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Docker
+docker-compose.override.yml
+Dockerfile*
+.dockerignore
+
+# CI/CD
+.github
+
+# Documentation (built at runtime if needed)
+docs/.vitepress/cache
+docs/.vitepress/dist
