@@ -62,3 +62,8 @@ desktop.ini
 .pytest_cache/
 .coverage
 htmlcov/
+
+# OMP real provider keys (never commit)
+models.yml
+config.yml.bak-*
+models.yml.bak-*

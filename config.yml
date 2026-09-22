@@ -1,0 +1,34 @@
+modelRoles:
+  smol: google-antigravity/gemini-3.8-flash:auto
+  slow: bandelbanget/kimi-k3:off
+  task: bandelbanget/kimi-k3:off
+  default: surx/claude-sonnet-4.5-jailbrak-v1:off
+symbolPreset: unicode
+composer:
+  shape: band
+theme:
+  dark: titanium
+  light: light
+setupVersion: 2
+skills:
+  enablePiUser: false
+  enablePiProject: false
+  customDirectories:
+    - /Users/hariz/omp-enhanced/skills/software-development
+    - /Users/hariz/omp-enhanced/skills/productivity
+    - /Users/hariz/omp-enhanced/skills/creative
+    - /Users/hariz/omp-enhanced/skills/research
+    - /Users/hariz/omp-enhanced/skills/DevOps
+    - /Users/hariz/omp-enhanced/skills/QA-Testing
+    - /Users/hariz/omp-enhanced/skills/web
+    - /Users/hariz/omp-enhanced/skills/social-media
+    - /Users/hariz/omp-enhanced/skills/note-taking
+    - /Users/hariz/omp-enhanced/skills/media
+    - /Users/hariz/omp-enhanced/skills/email
+    - /Users/hariz/omp-enhanced/skills/autonomous-ai-agents
+    - /Users/hariz/omp-enhanced/skills/apple
+    - /Users/hariz/.hermes/skills
+    - /Users/hariz/omp-enhanced/skills/Security
+dev:
+  autoqaConsent: granted
+defaultThinkingLevel: auto

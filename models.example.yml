@@ -1,0 +1,1568 @@
+providers:
+  bandelbanget:
+    baseUrl: https://bandelbanget.xyz/v1
+    api: openai-completions
+    apiKey: ${OMP_API_KEY}  # set via env / isi manual
+    authHeader: true
+    models:
+      - id: "auto"
+        input: ["text"]
+      - id: "deepseek-v4-flash"
+        input: ["text"]
+      - id: "deepseek-v4-flash-0731"
+        input: ["text"]
+      - id: "deepseek-v4-flash-vision-exp"
+        input: ["text", "image"]
+      - id: "deepseek-v4-mod"
+        input: ["text"]
+      - id: "deepseek-v4-pro"
+        input: ["text"]
+      - id: "deepseek-v4-pro-0813"
+        input: ["text"]
+      - id: "deepseek-v4.1-flash"
+        input: ["text", "image"]
+      - id: "glm-5.1"
+        input: ["text"]
+      - id: "glm-5.2"
+        input: ["text"]
+      - id: "glm-5.2-mod"
+        input: ["text"]
+      - id: "glm-5.3"
+        input: ["text"]
+      - id: "glm-5.3-flash"
+        input: ["text"]
+      - id: "glm-5.3-mod"
+        input: ["text"]
+      - id: "hy3"
+        input: ["text"]
+      - id: "hy4"
+        input: ["text"]
+      - id: "kimi-k2.7-code"
+        input: ["text"]
+      - id: "kimi-k2.7-code-highspeed"
+        input: ["text"]
+      - id: "kimi-k3"
+        input: ["text", "image"]
+      - id: "kimi-k3-mod"
+        input: ["text", "image"]
+      - id: "mimo-v2.5-pro"
+        input: ["text"]
+      - id: "minimax-m3"
+        input: ["text"]
+
+  infron:
+    baseUrl: https://api.infron.ai/v1
+    api: openai-completions
+    apiKey: ${OMP_API_KEY}  # set via env / isi manual
+    authHeader: true
+    models:
+      - id: "aion-labs/aion-2.0"
+        input: ["text"]
+      - id: "aion-labs/aion-3.0"
+        input: ["text"]
+      - id: "aion-labs/aion-3.0-mini"
+        input: ["text"]
+      - id: "amazon/nova-2-lite-v1"
+        input: ["text", "image"]
+      - id: "amazon/nova-lite-v1"
+        input: ["text", "image"]
+      - id: "amazon/nova-micro-v1"
+        input: ["text"]
+      - id: "amazon/nova-pro-v1"
+        input: ["text", "image"]
+      - id: "anthropic/claude-fable-5"
+        input: ["text", "image"]
+      - id: "anthropic/claude-fable-5.1"
+        input: ["text", "image"]
+      - id: "anthropic/claude-haiku-4.5"
+        input: ["text"]
+      - id: "anthropic/claude-opus-4.1"
+        input: ["text"]
+      - id: "anthropic/claude-opus-4.5"
+        input: ["text", "image"]
+      - id: "anthropic/claude-opus-4.6"
+        input: ["text", "image"]
+      - id: "anthropic/claude-opus-4.7"
+        input: ["text", "image"]
+      - id: "anthropic/claude-opus-4.8"
+        input: ["text", "image"]
+      - id: "anthropic/claude-opus-4.8-fast"
+        input: ["text", "image"]
+      - id: "anthropic/claude-opus-5"
+        input: ["text", "image"]
+      - id: "anthropic/claude-opus-5-fast"
+        input: ["text", "image"]
+      - id: "anthropic/claude-sonnet-4.5"
+        input: ["text"]
+      - id: "anthropic/claude-sonnet-4.6"
+        input: ["text", "image"]
+      - id: "anthropic/claude-sonnet-5"
+        input: ["text", "image"]
+      - id: "apodex/apodex-1.1"
+        input: ["text"]
+      - id: "apodex/apodex-1.1-mini"
+        input: ["text"]
+      - id: "arcee-ai/trinity-large-thinking"
+        input: ["text"]
+      - id: "baai/bge-base-en-v1.5"
+        input: ["text"]
+      - id: "baai/bge-large-en-v1.5"
+        input: ["text"]
+      - id: "baai/bge-m3"
+        input: ["text"]
+      - id: "bytedance/sc-250615"
+        input: ["text"]
+      - id: "bytedance/seed-1.6"
+        input: ["text"]
+      - id: "bytedance/seed-1.6-flash"
+        input: ["text"]
+      - id: "bytedance/seed-1.8"
+        input: ["text"]
+      - id: "bytedance/seed-2.0-code"
+        input: ["text", "image"]
+      - id: "bytedance/seed-2.0-lite"
+        input: ["text"]
+      - id: "bytedance/seed-2.0-mini"
+        input: ["text"]
+      - id: "bytedance/seed-2.0-pro"
+        input: ["text"]
+      - id: "bytedance/seed-2.1-turbo"
+        input: ["text", "image"]
+      - id: "bytedance/seedance-2.0/fast/image-to-video"
+        input: ["text", "image"]
+      - id: "bytedance/seedance-2.0/fast/reference-to-video"
+        input: ["text", "image"]
+      - id: "bytedance/seedance-2.0/fast/text-to-video"
+        input: ["text"]
+      - id: "bytedance/seedance-2.0/fast/virtual-portrait-reference-to-video"
+        input: ["text", "image"]
+      - id: "bytedance/seedance-2.0/image-to-video"
+        input: ["text", "image"]
+      - id: "bytedance/seedance-2.0/mini/image-to-video"
+        input: ["text", "image"]
+      - id: "bytedance/seedance-2.0/mini/reference-to-video"
+        input: ["text", "image"]
+      - id: "bytedance/seedance-2.0/mini/text-to-video"
+        input: ["text"]
+      - id: "bytedance/seedance-2.0/mini/virtual-portrait-reference-to-video"
+        input: ["text", "image"]
+      - id: "bytedance/seedance-2.0/reference-to-video"
+        input: ["text", "image"]
+      - id: "bytedance/seedance-2.0/text-to-video"
+        input: ["text"]
+      - id: "bytedance/seedance-2.0/virtual-portrait-reference-to-video"
+        input: ["text", "image"]
+      - id: "bytedance/seedance-2.5/image-to-video"
+        input: ["text", "image"]
+      - id: "bytedance/seedance-2.5/reference-to-video"
+        input: ["text", "image"]
+      - id: "bytedance/seedance-2.5/text-to-video"
+        input: ["text"]
+      - id: "bytedance/seedance-2.5/virtual-portrait-reference-to-video"
+        input: ["text", "image"]
+      - id: "bytedance/seedream-5.0/image-to-image"
+        input: ["text", "image"]
+      - id: "bytedance/seedream-5.0/text-to-image"
+        input: ["text"]
+      - id: "bytedance/seedream-lite-5.0/image-to-image"
+        input: ["text", "image"]
+      - id: "bytedance/seedream-lite-5.0/text-to-image"
+        input: ["text"]
+      - id: "cloudsway/cloudsway-smart-search"
+        input: ["text"]
+      - id: "cohere/command-a-03-2025"
+        input: ["text"]
+      - id: "deepseek/deepseek-chat"
+        input: ["text"]
+      - id: "deepseek/deepseek-chat-v3-0324"
+        input: ["text"]
+      - id: "deepseek/deepseek-chat-v3.1"
+        input: ["text"]
+      - id: "deepseek/deepseek-ocr"
+        input: ["text"]
+      - id: "deepseek/deepseek-r1"
+        input: ["text"]
+      - id: "deepseek/deepseek-r1-0528"
+        input: ["text"]
+      - id: "deepseek/deepseek-r1-distill-llama-70b"
+        input: ["text"]
+      - id: "deepseek/deepseek-v3.1"
+        input: ["text"]
+      - id: "deepseek/deepseek-v3.1-terminus"
+        input: ["text"]
+      - id: "deepseek/deepseek-v4-flash"
+        input: ["text"]
+      - id: "deepseek/deepseek-v4-flash-0731"
+        input: ["text"]
+      - id: "deepseek/deepseek-v4-flash-0731:free"
+        input: ["text"]
+      - id: "deepseek/deepseek-v4-flash-vision-exp"
+        input: ["text", "image"]
+      - id: "deepseek/deepseek-v4-flash:free"
+        input: ["text"]
+      - id: "deepseek/deepseek-v4-pro"
+        input: ["text"]
+      - id: "deepseek/deepseek-v4-pro-0813"
+        input: ["text"]
+      - id: "deepseek/deepseek-v4.1-flash"
+        input: ["text", "image"]
+      - id: "exa/exa-search"
+        input: ["text"]
+      - id: "firecrawl/firecrawl-search"
+        input: ["text"]
+      - id: "google/gemini-2.5-flash"
+        input: ["text"]
+      - id: "google/gemini-2.5-flash-image"
+        input: ["text"]
+      - id: "google/gemini-2.5-flash-image-preview"
+        input: ["text"]
+      - id: "google/gemini-2.5-flash-lite"
+        input: ["text"]
+      - id: "google/gemini-2.5-flash-lite-preview-06-17"
+        input: ["text"]
+      - id: "google/gemini-2.5-flash-lite-preview-09-2025"
+        input: ["text"]
+      - id: "google/gemini-2.5-flash-preview"
+        input: ["text"]
+      - id: "google/gemini-2.5-flash-preview-05-20"
+        input: ["text"]
+      - id: "google/gemini-2.5-pro"
+        input: ["text"]
+      - id: "google/gemini-2.5-pro-preview-03-25"
+        input: ["text"]
+      - id: "google/gemini-2.5-pro-preview-05-06"
+        input: ["text"]
+      - id: "google/gemini-2.5-pro-preview-06-05"
+        input: ["text"]
+      - id: "google/gemini-3-flash-preview"
+        input: ["text", "image"]
+      - id: "google/gemini-3.1-flash-lite"
+        input: ["text", "image"]
+      - id: "google/gemini-3.1-flash-lite-preview"
+        input: ["text", "image"]
+      - id: "google/gemini-3.1-pro-preview"
+        input: ["image", "text"]
+      - id: "google/gemini-3.5-flash"
+        input: ["text", "image"]
+      - id: "google/gemini-3.5-flash-lite"
+        input: ["text", "image"]
+      - id: "google/gemini-3.6-flash"
+        input: ["text", "image"]
+      - id: "google/gemini-3.7-flash"
+        input: ["text", "image"]
+      - id: "google/gemini-3.8-flash"
+        input: ["text", "image"]
+      - id: "google/gemini-embedding-001"
+        input: ["text"]
+      - id: "google/gemma-3-12b-it"
+        input: ["text", "image"]
+      - id: "google/gemma-3-27b-it"
+        input: ["text"]
+      - id: "google/gemma-3-4b-it"
+        input: ["text", "image"]
+      - id: "google/gemma-4-26b-a4b"
+        input: ["text", "image"]
+      - id: "google/gemma-4-31b-it"
+        input: ["text", "image"]
+      - id: "google/nano-banana-2-lite/image-to-image"
+        input: ["text", "image"]
+      - id: "google/nano-banana-2-lite/text-to-image"
+        input: ["text"]
+      - id: "google/nano-banana-2/image-to-image"
+        input: ["text", "image"]
+      - id: "google/nano-banana-2/text-to-image"
+        input: ["text"]
+      - id: "google/nano-banana-pro/image-to-image"
+        input: ["text", "image"]
+      - id: "google/nano-banana-pro/text-to-image"
+        input: ["text"]
+      - id: "google/nano-banana/image-to-image"
+        input: ["text", "image"]
+      - id: "google/nano-banana/text-to-image"
+        input: ["text", "image"]
+      - id: "google/text-embedding-005"
+        input: ["text"]
+      - id: "google/text-embedding-large-exp-03-07"
+        input: ["text"]
+      - id: "google/transcoder/merge-audio-video"
+        input: ["text"]
+      - id: "google/transcoder/merge-audios"
+        input: ["text"]
+      - id: "google/transcoder/merge-videos"
+        input: ["text"]
+      - id: "google/veo3.1/first-last-frame-to-video"
+        input: ["text", "image"]
+      - id: "google/veo3.1/image-to-video"
+        input: ["text", "image"]
+      - id: "google/veo3.1/reference-to-video"
+        input: ["text", "image"]
+      - id: "google/veo3.1/text-to-video"
+        input: ["text"]
+      - id: "google/veo3.1/video-extend"
+        input: ["text"]
+      - id: "gryphe/mythomax-l2-13b"
+        input: ["text"]
+      - id: "happyhorse/happyhorse1.0/image-to-video"
+        input: ["text", "image"]
+      - id: "happyhorse/happyhorse1.0/reference-to-video"
+        input: ["text", "image"]
+      - id: "happyhorse/happyhorse1.0/text-to-video"
+        input: ["text"]
+      - id: "happyhorse/happyhorse1.0/video-edit"
+        input: ["text", "image"]
+      - id: "happyhorse/happyhorse1.1/image-to-video"
+        input: ["text", "image"]
+      - id: "happyhorse/happyhorse1.1/reference-to-video"
+        input: ["text", "image"]
+      - id: "happyhorse/happyhorse1.1/text-to-video"
+        input: ["text"]
+      - id: "holo/holo3-35b-a3b"
+        input: ["text"]
+      - id: "inception/mercury-2"
+        input: ["text"]
+      - id: "inclusionai/ling-2.6-1t"
+        input: ["text"]
+      - id: "inclusionai/ling-2.6-flash"
+        input: ["text"]
+      - id: "inclusionai/ling-3.0-flash"
+        input: ["text"]
+      - id: "inclusionai/ling-3.0-flash-vl"
+        input: ["text", "image"]
+      - id: "inference-net/schematron-v2-small"
+        input: ["text"]
+      - id: "inference-net/schematron-v2-turbo"
+        input: ["text"]
+      - id: "inflection/inflection-3-pi"
+        input: ["text"]
+      - id: "infron/auto"
+        input: ["text", "image"]
+      - id: "interfaze/interfaze-beta"
+        input: ["text"]
+      - id: "intfloat/e5-base-v2"
+        input: ["text"]
+      - id: "intfloat/e5-large-v2"
+        input: ["text"]
+      - id: "intfloat/multilingual-e5-large"
+        input: ["text"]
+      - id: "jina/jina-clip-v1"
+        input: ["text"]
+      - id: "jina/jina-clip-v2"
+        input: ["text"]
+      - id: "jina/jina-colbert-v1-en"
+        input: ["text"]
+      - id: "jina/jina-colbert-v2"
+        input: ["text"]
+      - id: "jina/jina-deepsearch-v1"
+        input: ["text"]
+      - id: "jina/jina-embeddings-v2-base-code"
+        input: ["text"]
+      - id: "jina/jina-embeddings-v2-base-de"
+        input: ["text"]
+      - id: "jina/jina-embeddings-v2-base-en"
+        input: ["text"]
+      - id: "jina/jina-embeddings-v2-base-es"
+        input: ["text"]
+      - id: "jina/jina-embeddings-v2-base-zh"
+        input: ["text"]
+      - id: "jina/jina-embeddings-v3"
+        input: ["text"]
+      - id: "jina/jina-embeddings-v4"
+        input: ["text"]
+      - id: "jina/jina-reranker-m0"
+        input: ["text"]
+      - id: "jina/jina-reranker-v1-base-en"
+        input: ["text"]
+      - id: "jina/jina-reranker-v1-tiny-en"
+        input: ["text"]
+      - id: "jina/jina-reranker-v1-turbo-en"
+        input: ["text"]
+      - id: "jina/jina-reranker-v2-base-multilingual"
+        input: ["text"]
+      - id: "jina/jina-reranker-v3"
+        input: ["text"]
+      - id: "kwaipilot/kat-coder-air-v2.5"
+        input: ["text", "image"]
+      - id: "kwaipilot/kat-coder-pro"
+        input: ["text"]
+      - id: "kwaipilot/kat-coder-pro-v2"
+        input: ["text"]
+      - id: "kwaipilot/kat-coder-pro-v2.5"
+        input: ["text", "image"]
+      - id: "meituan/longcat-2.0"
+        input: ["text"]
+      - id: "meituan/longcat-flash-chat"
+        input: ["text"]
+      - id: "meta-ai/muse-glimmer-30b"
+        input: ["text", "image"]
+      - id: "meta-ai/muse-spark-1.1"
+        input: ["text", "image"]
+      - id: "meta-llama/llama-3.1-70b-instruct"
+        input: ["text"]
+      - id: "meta-llama/llama-3.1-8b"
+        input: ["text"]
+      - id: "meta-llama/llama-3.3-70b-instruct"
+        input: ["text"]
+      - id: "meta-llama/llama-4-maverick"
+        input: ["text"]
+      - id: "minimax/minimax-h3/image-to-video"
+        input: ["text", "image"]
+      - id: "minimax/minimax-h3/reference-to-video"
+        input: ["text", "image"]
+      - id: "minimax/minimax-h3/text-to-video"
+        input: ["text"]
+      - id: "minimax/minimax-m2"
+        input: ["text"]
+      - id: "minimax/minimax-m2-her"
+        input: ["text"]
+      - id: "minimax/minimax-m2.1"
+        input: ["text"]
+      - id: "minimax/minimax-m2.5"
+        input: ["text"]
+      - id: "minimax/minimax-m2.7"
+        input: ["text"]
+      - id: "minimax/minimax-m3"
+        input: ["text", "image"]
+      - id: "miromind/mirothinker-1-7-deepresearch"
+        input: ["text"]
+      - id: "miromind/mirothinker-1-7-deepresearch-mini"
+        input: ["text"]
+      - id: "mistral/codestral-embed-2505"
+        input: ["text"]
+      - id: "mistral/ministral-14b-2512"
+        input: ["text"]
+      - id: "mistral/mistral-embed-2312"
+        input: ["text"]
+      - id: "mistral/mistral-nemo"
+        input: ["text"]
+      - id: "mistral/mistral-small-24b-instruct-2501"
+        input: ["text"]
+      - id: "mistral/mistral-small-24b-instruct-2506"
+        input: ["text"]
+      - id: "mistral/mistral-small-2603"
+        input: ["text"]
+      - id: "mistral/mistral-small-creative"
+        input: ["text"]
+      - id: "moonshotai/kimi-k2-0905"
+        input: ["text"]
+      - id: "moonshotai/kimi-k2-instruct"
+        input: ["text"]
+      - id: "moonshotai/kimi-k2-thinking"
+        input: ["text"]
+      - id: "moonshotai/kimi-k2.5"
+        input: ["text", "image"]
+      - id: "moonshotai/kimi-k2.6"
+        input: ["text", "image"]
+      - id: "moonshotai/kimi-k2.7-code"
+        input: ["text", "image"]
+      - id: "moonshotai/kimi-k3"
+        input: ["text", "image"]
+      - id: "moonshotai/kimi-v1-128k"
+        input: ["text"]
+      - id: "moonshotai/kimi-v1-32k"
+        input: ["text"]
+      - id: "morph/morph-v3-fast"
+        input: ["text"]
+      - id: "morph/morph-v3-large"
+        input: ["text"]
+      - id: "motif/motif-3"
+        input: ["text"]
+      - id: "nousresearch/hermes-3-llama-3.1-405b"
+        input: ["text"]
+      - id: "nousresearch/hermes-3-llama-3.1-70b"
+        input: ["text"]
+      - id: "nousresearch/hermes-4-14b"
+        input: ["text"]
+      - id: "nvidia/llama-3.1-nemotron-70b-instruct"
+        input: ["text"]
+      - id: "nvidia/llama-3.3-nemotron-super-49b-v1.5"
+        input: ["text"]
+      - id: "nvidia/nemotron-3-nano-30b-a3b"
+        input: ["text"]
+      - id: "nvidia/nemotron-3-nano-omni-30b-a3b-reasoning"
+        input: ["text"]
+      - id: "nvidia/nemotron-3-super-120b-a12b"
+        input: ["text"]
+      - id: "nvidia/nemotron-3-ultra-550b-a55b"
+        input: ["text"]
+      - id: "nvidia/nemotron-3.5-lightning-30b-a3b:free"
+        input: ["text"]
+      - id: "nvidia/nemotron-nano-12b-v2-vl"
+        input: ["text"]
+      - id: "nvidia/nemotron-nano-9b-v2"
+        input: ["text"]
+      - id: "nvidia/nvidia-nemotron-3.5-lightning"
+        input: ["text"]
+      - id: "openai/gpt-35-turbo"
+        input: ["text"]
+      - id: "openai/gpt-4"
+        input: ["text", "image"]
+      - id: "openai/gpt-4.1"
+        input: ["text", "image"]
+      - id: "openai/gpt-4.1-mini"
+        input: ["text", "image"]
+      - id: "openai/gpt-4.1-nano"
+        input: ["text", "image"]
+      - id: "openai/gpt-4o"
+        input: ["text", "image"]
+      - id: "openai/gpt-4o-mini"
+        input: ["text", "image"]
+      - id: "openai/gpt-4o-mini-transcribe/audio-to-text"
+        input: ["text"]
+      - id: "openai/gpt-4o-mini-tts/text-to-audio"
+        input: ["text"]
+      - id: "openai/gpt-4o-transcribe/audio-to-text"
+        input: ["text"]
+      - id: "openai/gpt-5"
+        input: ["text", "image"]
+      - id: "openai/gpt-5-chat"
+        input: ["text"]
+      - id: "openai/gpt-5-codex"
+        input: ["text"]
+      - id: "openai/gpt-5-mini"
+        input: ["text", "image"]
+      - id: "openai/gpt-5-nano"
+        input: ["text", "image"]
+      - id: "openai/gpt-5-pro"
+        input: ["text", "image"]
+      - id: "openai/gpt-5.1"
+        input: ["text", "image"]
+      - id: "openai/gpt-5.1-chat"
+        input: ["text", "image"]
+      - id: "openai/gpt-5.1-codex"
+        input: ["text"]
+      - id: "openai/gpt-5.1-codex-mini"
+        input: ["text"]
+      - id: "openai/gpt-5.2"
+        input: ["text", "image"]
+      - id: "openai/gpt-5.2-chat"
+        input: ["text", "image"]
+      - id: "openai/gpt-5.3-codex"
+        input: ["text"]
+      - id: "openai/gpt-5.4"
+        input: ["text", "image"]
+      - id: "openai/gpt-5.4-mini"
+        input: ["text", "image"]
+      - id: "openai/gpt-5.4-nano"
+        input: ["text"]
+      - id: "openai/gpt-5.4-pro"
+        input: ["text"]
+      - id: "openai/gpt-5.5"
+        input: ["text", "image"]
+      - id: "openai/gpt-5.5-pro"
+        input: ["text", "image"]
+      - id: "openai/gpt-5.6-luna"
+        input: ["text", "image"]
+      - id: "openai/gpt-5.6-sol"
+        input: ["text", "image"]
+      - id: "openai/gpt-5.6-terra"
+        input: ["text", "image"]
+      - id: "openai/gpt-6-astra"
+        input: ["text", "image"]
+      - id: "openai/gpt-image-2.5-flare/image-to-image"
+        input: ["text", "image"]
+      - id: "openai/gpt-image-2.5-flare/text-to-image"
+        input: ["text"]
+      - id: "openai/gpt-image-2.5-sunburst/image-to-image"
+        input: ["text", "image"]
+      - id: "openai/gpt-image-2.5-sunburst/text-to-image"
+        input: ["text"]
+      - id: "openai/gpt-image-2/image-to-image"
+        input: ["text", "image"]
+      - id: "openai/gpt-image-2/text-to-image"
+        input: ["text"]
+      - id: "openai/gpt-oss-120b"
+        input: ["text"]
+      - id: "openai/gpt-oss-20b"
+        input: ["text", "image"]
+      - id: "openai/gpt-oss-safeguard-20b"
+        input: ["text"]
+      - id: "openai/o1"
+        input: ["text"]
+      - id: "openai/o1-mini"
+        input: ["text"]
+      - id: "openai/o3-mini"
+        input: ["text"]
+      - id: "openai/o4-mini"
+        input: ["text"]
+      - id: "openai/text-embedding-3-large"
+        input: ["text"]
+      - id: "openai/text-embedding-3-small"
+        input: ["text"]
+      - id: "openai/text-embedding-ada-002"
+        input: ["text"]
+      - id: "openai/tts-1-hd/text-to-audio"
+        input: ["text"]
+      - id: "openai/tts-1/text-to-audio"
+        input: ["text"]
+      - id: "openai/whisper-1/audio-to-text"
+        input: ["text"]
+      - id: "perceptron/perceptron-mk1"
+        input: ["text", "image"]
+      - id: "perplexity/perplexity-search"
+        input: ["text"]
+      - id: "qwen/qwen-flash"
+        input: ["text"]
+      - id: "qwen/qwen-image-3.0/image-to-image"
+        input: ["text", "image"]
+      - id: "qwen/qwen-image-3.0/pro/image-to-image"
+        input: ["text", "image"]
+      - id: "qwen/qwen-image-3.0/pro/text-to-image"
+        input: ["text"]
+      - id: "qwen/qwen-image-3.0/text-to-image"
+        input: ["text"]
+      - id: "qwen/qwen-mt-lite"
+        input: ["text"]
+      - id: "qwen/qwen-mt-plus"
+        input: ["text"]
+      - id: "qwen/qwen-plus"
+        input: ["text"]
+      - id: "qwen/qwen-plus-character"
+        input: ["text"]
+      - id: "qwen/qwen2.5-7b-instruct"
+        input: ["text"]
+      - id: "qwen/qwen2.5-7b-instruct-1m"
+        input: ["text"]
+      - id: "qwen/qwen3-0.6b"
+        input: ["text"]
+      - id: "qwen/qwen3-14b"
+        input: ["text"]
+      - id: "qwen/qwen3-235b-a22b"
+        input: ["text"]
+      - id: "qwen/qwen3-235b-a22b-instruct-2507"
+        input: ["text"]
+      - id: "qwen/qwen3-235b-a22b-thinking-2507"
+        input: ["text"]
+      - id: "qwen/qwen3-30b-a3b"
+        input: ["text"]
+      - id: "qwen/qwen3-30b-a3b-instruct-2507"
+        input: ["text"]
+      - id: "qwen/qwen3-30b-a3b-thinking-2507"
+        input: ["text"]
+      - id: "qwen/qwen3-32b"
+        input: ["text"]
+      - id: "qwen/qwen3-8b"
+        input: ["text"]
+      - id: "qwen/qwen3-coder"
+        input: ["text"]
+      - id: "qwen/qwen3-coder-30b-a3b-instruct"
+        input: ["text"]
+      - id: "qwen/qwen3-coder-480b-a35b"
+        input: ["text"]
+      - id: "qwen/qwen3-coder-flash"
+        input: ["text"]
+      - id: "qwen/qwen3-coder-next"
+        input: ["text"]
+      - id: "qwen/qwen3-coder-plus"
+        input: ["text"]
+      - id: "qwen/qwen3-embedding-0.6b"
+        input: ["text"]
+      - id: "qwen/qwen3-embedding-4b"
+        input: ["text"]
+      - id: "qwen/qwen3-embedding-8b"
+        input: ["text"]
+      - id: "qwen/qwen3-max"
+        input: ["text"]
+      - id: "qwen/qwen3-next-80b-a3b-instruct"
+        input: ["text"]
+      - id: "qwen/qwen3-next-80b-a3b-thinking"
+        input: ["text"]
+      - id: "qwen/qwen3-omni-30b-a3b-instruct"
+        input: ["text"]
+      - id: "qwen/qwen3-omni-30b-a3b-thinking"
+        input: ["text"]
+      - id: "qwen/qwen3-reranker-0.6b"
+        input: ["text"]
+      - id: "qwen/qwen3-reranker-4b"
+        input: ["text"]
+      - id: "qwen/qwen3-reranker-8b"
+        input: ["text"]
+      - id: "qwen/qwen3-vl-235b-a22b-instruct"
+        input: ["text", "image"]
+      - id: "qwen/qwen3-vl-235b-a22b-thinking"
+        input: ["text"]
+      - id: "qwen/qwen3-vl-flash"
+        input: ["text"]
+      - id: "qwen/qwen3-vl-plus"
+        input: ["text", "image"]
+      - id: "qwen/qwen3.5-122b-a10b"
+        input: ["text", "image"]
+      - id: "qwen/qwen3.5-27b"
+        input: ["text", "image"]
+      - id: "qwen/qwen3.5-27b-anko"
+        input: ["text"]
+      - id: "qwen/qwen3.5-27b-bluestar-v3-derestricted"
+        input: ["text"]
+      - id: "qwen/qwen3.5-27b-bluestar-v3-derestricted-lite"
+        input: ["text"]
+      - id: "qwen/qwen3.5-27b-earica-derestricted"
+        input: ["text"]
+      - id: "qwen/qwen3.5-27b-earica-derestricted-lite"
+        input: ["text"]
+      - id: "qwen/qwen3.5-27b-infracelestial"
+        input: ["text"]
+      - id: "qwen/qwen3.5-27b-marvin-dpo-v2-derestricted"
+        input: ["text"]
+      - id: "qwen/qwen3.5-27b-marvin-dpo-v2-derestricted-lite"
+        input: ["text"]
+      - id: "qwen/qwen3.5-27b-marvin-v2-derestricted"
+        input: ["text"]
+      - id: "qwen/qwen3.5-27b-marvin-v2-derestricted-lite"
+        input: ["text"]
+      - id: "qwen/qwen3.5-27b-nanovel-v2-derestricted"
+        input: ["text"]
+      - id: "qwen/qwen3.5-27b-nanovel-v2-derestricted-lite"
+        input: ["text"]
+      - id: "qwen/qwen3.5-27b-queen-derestricted"
+        input: ["text"]
+      - id: "qwen/qwen3.5-27b-queen-derestricted-lite"
+        input: ["text"]
+      - id: "qwen/qwen3.5-27b-rprmax-v1"
+        input: ["text"]
+      - id: "qwen/qwen3.5-35b-a3b"
+        input: ["text", "image"]
+      - id: "qwen/qwen3.5-397b-a17b"
+        input: ["text", "image"]
+      - id: "qwen/qwen3.5-4b"
+        input: ["text", "image"]
+      - id: "qwen/qwen3.5-9b"
+        input: ["text", "image"]
+      - id: "qwen/qwen3.5-flash"
+        input: ["text"]
+      - id: "qwen/qwen3.5-plus"
+        input: ["text", "image"]
+      - id: "qwen/qwen3.6-27b"
+        input: ["text", "image"]
+      - id: "qwen/qwen3.6-35b-a3b"
+        input: ["text", "image"]
+      - id: "qwen/qwen3.6-flash"
+        input: ["text", "image"]
+      - id: "qwen/qwen3.6-max-preview"
+        input: ["text"]
+      - id: "qwen/qwen3.6-plus"
+        input: ["text", "image"]
+      - id: "qwen/qwen3.7-flash"
+        input: ["text", "image"]
+      - id: "qwen/qwen3.7-max"
+        input: ["text"]
+      - id: "qwen/qwen3.7-plus"
+        input: ["text", "image"]
+      - id: "qwen/qwen3.8-2.4t-a95b"
+        input: ["text"]
+      - id: "qwen/qwen3.8-27b"
+        input: ["text", "image"]
+      - id: "qwen/qwen3.8-27b:free"
+        input: ["text", "image"]
+      - id: "qwen/qwen3.8-flash"
+        input: ["text", "image"]
+      - id: "qwen/qwen3.8-max"
+        input: ["text", "image"]
+      - id: "qwen/tongyi-deepresearch-30b-a3b"
+        input: ["text"]
+      - id: "rednote-hilab/dots.ocr"
+        input: ["text"]
+      - id: "sakana/fugu-max-v1.0"
+        input: ["text", "image"]
+      - id: "sakana/fugu-ultra"
+        input: ["text", "image"]
+      - id: "sakana/fugu-ultra-v2.0"
+        input: ["text", "image"]
+      - id: "sao10k/l3.1-70b-euryale-v2.2"
+        input: ["text"]
+      - id: "sao10k/l3.1-70b-hanami-x1"
+        input: ["text"]
+      - id: "sao10k/l3.3-70b-euryale-v2.3"
+        input: ["text"]
+      - id: "sentence-transformers/all-minilm-l12-v2"
+        input: ["text"]
+      - id: "sentence-transformers/all-minilm-l6-v2"
+        input: ["text"]
+      - id: "sentence-transformers/all-mpnet-base-v2"
+        input: ["text"]
+      - id: "sentence-transformers/multi-qa-mpnet-base-dot-v1"
+        input: ["text"]
+      - id: "sentence-transformers/paraphrase-minilm-l6-v2"
+        input: ["text"]
+      - id: "stepfun/step-3.5-flash"
+        input: ["text"]
+      - id: "stepfun/step-3.7-flash"
+        input: ["text", "image"]
+      - id: "tavily/tavily-extract"
+        input: ["text"]
+      - id: "tavily/tavily-search"
+        input: ["text"]
+      - id: "tencent/hy3"
+        input: ["text"]
+      - id: "tencent/hy4-preview"
+        input: ["text"]
+      - id: "thenlper/gte-base"
+        input: ["text"]
+      - id: "thenlper/gte-large"
+        input: ["text"]
+      - id: "thinkingmachines/inkling"
+        input: ["text", "image"]
+      - id: "upstage/solar-pro-3"
+        input: ["text"]
+      - id: "upstage/solar-pro-4"
+        input: ["text"]
+      - id: "volcengine/doubao-seed-1.8"
+        input: ["text"]
+      - id: "volcengine/doubao-seed-2.0-code"
+        input: ["text"]
+      - id: "volcengine/doubao-seed-2.0-lite"
+        input: ["text"]
+      - id: "volcengine/doubao-seed-2.0-mini"
+        input: ["text"]
+      - id: "volcengine/doubao-seed-2.0-pro"
+        input: ["text"]
+      - id: "voyage/voyage-3-large"
+        input: ["text"]
+      - id: "voyage/voyage-3.5"
+        input: ["text"]
+      - id: "voyage/voyage-3.5-lite"
+        input: ["text"]
+      - id: "voyage/voyage-4"
+        input: ["text"]
+      - id: "voyage/voyage-4-large"
+        input: ["text"]
+      - id: "voyage/voyage-4-lite"
+        input: ["text"]
+      - id: "voyage/voyage-code-2"
+        input: ["text"]
+      - id: "voyage/voyage-code-3"
+        input: ["text"]
+      - id: "voyage/voyage-finance-2"
+        input: ["text"]
+      - id: "voyage/voyage-law-2"
+        input: ["text"]
+      - id: "voyage/voyage-rerank-2.5"
+        input: ["text"]
+      - id: "voyage/voyage-rerank-2.5-lite"
+        input: ["text"]
+      - id: "wan/face-swap/image-to-image"
+        input: ["image"]
+      - id: "wan/flashvsr/video-super-resolution"
+        input: ["text"]
+      - id: "wan/head-swap/image-to-image"
+        input: ["image"]
+      - id: "wan/qwen-image-edit-spicy/image-to-image"
+        input: ["text", "image"]
+      - id: "wan/wan-animate/video-to-video"
+        input: ["image"]
+      - id: "wan/wan2.2-i2v-spicy/image-to-video"
+        input: ["image"]
+      - id: "wan/wan2.7-i2v-spicy/image-to-video"
+        input: ["text", "image"]
+      - id: "wan/wan2.7/image-to-image"
+        input: ["text", "image"]
+      - id: "wan/wan2.7/image-to-video"
+        input: ["text", "image"]
+      - id: "wan/wan2.7/pro/image-to-image"
+        input: ["text", "image"]
+      - id: "wan/wan2.7/pro/text-to-image"
+        input: ["text"]
+      - id: "wan/wan2.7/reference-to-video"
+        input: ["text", "image"]
+      - id: "wan/wan2.7/text-to-image"
+        input: ["text"]
+      - id: "wan/wan2.7/text-to-video"
+        input: ["text"]
+      - id: "wan/wan2.7/video-edit"
+        input: ["text", "image"]
+      - id: "wan/wan3.0/image-to-video"
+        input: ["text", "image"]
+      - id: "wan/wan3.0/reference-to-video"
+        input: ["text", "image"]
+      - id: "wan/wan3.0/text-to-video"
+        input: ["text"]
+      - id: "wan/wan3.0/video-edit"
+        input: ["text", "image"]
+      - id: "wan/z-image-spicy/text-to-image"
+        input: ["text"]
+      - id: "x-ai/grok-4.2-non-reasoning"
+        input: ["text"]
+      - id: "x-ai/grok-4.2-reasoning"
+        input: ["text"]
+      - id: "x-ai/grok-4.3"
+        input: ["text", "image"]
+      - id: "x-ai/grok-4.5"
+        input: ["text", "image"]
+      - id: "x-ai/grok-4.6"
+        input: ["text", "image"]
+      - id: "x-ai/grok-build-0.1"
+        input: ["text", "image"]
+      - id: "x-ai/grok-imagine-image-2.0/image-to-image"
+        input: ["text", "image"]
+      - id: "x-ai/grok-imagine-image-2.0/text-to-image"
+        input: ["text"]
+      - id: "x-ai/grok-imagine-image-quality/image-to-image"
+        input: ["text", "image"]
+      - id: "x-ai/grok-imagine-image-quality/text-to-image"
+        input: ["text"]
+      - id: "x-ai/grok-imagine-image/image-to-image"
+        input: ["text", "image"]
+      - id: "x-ai/grok-imagine-image/text-to-image"
+        input: ["text"]
+      - id: "x-ai/grok-imagine-video-1.5/image-to-video"
+        input: ["text", "image"]
+      - id: "x-ai/grok-imagine-video/edit-video"
+        input: ["text"]
+      - id: "x-ai/grok-imagine-video/extend-video"
+        input: ["text"]
+      - id: "x-ai/grok-imagine-video/image-to-video"
+        input: ["text", "image"]
+      - id: "x-ai/grok-imagine-video/reference-to-video"
+        input: ["text", "image"]
+      - id: "x-ai/grok-imagine-video/text-to-video"
+        input: ["text"]
+      - id: "xiaomi/mimo-v2.5"
+        input: ["text", "image"]
+      - id: "xiaomi/mimo-v2.5-pro"
+        input: ["text"]
+      - id: "z-ai/embedding-3"
+        input: ["text"]
+      - id: "z-ai/glm-4-32b"
+        input: ["text"]
+      - id: "z-ai/glm-4-32b-0414-128k"
+        input: ["text"]
+      - id: "z-ai/glm-4.5"
+        input: ["text"]
+      - id: "z-ai/glm-4.5-air"
+        input: ["text"]
+      - id: "z-ai/glm-4.5-airx"
+        input: ["text"]
+      - id: "z-ai/glm-4.5-flash"
+        input: ["text"]
+      - id: "z-ai/glm-4.5v"
+        input: ["text", "image"]
+      - id: "z-ai/glm-4.5x"
+        input: ["text"]
+      - id: "z-ai/glm-4.6"
+        input: ["text"]
+      - id: "z-ai/glm-4.6v"
+        input: ["text", "image"]
+      - id: "z-ai/glm-4.6v-flash"
+        input: ["text", "image"]
+      - id: "z-ai/glm-4.6v-flashx"
+        input: ["text", "image"]
+      - id: "z-ai/glm-4.7"
+        input: ["text"]
+      - id: "z-ai/glm-4.7-flash"
+        input: ["text"]
+      - id: "z-ai/glm-4.7-flashx"
+        input: ["text"]
+      - id: "z-ai/glm-5"
+        input: ["text"]
+      - id: "z-ai/glm-5-turbo"
+        input: ["text"]
+      - id: "z-ai/glm-5.1"
+        input: ["text"]
+      - id: "z-ai/glm-5.2"
+        input: ["text"]
+      - id: "z-ai/glm-5.2-fast"
+        input: ["text"]
+      - id: "z-ai/glm-5.3"
+        input: ["text"]
+      - id: "z-ai/glm-5.3-flash"
+        input: ["text", "image"]
+      - id: "z-ai/glm-5v-turbo"
+        input: ["text", "image"]
+
+  surx:
+    baseUrl: https://router.surx.web.id/v1
+    api: openai-completions
+    apiKey: ${OMP_API_KEY}  # set via env / isi manual
+    authHeader: true
+    models:
+      - id: "claude-sonnet-4.5-jailbrak-v1"
+        input: ["text", "image"]
+      - id: "deepseek-4.1-flash-jailbreak"
+        input: ["text"]
+
+  siromop:
+    baseUrl: https://siromop.web.id/v1
+    api: openai-completions
+    apiKey: ${OMP_API_KEY}  # set via env / isi manual
+    authHeader: true
+    models:
+      - id: "Grove/deepseek-v4-flash"
+        input: ["text"]
+      - id: "Grove/deepseek-v4-flash-0731"
+        input: ["text"]
+      - id: "Grove/deepseek-v4-flash-0731-turbo"
+        input: ["text"]
+      - id: "Grove/deepseek-v4-flash-turbo"
+        input: ["text"]
+      - id: "Grove/deepseek-v4-pro"
+        input: ["text"]
+      - id: "Grove/deepseek-v4-pro-0813"
+        input: ["text"]
+      - id: "Grove/deepseek-v4-pro-0813-turbo"
+        input: ["text"]
+      - id: "Grove/deepseek-v4-pro-turbo"
+        input: ["text"]
+      - id: "Grove/deepseek-v4.1-flash"
+        input: ["text", "image"]
+      - id: "Grove/deepseek-v4.1-flash-turbo"
+        input: ["text", "image"]
+      - id: "Grove/gemma-4-31b"
+        input: ["text", "image"]
+      - id: "Grove/gemma-4-31b-turbo"
+        input: ["text", "image"]
+      - id: "Grove/glm-5.2"
+        input: ["text"]
+      - id: "Grove/glm-5.2-turbo"
+        input: ["text"]
+      - id: "Grove/glm-5.3"
+        input: ["text"]
+      - id: "Grove/glm-5.3-flash"
+        input: ["text", "image"]
+      - id: "Grove/kimi-k2.6"
+        input: ["text", "image"]
+      - id: "Grove/kimi-k2.6-turbo"
+        input: ["text", "image"]
+      - id: "Grove/kimi-k2.7"
+        input: ["text", "image"]
+      - id: "Grove/kimi-k2.7-turbo"
+        input: ["text", "image"]
+      - id: "Grove/kimi-k3"
+        input: ["text", "image"]
+      - id: "Grove/kokoro-82m"
+        input: ["text"]
+      - id: "Grove/mimo-v2.5"
+        input: ["text", "image"]
+      - id: "Grove/mimo-v2.5-pro"
+        input: ["text", "image"]
+      - id: "Grove/mimo-v2.5-pro-turbo"
+        input: ["text", "image"]
+      - id: "Grove/mimo-v2.5-turbo"
+        input: ["text", "image"]
+      - id: "Grove/minimax-m3"
+        input: ["text", "image"]
+      - id: "Grove/nemotron-3-super"
+        input: ["text"]
+      - id: "Grove/nemotron-3-super-turbo"
+        input: ["text"]
+      - id: "Grove/nemotron-3-ultra"
+        input: ["text"]
+      - id: "Grove/nemotron-3-ultra-turbo"
+        input: ["text"]
+      - id: "Grove/qwen-3.8-2.4t"
+        input: ["text"]
+      - id: "Grove/qwen-3.8-2.4t-turbo"
+        input: ["text"]
+      - id: "Grove/qwen-3.8-27b"
+        input: ["text"]
+      - id: "Unikey/BAAI/bge-m3"
+        input: ["text"]
+      - id: "Unikey/MiniMax-M2.7"
+        input: ["text"]
+      - id: "Unikey/MiniMax-M3"
+        input: ["text", "image"]
+      - id: "Unikey/bytedance-seed/seedream-5-0-pro"
+        input: ["text"]
+      - id: "Unikey/bytedance/seedance-2.0-fast"
+        input: ["text"]
+      - id: "Unikey/bytedance/seedance-2.5"
+        input: ["text"]
+      - id: "Unikey/claude-haiku-4-5-20251001"
+        input: ["text", "image"]
+      - id: "Unikey/claude-opus-4-6"
+        input: ["text", "image"]
+      - id: "Unikey/claude-opus-4-7"
+        input: ["text", "image"]
+      - id: "Unikey/claude-opus-4-8"
+        input: ["text", "image"]
+      - id: "Unikey/deepseek-v4-flash"
+        input: ["text"]
+      - id: "Unikey/deepseek-v4-pro"
+        input: ["text"]
+      - id: "Unikey/deepseek/deepseek-v4-flash"
+        input: ["text"]
+      - id: "Unikey/deepseek/deepseek-v4-pro"
+        input: ["text"]
+      - id: "Unikey/gemini-3.1-pro"
+        input: ["text", "image"]
+      - id: "Unikey/gemini-3.5-flash"
+        input: ["text", "image"]
+      - id: "Unikey/glm-5.1"
+        input: ["text"]
+      - id: "Unikey/google/gemini-3-pro-image"
+        input: ["text", "image"]
+      - id: "Unikey/google/gemini-3.1-flash-image"
+        input: ["text", "image"]
+      - id: "Unikey/google/gemini-3.1-flash-lite"
+        input: ["text", "image"]
+      - id: "Unikey/google/gemini-3.1-pro-preview"
+        input: ["text", "image"]
+      - id: "Unikey/google/gemini-3.5-flash"
+        input: ["text", "image"]
+      - id: "Unikey/gpt-5.5"
+        input: ["text", "image"]
+      - id: "Unikey/gpt-5.6-luna"
+        input: ["text", "image"]
+      - id: "Unikey/gpt-5.6-sol"
+        input: ["text", "image"]
+      - id: "Unikey/gpt-5.6-terra"
+        input: ["text", "image"]
+      - id: "Unikey/gpt-6-astra"
+        input: ["text", "image"]
+      - id: "Unikey/kimi-k2.6"
+        input: ["text", "image"]
+      - id: "Unikey/kimi-k2.7-code"
+        input: ["text", "image"]
+      - id: "Unikey/kimi-k3"
+        input: ["text", "image"]
+      - id: "Unikey/kwaivgi/kling-v3.0-pro"
+        input: ["text"]
+      - id: "Unikey/minimax/hailuo-3"
+        input: ["text"]
+      - id: "Unikey/minimax/minimax-m3"
+        input: ["text", "image"]
+      - id: "Unikey/moonshotai/kimi-k2.7-code"
+        input: ["text", "image"]
+      - id: "Unikey/moonshotai/kimi-k3"
+        input: ["text", "image"]
+      - id: "Unikey/openai/gpt-5-image"
+        input: ["text"]
+      - id: "Unikey/openai/gpt-5-image-mini"
+        input: ["text"]
+      - id: "Unikey/qwen/qwen-image-3"
+        input: ["text"]
+      - id: "Unikey/qwen3.7-max"
+        input: ["text"]
+      - id: "Unikey/x-ai/grok-4.3"
+        input: ["text", "image"]
+      - id: "Unikey/x-ai/grok-imagine-image-2.0"
+        input: ["text"]
+      - id: "Unikey/z-ai/glm-5.1"
+        input: ["text"]
+      - id: "Unikey/z-ai/glm-5.2"
+        input: ["text"]
+      - id: "astria/Atria-Dawn-Preview"
+        input: ["text"]
+      - id: "dot/nemotron-3-ultra"
+        input: ["text"]
+      - id: "dot/ollama/gpt-oss:120b"
+        input: ["text"]
+      - id: "dot/ollama/nemotron-3-nano:30b"
+        input: ["text"]
+      - id: "dot/ollama/nemotron-3-super:cloud"
+        input: ["text"]
+      - id: "dot/ollama/nemotron-3-ultra"
+        input: ["text"]
+      - id: "gcli/grok-4.5"
+        input: ["text", "image"]
+      - id: "gcli/grok-4.5-high"
+        input: ["text", "image"]
+      - id: "gcli/grok-4.5-low"
+        input: ["text", "image"]
+      - id: "gcli/grok-4.5-medium"
+        input: ["text", "image"]
+      - id: "gcli/grok-4.7"
+        input: ["text", "image"]
+      - id: "gcli/grok-4.7-high"
+        input: ["text", "image"]
+      - id: "gcli/grok-4.7-xhigh"
+        input: ["text", "image"]
+      - id: "gcli/grok-build"
+        input: ["text", "image"]
+      - id: "orcarouter/anthropic/claude-fable-5"
+        input: ["text", "image"]
+      - id: "orcarouter/anthropic/claude-fable-5.1"
+        input: ["text", "image"]
+      - id: "orcarouter/anthropic/claude-haiku-4.5"
+        input: ["text", "image"]
+      - id: "orcarouter/anthropic/claude-opus-4.5"
+        input: ["text", "image"]
+      - id: "orcarouter/anthropic/claude-opus-4.6"
+        input: ["text", "image"]
+      - id: "orcarouter/anthropic/claude-opus-4.7"
+        input: ["text", "image"]
+      - id: "orcarouter/anthropic/claude-opus-4.8"
+        input: ["text", "image"]
+      - id: "orcarouter/anthropic/claude-opus-5"
+        input: ["text", "image"]
+      - id: "orcarouter/anthropic/claude-sonnet-4.6"
+        input: ["text", "image"]
+      - id: "orcarouter/anthropic/claude-sonnet-5"
+        input: ["text", "image"]
+      - id: "orcarouter/auto"
+        input: ["text"]
+      - id: "orcarouter/codex-auto-review"
+        input: ["text"]
+      - id: "orcarouter/deepseek/deepseek-chat"
+        input: ["text"]
+      - id: "orcarouter/deepseek/deepseek-reasoner"
+        input: ["text"]
+      - id: "orcarouter/deepseek/deepseek-v4-flash"
+        input: ["text"]
+      - id: "orcarouter/deepseek/deepseek-v4-flash-0731"
+        input: ["text"]
+      - id: "orcarouter/deepseek/deepseek-v4-flash-free"
+        input: ["text"]
+      - id: "orcarouter/deepseek/deepseek-v4-flash-vision-exp"
+        input: ["text", "image"]
+      - id: "orcarouter/deepseek/deepseek-v4-pro"
+        input: ["text"]
+      - id: "orcarouter/deepseek/deepseek-v4-pro-0813"
+        input: ["text"]
+      - id: "orcarouter/deepseek/deepseek-v4.1-flash"
+        input: ["text", "image"]
+      - id: "orcarouter/free"
+        input: ["text"]
+      - id: "orcarouter/fusion"
+        input: ["text"]
+      - id: "orcarouter/fusion-flash"
+        input: ["text"]
+      - id: "orcarouter/fusion-mini"
+        input: ["text"]
+      - id: "orcarouter/google/gemini-2.5-flash"
+        input: ["text", "image"]
+      - id: "orcarouter/google/gemini-2.5-flash-lite"
+        input: ["text", "image"]
+      - id: "orcarouter/google/gemini-2.5-pro"
+        input: ["text", "image"]
+      - id: "orcarouter/google/gemini-3-flash-preview"
+        input: ["text", "image"]
+      - id: "orcarouter/google/gemini-3.1-flash-lite"
+        input: ["text", "image"]
+      - id: "orcarouter/google/gemini-3.1-flash-lite-preview"
+        input: ["text", "image"]
+      - id: "orcarouter/google/gemini-3.1-pro-preview"
+        input: ["text", "image"]
+      - id: "orcarouter/google/gemini-3.1-pro-preview-customtools"
+        input: ["text", "image"]
+      - id: "orcarouter/google/gemini-3.5-flash"
+        input: ["text", "image"]
+      - id: "orcarouter/google/gemini-3.5-flash-lite"
+        input: ["text", "image"]
+      - id: "orcarouter/google/gemini-3.6-flash"
+        input: ["text", "image"]
+      - id: "orcarouter/google/gemini-3.8-flash"
+        input: ["text", "image"]
+      - id: "orcarouter/google/gemini-flash-latest"
+        input: ["text", "image"]
+      - id: "orcarouter/google/gemini-flash-lite-latest"
+        input: ["text", "image"]
+      - id: "orcarouter/google/gemini-pro-latest"
+        input: ["text", "image"]
+      - id: "orcarouter/google/gemini-robotics-er-1.6-preview"
+        input: ["text", "image"]
+      - id: "orcarouter/google/gemma-4-26b-a4b-it"
+        input: ["text", "image"]
+      - id: "orcarouter/google/gemma-4-31b-it"
+        input: ["text", "image"]
+      - id: "orcarouter/gpt-5.6-luna"
+        input: ["text", "image"]
+      - id: "orcarouter/grok/grok-4.3"
+        input: ["text", "image"]
+      - id: "orcarouter/grok/grok-4.5"
+        input: ["text", "image"]
+      - id: "orcarouter/grok/grok-4.6"
+        input: ["text", "image"]
+      - id: "orcarouter/kimi/kimi-k2.5"
+        input: ["text", "image"]
+      - id: "orcarouter/kimi/kimi-k2.6"
+        input: ["text", "image"]
+      - id: "orcarouter/kimi/kimi-k2.7-code"
+        input: ["text", "image"]
+      - id: "orcarouter/kimi/kimi-k3"
+        input: ["text", "image"]
+      - id: "orcarouter/kling/kling-3-turbo"
+        input: ["text"]
+      - id: "orcarouter/kling/kling-v2-1-master"
+        input: ["text"]
+      - id: "orcarouter/kling/kling-v2-5-turbo"
+        input: ["text"]
+      - id: "orcarouter/kling/kling-v2-6"
+        input: ["text"]
+      - id: "orcarouter/kling/kling-v2-master"
+        input: ["text"]
+      - id: "orcarouter/kling/kling-v3"
+        input: ["text"]
+      - id: "orcarouter/kling/kling-v3-omni"
+        input: ["text", "image"]
+      - id: "orcarouter/kling/kling-video-o1"
+        input: ["text", "image"]
+      - id: "orcarouter/meta/muse-spark-1.1"
+        input: ["text", "image"]
+      - id: "orcarouter/meta/muse-spark-1.2"
+        input: ["text", "image"]
+      - id: "orcarouter/minimax/minimax-h3"
+        input: ["text"]
+      - id: "orcarouter/minimax/minimax-m2.5"
+        input: ["text"]
+      - id: "orcarouter/minimax/minimax-m2.5-highspeed"
+        input: ["text"]
+      - id: "orcarouter/minimax/minimax-m2.7"
+        input: ["text"]
+      - id: "orcarouter/minimax/minimax-m2.7-highspeed"
+        input: ["text"]
+      - id: "orcarouter/minimax/minimax-m3"
+        input: ["text", "image"]
+      - id: "orcarouter/obsidian/Qwen3.6-35B-A3B"
+        input: ["text", "image"]
+      - id: "orcarouter/obsidian/Qwen3.8-27B"
+        input: ["text"]
+      - id: "orcarouter/obsidian/gemma-4-26B-A4B"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-3.5-turbo"
+        input: ["text"]
+      - id: "orcarouter/openai/gpt-3.5-turbo-0125"
+        input: ["text"]
+      - id: "orcarouter/openai/gpt-3.5-turbo-1106"
+        input: ["text"]
+      - id: "orcarouter/openai/gpt-3.5-turbo-16k"
+        input: ["text"]
+      - id: "orcarouter/openai/gpt-4"
+        input: ["text"]
+      - id: "orcarouter/openai/gpt-4-0613"
+        input: ["text"]
+      - id: "orcarouter/openai/gpt-4-turbo"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-4-turbo-2024-04-09"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-4.1"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-4.1-2025-04-14"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-4.1-mini"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-4.1-mini-2025-04-14"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-4.1-nano"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-4.1-nano-2025-04-14"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-4o"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-4o-2024-05-13"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-4o-2024-08-06"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-4o-2024-11-20"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-4o-mini"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-4o-mini-2024-07-18"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5-2025-08-07"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5-chat-latest"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5-mini"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5-mini-2025-08-07"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5-nano"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5-nano-2025-08-07"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5-pro"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5-pro-2025-10-06"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5-search-api"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5-search-api-2025-10-14"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5.1"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5.1-2025-11-13"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5.1-chat-latest"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5.1-codex"
+        input: ["text"]
+      - id: "orcarouter/openai/gpt-5.1-codex-mini"
+        input: ["text"]
+      - id: "orcarouter/openai/gpt-5.2"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5.2-2025-12-11"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5.2-chat-latest"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5.2-codex"
+        input: ["text"]
+      - id: "orcarouter/openai/gpt-5.2-pro"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5.2-pro-2025-12-11"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5.3-codex"
+        input: ["text"]
+      - id: "orcarouter/openai/gpt-5.4"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5.4-2026-03-05"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5.4-mini"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5.4-mini-2026-03-17"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5.4-nano"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5.4-nano-2026-03-17"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5.4-pro"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5.4-pro-2026-03-05"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5.5"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5.5-2026-04-23"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5.5-pro"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5.5-pro-2026-04-23"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5.6-luna"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5.6-sol"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-5.6-terra"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-6-astra"
+        input: ["text", "image"]
+      - id: "orcarouter/openai/gpt-oss-120b"
+        input: ["text"]
+      - id: "orcarouter/orca/dub"
+        input: ["text"]
+      - id: "orcarouter/orca/orcaverify-text1.0"
+        input: ["text"]
+      - id: "orcarouter/orca/orcaverify-text1.0-free"
+        input: ["text"]
+      - id: "orcarouter/qwen/qwen3-max"
+        input: ["text"]
+      - id: "orcarouter/qwen/qwen3-max-preview"
+        input: ["text"]
+      - id: "orcarouter/qwen/qwen3-vl-235b-a22b-instruct"
+        input: ["text", "image"]
+      - id: "orcarouter/qwen/qwen3-vl-235b-a22b-thinking"
+        input: ["text", "image"]
+      - id: "orcarouter/qwen/qwen3-vl-8b-instruct"
+        input: ["text", "image"]
+      - id: "orcarouter/qwen/qwen3-vl-8b-thinking"
+        input: ["text", "image"]
+      - id: "orcarouter/qwen/qwen3.5-122b-a10b"
+        input: ["text", "image"]
+      - id: "orcarouter/qwen/qwen3.5-27b"
+        input: ["text", "image"]
+      - id: "orcarouter/qwen/qwen3.5-35b-a3b"
+        input: ["text", "image"]
+      - id: "orcarouter/qwen/qwen3.5-397b-a17b"
+        input: ["text", "image"]
+      - id: "orcarouter/qwen/qwen3.5-flash"
+        input: ["text", "image"]
+      - id: "orcarouter/qwen/qwen3.5-flash-2026-02-23"
+        input: ["text", "image"]
+      - id: "orcarouter/qwen/qwen3.5-plus"
+        input: ["text", "image"]
+      - id: "orcarouter/qwen/qwen3.5-plus-2026-02-15"
+        input: ["text", "image"]
+      - id: "orcarouter/qwen/qwen3.6-35b-a3b"
+        input: ["text", "image"]
+      - id: "orcarouter/qwen/qwen3.6-flash"
+        input: ["text", "image"]
+      - id: "orcarouter/qwen/qwen3.6-flash-2026-04-16"
+        input: ["text", "image"]
+      - id: "orcarouter/qwen/qwen3.6-plus"
+        input: ["text", "image"]
+      - id: "orcarouter/qwen/qwen3.6-plus-2026-04-02"
+        input: ["text", "image"]
+      - id: "orcarouter/qwen/qwen3.7-flash"
+        input: ["text", "image"]
+      - id: "orcarouter/qwen/qwen3.7-max"
+        input: ["text"]
+      - id: "orcarouter/qwen/qwen3.7-max-2026-05-20"
+        input: ["text"]
+      - id: "orcarouter/qwen/qwen3.7-plus"
+        input: ["text", "image"]
+      - id: "orcarouter/qwen/qwen3.8-27b"
+        input: ["text"]
+      - id: "orcarouter/qwen/qwen3.8-flash"
+        input: ["text"]
+      - id: "orcarouter/qwen/qwen3.8-max"
+        input: ["text"]
+      - id: "orcarouter/qwen/qwen3.8-max-0902"
+        input: ["text"]
+      - id: "orcarouter/tencent/hy3"
+        input: ["text"]
+      - id: "orcarouter/tencent/hy3-free"
+        input: ["text"]
+      - id: "orcarouter/z-ai/glm-4.5"
+        input: ["text"]
+      - id: "orcarouter/z-ai/glm-4.5-air"
+        input: ["text"]
+      - id: "orcarouter/z-ai/glm-4.6"
+        input: ["text"]
+      - id: "orcarouter/z-ai/glm-4.7"
+        input: ["text"]
+      - id: "orcarouter/z-ai/glm-5"
+        input: ["text"]
+      - id: "orcarouter/z-ai/glm-5.1"
+        input: ["text"]
+      - id: "orcarouter/z-ai/glm-5.2"
+        input: ["text"]
+      - id: "orcarouter/z-ai/glm-5.3"
+        input: ["text"]
+      - id: "orcarouter/z-ai/glm-5.3-flash"
+        input: ["text", "image"]
+      - id: "orcarouter/z-ai/glm-5.3-flash-free"
+        input: ["text"]
+      - id: "root/Deepseek"
+        input: ["text"]
+      - id: "root/Mimo"
+        input: ["text", "image"]
+      - id: "root/Ngebut"
+        input: ["text"]
+      - id: "root/UnikeyGPT/gpt-6-astra"
+        input: ["text", "image"]
+      - id: "root/elf/claude-opus-4-6"
+        input: ["text", "image"]
+      - id: "root/elf/claude-opus-4-7"
+        input: ["text", "image"]
+      - id: "root/elf/claude-opus-4-7 MT"
+        input: ["text", "image"]
+      - id: "root/elf/claude-opus-4-8"
+        input: ["text", "image"]
+      - id: "root/elf/deepseek-v4-flash"
+        input: ["text"]
+      - id: "root/elf/deepseek-v4.1-flash"
+        input: ["text", "image"]
+      - id: "root/elf/deepseek-v4.1-flash SPEED"
+        input: ["text", "image"]
+      - id: "root/elf/deepsseek-v4-pro"
+        input: ["text"]
+      - id: "root/elf/glm-5.2"
+        input: ["text"]
+      - id: "root/elf/glm-5.3-flash"
+        input: ["text", "image"]
+      - id: "root/elf/glm-5.3-flash MT GAES"
+        input: ["text"]
+      - id: "root/elf/gpt-5.6-luna"
+        input: ["text", "image"]
+      - id: "root/elf/gpt-5.6-sol"
+        input: ["text", "image"]
+      - id: "root/elf/gpt-6-astra"
+        input: ["text", "image"]
+      - id: "root/elf/grok-4.7"
+        input: ["text", "image"]
+      - id: "root/elf/laguna-s-2.1"
+        input: ["text"]
+      - id: "root/elf/mimo"
+        input: ["text", "image"]
+      - id: "root/elf/mimo-v2.5"
+        input: ["text", "image"]
+      - id: "root/elf/minimax-M3"
+        input: ["text", "image"]
+      - id: "root/elf/muse-spark-1.3-contributor"
+        input: ["text", "image"]
+      - id: "root/elf/nemotron-3.5-lightning"
+        input: ["text"]
+      - id: "root/elf/qwen3.8-flash"
+        input: ["text"]
+      - id: "root/elf/solar-pro4"
+        input: ["text"]
+      - id: "sir"
+        input: ["text"]
